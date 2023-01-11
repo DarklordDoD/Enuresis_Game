@@ -13,6 +13,8 @@ public class Ressourcer : MonoBehaviour
     [SerializeField]
     private float tisUp;
     [SerializeField]
+    private float whenVandUp;
+    [SerializeField]
     private float tisVandUp;
 
     [Header("Vand Resurce")]
@@ -27,19 +29,121 @@ public class Ressourcer : MonoBehaviour
     private Scrollbar gladShow;
     private float gladMeter;
     [SerializeField]
+    private float whenTisNed;
+    [SerializeField]
     private float gladTisNed;
     [SerializeField]
+    private float whenVandNed;
+    [SerializeField]
     private float gladVandNed;
+
+    [Header("Andet")]
+    [SerializeField]
+    private float reduceSpeed;
+    [SerializeField]
+    private float opdateringsTid;
+    [SerializeField]
+    private float minBar;
+    [SerializeField]
+    private float maxBar;
+    private float klokken;
+    private float dato;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        tisMeter = minBar;
+        vandMeter = maxBar;
+        gladMeter = maxBar;
+
+        tisShow.size = tisMeter / 100f;
+        vandShow.size = vandMeter / 100f;
+        gladShow.size = gladMeter / 100f;
     }
 
     // Update is called once per frame
-    void fixedUpdate()
+    void FixedUpdate()
     {
-        
+        if (opdateringsTid > reduceSpeed)
+        {
+            opdateringsTid = 0;
+
+            if (tisMeter < maxBar)
+                TisControl();
+
+            if (vandMeter > minBar)
+                VandControl();
+
+            if (gladMeter > minBar)
+                GladControl();
+
+        } else
+        {
+            opdateringsTid += 1 * Time.deltaTime;
+        }
+    }
+
+    private void TisControl()
+    {
+        tisMeter += tisUp;
+
+        if (vandMeter >= whenVandUp)
+        {
+            tisMeter += tisVandUp;
+        }
+
+        tisShow.size = tisMeter / 100f;
+    }
+
+    private void VandControl()
+    {
+        vandMeter -= vandNed;
+
+        vandShow.size = vandMeter / 100f;
+    }
+
+    private void GladControl()
+    {
+        if (vandMeter < whenVandNed)
+        {
+            gladMeter -= gladVandNed;
+        }
+
+        if (tisMeter > whenTisNed)
+        {
+            gladMeter -= gladTisNed;
+        }
+
+        gladShow.size = gladMeter / 100f;
+    }
+
+    public void RemuveTis(float amaunt)
+    {
+        tisMeter -= amaunt;
+
+        if (tisMeter < minBar)
+            tisMeter = minBar;
+
+        tisShow.size = tisMeter / 100f;
+    }
+
+    public void AddVand(float amaunt)
+    {
+        vandMeter += amaunt;
+
+        if (vandMeter > maxBar)
+            vandMeter = maxBar;
+
+        vandShow.size = vandMeter / 100f;
+    }
+
+    public void AddGlad(float amaunt)
+    {
+        gladMeter += amaunt;
+
+        if (gladMeter > maxBar)
+            gladMeter = maxBar;
+
+        gladShow.size = gladMeter / 100f;
     }
 }
