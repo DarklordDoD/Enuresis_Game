@@ -8,6 +8,8 @@ public class muvePet : MonoBehaviour
     private float walkSpeed;
     [SerializeField]
     float pointClosness;
+    [SerializeField]
+    float petZone;
 
     [SerializeField]
     private Vector2 minPoint;
@@ -36,7 +38,7 @@ public class muvePet : MonoBehaviour
     }
 
     // Update is called once per frame 
-    // jeg bruger opdate til at sende beskeder til andre fungtioner
+    // jeg bruger update til at sende beskeder til andre fungtioner
     void Update()
     {
         if (!onTask)
@@ -108,9 +110,17 @@ public class muvePet : MonoBehaviour
         //sætter et point på registreret klik/touch
         if (mousePosition.y < maxPoint.y)
         {
-            nextPoint = mousePosition;
-            venter = false;
-            valgtWalk = true;
+            DistanceToPoint(transform.position, mousePosition);
+            if (pointDistance > petZone)
+            {
+                nextPoint = mousePosition;
+                venter = false;
+                valgtWalk = true;
+            }
+            else
+            {
+                Debug.Log("pet");
+            }
         }
             
     }

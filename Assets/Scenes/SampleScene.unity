@@ -956,13 +956,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 10
   pointClosness: 0.3
+  petZone: 2
   minPoint: {x: -6, y: -5}
   maxPoint: {x: 6, y: 0}
   timerRange: {x: 10, y: 20}
   valgtWalk: 0
   onTask: 0
-  nextPoint: {x: 0, y: 0}
-  rngTimer: 0
 --- !u!212 &1516799986
 SpriteRenderer:
   m_ObjectHideFlags: 0
