@@ -22,11 +22,9 @@ public class muvePet : MonoBehaviour
     private bool onTask;
 
     private Rigidbody2D rb;
-    [SerializeField]
     private Vector2 nextPoint;
     private float pointDistance;
     private bool venter = true;
-    [SerializeField]
     private float rngTimer;
     private Vector3 mousePosition;
 
@@ -37,30 +35,33 @@ public class muvePet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+    // Update is called once per frame 
+    // jeg bruger opdate til at sende beskeder til andre fungtioner
     void Update()
     {
         if (!onTask)
-            KlikPoint();
+            KlikPoint(); //rigistrer om spilleren klikker på skærmen
 
         if (!venter)
-            WalkTo();
+            WalkTo(); //får pettet til at gå imod et point
 
         if (!valgtWalk)
-            RandomWalk();
+            RandomWalk(); //setter et tefeldigt point som pette vil gå til
     }
 
     private void WalkTo()
     {
-        DistanceToPoint(transform.position, nextPoint);
+        DistanceToPoint(transform.position, nextPoint); //rigistrer hvor tæt pettet er på sin point
 
         if (pointDistance > pointClosness)
         {
+            //flytter pette imod destinationen 
             float walkSteps = walkSpeed * Time.deltaTime;
             rb.position = Vector2.MoveTowards(transform.position, nextPoint, walkSteps);
         }
         else
         {
+            //stopper med at flytte pettet og gøre klar til nyt indput
             valgtWalk = false;
             venter = true;
         }
@@ -68,10 +69,11 @@ public class muvePet : MonoBehaviour
 
     private void RandomWalk()
     {
-        rngTimer -= Time.deltaTime;
+        rngTimer -= Time.deltaTime; //tæller ned til næste tefældige indpit
 
         if (rngTimer <= 0)
         {
+            //finder tefældig point på skærmen og tefældig tid til næste tefældige indput
             nextPoint = new Vector2(Random.Range(minPoint.x, maxPoint.x), Random.Range(minPoint.y, maxPoint.y));
             rngTimer = Random.Range(timerRange.x, timerRange.y);
             venter = false;
@@ -80,11 +82,11 @@ public class muvePet : MonoBehaviour
 
     private void KlikPoint()
     {
-
-        if (Input.GetMouseButtonDown(0))
+        //ragistrer musseklik
+        if (Input.GetMouseButtonDown(0)) 
             getMouseKlik(false);
 
-        
+        //registrer touch fra tablet
         if (Input.touchCount > 0)
             getMouseKlik(true);
 
@@ -94,14 +96,16 @@ public class muvePet : MonoBehaviour
     {
         if (!isTouch)
         {
+            //finder lokalitionen af musen
             Vector3 mouseIndput = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mouseIndput);
         }
         else
         {
-
+            //finder lokalitionen af touch på tablet
         }
 
+        //sætter et point på registreret klik/touch
         if (mousePosition.y < maxPoint.y)
         {
             nextPoint = mousePosition;
@@ -113,6 +117,7 @@ public class muvePet : MonoBehaviour
 
     private void DistanceToPoint(Vector2 p1, Vector2 p2)
     {
+        //berigner hvor tæt pettet er på næste point
         pointDistance = Mathf.Sqrt(Mathf.Pow(p1[0] - p2[0], 2) + Mathf.Pow(p1[1] - p2[1], 2));
     }
 }

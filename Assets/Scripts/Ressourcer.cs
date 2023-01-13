@@ -69,6 +69,7 @@ public class Ressourcer : MonoBehaviour
     }
 
     // Update is called once per frame
+    // jeg bruger update til at sende beskeder til andre fungtioner
     void FixedUpdate()
     {
         if (opdateringsTid > reduceSpeed)
@@ -76,13 +77,13 @@ public class Ressourcer : MonoBehaviour
             opdateringsTid = 0;
 
             if (tisMeter < maxBar)
-                TisControl();
+                TisControl(); //controler tis resurcen. fylder den op over tid
 
             if (vandMeter > minBar)
-                VandControl();
+                VandControl(); //controler tørst resurcen. tømmer den over tid
 
             if (gladMeter > minBar)
-                GladControl();
+                GladControl(); //controler glæde resurce. tømmer den over tid
 
         }
         else
@@ -93,38 +94,42 @@ public class Ressourcer : MonoBehaviour
 
     private void TisControl()
     {
-        tisMeter += tisUp;
+        tisMeter += tisUp; 
 
+        //fylder tis recursen op hurtiger hvis vand recursen er over en bestemt mængde
         if (vandMeter >= whenVandUp)
         {
             tisMeter += tisVandUp;
         }
 
-        tisShow.size = tisMeter / 100f;
+        tisShow.size = tisMeter / 100f; //viser recursen i UI
     }
 
     private void VandControl()
     {
         vandMeter -= vandNed;
 
-        vandShow.size = vandMeter / 100f;
+        vandShow.size = vandMeter / 100f; //viser recursen i UI
     }
 
     private void GladControl()
     {
+        //tømmer glæde recursen når tørst resurcen er under en bestemt mængde
         if (vandMeter < whenVandNed)
         {
             gladMeter -= gladVandNed;
         }
 
+        //tømmer glæde recursen når tis recursen er over en bestemt mængde
         if (tisMeter > whenTisNed)
         {
             gladMeter -= gladTisNed;
         }
 
-        gladShow.size = gladMeter / 100f;
+        gladShow.size = gladMeter / 100f; //viser recursen i UI
     }
 
+    //gør det muligt at påvirke tis recursen fra andre scripts
     public void RemuveTis(float amaunt)
     {
         tisMeter -= amaunt;
@@ -135,6 +140,7 @@ public class Ressourcer : MonoBehaviour
         tisShow.size = tisMeter / 100f;
     }
 
+    //gør det muligt at påvirke vand recursen fra andre scripts
     public void AddVand(float amaunt)
     {
         vandMeter += amaunt;
@@ -145,6 +151,7 @@ public class Ressourcer : MonoBehaviour
         vandShow.size = vandMeter / 100f;
     }
 
+    //gør det muligt at påvirke glæde recursen fra andre scripts
     public void AddGlad(float amaunt)
     {
         gladMeter += amaunt;
@@ -155,6 +162,7 @@ public class Ressourcer : MonoBehaviour
         gladShow.size = gladMeter / 100f;
     }
 
+    //alle recurserne bliver sent til save maneger
     public void SaveRecorses()
     {
         dato = DateTime.Today + DateTime.Now.TimeOfDay;
@@ -166,6 +174,7 @@ public class Ressourcer : MonoBehaviour
         sd.gladData = gladMeter;
     }
 
+    //alle recurserne bliver loadet fra save maneger
     private void LoadRecorses()
     {
         SaveClass sd = new SaveClass();
