@@ -11,8 +11,7 @@ public class SporgeSkema : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Button btn = yourButton.GetComponent<Button>();
-        btn.onClick.AddListener(Sporgeskema);
+
     }
 
     // Update is called once per frame

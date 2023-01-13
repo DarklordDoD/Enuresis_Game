@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.WSA;
 using UnityEngine.UI;
+using System;
 
 public class Ressourcer : MonoBehaviour
 {
@@ -46,8 +47,12 @@ public class Ressourcer : MonoBehaviour
     private float minBar;
     [SerializeField]
     private float maxBar;
-    private float klokken;
-    private float dato;
+    private DateTime dato;
+
+    private void Awake()
+    {
+        SaveRecorses();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +64,8 @@ public class Ressourcer : MonoBehaviour
         tisShow.size = tisMeter / 100f;
         vandShow.size = vandMeter / 100f;
         gladShow.size = gladMeter / 100f;
+
+        LoadRecorses();
     }
 
     // Update is called once per frame
@@ -77,7 +84,8 @@ public class Ressourcer : MonoBehaviour
             if (gladMeter > minBar)
                 GladControl();
 
-        } else
+        }
+        else
         {
             opdateringsTid += 1 * Time.deltaTime;
         }
@@ -146,4 +154,25 @@ public class Ressourcer : MonoBehaviour
 
         gladShow.size = gladMeter / 100f;
     }
+
+    public void SaveRecorses()
+    {
+        dato = DateTime.Today + DateTime.Now.TimeOfDay;
+
+        SaveClass sd = new SaveClass();
+        sd.dato = dato;
+        sd.vandData = vandMeter;
+        sd.tisData = tisMeter;
+        sd.gladData = gladMeter;
+    }
+
+    private void LoadRecorses()
+    {
+        SaveClass sd = new SaveClass();
+        dato = sd.dato;
+
+        TimeSpan lastVisit = DateTime.Today + DateTime.Now.TimeOfDay - dato;
+        Debug.Log(lastVisit);
+    }
+
 }
