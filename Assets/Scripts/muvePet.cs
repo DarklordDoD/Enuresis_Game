@@ -99,12 +99,12 @@ public class muvePet : MonoBehaviour
         if (!isTouch)
         {
             //finder lokalitionen af musen
-            Vector3 mouseIndput = Input.mousePosition;
-            mousePosition = Camera.main.ScreenToWorldPoint(mouseIndput);
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
         else
         {
             //finder lokalitionen af touch på tablet
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.touches[0].position);
         }
 
         //sætter et point på registreret klik/touch
@@ -119,7 +119,7 @@ public class muvePet : MonoBehaviour
             }
             else
             {
-                Debug.Log("pet");
+                //Debug.Log("pet");
             }
         }
             
@@ -129,5 +129,10 @@ public class muvePet : MonoBehaviour
     {
         //berigner hvor tæt pettet er på næste point
         pointDistance = Mathf.Sqrt(Mathf.Pow(p1[0] - p2[0], 2) + Mathf.Pow(p1[1] - p2[1], 2));
+    }
+
+    public void PetPet()
+    {
+        Debug.Log("pet");
     }
 }
