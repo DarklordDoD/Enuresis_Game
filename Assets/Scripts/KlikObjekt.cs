@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class KlikObjekt : MonoBehaviour
 {
-    private Ray ray;
     private RaycastHit2D hit;
 
     /*public void OnMouseDown()
@@ -56,6 +55,7 @@ public class KlikObjekt : MonoBehaviour
             if (hit.collider.tag == "SceneSkift")
             {
                 hit.collider.GetComponent<SceneSkift>().SkiftTil();
+                Debug.Log("hit");
             }
         }
     }
