@@ -47,11 +47,12 @@ public class Ressourcer : MonoBehaviour
     private float minBar;
     [SerializeField]
     private float maxBar;
-    private DateTime dato;
+    public DateTime dato;
 
     private void Awake()
     {
-        SaveRecorses();
+        //SaveRecorses();
+        LoadRecorses();
     }
 
     // Start is called before the first frame update
@@ -63,9 +64,7 @@ public class Ressourcer : MonoBehaviour
 
         tisShow.size = tisMeter / 100f;
         vandShow.size = vandMeter / 100f;
-        gladShow.size = gladMeter / 100f;
-
-        LoadRecorses();
+        gladShow.size = gladMeter / 100f;       
     }
 
     // Update is called once per frame

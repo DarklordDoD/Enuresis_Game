@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -29,6 +30,9 @@ public class SceneManeger : MonoBehaviour
         }
         else
             instance = this.gameObject;
+
+        if (DateTime.Today != GetComponent<Ressourcer>().dato)
+            GetComponentInChildren<DataSamling>().SporgPlayer();
 
     }
 

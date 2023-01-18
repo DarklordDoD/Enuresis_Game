@@ -12,13 +12,20 @@ public class SaveClass
     public float gladData;
     public int points;
 
-    public string ToJson()
+    public string TilJson()
     {
         return JsonUtility.ToJson(this);
     }
 
-    public void LoadFormJson(string a_Json)
+    public void LoadFraJson(string a_Json)
     {
         JsonUtility.FromJsonOverwrite(a_Json, this);
     }
+
+    public interface GemtData
+    {
+        void FyldData(SaveClass nogetGemt);
+        void HentData(SaveClass nogetGemt);
+    }
+
 }
