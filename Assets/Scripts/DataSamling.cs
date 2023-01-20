@@ -22,6 +22,7 @@ public class DataSamling : MonoBehaviour
     private List<string> svarList;
 
     private int page;
+    private string standart;
 
     public void SporgPlayer()
     {
@@ -32,28 +33,63 @@ public class DataSamling : MonoBehaviour
 
     private void NextSpogsmaal()
     {
-        page++;
-        spogsmaal.text = spogsmaalN[page];
-        if (page > 0)
-            svarIndput[page - 1].SetActive(false);
-        svarIndput[page].SetActive(true);      
+        switch (page)
+        {
+            case -1:
+                page++;
+                svarIndput[page].SetActive(true);
+                standart = GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text;
+                break;
+
+            case 3:
+                if (svarList[page] == "Nej" || svarList[page] == "No")
+                    page = 5;
+                else
+                    page++;
+                break;
+
+            case 4:
+                page = 7;
+                break;
+
+            default:
+                page++;
+                break;
+        }
+
+        if (page >= svarIndput.Count)
+            GemSvar();
+        else
+        {
+            spogsmaal.text = spogsmaalN[page];
+
+            if (page > 0)
+                svarIndput[page - 1].SetActive(false);
+            svarIndput[page].SetActive(true);
+        }
     }
 
     public void SpogsmaalSvar()
     {
-        svarList[page] = GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text;   
+        svarList[page] = GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text;
 
-        if (svarList[page] != null || svarList[page] != "Valg")
+        if (standart == svarList[page])
+            advarelse.text = "Ver venlig at udfylde et svar";
+        else
         {
             advarelse.text = "";
             NextSpogsmaal();
         }
-        else
-            advarelse.text = "Ver venlig at udfylde et svar";
     }
 
     public void UdAf()
     {
+        gameObject.SetActive(false);
+    }
+
+    private void GemSvar()
+    {
+
         gameObject.SetActive(false);
     }
 }

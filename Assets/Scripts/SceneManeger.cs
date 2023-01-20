@@ -8,7 +8,9 @@ using UnityEngine.SceneManagement;
 public class SceneManeger : MonoBehaviour
 {
     [SerializeField]
-    private GameObject standartUI; 
+    private GameObject standartUI;
+    [SerializeField]
+    private GameObject sporgeSkema;
 
     public static GameObject instance;
     private int iS;
@@ -33,6 +35,8 @@ public class SceneManeger : MonoBehaviour
 
         if (DateTime.Today != GetComponent<Ressourcer>().dato)
             GetComponentInChildren<DataSamling>().SporgPlayer();
+        else
+            Destroy(sporgeSkema);
 
     }
 
