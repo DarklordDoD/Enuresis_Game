@@ -180,7 +180,6 @@ public class Ressourcer : MonoBehaviour
         dato = sd.dato;
 
         TimeSpan lastVisit = DateTime.Today + DateTime.Now.TimeOfDay - dato;
-        Debug.Log(lastVisit);
     }
 
 }

@@ -32,12 +32,14 @@ public class SceneManeger : MonoBehaviour
         }
         else
             instance = this.gameObject;
+    }
 
-        if (DateTime.Today != GetComponent<Ressourcer>().dato)
+    private void Start()
+    {
+        if (DateTime.Today.ToString("dd/MM/yyyy") != GetComponent<Ressourcer>().dato.ToString("dd/MM/yyyy"))
             GetComponentInChildren<DataSamling>().SporgPlayer();
         else
             Destroy(sporgeSkema);
-
     }
 
     //loader en ny scene

@@ -73,7 +73,7 @@ public class DataSamling : MonoBehaviour
     {
         svarList[page] = GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text;
 
-        if (standart == svarList[page])
+        if (page == 0 && standart == svarList[page])
             advarelse.text = "Ver venlig at udfylde et svar";
         else
         {
@@ -90,6 +90,6 @@ public class DataSamling : MonoBehaviour
     private void GemSvar()
     {
 
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }
