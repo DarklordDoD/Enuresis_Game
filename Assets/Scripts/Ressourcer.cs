@@ -49,9 +49,13 @@ public class Ressourcer : MonoBehaviour
     private float maxBar;
     public DateTime dato;
 
+    [SerializeField]
+    private List<string> saveR;
+    [SerializeField]
+    private List<string> gotList;
+
     private void Awake()
     {
-        //SaveRecorses();
         LoadRecorses();
     }
 
@@ -64,7 +68,9 @@ public class Ressourcer : MonoBehaviour
 
         tisShow.size = tisMeter / 100f;
         vandShow.size = vandMeter / 100f;
-        gladShow.size = gladMeter / 100f;       
+        gladShow.size = gladMeter / 100f;
+
+        SaveRecorses();
     }
 
     // Update is called once per frame
@@ -166,20 +172,19 @@ public class Ressourcer : MonoBehaviour
     {
         dato = DateTime.Today + DateTime.Now.TimeOfDay;
 
-        SaveClass sd = new SaveClass();
-        sd.dato = dato;
-        sd.vandData = vandMeter;
-        sd.tisData = tisMeter;
-        sd.gladData = gladMeter;
+        saveR.Add(dato.ToString("dd/MM/yyyy/HH.mm.ss"));
+        saveR.Add(tisMeter.ToString());
+        saveR.Add(vandMeter.ToString());
+        saveR.Add(gladMeter.ToString());
+
+        SaveClass.WriteToFile("MainGame" ,saveR, false);
+        Debug.Log($"Prøver at gemme (saveR) to (MainGame)");
     }
 
     //alle recurserne bliver loadet fra save maneger
     private void LoadRecorses()
     {
-        SaveClass sd = new SaveClass();
-        dato = sd.dato;
-
-        TimeSpan lastVisit = DateTime.Today + DateTime.Now.TimeOfDay - dato;
+        SaveClass.LoadFromFile("MainGame", out gotList);
+        //TimeSpan lastVisit = DateTime.Today + DateTime.Now.TimeOfDay - dato;
     }
-
 }

@@ -21,12 +21,14 @@ public class DataSamling : MonoBehaviour
     [SerializeField]
     private List<string> svarList;
 
+    [SerializeField]
     private int page;
     private string standart;
 
     public void SporgPlayer()
     {
         dato.text = DateTime.Today.ToString("dd/MM/yyyy");
+        svarList.Add((DateTime.Today).ToString("dd/MM/yyyy"));
         page = -1;
         NextSpogsmaal();
     }
@@ -42,7 +44,7 @@ public class DataSamling : MonoBehaviour
                 break;
 
             case 3:
-                if (svarList[page] == "Nej" || svarList[page] == "No")
+                if (svarList[page + 1] == "Nej" || svarList[page + 1] == "No")
                     page = 5;
                 else
                     page++;
@@ -71,9 +73,12 @@ public class DataSamling : MonoBehaviour
 
     public void SpogsmaalSvar()
     {
-        svarList[page] = GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text;
+        if (svarList.Count > page + 1)
+            svarList[page + 1] = GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text;
+        else
+            svarList.Add(GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text);       
 
-        if (page == 0 && standart == svarList[page])
+        if (page == 0 && standart == svarList[page + 1])
             advarelse.text = "Ver venlig at udfylde et svar";
         else
         {
@@ -89,7 +94,7 @@ public class DataSamling : MonoBehaviour
 
     private void GemSvar()
     {
-
+        SaveClass.WriteToFile("SaveData", svarList, true);
         Destroy(gameObject);
     }
 }
