@@ -172,19 +172,22 @@ public class Ressourcer : MonoBehaviour
     {
         dato = DateTime.Today + DateTime.Now.TimeOfDay;
 
-        saveR.Add(dato.ToString("dd/MM/yyyy/HH.mm.ss"));
+        saveR.Add(dato.ToString("dd/MM/yyyy HH:mm:ss"));
         saveR.Add(tisMeter.ToString());
         saveR.Add(vandMeter.ToString());
         saveR.Add(gladMeter.ToString());
 
         SaveClass.WriteToFile("MainGame" ,saveR, false);
-        Debug.Log($"Prøver at gemme (saveR) to (MainGame)");
     }
 
     //alle recurserne bliver loadet fra save maneger
     private void LoadRecorses()
     {
         SaveClass.LoadFromFile("MainGame", out gotList);
-        //TimeSpan lastVisit = DateTime.Today + DateTime.Now.TimeOfDay - dato;
+
+        dato = DateTime.Parse(gotList[0]);
+
+        TimeSpan lastVisit = DateTime.Today + DateTime.Now.TimeOfDay - dato;
+        print(lastVisit);
     }
 }
