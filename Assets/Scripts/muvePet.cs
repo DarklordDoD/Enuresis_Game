@@ -17,10 +17,10 @@ public class muvePet : MonoBehaviour
     private Vector2 maxPoint;
     [SerializeField]
     private Vector2 timerRange;
+    [SerializeField]
+    private Vector2 siceControle;
 
-    [SerializeField]
     private bool valgtWalk;
-    [SerializeField]
     private bool onTask;
 
     private Rigidbody2D rb;
@@ -29,6 +29,26 @@ public class muvePet : MonoBehaviour
     private bool venter = true;
     private float rngTimer;
     private Vector3 mousePosition;
+
+    public static GameObject instance;
+    [SerializeField]
+    private List<GameObject> pets;
+
+    // Start is called before the first frame update
+    void Awake()
+    {
+        //dette objekt bliver ikke fjernet når en ny scenemaneger
+        DontDestroyOnLoad(this.gameObject);
+
+        //hvis der alderade er et pet destroy dette pet
+        if (GameObject.FindGameObjectsWithTag("Player").Length > 1)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+            instance = this.gameObject;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +80,11 @@ public class muvePet : MonoBehaviour
             //flytter pette imod destinationen 
             float walkSteps = walkSpeed * Time.deltaTime;
             rb.position = Vector2.MoveTowards(transform.position, nextPoint, walkSteps);
+
+            //scalere pettet efter y position
+            float location = gameObject.GetComponent<Transform>().position.y / siceControle.x;
+            float locationS = siceControle.y - location;
+            gameObject.GetComponent<Transform>().localScale = new Vector2(locationS, locationS);
         }
         else
         {

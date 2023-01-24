@@ -41,7 +41,6 @@ public class Ressourcer : MonoBehaviour
     [Header("Andet")]
     [SerializeField]
     private float reduceSpeed;
-    [SerializeField]
     private float opdateringsTid;
     [SerializeField]
     private float minBar;
@@ -49,28 +48,62 @@ public class Ressourcer : MonoBehaviour
     private float maxBar;
     public DateTime dato;
 
-    [SerializeField]
     private List<string> saveR;
-    [SerializeField]
     private List<string> gotList;
+    private bool loadSykse;
 
     private void Awake()
     {
-        LoadRecorses();
+        try
+        {
+            LoadRecorses();
+        }
+        catch (Exception e)
+        {
+            Debug.Log($"No save. {e}");
+            loadSykse = false;
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        tisMeter = minBar;
-        vandMeter = maxBar;
-        gladMeter = maxBar;
+        if (loadSykse)
+        {
+            tisMeter = float.Parse(gotList[1]);
+            vandMeter = float.Parse(gotList[2]);
+            gladMeter = float.Parse(gotList[3]);
 
-        tisShow.size = tisMeter / 100f;
-        vandShow.size = vandMeter / 100f;
-        gladShow.size = gladMeter / 100f;
+            TimeSpan lastVisit = DateTime.Today + DateTime.Now.TimeOfDay - dato;
+            float lastVisitS = float.Parse(lastVisit.Seconds.ToString());
+            lastVisitS += float.Parse(lastVisit.Minutes.ToString()) * 60;
+            lastVisitS += float.Parse(lastVisit.Hours.ToString()) * 3600;
+            lastVisitS += float.Parse(lastVisit.Days.ToString()) * 86400;
+            int LastVisitOpdate = Convert.ToInt32(lastVisitS / reduceSpeed);
+            Debug.Log($"{lastVisit} to {lastVisitS}. tirgger {LastVisitOpdate} tims");
 
-        SaveRecorses();
+            for (int i = 0; i < LastVisitOpdate; i++)
+            {
+                if (tisMeter < maxBar)
+                    TisControl(); //controler tis resurcen. fylder den op over tid
+
+                if (vandMeter > minBar)
+                    VandControl(); //controler tørst resurcen. tømmer den over tid
+
+                if (gladMeter > minBar)
+                    GladControl(); //controler glæde resurce. tømmer den over tid
+            }
+        }
+        else
+        {
+            tisMeter = minBar;
+            vandMeter = maxBar;
+            gladMeter = maxBar;
+
+            tisShow.size = tisMeter / maxBar;
+            vandShow.size = vandMeter / maxBar;
+            gladShow.size = gladMeter / maxBar;
+        }    
     }
 
     // Update is called once per frame
@@ -90,6 +123,7 @@ public class Ressourcer : MonoBehaviour
             if (gladMeter > minBar)
                 GladControl(); //controler glæde resurce. tømmer den over tid
 
+            SaveRecorses();
         }
         else
         {
@@ -107,14 +141,14 @@ public class Ressourcer : MonoBehaviour
             tisMeter += tisVandUp;
         }
 
-        tisShow.size = tisMeter / 100f; //viser recursen i UI
+        tisShow.size = tisMeter / maxBar; //viser recursen i UI
     }
 
     private void VandControl()
     {
         vandMeter -= vandNed;
 
-        vandShow.size = vandMeter / 100f; //viser recursen i UI
+        vandShow.size = vandMeter / maxBar; //viser recursen i UI
     }
 
     private void GladControl()
@@ -131,7 +165,7 @@ public class Ressourcer : MonoBehaviour
             gladMeter -= gladTisNed;
         }
 
-        gladShow.size = gladMeter / 100f; //viser recursen i UI
+        gladShow.size = gladMeter / maxBar; //viser recursen i UI
     }
 
     //gør det muligt at påvirke tis recursen fra andre scripts
@@ -142,7 +176,7 @@ public class Ressourcer : MonoBehaviour
         if (tisMeter < minBar)
             tisMeter = minBar;
 
-        tisShow.size = tisMeter / 100f;
+        tisShow.size = tisMeter / maxBar;
     }
 
     //gør det muligt at påvirke vand recursen fra andre scripts
@@ -153,7 +187,7 @@ public class Ressourcer : MonoBehaviour
         if (vandMeter > maxBar)
             vandMeter = maxBar;
 
-        vandShow.size = vandMeter / 100f;
+        vandShow.size = vandMeter / maxBar;
     }
 
     //gør det muligt at påvirke glæde recursen fra andre scripts
@@ -164,7 +198,7 @@ public class Ressourcer : MonoBehaviour
         if (gladMeter > maxBar)
             gladMeter = maxBar;
 
-        gladShow.size = gladMeter / 100f;
+        gladShow.size = gladMeter / maxBar;
     }
 
     //alle recurserne bliver sent til save maneger
@@ -172,10 +206,12 @@ public class Ressourcer : MonoBehaviour
     {
         dato = DateTime.Today + DateTime.Now.TimeOfDay;
 
-        saveR.Add(dato.ToString("dd/MM/yyyy HH:mm:ss"));
-        saveR.Add(tisMeter.ToString());
-        saveR.Add(vandMeter.ToString());
-        saveR.Add(gladMeter.ToString());
+        saveR = new List<string>() {"","","",""};
+
+        saveR[0] = dato.ToString("dd/MM/yyyy HH:mm:ss");
+        saveR[1] = tisMeter.ToString();
+        saveR[2] = vandMeter.ToString();
+        saveR[3] = gladMeter.ToString();
 
         SaveClass.WriteToFile("MainGame" ,saveR, false);
     }
@@ -186,8 +222,7 @@ public class Ressourcer : MonoBehaviour
         SaveClass.LoadFromFile("MainGame", out gotList);
 
         dato = DateTime.Parse(gotList[0]);
-
-        TimeSpan lastVisit = DateTime.Today + DateTime.Now.TimeOfDay - dato;
-        print(lastVisit);
+        
+        loadSykse = true;
     }
 }

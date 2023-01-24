@@ -2727,7 +2727,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: det er her
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3329,7 +3329,7 @@ GameObject:
   - component: {fileID: 1516799989}
   m_Layer: 0
   m_Name: Pet
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3352,8 +3352,8 @@ MonoBehaviour:
   minPoint: {x: -6, y: -5}
   maxPoint: {x: 6, y: 0}
   timerRange: {x: 10, y: 20}
-  valgtWalk: 0
-  onTask: 0
+  siceControle: {x: 4, y: 0.5}
+  pets: []
 --- !u!212 &1516799986
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3852,8 +3852,10 @@ MonoBehaviour:
   - {fileID: 1219805975}
   - {fileID: 1219805975}
   - {fileID: 1365719381}
+  nameInput: {fileID: 777443064}
   svarList: []
-  page: 0
+  splitListExeption: ShortList
+  gotList: []
 --- !u!1 &1879695753
 GameObject:
   m_ObjectHideFlags: 0
@@ -3940,6 +3942,30 @@ PrefabInstance:
     - target: {fileID: 712255103116963998, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 712255103116963999, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 712255103116963999, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 712255103116963999, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 712255103809718832, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 712255103809718832, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 712255103809718832, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 712255103809718835, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4033,9 +4059,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: maxBar
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: whenTisNed
+      value: 7500
+      objectReference: {fileID: 0}
+    - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: whenVandUp
+      value: 7500
+      objectReference: {fileID: 0}
+    - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: whenVandNed
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: opdateringsTid
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 712255104591520818, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 712255104669333800, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 712255104669333800, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 712255104669333800, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 712255104669333803, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_AnchorMax.y

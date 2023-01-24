@@ -19,18 +19,41 @@ public class DataSamling : MonoBehaviour
     [SerializeField]
     private List<GameObject> svarIndput;
     [SerializeField]
-    private List<string> svarList;
-
+    private TMP_InputField nameInput;
     [SerializeField]
+    private List<string> svarList;
+    [SerializeField]
+    private string splitListExeption;
+    [SerializeField]
+    private List<string> gotList;
+
     private int page;
     private string standart;
+    private string sidsteNavn;
 
     public void SporgPlayer()
     {
-        dato.text = DateTime.Today.ToString("dd/MM/yyyy");
-        svarList.Add((DateTime.Today).ToString("dd/MM/yyyy"));
-        page = -1;
-        NextSpogsmaal();
+        try
+        {
+            SaveClass.LoadFromFile("SaveData", out gotList);
+        }
+        catch (Exception e)
+        {
+            Debug.Log($"No Save. {e}");
+        }
+
+        string lastSvarDato = gotList[gotList.Count - 8];
+        sidsteNavn = gotList[gotList.Count - 7];
+
+        if (lastSvarDato != DateTime.Today.ToString("dd-MM-yyyy"))
+        {
+            dato.text = DateTime.Today.ToString("dd/MM/yyyy");
+            svarList.Add(DateTime.Today.ToString("dd/MM/yyyy"));
+            page = -1;
+            NextSpogsmaal();
+        }
+        else
+            UdAf();
     }
 
     private void NextSpogsmaal()
@@ -41,13 +64,17 @@ public class DataSamling : MonoBehaviour
                 page++;
                 svarIndput[page].SetActive(true);
                 standart = GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text;
+                nameInput.text = sidsteNavn;
                 break;
 
             case 3:
                 if (svarList[page + 1] == "Nej" || svarList[page + 1] == "No")
                     page = 5;
                 else
-                    page++;
+                {
+                   svarList.Add(splitListExeption);
+                   page++;
+                }
                 break;
 
             case 4:
@@ -73,7 +100,7 @@ public class DataSamling : MonoBehaviour
 
     public void SpogsmaalSvar()
     {
-        if (svarList.Count > page + 1)
+        if (svarList.Count > page + 1 && svarList[page + 1] != splitListExeption)
             svarList[page + 1] = GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text;
         else
             svarList.Add(GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text);       
@@ -95,6 +122,6 @@ public class DataSamling : MonoBehaviour
     private void GemSvar()
     {
         SaveClass.WriteToFile("SaveData", svarList, true);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

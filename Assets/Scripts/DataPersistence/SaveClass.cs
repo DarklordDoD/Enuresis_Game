@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 
@@ -15,12 +16,19 @@ public static class SaveClass
 
         if (addToSave)
         {
-            string loadData = File.ReadAllText(path);
-            fileContents = $"{loadData}\n{fileContents}";
+            try
+            {
+                string loadData = File.ReadAllText(path);
+                fileContents = $"{loadData}\n{fileContents}";
+            }
+            catch (Exception e)
+            {
+                Debug.Log($"No Save. {e}");
+            }
         }
 
         FileStream stream = new FileStream(path, FileMode.Create);
-        stream.Close();      
+        stream.Close();
 
         try
         {
@@ -30,7 +38,7 @@ public static class SaveClass
         catch (Exception e)
         {
             Debug.LogError($"Failed to write to {fileName} with exception {e}");
-        }     
+        }
     }
 
     public static List<string> LoadFromFile(string fileName, out List<string> loadList)
@@ -40,7 +48,7 @@ public static class SaveClass
         try
         {
             string loadData = File.ReadAllText(path);
-            return loadList = loadData.Split(',').ToList();
+            return loadList = loadData.Split(',', '\n').ToList();
         }
         catch (Exception e)
         {
