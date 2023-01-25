@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.WSA;
 using UnityEngine.UI;
 using System;
 
@@ -54,6 +52,7 @@ public class Ressourcer : MonoBehaviour
 
     private void Awake()
     {
+        //prøver at loade sidste gem
         try
         {
             LoadRecorses();
@@ -61,49 +60,57 @@ public class Ressourcer : MonoBehaviour
         catch (Exception e)
         {
             Debug.Log($"No save. {e}");
-            loadSykse = false;
+            loadSykse = false; //registretr at der ikke er loadet noget
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        //sætte er det gemte data ind i recursce systemet
         if (loadSykse)
         {
             tisMeter = float.Parse(gotList[1]);
             vandMeter = float.Parse(gotList[2]);
             gladMeter = float.Parse(gotList[3]);
 
+            /*finder id af hvor meget tid der er gådet siden de blev gemt sidst
+            og konveter det hele til sekunder, som en int verdi*/
             TimeSpan lastVisit = DateTime.Today + DateTime.Now.TimeOfDay - dato;
-            float lastVisitS = float.Parse(lastVisit.Seconds.ToString());
-            lastVisitS += float.Parse(lastVisit.Minutes.ToString()) * 60;
-            lastVisitS += float.Parse(lastVisit.Hours.ToString()) * 3600;
-            lastVisitS += float.Parse(lastVisit.Days.ToString()) * 86400;
-            int LastVisitOpdate = Convert.ToInt32(lastVisitS / reduceSpeed);
+            float lastVisitS = float.Parse(lastVisit.Seconds.ToString());   //sekunder
+            lastVisitS += float.Parse(lastVisit.Minutes.ToString()) * 60;   //minutter til sekunder
+            lastVisitS += float.Parse(lastVisit.Hours.ToString()) * 3600;   //timer til sekunder
+            lastVisitS += float.Parse(lastVisit.Days.ToString()) * 86400;   //dage til sekunder
+
+            //samlet tid dividert med hvor ofte recurser endre sig og konvertert til int
+            int LastVisitOpdate = Convert.ToInt32(lastVisitS / reduceSpeed);   
             Debug.Log($"{lastVisit} to {lastVisitS}. tirgger {LastVisitOpdate} tims");
 
+            //luper rescurese udregnings systemet intil systemet har cateh op
             for (int i = 0; i < LastVisitOpdate; i++)
             {
-                if (tisMeter < maxBar)
+                if (tisMeter <= maxBar)
                     TisControl(); //controler tis resurcen. fylder den op over tid
 
-                if (vandMeter > minBar)
+                if (vandMeter >= minBar)
                     VandControl(); //controler tørst resurcen. tømmer den over tid
 
-                if (gladMeter > minBar)
+                if (gladMeter >= minBar)
                     GladControl(); //controler glæde resurce. tømmer den over tid
             }
         }
         else
         {
+            //hvis der ikke kunne findes en gemt file set systemet til standart
             tisMeter = minBar;
             vandMeter = maxBar;
             gladMeter = maxBar;
+        }
 
-            tisShow.size = tisMeter / maxBar;
-            vandShow.size = vandMeter / maxBar;
-            gladShow.size = gladMeter / maxBar;
-        }    
+        //set alle de visuelle meter
+        tisShow.size = tisMeter / maxBar;
+        vandShow.size = vandMeter / maxBar;
+        gladShow.size = gladMeter / maxBar;
     }
 
     // Update is called once per frame
@@ -114,13 +121,13 @@ public class Ressourcer : MonoBehaviour
         {
             opdateringsTid = 0;
 
-            if (tisMeter < maxBar)
+            if (tisMeter <= maxBar)
                 TisControl(); //controler tis resurcen. fylder den op over tid
 
-            if (vandMeter > minBar)
+            if (vandMeter >= minBar)
                 VandControl(); //controler tørst resurcen. tømmer den over tid
 
-            if (gladMeter > minBar)
+            if (gladMeter >= minBar)
                 GladControl(); //controler glæde resurce. tømmer den over tid
 
             SaveRecorses();
@@ -204,16 +211,17 @@ public class Ressourcer : MonoBehaviour
     //alle recurserne bliver sent til save maneger
     public void SaveRecorses()
     {
-        dato = DateTime.Today + DateTime.Now.TimeOfDay;
+        dato = DateTime.Today + DateTime.Now.TimeOfDay; //finder dato og tid
 
-        saveR = new List<string>() {"","","",""};
+        saveR = new List<string>() {"","","",""}; //set list lengde
 
+        //samle alle variabler i en liste
         saveR[0] = dato.ToString("dd/MM/yyyy HH:mm:ss");
         saveR[1] = tisMeter.ToString();
         saveR[2] = vandMeter.ToString();
         saveR[3] = gladMeter.ToString();
 
-        SaveClass.WriteToFile("MainGame" ,saveR, false);
+        SaveClass.WriteToFile("MainGame" ,saveR, false); //gem via save system
     }
 
     //alle recurserne bliver loadet fra save maneger

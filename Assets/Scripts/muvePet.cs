@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -116,7 +115,6 @@ public class muvePet : MonoBehaviour
         //registrer touch fra tablet
         if (Input.touchCount > 0)
             getMouseKlik(true);
-
     }
 
     private void getMouseKlik(bool isTouch)
@@ -136,7 +134,7 @@ public class muvePet : MonoBehaviour
         if (mousePosition.y < maxPoint.y)
         {
             DistanceToPoint(transform.position, mousePosition);
-            if (pointDistance > petZone)
+            if (pointDistance > petZone) //sørger for at klikket ikke er for tet på pet
             {
                 nextPoint = mousePosition;
                 venter = false;

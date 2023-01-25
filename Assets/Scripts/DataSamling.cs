@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using System;
 using TMPro;
 
@@ -31,8 +29,10 @@ public class DataSamling : MonoBehaviour
     private string standart;
     private string sidsteNavn;
 
+    //starter Spørgeskemaet op
     public void SporgPlayer()
     {
+        //prøver at loade gem file
         try
         {
             SaveClass.LoadFromFile("SaveData", out gotList);
@@ -42,13 +42,14 @@ public class DataSamling : MonoBehaviour
             Debug.Log($"No Save. {e}");
         }
 
+        //tjekker om spilleren svaret i dag og lukker spørge skemaet hvis de gjore
         string lastSvarDato = gotList[gotList.Count - 8];
         sidsteNavn = gotList[gotList.Count - 7];
 
         if (lastSvarDato != DateTime.Today.ToString("dd-MM-yyyy"))
         {
-            dato.text = DateTime.Today.ToString("dd/MM/yyyy");
-            svarList.Add(DateTime.Today.ToString("dd/MM/yyyy"));
+            dato.text = DateTime.Today.ToString("dd/MM/yyyy"); //sette dagens dato ind på skærmen
+            svarList.Add(DateTime.Today.ToString("dd/MM/yyyy")); //setter dagens dato på gem listen
             page = -1;
             NextSpogsmaal();
         }
@@ -58,6 +59,7 @@ public class DataSamling : MonoBehaviour
 
     private void NextSpogsmaal()
     {
+        //switch til hanling ved spesifikke spørgsmål
         switch (page)
         {
             case -1:
@@ -85,11 +87,12 @@ public class DataSamling : MonoBehaviour
                 page++;
                 break;
         }
-
-        if (page >= svarIndput.Count)
+      
+        if (page >= svarIndput.Count) //gem svar når spørgeskemaet er færdigt
             GemSvar();
         else
         {
+            //neste spørgsmål
             spogsmaal.text = spogsmaalN[page];
 
             if (page > 0)
@@ -98,13 +101,16 @@ public class DataSamling : MonoBehaviour
         }
     }
 
+    //tager imod svar
     public void SpogsmaalSvar()
     {
+        //sørger for at listen altid bliver lige lang
         if (svarList.Count > page + 1 && svarList[page + 1] != splitListExeption)
             svarList[page + 1] = GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text;
         else
             svarList.Add(GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text);       
 
+        //registrer om der er svaret på spørgsmålet
         if (page == 0 && standart == svarList[page + 1])
             advarelse.text = "Ver venlig at udfylde et svar";
         else
@@ -114,11 +120,13 @@ public class DataSamling : MonoBehaviour
         }
     }
 
+    //går id af spørgeskemaet uden at gemme
     public void UdAf()
     {
         gameObject.SetActive(false);
     }
 
+    //gemmer og går ud af spørgeskemate
     private void GemSvar()
     {
         SaveClass.WriteToFile("SaveData", svarList, true);

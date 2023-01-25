@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class KlikObjekt : MonoBehaviour
@@ -45,13 +43,13 @@ public class KlikObjekt : MonoBehaviour
         //tester om spilleren klikker på et object
         if (hit.collider != null)
         {
-            //hvis spillern klikker på pettet aktiver de pe funktionen i muvePet scriptet
+            //hvis spillern klikker på pettet aktiver de pet funktionen i muvePet scriptet
             if (hit.collider.name == "Pet")
             {
                 hit.collider.GetComponent<muvePet>().PetPet();              
             }
 
-
+            //hvis spillern klikker på et sceneskift objekt aktiver de skiftTil fungtionen på objektet
             if (hit.collider.tag == "SceneSkift")
             {
                 hit.collider.GetComponent<SceneSkift>().SkiftTil();

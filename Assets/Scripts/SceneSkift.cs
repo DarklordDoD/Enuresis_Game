@@ -9,7 +9,7 @@ public class SceneSkift : MonoBehaviour
     [SerializeField]
     private string skiftSceneTil; //hvilken en scene der skal loades
     [SerializeField]
-    private bool minigame;
+    private bool minigame; //om der bliver skiftet til minigame
 
     SceneManeger scM;
 
@@ -22,6 +22,5 @@ public class SceneSkift : MonoBehaviour
     public void SkiftTil()
     {
         scM.NewScene(skiftSceneTil, minigame);
-        Debug.Log(skiftSceneTil);
     }
 }
