@@ -67,6 +67,11 @@ public class Ressourcer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Setop();
+    }
+
+    public void Setop()
+    {
         //sætte er det gemte data ind i recursce systemet
         if (loadSykse)
         {
@@ -83,7 +88,7 @@ public class Ressourcer : MonoBehaviour
             lastVisitS += float.Parse(lastVisit.Days.ToString()) * 86400;   //dage til sekunder
 
             //samlet tid dividert med hvor ofte recurser endre sig og konvertert til int
-            int LastVisitOpdate = Convert.ToInt32(lastVisitS / reduceSpeed);   
+            int LastVisitOpdate = Convert.ToInt32(lastVisitS / reduceSpeed);
             Debug.Log($"{lastVisit} to {lastVisitS}. tirgger {LastVisitOpdate} tims");
 
             //luper rescurese udregnings systemet intil systemet har cateh op

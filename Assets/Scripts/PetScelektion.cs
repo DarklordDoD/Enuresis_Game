@@ -13,6 +13,7 @@ public class PetScelektion : MonoBehaviour
     private int petType;
 
     private List<string> saveList;
+    private bool inPetMenu;
 
     private void Awake()
     {
@@ -22,30 +23,39 @@ public class PetScelektion : MonoBehaviour
             SaveClass.LoadFromFile("Pet", out saveList);
             petName = saveList[0];
             petType = int.Parse(saveList[1]);
+
+            Instantiate(petScelektion[petType], GameObject.FindGameObjectWithTag("Player").transform);
         }
         catch
         {
+            inPetMenu = true;
+
             try 
             {
                 GetComponentInChildren<DataSamling>().UdAf();
             }
             catch { }
 
-            GetComponent<Ressourcer>().enabled = false; 
-            
             GetComponent<SceneManeger>().NewScene("PetShop", true);
 
             GameObject[] thePet = GameObject.FindGameObjectsWithTag("Player");
             foreach (GameObject pets in thePet)
-                pets.SetActive(false);
+                pets.SetActive(false);       
         }
     }
 
-    public void RotatePet(bool right)
+    private void Start()
     {
-        if (right)
+        if (inPetMenu)
+            Instantiate(petScelektion[petType], showPosition, Quaternion.identity); //Vis det nye pet
+    }
+
+    public void RotatePet(bool right)
+    {      
+        //roter i gennem listen
+        if (right) 
         {
-            if (petType >= petScelektion.Count)
+            if (petType >= petScelektion.Count - 1)
                 petType = 0;
             else
                 petType++;
@@ -53,18 +63,23 @@ public class PetScelektion : MonoBehaviour
         else
         {
             if (petType <= 0)
-                petType = petScelektion.Count;
+                petType = petScelektion.Count - 1;
             else
                 petType--;
         }
 
-        GameObject[] showPet = GameObject.FindGameObjectsWithTag("ShowPet");
-        foreach (GameObject show in showPet)
+        try
         {
-            Destroy(show);
+            //fjern det gamle pet
+            GameObject[] showPet = GameObject.FindGameObjectsWithTag("ShowPet");
+            foreach (GameObject show in showPet)
+            {
+                Destroy(show);
+            }
         }
+        catch { }
 
-        Instantiate(petScelektion[petType], showPosition, Quaternion.identity);
+        Instantiate(petScelektion[petType], showPosition, Quaternion.identity); //Vis det nye pet
     }
     public void ScelektEnd()
     {
@@ -76,7 +91,8 @@ public class PetScelektion : MonoBehaviour
 
         SaveClass.WriteToFile("Pet", saveList, false);
 
-        GetComponent<Ressourcer>().enabled = false;
-        GetComponent<SceneManeger>().NewScene("SampleScene", false);
+        GetComponent<SceneManeger>().NewScene("SampleScene", true);
+
+        Instantiate(petScelektion[petType], GameObject.FindGameObjectWithTag("Player").transform);  
     }
 }

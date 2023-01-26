@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class ObjecktSkift : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private bool right; //Hvilken retning skal den roter
+
+    PetScelektion petS;
+
+    private void Start()
     {
-        
+            petS = GameObject.FindGameObjectWithTag("GameController").GetComponent<PetScelektion>();
     }
 
-    // Update is called once per frame
-    void Update()
+    //for besked om at den næste sene skal loades
+    public void SkiftTil()
     {
-        
+        petS.RotatePet(right);
     }
 }

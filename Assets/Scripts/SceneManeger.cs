@@ -9,7 +9,6 @@ public class SceneManeger : MonoBehaviour
     private GameObject sporgeSkema;
 
     public static GameObject instance;
-    private int iS;
 
     // Start is called before the first frame update
     void Awake()
@@ -17,11 +16,8 @@ public class SceneManeger : MonoBehaviour
         //dette objekt bliver ikke fjernet når en ny scenemaneger
         DontDestroyOnLoad(this.gameObject);
 
-        //tjekker hvor mange canvas der er
-        iS = GameObject.FindObjectsOfType<Canvas>().Length;
-
             //hvis der alderade er et canvas destroy dette canvas
-            if (iS > 1)
+            if (GameObject.FindGameObjectsWithTag("GameController").Length > 1)
         {
             Destroy(this.gameObject);
             return;
@@ -45,11 +41,6 @@ public class SceneManeger : MonoBehaviour
         SceneManager.LoadScene(scenen);
 
         //fjern UI information når man går ind i minigame
-        if (minigame)
-            standartUI.SetActive(false);
-
-        else
-            standartUI.SetActive(true);
+        standartUI.SetActive(minigame);
     }
-
 }

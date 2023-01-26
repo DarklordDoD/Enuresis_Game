@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skiftSceneTil: SampleScene
-  minigame: 0
+  minigame: 1
 --- !u!212 &984178148
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -35,11 +35,11 @@ public static class SaveClass
         try
         {
             File.WriteAllText(path, fileContents); 
-            Debug.Log($"Gemt ({fileContents}) to ({fileName})");
+            //Debug.Log($"Gemt ({fileContents}) to ({fileName})");
         }
-        catch (Exception e)
+        catch //(Exception e)
         {
-            Debug.LogError($"Failed to write to {fileName} with exception {e}");
+            //Debug.LogError($"Failed to write to {fileName} with exception {e}");
         }
     }
 
@@ -54,9 +54,9 @@ public static class SaveClass
             string loadData = File.ReadAllText(path);
             return loadList = loadData.Split(',', '\n').ToList();
         }
-        catch (Exception e) //hvis fejl sand ikke en liste
+        catch //(Exception e) //hvis fejl sand ikke en liste
         {
-            Debug.LogError($"Failed to read from {path} with exception {e}");
+            //Debug.LogError($"Failed to read from {path} with exception {e}");
             loadList = null;
             return loadList;
         }

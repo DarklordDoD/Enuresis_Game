@@ -4013,7 +4013,7 @@ GameObject:
   - component: {fileID: 4174684531747814989}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4113,10 +4113,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61aa72a200f63d642954103af4eb2c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petScelektion: []
+  petScelektion:
+  - {fileID: 5803780440325321275, guid: 12381bbcc99d671429678f8f3b72d328, type: 3}
+  - {fileID: 2657243501815689803, guid: 7126554099552c84fbdb6ce3db5adb3b, type: 3}
+  - {fileID: 2657243501815689803, guid: 7126554099552c84fbdb6ce3db5adb3b, type: 3}
+  showPosition: {x: 0, y: 0}
   petName: 
-  petType: 0
-  SporgeSkema: {fileID: 1788542395}
+  petType: 1
 --- !u!114 &712255104591520815
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -53,7 +53,11 @@ public class KlikObjekt : MonoBehaviour
             if (hit.collider.tag == "SceneSkift")
             {
                 hit.collider.GetComponent<SceneSkift>().SkiftTil();
-                Debug.Log("hit");
+            }
+
+            if (hit.collider.tag == "petSkift")
+            {
+                hit.collider.GetComponent<ObjecktSkift>().SkiftTil();
             }
         }
     }

@@ -6,11 +6,13 @@ TagManager:
   tags:
   - SceneSkift
   - SvarText
+  - petSkift
+  - ShowPet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Klik
   - Water
   - UI
   - 
@@ -42,4 +44,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: pet
+    uniqueID: 2520962579
     locked: 0

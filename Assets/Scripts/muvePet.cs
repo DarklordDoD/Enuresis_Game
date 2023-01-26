@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class muvePet : MonoBehaviour
 {
+    [Header("Pet Muvment")]
     [SerializeField]
     private float walkSpeed;
     [SerializeField]
@@ -30,8 +31,15 @@ public class muvePet : MonoBehaviour
     private Vector3 mousePosition;
 
     public static GameObject instance;
+
+    [Header("Interakt med Pet")]
     [SerializeField]
-    private List<GameObject> pets;
+    private float timeMellemPets;
+    [SerializeField]
+    private float petEffekt;
+
+    private float petTimer;
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -68,6 +76,9 @@ public class muvePet : MonoBehaviour
 
         if (!valgtWalk)
             RandomWalk(); //setter et tefeldigt point som pette vil gå til
+
+        if (petTimer <= timeMellemPets)
+            petTimer += Time.deltaTime;
     }
 
     private void WalkTo()
@@ -144,8 +155,7 @@ public class muvePet : MonoBehaviour
             {
                 //Debug.Log("pet");
             }
-        }
-            
+        }           
     }
 
     private void DistanceToPoint(Vector2 p1, Vector2 p2)
@@ -156,6 +166,10 @@ public class muvePet : MonoBehaviour
 
     public void PetPet()
     {
-        Debug.Log("pet");
+        if (petTimer >= timeMellemPets)
+        {
+            petTimer = 0;
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<Ressourcer>().AddGlad(petEffekt);
+        }       
     }
 }
