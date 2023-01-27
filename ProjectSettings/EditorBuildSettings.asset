@@ -9,16 +9,46 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/MainGame/Scenes/SampleScene.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
-    path: Assets/Scenes/Garden.unity
+    path: Assets/MainGame/Scenes/Garden.unity
     guid: 1bdc0a114ac17d247aee6e09d4debd5f
   - enabled: 1
-    path: Assets/Scenes/Toilet.unity
+    path: Assets/MainGame/Scenes/Toilet.unity
     guid: 32fd0786a9b67a34a96eef01c2defc9e
   - enabled: 1
-    path: Assets/Scenes/PetShop.unity
+    path: Assets/MainGame/Scenes/PetShop.unity
     guid: 20d2d11fed6b8c14296fef0c1c3e7e1c
+  - enabled: 1
+    path: Assets/Snake/Scenes/StartMenuSnake.unity
+    guid: a975a8f458182422d8337b94d96daff9
+  - enabled: 1
+    path: Assets/Snake/Scenes/Snake.unity
+    guid: 78e065d48b09aea45b13f3d22544e460
+  - enabled: 1
+    path: Assets/Runner/Scenes/GameOver.unity
+    guid: e8648dab244af0d408720adc84539e47
+  - enabled: 1
+    path: Assets/Runner/Scenes/MainMenu.unity
+    guid: 278f3db18605c1f418d9f068d7388711
+  - enabled: 1
+    path: Assets/Runner/Scenes/MainScene.unity
+    guid: db2ee55064c3b6f4a87bc41b2393751c
+  - enabled: 1
+    path: Assets/Runner/Scenes/TutorialScene.unity
+    guid: c08648c15b4ae054ea3bf94d9d53d1e9
+  - enabled: 1
+    path: Assets/Runner/Scenes/WinScreen.unity
+    guid: 329d452d7c851a04790267e105f417b2
+  - enabled: 1
+    path: Assets/VendeSpil/Scenes/Memory_Game.unity
+    guid: b87c5f3d6ad49434bab3955f7aaa892e
+  - enabled: 1
+    path: Assets/VendeSpil/Scenes/MemoryGameTitleScreen.unity
+    guid: 957623b4efbfaa745ad382cd1577b54e
+  - enabled: 1
+    path: Assets/VendeSpil/Scenes/MemoryGameWinScreen.unity
+    guid: d1c1f36327e53b04c96e68f28bee3ba9
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 6f0895d3c2fcec041832f5f1648e21f3, type: 2}

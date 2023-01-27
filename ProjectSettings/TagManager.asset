@@ -9,6 +9,15 @@ TagManager:
   - petSkift
   - ShowPet
   - RecorseInterakt
+  - Obstacle
+  - MyCoin
+  - Ned
+  - Venstre
+  - Op
+  - "H\xF8jre"
+  - Food
+  - Ground
+  - Border
   layers:
   - Default
   - TransparentFX
@@ -17,7 +26,7 @@ TagManager:
   - Water
   - UI
   - UIShow
-  - 
+  - Graund
   - 
   - 
   - 
@@ -43,6 +52,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Backgraund
+    uniqueID: 3626209267
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
