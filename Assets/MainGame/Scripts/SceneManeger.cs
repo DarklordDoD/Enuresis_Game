@@ -29,7 +29,11 @@ public class SceneManeger : MonoBehaviour
 
     private void Start()
     {
-        GetComponentInChildren<DataSamling>().SporgPlayer();
+        try
+        {
+            GetComponentInChildren<DataSamling>().SporgPlayer();
+        }
+        catch { }
     }
 
     public void MiniGameUI (bool minigame)
