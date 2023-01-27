@@ -36,7 +36,7 @@ public class PetScelektion : MonoBehaviour
             }
             catch { }
 
-            GetComponent<SceneManeger>().NewScene("PetShop", true);
+            GetComponent<SceneManeger>().NewScene("PetShop");
 
             GameObject[] thePet = GameObject.FindGameObjectsWithTag("Player");
             foreach (GameObject pets in thePet)
@@ -91,7 +91,7 @@ public class PetScelektion : MonoBehaviour
 
         SaveClass.WriteToFile("Pet", saveList, false);
 
-        GetComponent<SceneManeger>().NewScene("SampleScene", true);
+        GetComponent<SceneManeger>().NewScene("SampleScene");
 
         Instantiate(petScelektion[petType], GameObject.FindGameObjectWithTag("Player").transform);  
     }

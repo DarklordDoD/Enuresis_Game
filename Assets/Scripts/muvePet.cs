@@ -141,21 +141,24 @@ public class muvePet : MonoBehaviour
             mousePosition = Camera.main.ScreenToWorldPoint(Input.touches[0].position);
         }
 
-        //sætter et point på registreret klik/touch
-        if (mousePosition.y < maxPoint.y)
+        //sørger for at pettet ikke kravler op af vægene
+        if (mousePosition.y > maxPoint.y)
         {
-            DistanceToPoint(transform.position, mousePosition);
-            if (pointDistance > petZone) //sørger for at klikket ikke er for tet på pet
-            {
-                nextPoint = mousePosition;
-                venter = false;
-                valgtWalk = true;
-            }
-            else
-            {
-                //Debug.Log("pet");
-            }
-        }           
+            mousePosition.y = maxPoint.y;
+        }
+
+        //sætter et point på registreret klik/touch
+        DistanceToPoint(transform.position, mousePosition);
+        if (pointDistance > petZone) //sørger for at klikket ikke er for tet på pet
+        {
+            nextPoint = mousePosition;
+            venter = false;
+            valgtWalk = true;
+        }
+        else
+        {
+            //Debug.Log("pet");
+        }
     }
 
     private void DistanceToPoint(Vector2 p1, Vector2 p2)

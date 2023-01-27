@@ -6,17 +6,25 @@ public class SceneSkift : MonoBehaviour
     private string skiftSceneTil; //hvilken en scene der skal loades
     [SerializeField]
     private bool minigame; //om der bliver skiftet til minigame
+    [SerializeField]
+    private GameObject Aktivate; //Hvis der skal åbnes en menu
 
     SceneManeger scM;
 
     private void Start()
     {
-        scM = FindObjectOfType<Canvas>().GetComponent<SceneManeger>();
+        scM = GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneManeger>();
     }
 
     //for besked om at den næste sene skal loades
     public void SkiftTil()
     {
-        scM.NewScene(skiftSceneTil, minigame);
+        if (Aktivate == null)
+        {
+            scM.NewScene(skiftSceneTil);
+            scM.MiniGameUI(minigame);
+        }
+        else
+            Aktivate.SetActive(true);
     }
 }

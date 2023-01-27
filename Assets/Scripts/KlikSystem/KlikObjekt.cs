@@ -59,6 +59,11 @@ public class KlikObjekt : MonoBehaviour
             {
                 hit.collider.GetComponent<ObjecktSkift>().SkiftTil();
             }
+
+            if (hit.collider.tag == "RecorseInterakt")
+            {
+                hit.collider.GetComponent<AddRessourcer>().AddNow();
+            }
         }
     }
 }

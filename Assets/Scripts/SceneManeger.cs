@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,12 +36,15 @@ public class SceneManeger : MonoBehaviour
         catch { }
     }
 
-    //loader en ny scene
-    public void NewScene(string scenen, bool minigame)
+    public void MiniGameUI (bool minigame)
     {
-        SceneManager.LoadScene(scenen);
-
         //fjern UI information når man går ind i minigame
         standartUI.SetActive(minigame);
+    }
+
+    //loader en ny scene
+    public void NewScene(string scenen)
+    {
+        SceneManager.LoadScene(scenen);
     }
 }
