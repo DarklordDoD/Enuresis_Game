@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e37bd1f3f0c2e04e8069e2909666852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skiftSceneTil: SampleScene
+  skiftSceneTil: Stue
   minigame: 1
   Aktivate: {fileID: 0}
 --- !u!1 &243472524

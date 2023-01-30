@@ -433,6 +433,7 @@ GameObject:
   - component: {fileID: 1728208210}
   - component: {fileID: 1728208209}
   - component: {fileID: 1728208208}
+  - component: {fileID: 1728208211}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -505,10 +506,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 350425374}
-        m_TargetAssemblyTypeName: MemoryMenu, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 1728208211}
+        m_TargetAssemblyTypeName: SceneSkift, Assembly-CSharp
+        m_MethodName: SkiftTil
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -555,6 +556,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728208206}
   m_CullTransparentMesh: 1
+--- !u!114 &1728208211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728208206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e37bd1f3f0c2e04e8069e2909666852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skiftSceneTil: Stue
+  minigame: 1
+  Aktivate: {fileID: 0}
 --- !u!1 &1818173792
 GameObject:
   m_ObjectHideFlags: 0
