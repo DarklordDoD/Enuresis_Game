@@ -58,6 +58,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: pet
+  - name: Pet
     uniqueID: 2520962579
+    locked: 0
+  - name: Front
+    uniqueID: 1163576869
     locked: 0
