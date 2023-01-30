@@ -10,6 +10,8 @@ public class SceneManeger : MonoBehaviour
     private GameObject sporgeSkema;
 
     public static GameObject instance;
+    [SerializeField]
+    public GameObject thePet;
 
     // Start is called before the first frame update
     void Awake()
@@ -34,12 +36,18 @@ public class SceneManeger : MonoBehaviour
             GetComponentInChildren<DataSamling>().SporgPlayer();
         }
         catch { }
+
+        thePet = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void MiniGameUI (bool minigame)
     {
         //fjern UI information når man går ind i minigame
         standartUI.SetActive(minigame);
+        if (minigame)
+            thePet.SetActive(true);
+        else
+            thePet.SetActive(false);
     }
 
     //loader en ny scene

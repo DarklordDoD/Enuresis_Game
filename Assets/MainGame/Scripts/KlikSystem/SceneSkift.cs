@@ -15,7 +15,6 @@ public class SceneSkift : MonoBehaviour
     private void Start()
     {
         scM = GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneManeger>();
-        thePet = GameObject.FindGameObjectWithTag("Player");
     }
 
     //for besked om at den næste sene skal loades
@@ -25,10 +24,6 @@ public class SceneSkift : MonoBehaviour
         {
             scM.NewScene(skiftSceneTil);
             scM.MiniGameUI(minigame);
-            if (minigame)
-                thePet.SetActive(false);
-            else
-                thePet.SetActive(true);
         }
         else
             Aktivate.SetActive(true);
