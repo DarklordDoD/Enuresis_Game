@@ -1411,6 +1411,7 @@ MonoBehaviour:
   - 1000
   - 0
   delayMellemKlik: 0
+  showTimer: {fileID: 0}
 --- !u!1 &1226656787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2720,7 +2721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 884662105, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1152584673, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_text
@@ -2788,7 +2789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1546064434, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1546064436, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_Options.m_Options.Array.size
