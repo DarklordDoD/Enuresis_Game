@@ -91,7 +91,7 @@ public class PetScelektion : MonoBehaviour
 
         SaveClass.WriteToFile("Pet", saveList, false);
 
-        GetComponent<SceneManeger>().NewScene("SampleScene");
+        GetComponent<SceneManeger>().NewScene("Stue");
 
         Instantiate(petScelektion[petType], GameObject.FindGameObjectWithTag("Player").transform);  
     }
