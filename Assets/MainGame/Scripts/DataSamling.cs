@@ -68,7 +68,7 @@ public class DataSamling : MonoBehaviour
                 break;
 
             case 3:
-                if (svarList[page + 1] == "Nej" || svarList[page + 1] == "No")
+                if (svarList[page + 1] == "Ja" || svarList[page + 1] == "Yes")
                     page = 5;
                 else
                 {
@@ -93,8 +93,8 @@ public class DataSamling : MonoBehaviour
             //neste spørgsmål
             spogsmaal.text = spogsmaalN[page];
 
-            if (page > 0)
-                svarIndput[page - 1].SetActive(false);
+            foreach (GameObject svar in svarIndput)
+                svar.SetActive(false);
             svarIndput[page].SetActive(true);
         }
     }
