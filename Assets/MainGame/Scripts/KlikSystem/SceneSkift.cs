@@ -14,14 +14,11 @@ public class SceneSkift : MonoBehaviour
     SceneManeger scM;
     GameObject thePet;
 
-    private void Start()
-    {
-        scM = GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneManeger>();
-    }
-
     //for besked om at den næste sene skal loades
     public void SkiftTil()
     {
+        scM = GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneManeger>();
+
         if (aktivateUI == null)
         {
             scM.NewScene(skiftSceneTil);
