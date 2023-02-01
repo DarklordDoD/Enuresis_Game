@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Snake : MonoBehaviour
@@ -26,7 +27,7 @@ public class Snake : MonoBehaviour
 	
    private void Start()
    {
-   		ResetState();
+   		StartState();
 		
 		Button btnUp = upButton.GetComponent<Button>();
 		btnUp.onClick.AddListener(OnClickUp);
@@ -118,7 +119,7 @@ public class Snake : MonoBehaviour
 		_segments.Add(segment);
    }
    
-   private void ResetState()
+   private void StartState()
    {
    		for(int i = 1; i < _segments.Count; i++){
 			Destroy(_segments[i].gameObject);
@@ -134,12 +135,26 @@ public class Snake : MonoBehaviour
 		this.transform.position = Vector3.zero;
    }
    
+   public int sceneNum;
+   
+   private void FailState()
+   {
+   		for(int i = 1; i < _segments.Count; i++){
+			Destroy(_segments[i].gameObject);
+		}
+		
+		_segments.Clear();
+   
+   
+   		SceneManager.LoadScene(sceneNum);
+   }
+   
    private void OnTriggerEnter2D(Collider2D other)
    {
    		if(other.tag == "Food"){
 			Grow();
 		} else if(other.tag == "Obstacle"){
-			ResetState();
+			FailState();
 		}
    }
    

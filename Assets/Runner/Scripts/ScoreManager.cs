@@ -23,7 +23,6 @@ public class ScoreManager : MonoBehaviour
 
     void Start ()
     {
-        
         highscore = PlayerPrefs.GetInt("highscore", 0);
         scoreText.text = "SCORE: " + score.ToString();
         highscoreText.text = "HIGHSCORE: " + highscore.ToString();
