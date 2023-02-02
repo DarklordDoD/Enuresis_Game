@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,11 +8,12 @@ public class SceneManeger : MonoBehaviour
     [SerializeField]
     private GameObject standartUI;
     [SerializeField]
-    private GameObject sporgeSkema;
+    private List<GameObject> sporgeSkema;
 
     public static GameObject instance;
-    [SerializeField]
-    public GameObject thePet;
+    private GameObject thePet;
+    [HideInInspector]
+    public int valgtSprog;
 
     // Start is called before the first frame update
     void Awake()
@@ -31,13 +33,8 @@ public class SceneManeger : MonoBehaviour
 
     private void Start()
     {
-        try
-        {
-            GetComponentInChildren<DataSamling>().SporgPlayer();
-        }
-        catch { }
-
         thePet = GameObject.FindGameObjectWithTag("Player");
+        Instantiate(sporgeSkema[valgtSprog], GetComponent<Transform>());
     }
 
     public void MiniGameUI (bool minigame)

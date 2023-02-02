@@ -62,7 +62,7 @@ public class KlikObjekt : MonoBehaviour
 
             if (hit.collider.tag == "RecorseInterakt")
             {
-                hit.collider.GetComponent<AddRessourcer>().AddNow();
+                hit.collider.GetComponent<AddRessourcer>().DoTask();
             }
         }
     }

@@ -14,6 +14,8 @@ public class AddRessourcer : MonoBehaviour
 
     private Ressourcer ressourcer;
     private float klikTimer;
+    [SerializeField]
+    private bool tjekTrikker;
 
     private void Update()
     {
@@ -26,15 +28,25 @@ public class AddRessourcer : MonoBehaviour
 
     public void AddNow()
     {
-        ressourcer = GameObject.FindGameObjectWithTag("GameController").GetComponent<Ressourcer>();
+        if (tjekTrikker)
+        {
+            ressourcer = GameObject.FindGameObjectWithTag("GameController").GetComponent<Ressourcer>();
 
-        if (klikTimer >= delayMellemKlik) {
+            if (klikTimer >= delayMellemKlik)
+            {
 
-            klikTimer = 0;
+                klikTimer = 0;
+                tjekTrikker = false;
 
-            ressourcer.RemuveTis(addRessuorcerTil[0]);
-            ressourcer.AddVand(addRessuorcerTil[1]);
-            ressourcer.AddGlad(addRessuorcerTil[2]);
+                ressourcer.RemuveTis(addRessuorcerTil[0]);
+                ressourcer.AddVand(addRessuorcerTil[1]);
+                ressourcer.AddGlad(addRessuorcerTil[2]);
+            }
         }
+    }
+
+    public void DoTask()
+    {
+        tjekTrikker = true;
     }
 }

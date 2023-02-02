@@ -26,6 +26,13 @@ public class Ressourcer : MonoBehaviour
     [Header("Glad Resurce")]
     [SerializeField]
     private Scrollbar gladShow;
+    [SerializeField]
+    private Image gladIkon;
+    [SerializeField]
+    private List<Sprite> gladIkonList;
+    [SerializeField]
+    private float whenIkonSkift;
+
     private float gladMeter;
     [SerializeField]
     private float whenTisNed;
@@ -178,6 +185,16 @@ public class Ressourcer : MonoBehaviour
         }
 
         gladShow.size = gladMeter / maxBar; //viser recursen i UI
+
+        GladIkonSkift();
+    }
+
+    private void GladIkonSkift()
+    {
+        if (gladMeter < whenIkonSkift)
+            gladIkon.sprite = gladIkonList[0];
+        else
+            gladIkon.sprite = gladIkonList[1];
     }
 
     //gør det muligt at påvirke tis recursen fra andre scripts
@@ -211,6 +228,8 @@ public class Ressourcer : MonoBehaviour
             gladMeter = maxBar;
 
         gladShow.size = gladMeter / maxBar;
+
+        GladIkonSkift();
     }
 
     //alle recurserne bliver sent til save maneger
