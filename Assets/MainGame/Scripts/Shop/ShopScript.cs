@@ -7,8 +7,9 @@ using UnityEngine;
 public class ShopScript : MonoBehaviour
 {
     [SerializeField]
+    private List<GameObject> muligeShopItem;
+
     private List<string> gotList;
-    [SerializeField]
     private bool randomiseShop;
 
     private void Awake()
@@ -28,15 +29,8 @@ public class ShopScript : MonoBehaviour
         catch { }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void GemShop()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

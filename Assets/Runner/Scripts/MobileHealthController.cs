@@ -21,7 +21,7 @@ public class MobileHealthController : MonoBehaviour
         {
             
             
-                SceneManager.LoadScene("GameOver");
+                SceneManager.LoadScene("GameOver_Runner");
            
         }
     }

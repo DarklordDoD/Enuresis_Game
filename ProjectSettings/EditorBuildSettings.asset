@@ -27,19 +27,19 @@ EditorBuildSettings:
     path: Assets/Snake/Scenes/Snake.unity
     guid: 78e065d48b09aea45b13f3d22544e460
   - enabled: 1
-    path: Assets/Runner/Scenes/GameOver.unity
+    path: Assets/Runner/Scenes/GameOver_Runner.unity
     guid: e8648dab244af0d408720adc84539e47
   - enabled: 1
-    path: Assets/Runner/Scenes/MainMenu.unity
+    path: Assets/Runner/Scenes/MainMenu_Runner.unity
     guid: 278f3db18605c1f418d9f068d7388711
   - enabled: 1
-    path: Assets/Runner/Scenes/MainScene.unity
+    path: Assets/Runner/Scenes/MainScene_Runner.unity
     guid: db2ee55064c3b6f4a87bc41b2393751c
   - enabled: 1
-    path: Assets/Runner/Scenes/TutorialScene.unity
+    path: Assets/Runner/Scenes/TutorialScene_Runner.unity
     guid: c08648c15b4ae054ea3bf94d9d53d1e9
   - enabled: 1
-    path: Assets/Runner/Scenes/WinScreen.unity
+    path: Assets/Runner/Scenes/WinScreen_Runner.unity
     guid: 329d452d7c851a04790267e105f417b2
   - enabled: 1
     path: Assets/VendeSpil/Scenes/Memory_Game.unity
@@ -53,5 +53,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Snake/Scenes/SnakeEnd.unity
     guid: f87c1845956c14e79835a205f0ee09c1
+  - enabled: 1
+    path: Assets/SimonMiniGame/Scenes/GameOver_Simon.unity
+    guid: afd7eb01d7c9e374eb91e3baf95d30f8
+  - enabled: 1
+    path: Assets/SimonMiniGame/Scenes/GameScene_Simon.unity
+    guid: a40ccb1f949d25b4fa9ec744d065dc4d
+  - enabled: 1
+    path: Assets/SimonMiniGame/Scenes/MainMenu_Simon.unity
+    guid: 7b6cb1f1393cd314598a34dc66862d99
+  - enabled: 1
+    path: Assets/SimonMiniGame/Scenes/TutorialScene_Simon.unity
+    guid: 39af8dff3fb5b3445a428f5462719e59
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 6f0895d3c2fcec041832f5f1648e21f3, type: 2}
