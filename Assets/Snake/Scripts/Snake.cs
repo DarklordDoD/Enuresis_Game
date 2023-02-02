@@ -6,29 +6,37 @@ using UnityEngine;
 
 public class Snake : MonoBehaviour
 {
+   //Opsætning til at bevæge spilleren
    private Vector2 _direction = Vector2.up;
    
    private Vector2 input;
    
+   //Opsætning til de segmenter, som skal på for at gøre slangen større
    private List<Transform> _segments = new List<Transform>();
    public Transform segmentPrefab;
    
    public int initialSize = 3;
    
+   //Opsætning til at kunne bestemme farten på slangen/spillet
    public float speed = 20f;
    public float speedMultiplier = 1f;
    
    private float nextUpdate;
    
+   //Opsætning til at kunne bruge touch knapper i spillet
    public Button upButton;
    public Button downButton;
    public Button leftButton;
    public Button rightButton;
 	
+	
+   //Det som spillet skal gøre, når det starter
    private void Start()
    {
+   		//Loade vores Start State
    		StartState();
 		
+		//Lave vores knapper så vi kan bruge dem, her op, ned, venstre, højre
 		Button btnUp = upButton.GetComponent<Button>();
 		btnUp.onClick.AddListener(OnClickUp);
 		
@@ -42,27 +50,44 @@ public class Snake : MonoBehaviour
 		btnRight.onClick.AddListener(OnClickRight);
    }
    
+   //Fortælle hvad knapperne skal gøre når de bliver trykket på. Her at lave spilleren/slanges retning op, ned, venstre eller højre
    public void OnClickRight()
    {
-   		input = Vector2.right;
+   		if(_direction.x != 0f){
+			return;
+		} else {
+			input = Vector2.right;
+		}
    }
    
    public void OnClickLeft()
    {
-   		input = Vector2.left;
+   		if(_direction.x != 0f){
+			return;
+		} else {
+			input = Vector2.left;
+		}
    }
    
    public void OnClickUp()
    {
-   		input = Vector2.up;
+   		if(_direction.y != 0f){
+			return;
+		} else {
+			input = Vector2.up;
+		}
    }
    
    public void OnClickDown()
    {
-   		input = Vector2.down;
+   		if(_direction.y != 0f){
+			return;
+		} else {
+			input = Vector2.down;
+		}
    }
    
-   
+   //En konstant opdatering af kode
    private void Update()
    {
     	// Only allow turning up or down while moving in the x-axis
@@ -84,7 +109,7 @@ public class Snake : MonoBehaviour
     	}
    }
    
-   
+   //En sat opdatering af kode i takt med spillets frames
    private void FixedUpdate()
    {
    		// Wait until the next update before proceeding
@@ -111,6 +136,7 @@ public class Snake : MonoBehaviour
     	nextUpdate = Time.time + (1f / (speed * speedMultiplier));
    }
    
+   //Opsætning til at vokse spilleren
    private void Grow()
    {
    		Transform segment = Instantiate(this.segmentPrefab);
@@ -119,6 +145,7 @@ public class Snake : MonoBehaviour
 		_segments.Add(segment);
    }
    
+   //Kode til at angive, hvordan spilleren start, blandt andet hvor lang de er
    private void StartState()
    {
    		for(int i = 1; i < _segments.Count; i++){
@@ -135,6 +162,7 @@ public class Snake : MonoBehaviour
 		this.transform.position = Vector3.zero;
    }
    
+   //Kode til at loade slut skærmmen når spilleren rammer væggene/sig selv
    public int sceneNum;
    
    private void FailState()
@@ -149,6 +177,7 @@ public class Snake : MonoBehaviour
    		SceneManager.LoadScene(sceneNum);
    }
    
+   //Kode til at køre tidligere opsat kode, når spilleren enden samler mad op, eller rammer væggene/sig selv
    private void OnTriggerEnter2D(Collider2D other)
    {
    		if(other.tag == "Food"){
@@ -158,6 +187,7 @@ public class Snake : MonoBehaviour
 		}
    }
    
+   //Opsætning til hvad tæller som en væg eller spillerens krop
    public bool Occupies(float x, float y)
    {
     	foreach (Transform segment in _segments)

@@ -17,7 +17,7 @@ public class SnakeStart : MonoBehaviour
         
     }
 	
-	
+	//Kode til at kunne loade en scene med en knap i Unity
 	public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
