@@ -143,9 +143,16 @@ public class muvePet : MonoBehaviour
 
         //sørger for at pettet ikke kravler op af vægene
         if (mousePosition.y > maxPoint.y)
-        {
             mousePosition.y = maxPoint.y;
-        }
+
+        if (mousePosition.y < minPoint.y)
+            mousePosition.y = minPoint.y;
+
+        if (mousePosition.x > maxPoint.x)
+            mousePosition.x = maxPoint.x;
+
+        if (mousePosition.x < minPoint.x)
+            mousePosition.x = minPoint.x;
 
         //sætter et point på registreret klik/touch
         DistanceToPoint(transform.position, mousePosition);
@@ -154,10 +161,6 @@ public class muvePet : MonoBehaviour
             nextPoint = mousePosition;
             venter = false;
             valgtWalk = true;
-        }
-        else
-        {
-            //Debug.Log("pet");
         }
     }
 
@@ -174,5 +177,10 @@ public class muvePet : MonoBehaviour
             petTimer = 0;
             GameObject.FindGameObjectWithTag("GameController").GetComponent<Ressourcer>().AddGlad(petEffekt);
         }       
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        nextPoint = transform.position;
     }
 }

@@ -30,6 +30,11 @@ public class DataSamling : MonoBehaviour
     private string sidsteNavn;
     private string lastSvarDato;
 
+    private void Start()
+    {
+        SporgPlayer();
+    }
+
     //starter Spørgeskemaet op
     public void SporgPlayer()
     {       
@@ -42,7 +47,7 @@ public class DataSamling : MonoBehaviour
             lastSvarDato = gotList[gotList.Count - 8];
             sidsteNavn = gotList[gotList.Count - 7];
         }
-        catch { }
+        catch { }    
 
         if (lastSvarDato != DateTime.Today.ToString("dd-MM-yyyy"))
         {
