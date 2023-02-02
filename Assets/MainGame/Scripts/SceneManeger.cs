@@ -21,14 +21,16 @@ public class SceneManeger : MonoBehaviour
         //dette objekt bliver ikke fjernet når en ny scenemaneger
         DontDestroyOnLoad(this.gameObject);
 
-            //hvis der alderade er et canvas destroy dette canvas
-            if (GameObject.FindGameObjectsWithTag("GameController").Length > 1)
+        //hvis der alderade er et canvas destroy dette canvas
+        if (instance == null)
+        {
+            instance = this.gameObject;
+        }
+        else
         {
             Destroy(this.gameObject);
             return;
         }
-        else
-            instance = this.gameObject;
     }
 
     private void Start()

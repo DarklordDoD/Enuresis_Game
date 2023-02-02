@@ -96,7 +96,7 @@ public class Ressourcer : MonoBehaviour
 
             //samlet tid dividert med hvor ofte recurser endre sig og konvertert til int
             int LastVisitOpdate = Convert.ToInt32(lastVisitS / reduceSpeed);
-            Debug.Log($"{lastVisit} to {lastVisitS}. tirgger {LastVisitOpdate} tims");
+            //Debug.Log($"{lastVisit} to {lastVisitS}. tirgger {LastVisitOpdate} tims");
 
             //luper rescurese udregnings systemet intil systemet har cateh op
             for (int i = 0; i < LastVisitOpdate; i++)

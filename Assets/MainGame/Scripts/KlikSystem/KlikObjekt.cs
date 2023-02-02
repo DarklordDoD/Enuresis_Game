@@ -43,27 +43,30 @@ public class KlikObjekt : MonoBehaviour
         //tester om spilleren klikker på et object
         if (hit.collider != null)
         {
-            //hvis spillern klikker på pettet aktiver de pet funktionen i muvePet scriptet
-            if (hit.collider.name == "Pet")
+            switch (hit.collider.tag)
             {
-                hit.collider.GetComponent<muvePet>().PetPet();              
+                //hvis spillern klikker på pettet aktiver de pet funktionen i muvePet scriptet
+                case "Player":
+                    hit.collider.GetComponent<muvePet>().PetPet();
+                    break;
+
+                //hvis spillern klikker på et sceneskift objekt aktiver de skiftTil fungtionen på objektet
+                case "SceneSkift":
+                    hit.collider.GetComponent<SceneSkift>().SkiftTil();
+                    break;
+
+                case "petSkift":
+                    hit.collider.GetComponent<ObjecktSkift>().SkiftTil();
+                    break;
+
+                case "RecorseInterakt":
+                    hit.collider.GetComponent<AddRessourcer>().DoTask();
+                    break;
+
+                case "ShopItem":
+                    break;
             }
 
-            //hvis spillern klikker på et sceneskift objekt aktiver de skiftTil fungtionen på objektet
-            if (hit.collider.tag == "SceneSkift")
-            {
-                hit.collider.GetComponent<SceneSkift>().SkiftTil();
-            }
-
-            if (hit.collider.tag == "petSkift")
-            {
-                hit.collider.GetComponent<ObjecktSkift>().SkiftTil();
-            }
-
-            if (hit.collider.tag == "RecorseInterakt")
-            {
-                hit.collider.GetComponent<AddRessourcer>().DoTask();
-            }
         }
     }
 }

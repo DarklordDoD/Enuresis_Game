@@ -47,14 +47,15 @@ public class muvePet : MonoBehaviour
         //dette objekt bliver ikke fjernet når en ny scenemaneger
         DontDestroyOnLoad(this.gameObject);
 
-        //hvis der alderade er et pet destroy dette pet
-        if (GameObject.FindGameObjectsWithTag("Player").Length > 1)
+        if (instance == null)
+        {
+            instance = this.gameObject;
+        }
+        else
         {
             Destroy(this.gameObject);
             return;
         }
-        else
-            instance = this.gameObject;
     }
 
     // Start is called before the first frame update
