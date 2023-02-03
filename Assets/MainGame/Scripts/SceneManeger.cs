@@ -51,10 +51,8 @@ public class SceneManeger : MonoBehaviour
     {
         //fjern UI information når man går ind i minigame
         standartUI.SetActive(minigame);
-        if (minigame)
-            thePet.SetActive(true);
-        else
-            thePet.SetActive(false);
+
+        thePet.SetActive(minigame);
     }
 
     //loader en ny scene
