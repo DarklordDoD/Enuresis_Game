@@ -13,7 +13,7 @@ public class SceneManeger : MonoBehaviour
     [Header("Music")]
     [SerializeField]
     private List <MusicAndScene> musicForScene;
-
+    [SerializeField]
     private MusicManager musicManager;
 
     public static GameObject instance;
@@ -37,14 +37,14 @@ public class SceneManeger : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
-
-        MusicForScene(SceneManager.GetActiveScene().name); 
     }
 
     private void Start()
     {
         thePet = GameObject.FindGameObjectWithTag("Player");
         Instantiate(sporgeSkema[valgtSprog], GetComponent<Transform>());
+
+        MusicForScene(SceneManager.GetActiveScene().name);
     }
 
     public void MiniGameUI (bool minigame)
@@ -72,7 +72,7 @@ public class SceneManeger : MonoBehaviour
         {
             if (nuScene.sceneMedMusic.ToString() == scene)
             {
-                musicManager.PlayMusicWithCrossFade(nuScene.music, nuScene.overgange);
+                musicManager.PlayMusic(nuScene.music);
             }
         }
     } 
