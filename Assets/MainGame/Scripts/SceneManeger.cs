@@ -10,6 +10,12 @@ public class SceneManeger : MonoBehaviour
     [SerializeField]
     private List<GameObject> sporgeSkema;
 
+    [Header("Music")]
+    [SerializeField]
+    private List <MusicAndScene> musicForScene;
+
+    private MusicManager musicManager;
+
     public static GameObject instance;
     private GameObject thePet;
     [HideInInspector]
@@ -31,6 +37,8 @@ public class SceneManeger : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
+
+        MusicForScene(SceneManager.GetActiveScene().name); 
     }
 
     private void Start()
@@ -53,5 +61,19 @@ public class SceneManeger : MonoBehaviour
     public void NewScene(string scenen)
     {
         SceneManager.LoadScene(scenen);
+        MusicForScene(scenen);
     }
+
+    private void MusicForScene(string scene)
+    {
+        musicManager = GetComponent<MusicManager>();
+
+        foreach (var nuScene in musicForScene)
+        {
+            if (nuScene.sceneMedMusic.ToString() == scene)
+            {
+                musicManager.PlayMusicWithCrossFade(nuScene.music, nuScene.overgange);
+            }
+        }
+    } 
 }

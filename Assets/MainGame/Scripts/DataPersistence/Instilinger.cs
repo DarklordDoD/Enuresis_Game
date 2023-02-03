@@ -9,11 +9,17 @@ public class Instilinger : MonoBehaviour
 {
     [SerializeField]
     private GameObject instillingMenu;
+
+    [Header("Sprog")]
     [SerializeField]
     private List<Button> sprogButtens;
 
-    //[HideInInspector]
+    [HideInInspector]
     public int sprog;
+
+    [Header("Lyd")]
+    [SerializeField]
+    private Slider soundSlider;
     [HideInInspector]
     public float soundLevel;
 
@@ -29,13 +35,15 @@ public class Instilinger : MonoBehaviour
         catch
         {
             sprog = 0;
-            soundLevel = 50;
+            soundLevel = 0.5f;
         }
     }
 
     private void Start()
     {
         AktivateButten();
+
+        soundSlider.value = soundLevel;
     }
 
     private void AktivateButten()

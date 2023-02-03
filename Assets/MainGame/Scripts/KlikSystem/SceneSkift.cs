@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneSkift : MonoBehaviour
 {
@@ -12,22 +13,31 @@ public class SceneSkift : MonoBehaviour
     private bool aktivate;
 
     SceneManeger scM;
-    GameObject thePet;
 
     //for besked om at den næste sene skal loades
     public void SkiftTil()
     {
-        scM = GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneManeger>();
+        try
+        {
+            scM = GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneManeger>();
+        }
+        catch
+        {
+            SceneManager.LoadScene(skiftSceneTil);
+        }
+
 
         if (aktivateUI == null)
         {
-            scM.NewScene(skiftSceneTil);
-            scM.MiniGameUI(minigame);
+                scM.NewScene(skiftSceneTil);
+                scM.MiniGameUI(minigame);            
         }
         else
         {
             aktivateUI.SetActive(aktivate);
-            GameObject.FindGameObjectWithTag("SceneSkift").GetComponent<Collider2D>().enabled = !aktivate;
+
+            foreach (GameObject go in GameObject.FindGameObjectsWithTag("SceneSkift"))
+                go.GetComponent<Collider2D>().enabled = !aktivate;
         }
     }
 }
