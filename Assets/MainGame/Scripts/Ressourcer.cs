@@ -8,7 +8,11 @@ public class Ressourcer : MonoBehaviour
     [Header("Tis Resurce")]
     [SerializeField]
     private Scrollbar tisShow;
+
     private float tisMeter;
+    [SerializeField]
+    private float tisShowMeter;
+
     [SerializeField]
     private float tisUp;
     [SerializeField]
@@ -19,7 +23,10 @@ public class Ressourcer : MonoBehaviour
     [Header("Vand Resurce")]
     [SerializeField]
     private Scrollbar vandShow;
+
     private float vandMeter;
+    private float vandShowMeter;
+
     [SerializeField]
     private float vandNed;
 
@@ -34,6 +41,8 @@ public class Ressourcer : MonoBehaviour
     private float whenIkonSkift;
 
     private float gladMeter;
+    private float gladShowMeter;
+
     [SerializeField]
     private float whenTisNed;
     [SerializeField]
@@ -53,9 +62,12 @@ public class Ressourcer : MonoBehaviour
     private float maxBar;
     public DateTime dato;
 
+    [SerializeField]
+    private float meterSpeed;
+
     private List<string> saveR;
     private List<string> gotList;
-    private bool loadSykse;
+    private bool loadSykse; 
 
     private void Awake()
     {
@@ -66,7 +78,7 @@ public class Ressourcer : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.Log($"No save. {e}");
+            //Debug.Log($"No save. {e}");
             loadSykse = false; //registretr at der ikke er loadet noget
         }
     }
@@ -86,7 +98,7 @@ public class Ressourcer : MonoBehaviour
             vandMeter = float.Parse(gotList[2]);
             gladMeter = float.Parse(gotList[3]);
 
-            /*finder id af hvor meget tid der er gådet siden de blev gemt sidst
+            /*finder ud af hvor meget tid der er gådet siden der blev gemt sidst
             og konveter det hele til sekunder, som en int verdi*/
             TimeSpan lastVisit = DateTime.Today + DateTime.Now.TimeOfDay - dato;
             float lastVisitS = float.Parse(lastVisit.Seconds.ToString());   //sekunder
@@ -133,21 +145,48 @@ public class Ressourcer : MonoBehaviour
         {
             opdateringsTid = 0;
 
-            if (tisMeter <= maxBar)
+            if (tisMeter < maxBar)
                 TisControl(); //controler tis resurcen. fylder den op over tid
+            else
+                Ulykke();
 
             if (vandMeter >= minBar)
                 VandControl(); //controler tørst resurcen. tømmer den over tid
 
             if (gladMeter >= minBar)
                 GladControl(); //controler glæde resurce. tømmer den over tid
-
-            SaveRecorses();
         }
         else
         {
             opdateringsTid += 1 * Time.deltaTime;
         }
+    }
+
+    private void Update()
+    {
+        tisShowMeter = Mathf.Lerp(tisShowMeter, tisMeter, meterSpeed * Time.deltaTime);
+        tisShow.size = tisShowMeter / maxBar;
+
+        vandShowMeter = Mathf.Lerp(vandShowMeter, vandMeter, meterSpeed * Time.deltaTime);
+        vandShow.size = vandShowMeter / maxBar;
+
+        gladShowMeter = Mathf.Lerp(gladShowMeter, gladMeter, meterSpeed * Time.deltaTime);
+        gladShow.size = gladShowMeter / maxBar;
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveRecorses();
+    }
+
+    private void Ulykke()
+    {
+        if (loadSykse)
+        if (DateTime.Today.Day - dato.Day > 0)
+            {
+                RemuveTis(UnityEngine.Random.Range(2000, 5000));
+            }
+
     }
 
     private void TisControl()
@@ -160,14 +199,14 @@ public class Ressourcer : MonoBehaviour
             tisMeter += tisVandUp;
         }
 
-        tisShow.size = tisMeter / maxBar; //viser recursen i UI
+        //tisShow.size = tisMeter / maxBar; //viser recursen i UI
     }
 
     private void VandControl()
     {
         vandMeter -= vandNed;
 
-        vandShow.size = vandMeter / maxBar; //viser recursen i UI
+        //vandShow.size = vandMeter / maxBar; //viser recursen i UI
     }
 
     private void GladControl()
@@ -184,7 +223,7 @@ public class Ressourcer : MonoBehaviour
             gladMeter -= gladTisNed;
         }
 
-        gladShow.size = gladMeter / maxBar; //viser recursen i UI
+        //gladShow.size = gladMeter / maxBar; //viser recursen i UI
 
         GladIkonSkift();
     }
@@ -205,7 +244,7 @@ public class Ressourcer : MonoBehaviour
         if (tisMeter < minBar)
             tisMeter = minBar;
 
-        tisShow.size = tisMeter / maxBar;
+        //tisShow.size = tisMeter / maxBar;
     }
 
     //gør det muligt at påvirke vand recursen fra andre scripts
@@ -216,7 +255,7 @@ public class Ressourcer : MonoBehaviour
         if (vandMeter > maxBar)
             vandMeter = maxBar;
 
-        vandShow.size = vandMeter / maxBar;
+        //vandShow.size = vandMeter / maxBar;
     }
 
     //gør det muligt at påvirke glæde recursen fra andre scripts
@@ -227,7 +266,7 @@ public class Ressourcer : MonoBehaviour
         if (gladMeter > maxBar)
             gladMeter = maxBar;
 
-        gladShow.size = gladMeter / maxBar;
+        //gladShow.size = gladMeter / maxBar;
 
         GladIkonSkift();
     }

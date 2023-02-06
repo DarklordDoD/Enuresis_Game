@@ -21,7 +21,7 @@ public class Instilinger : MonoBehaviour
     [SerializeField]
     private Slider soundSlider;
     [HideInInspector]
-    public float soundLevel;
+    public int soundLevel;
 
     private List<string> gotList;
     private List<string> saveList;
@@ -35,15 +35,16 @@ public class Instilinger : MonoBehaviour
         catch
         {
             sprog = 0;
-            soundLevel = 0.5f;
+            soundLevel = 50;
         }
     }
 
     private void Start()
     {
-        AktivateButten();
+        VelgSprog(sprog);
 
-        soundSlider.value = soundLevel;
+        soundSlider.value =  (float)soundLevel / 100;
+        Invoke("LydChange", 0f);
     }
 
     private void AktivateButten()
@@ -74,12 +75,23 @@ public class Instilinger : MonoBehaviour
         AktivateButten();
     }
 
+    public void LydStyrke()
+    {
+        soundLevel = Convert.ToInt32(soundSlider.value * 100);
+        LydChange();
+    }
+
+    private void LydChange()
+    {
+        GetComponent<MusicManager>().SetMusicVolume((float)soundLevel / 100);
+    }
+
     private void LoadInstilinger()
     {
         SaveClass.LoadFromFile("Instillinger", out gotList);
 
-        soundLevel = float.Parse(gotList[0]);
-        sprog = int.Parse(gotList[1]);
+        soundLevel = int.Parse(gotList[1]);
+        sprog = int.Parse(gotList[0]);
     }
 
     public void SaveInstillinger()
