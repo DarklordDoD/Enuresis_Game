@@ -3285,6 +3285,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: bed
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: meterSpeed
       value: 2
       objectReference: {fileID: 0}
@@ -3292,6 +3296,18 @@ PrefabInstance:
       propertyPath: whenIkonSkift
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: bedState.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: bedState.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: e5871a6ad67d2ec48bdf841c057b1f0e, type: 3}
+    - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: bedState.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8104507602caf164d82b017e688349b6, type: 3}
     - target: {fileID: 712255104591520818, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_Name
       value: GameController

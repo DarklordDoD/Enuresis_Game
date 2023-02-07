@@ -10,7 +10,6 @@ public class Ressourcer : MonoBehaviour
     private Scrollbar tisShow;
 
     private float tisMeter;
-    [SerializeField]
     private float tisShowMeter;
 
     [SerializeField]
@@ -19,6 +18,11 @@ public class Ressourcer : MonoBehaviour
     private float whenVandUp;
     [SerializeField]
     private float tisVandUp;
+
+    [SerializeField]
+    private string bed;
+    [SerializeField]
+    private List<Sprite> bedState;
 
     [Header("Vand Resurce")]
     [SerializeField]
@@ -185,8 +189,18 @@ public class Ressourcer : MonoBehaviour
         if (DateTime.Today.Day - dato.Day > 0)
             {
                 RemuveTis(UnityEngine.Random.Range(2000, 5000));
-            }
 
+                try
+                {
+                    GameObject.Find(bed).GetComponent<SpriteRenderer>().sprite = bedState[1];
+                }
+                catch { }
+            }
+    }
+
+    public void CleanUlykke()
+    {
+        GameObject.Find(bed).GetComponent<SpriteRenderer>().sprite = bedState[0];
     }
 
     private void TisControl()
