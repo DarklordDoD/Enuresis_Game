@@ -18,6 +18,7 @@ TagManager:
   - Food
   - Ground
   - Border
+  - ShopItem
   layers:
   - Default
   - TransparentFX

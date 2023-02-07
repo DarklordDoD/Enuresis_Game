@@ -64,6 +64,7 @@ public class KlikObjekt : MonoBehaviour
                     break;
 
                 case "ShopItem":
+                    hit.collider.GetComponent<KlikBuy>().BuyThisItem();
                     break;
             }
 

@@ -60,7 +60,7 @@ public class MusicManager : MonoBehaviour
         AudioSource activeSource = (firstMusicSourceIsPlaying) ? musicSource : musicSource2;
 
         activeSource.clip = musicClip;
-        activeSource.volume = 1;
+        //activeSource.volume = 1;
         activeSource.Play();
     }
     public void PlayMusicWithFade(AudioClip newClip, float transitionTime = 1.0f)
