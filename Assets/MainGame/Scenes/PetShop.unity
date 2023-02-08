@@ -1063,7 +1063,6 @@ GameObject:
   - component: {fileID: 2043922059}
   - component: {fileID: 2043922058}
   - component: {fileID: 2043922057}
-  - component: {fileID: 2043922060}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -1136,18 +1135,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2043922060}
-        m_TargetAssemblyTypeName: SceneSkift, Assembly-CSharp
-        m_MethodName: SkiftTil
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 5189052939098285532, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
         m_TargetAssemblyTypeName: PetScelektion, Assembly-CSharp
         m_MethodName: ScelektEnd
@@ -1198,19 +1185,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043922055}
   m_CullTransparentMesh: 1
---- !u!114 &2043922060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043922055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e37bd1f3f0c2e04e8069e2909666852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skiftSceneTil: stue
-  minigame: 1
-  aktivateUI: {fileID: 0}
-  aktivate: 0

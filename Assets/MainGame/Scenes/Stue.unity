@@ -3370,6 +3370,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 712255104322090767, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: musicSource2
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 712255104591520810, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: musicForScene.Array.size
       value: 3
@@ -3377,7 +3381,7 @@ PrefabInstance:
     - target: {fileID: 712255104591520810, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: musicForScene.Array.data[2].music
       value: 
-      objectReference: {fileID: 8300000, guid: c854d3249a273b1459ba3d1442a403f1, type: 3}
+      objectReference: {fileID: 8300000, guid: 479b18819d391044cb03d3dd8f96a9f4, type: 3}
     - target: {fileID: 712255104591520810, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: musicForScene.Array.data[2].overgange
       value: 0.5

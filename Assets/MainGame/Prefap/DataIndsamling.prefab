@@ -898,7 +898,7 @@ GameObject:
   - component: {fileID: 6599326834136481165}
   m_Layer: 5
   m_Name: DataIndsamling
-  m_TagString: Untagged
+  m_TagString: DataSamling
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1012,7 +1012,6 @@ MonoBehaviour:
   svarList: []
   splitListExeption: ShortList
   gotList: []
-  lDato: {fileID: 1452129986815597892}
 --- !u!1 &1568439477933776769
 GameObject:
   m_ObjectHideFlags: 0

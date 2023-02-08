@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PetScelektion : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PetScelektion : MonoBehaviour
     private int petType;
 
     private List<string> saveList;
+    [SerializeField]
     private bool inPetMenu;
     private GameObject thePet;
 
@@ -33,13 +35,7 @@ public class PetScelektion : MonoBehaviour
         {
             inPetMenu = true;
 
-            try 
-            {
-                GetComponentInChildren<DataSamling>().UdAf();
-            }
-            catch { }
-
-            GetComponent<SceneManeger>().NewScene("PetShop");     
+            GetComponent<SceneManeger>().NewScene("PetShop");
         }
     }
 
@@ -48,14 +44,15 @@ public class PetScelektion : MonoBehaviour
         if (inPetMenu)
         {
             Instantiate(petScelektion[petType], showPosition, Quaternion.identity); //Vis det nye pet
-
-            Invoke("HidePet", 0.5f);
-        }
+            
+            Invoke("HidePet", 0);
+        } 
     }
 
     private void HidePet()
     {
-        thePet.SetActive(false);
+        //thePet.SetActive(false);
+        GameObject.FindGameObjectWithTag("DataSamling").GetComponent<DataSamling>().UdAf();
     }
 
     public void RotatePet(bool right)
@@ -101,5 +98,7 @@ public class PetScelektion : MonoBehaviour
 
         thePet = GameObject.FindGameObjectWithTag("Player");
         Instantiate(petScelektion[petType], thePet.transform);
+
+        GetComponent<SceneManeger>().NewScene("Stue");
     }
 }
