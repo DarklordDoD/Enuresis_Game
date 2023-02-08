@@ -44,7 +44,7 @@ public class SceneManeger : MonoBehaviour
         thePet = GameObject.FindGameObjectWithTag("Player");
         Instantiate(sporgeSkema[valgtSprog], GetComponent<Transform>());
 
-        MusicForScene(SceneManager.GetActiveScene().name);
+        MusicForScene("Stue");
     }
 
     public void MiniGameUI (bool minigame)

@@ -28,8 +28,6 @@ public class PetScelektion : MonoBehaviour
             SaveClass.LoadFromFile("Pet", out saveList);
             petName = saveList[0];
             petType = int.Parse(saveList[1]);
-
-            Instantiate(petScelektion[petType], thePet.transform);
         }
         catch
         {
@@ -47,6 +45,8 @@ public class PetScelektion : MonoBehaviour
             
             Invoke("HidePet", 0);
         } 
+        else
+            Instantiate(petScelektion[petType], thePet.transform);
     }
 
     private void HidePet()
