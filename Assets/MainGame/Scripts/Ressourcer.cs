@@ -80,7 +80,7 @@ public class Ressourcer : MonoBehaviour
         {
             LoadRecorses();
         }
-        catch (Exception e)
+        catch //(Exception e)
         {
             //Debug.Log($"No save. {e}");
             loadSykse = false; //registretr at der ikke er loadet noget

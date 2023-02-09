@@ -1921,12 +1921,12 @@ GameObject:
   - component: {fileID: 712255104591520817}
   - component: {fileID: 712255104591520816}
   - component: {fileID: 712255104591520819}
+  - component: {fileID: 712255104322090767}
   - component: {fileID: 712255104591520810}
   - component: {fileID: 5189052939098285532}
   - component: {fileID: 712255104591520815}
   - component: {fileID: 4174684531747814989}
   - component: {fileID: 20522153}
-  - component: {fileID: 712255104322090767}
   m_Layer: 5
   m_Name: GameController
   m_TagString: GameController
@@ -2018,6 +2018,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &712255104322090767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712255104591520818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f548f3ed137705848b015ee79d4e0f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &712255104591520810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2040,7 +2052,6 @@ MonoBehaviour:
   - sceneMedMusic: Toilet
     music: {fileID: 8300000, guid: c854d3249a273b1459ba3d1442a403f1, type: 3}
     overgange: 0.5
-  musicManager: {fileID: 0}
   valgtSprog: 0
 --- !u!114 &5189052939098285532
 MonoBehaviour:
@@ -2077,6 +2088,8 @@ MonoBehaviour:
   tisUp: 1
   whenVandUp: 7500
   tisVandUp: 1
+  bed: 
+  bedState: []
   vandShow: {fileID: 712255102721757682}
   vandNed: 1
   gladShow: {fileID: 712255103491769383}
@@ -2092,6 +2105,7 @@ MonoBehaviour:
   reduceSpeed: 2
   minBar: 0
   maxBar: 10000
+  meterSpeed: 0
 --- !u!114 &4174684531747814989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2123,18 +2137,6 @@ MonoBehaviour:
   sprog: 0
   soundSlider: {fileID: 2062939712}
   soundLevel: 0
---- !u!114 &712255104322090767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712255104591520818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f548f3ed137705848b015ee79d4e0f32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &712255104669333802
 GameObject:
   m_ObjectHideFlags: 0

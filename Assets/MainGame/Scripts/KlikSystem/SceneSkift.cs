@@ -29,8 +29,8 @@ public class SceneSkift : MonoBehaviour
 
         if (aktivateUI == null)
         {
-                scM.NewScene(skiftSceneTil);
-                scM.MiniGameUI(minigame);            
+            scM.NewScene(skiftSceneTil);
+            scM.MiniGameUI(minigame);           
         }
         else
         {

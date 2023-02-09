@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PetScelektion : MonoBehaviour
 {
@@ -13,41 +14,45 @@ public class PetScelektion : MonoBehaviour
     private int petType;
 
     private List<string> saveList;
+    [SerializeField]
     private bool inPetMenu;
+    private GameObject thePet;
 
     private void Awake()
     {
+        thePet = GameObject.FindGameObjectWithTag("Player");
+
         //prøver at loade sidste gemte pet
         try
         {
             SaveClass.LoadFromFile("Pet", out saveList);
             petName = saveList[0];
             petType = int.Parse(saveList[1]);
-
-            Instantiate(petScelektion[petType], GameObject.FindGameObjectWithTag("Player").transform);
         }
         catch
         {
             inPetMenu = true;
 
-            try 
-            {
-                GetComponentInChildren<DataSamling>().UdAf();
-            }
-            catch { }
-
             GetComponent<SceneManeger>().NewScene("PetShop");
-
-            GameObject[] thePet = GameObject.FindGameObjectsWithTag("Player");
-            foreach (GameObject pets in thePet)
-                pets.SetActive(false);       
         }
     }
 
     private void Start()
     {
         if (inPetMenu)
+        {
             Instantiate(petScelektion[petType], showPosition, Quaternion.identity); //Vis det nye pet
+            
+            Invoke("HidePet", 0);
+        } 
+        else
+            Instantiate(petScelektion[petType], thePet.transform);
+    }
+
+    private void HidePet()
+    {
+        //thePet.SetActive(false);
+        GameObject.FindGameObjectWithTag("DataSamling").GetComponent<DataSamling>().UdAf();
     }
 
     public void RotatePet(bool right)
@@ -91,8 +96,9 @@ public class PetScelektion : MonoBehaviour
 
         SaveClass.WriteToFile("Pet", saveList, false);
 
-        GetComponent<SceneManeger>().NewScene("Stue");
+        thePet = GameObject.FindGameObjectWithTag("Player");
+        Instantiate(petScelektion[petType], thePet.transform);
 
-        Instantiate(petScelektion[petType], GameObject.FindGameObjectWithTag("Player").transform);  
+        GetComponent<SceneManeger>().NewScene("Stue");
     }
 }

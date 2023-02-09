@@ -10,7 +10,7 @@ public static class SaveClass
     //gem variabler ved at sende en string liste til denne funktion
     public static void WriteToFile(string fileName, List<string> gemDette, bool addToSave)
     {
-        string fileContents = string.Join(",", gemDette); //konvater list til string
+        string fileContents = string.Join("%", gemDette); //konvater list til string
         string path = Application.persistentDataPath + $"/{fileName}.txt"; //find stede hvor filer skal gemmes
 
         //prøver at loade en file så filen kan forlænges
@@ -52,7 +52,7 @@ public static class SaveClass
         try
         {
             string loadData = File.ReadAllText(path);
-            return loadList = loadData.Split(',', '\n').ToList();
+            return loadList = loadData.Split('%', '\n').ToList();
         }
         catch //(Exception e) //hvis fejl sand ikke en liste
         {

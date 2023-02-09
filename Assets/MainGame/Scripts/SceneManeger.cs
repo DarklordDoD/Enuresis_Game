@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -13,7 +14,6 @@ public class SceneManeger : MonoBehaviour
     [Header("Music")]
     [SerializeField]
     private List <MusicAndScene> musicForScene;
-    [SerializeField]
     private MusicManager musicManager;
 
     public static GameObject instance;
@@ -44,7 +44,7 @@ public class SceneManeger : MonoBehaviour
         thePet = GameObject.FindGameObjectWithTag("Player");
         Instantiate(sporgeSkema[valgtSprog], GetComponent<Transform>());
 
-        MusicForScene(SceneManager.GetActiveScene().name);
+        MusicForScene("Stue");
     }
 
     public void MiniGameUI (bool minigame)
@@ -70,7 +70,10 @@ public class SceneManeger : MonoBehaviour
         {
             if (nuScene.sceneMedMusic.ToString() == scene)
             {
-                musicManager.PlayMusic(nuScene.music);
+                try {
+                    musicManager.PlayMusic(nuScene.music);
+                }
+                catch { }
             }
         }
     } 
