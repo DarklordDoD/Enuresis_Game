@@ -44,7 +44,7 @@ public class Instilinger : MonoBehaviour
         VelgSprog(sprog);
 
         soundSlider.value =  (float)soundLevel / 100;
-        Invoke("LydChange", 0f);
+        Invoke("LydChange", 0.5f);
     }
 
     private void AktivateButten()

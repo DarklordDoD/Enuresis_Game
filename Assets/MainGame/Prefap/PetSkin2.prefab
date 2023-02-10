@@ -177,6 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5172404698101324216}
+  - component: {fileID: -1074418721222250540}
   m_Layer: 0
   m_Name: PetSkin2
   m_TagString: ShowPet
@@ -207,6 +208,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1074418721222250540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2657243501815689803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb9e1bb1fa8f7234dbb3b0a71475a427, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: Pet
+  itemName: Mar
 --- !u!1 &4559016363707477683
 GameObject:
   m_ObjectHideFlags: 0
