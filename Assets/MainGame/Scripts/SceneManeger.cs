@@ -71,7 +71,7 @@ public class SceneManeger : MonoBehaviour
             if (nuScene.sceneMedMusic.ToString() == scene)
             {
                 try {
-                    musicManager.PlayMusic(nuScene.music);
+                    musicManager.PlayMusicWithFade(nuScene.music, nuScene.overgange);
                 }
                 catch { }
             }

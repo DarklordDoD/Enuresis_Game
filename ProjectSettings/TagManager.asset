@@ -6,7 +6,6 @@ TagManager:
   tags:
   - SceneSkift
   - SvarText
-  - petSkift
   - ShowPet
   - RecorseInterakt
   - Obstacle
@@ -19,6 +18,8 @@ TagManager:
   - Ground
   - Border
   - ShopItem
+  - DataSamling
+  - ItemSkift
   layers:
   - Default
   - TransparentFX

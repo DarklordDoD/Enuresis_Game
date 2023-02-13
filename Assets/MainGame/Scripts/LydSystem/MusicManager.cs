@@ -96,11 +96,12 @@ public class MusicManager : MonoBehaviour
             activeSource.Play();
 
         float t = 0.0f;
+        float v = ((float)GetComponent<Instilinger>().soundLevel / 100); //telle volume Instillenger med
 
         //Fade out
         for (t = 0; t < transitionTime; t += Time.deltaTime)
         {
-            activeSource.volume = (1 - (t / transitionTime));
+            activeSource.volume = (v - (t / transitionTime));
             yield return null;
         }
 
@@ -114,8 +115,13 @@ public class MusicManager : MonoBehaviour
 
         for (t = 0; t < transitionTime; t += Time.deltaTime)
         {
-            activeSource.volume = (t / transitionTime);
-            yield return null;
+            if (v > (t / transitionTime))
+            {
+                activeSource.volume = (t / transitionTime);
+                yield return null;
+            }
+            else
+                activeSource.volume = v;
         }
     }
     private IEnumerator UpdateMusicWithCrossFade(AudioSource original, AudioSource newSource, float transitionTime)
