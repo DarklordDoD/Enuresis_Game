@@ -11,12 +11,12 @@ public class ObjecktSkift : MonoBehaviour
     private string itemType;
     [SerializeField]
     private int itemNumber;
-
+    [SerializeField]
     KledeSkab itemS;
 
     private void Start()
     {
-        itemS = GameObject.FindGameObjectWithTag("GameController").GetComponent<KledeSkab>();
+        itemS = GetComponentInParent<KledeSkab>();
     }
 
     public void SkiftItemTil()
