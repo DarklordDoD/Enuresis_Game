@@ -124,5 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb9e1bb1fa8f7234dbb3b0a71475a427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: box
-  itemName: Blue
+  itemType: Box
+  limNumber: 1
