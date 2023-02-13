@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class KledeSkab : MonoBehaviour
 {
@@ -12,12 +10,16 @@ public class KledeSkab : MonoBehaviour
 
     [SerializeField]
     private List<ItemListClass> alleItemLists;
+    [SerializeField]
+    private GameObject thePet;
 
     // Start is called before the first frame update
     void Start()
     {
         itemManeger = GameObject.FindGameObjectWithTag("GameController").GetComponent<AllItems>();
         Invoke("OpenSkab", 1);
+
+        thePet = GameObject.FindGameObjectWithTag("ShowPet");
     }
 
     public void OpenSkab()
@@ -79,27 +81,52 @@ public class KledeSkab : MonoBehaviour
 
     public void RotateItem(string itemTyps, int itemNumber, bool goLeft = false)
     {
-        try
+        GameObject theItem;
+
+        foreach (ItemListClass itemL in alleItemLists)
         {
-            if (goLeft)
-                itemNumber -= 1;
-            else
-                itemNumber += 1;
-        }
-        catch
-        {
-            Debug.Log(itemTyps + " not faund");
-        }
+            if (itemTyps == itemL.listName)
+            {
+                if (goLeft)
+                {
+                    itemNumber -= 1;
+
+                    if (itemNumber < 0)
+                        itemNumber = itemL.listObjekts.Count - 1;
+                    
+                }
+                else
+                {
+                    itemNumber += 1;
+
+                    if (itemNumber > itemL.listObjekts.Count - 1)
+                        itemNumber = 0;
+                                  
+                }             
+
+                theItem = itemL.listObjekts[itemNumber];
+
+                if(theItem != null)
+                {
+                    try
+                    {
+                        foreach (GameObject itemOS in GameObject.FindGameObjectsWithTag("ShopItem"))
+                        {
+                            if (itemOS.GetComponent<Item>().itemType == itemTyps)
+                                Destroy(itemOS);
+                        }
+                    }
+                    catch { }
+                }
+
+                GameObject petLim = thePet.transform.GetChild(theItem.GetComponent<Item>().limNumber).gameObject;
+                Instantiate(theItem, petLim.GetComponent<Transform>());
+            }
+        }     
 
         foreach (var rotateButten in GameObject.FindGameObjectsWithTag("ItemSkift"))
         {
             rotateButten.GetComponent<ObjecktSkift>().SetItemNumber(itemNumber, itemTyps);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
