@@ -5,20 +5,23 @@ using UnityEngine;
 
 public class KledeSkab : MonoBehaviour
 {
-    private AllItems itemManeger;
     [SerializeField]
-    private List<GameObject> itemsISkab;
+    private Vector2 showPosition;
 
-    [SerializeField]
+    private AllItems itemManeger;
+    private List<GameObject> itemsISkab;
     private List<ItemListClass> alleItemLists;
-    [SerializeField]
     private GameObject thePet;
 
     // Start is called before the first frame update
     void Start()
     {
-        itemManeger = GameObject.FindGameObjectWithTag("GameController").GetComponent<AllItems>();
+        GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
+        itemManeger = gameController.GetComponent<AllItems>();
         Invoke("OpenSkab", 1);
+
+        PetScelektion sP = gameController.GetComponent<PetScelektion>();
+        Instantiate(sP.petScelektion[sP.petType], showPosition, Quaternion.identity);
 
         thePet = GameObject.FindGameObjectWithTag("ShowPet");
     }

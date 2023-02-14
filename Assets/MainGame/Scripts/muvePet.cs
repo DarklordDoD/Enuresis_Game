@@ -42,7 +42,6 @@ public class muvePet : MonoBehaviour
     private float petTimer;
 
     [Header("Animation")]
-    [SerializeField]
     private Animator animator;
     
 
@@ -68,6 +67,8 @@ public class muvePet : MonoBehaviour
     {
         RandomWalk();
         rb = GetComponent<Rigidbody2D>();
+
+        rngTimer = timerRange.x;
 
         Invoke("lateStart", 0.5f);
     }
@@ -102,7 +103,11 @@ public class muvePet : MonoBehaviour
         if (pointDistance > pointClosness)
         {
             //start walking (Animation)
-            animator.SetBool("Run-element", true);
+            try
+            {
+                animator.SetBool("Run-element", true);
+            }
+            catch { }
 
             //flytter pette imod destinationen 
             float walkSteps = walkSpeed * Time.deltaTime;
@@ -120,7 +125,11 @@ public class muvePet : MonoBehaviour
             venter = true;
 
             //stop walking (Animation)
-            animator.SetBool("Run-element", false);
+            try
+            {
+                animator.SetBool("Run-element", false);
+            }
+            catch { }
         }
     }
 

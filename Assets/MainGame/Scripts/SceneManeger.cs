@@ -47,11 +47,12 @@ public class SceneManeger : MonoBehaviour
         MusicForScene("Stue");
     }
 
-    public void MiniGameUI (bool minigame)
+    public void MiniGameUI (bool minigame, bool omkledning)
     {
         //fjern UI information når man går ind i minigame
-        standartUI.SetActive(minigame);
-
+        if (omkledning)
+            standartUI.SetActive(minigame);
+        
         thePet.SetActive(minigame);
     }
 

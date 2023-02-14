@@ -23,14 +23,14 @@ public class SceneSkift : MonoBehaviour
         }
         catch
         {
-            SceneManager.LoadScene(skiftSceneTil);
+            if (aktivateUI == null)
+                SceneManager.LoadScene(skiftSceneTil);
         }
-
 
         if (aktivateUI == null)
         {
             scM.NewScene(skiftSceneTil);
-            scM.MiniGameUI(minigame);           
+            scM.MiniGameUI(minigame, true);
         }
         else
         {
@@ -38,6 +38,9 @@ public class SceneSkift : MonoBehaviour
 
             foreach (GameObject go in GameObject.FindGameObjectsWithTag("SceneSkift"))
                 go.GetComponent<Collider2D>().enabled = !aktivate;
+
+            if (skiftSceneTil == "Omkledning")
+            scM.MiniGameUI(minigame, minigame);
         }
     }
 }
