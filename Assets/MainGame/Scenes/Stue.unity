@@ -3257,6 +3257,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: gladIkonList.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 27ecc14499a39410cb9f3c576baa80f6, type: 3}
     - target: {fileID: 712255104591520818, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_Name
       value: GameController
