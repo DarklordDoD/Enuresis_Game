@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +18,12 @@ public class AddRessourcer : MonoBehaviour
     private float klikTimer;
     [SerializeField]
     private bool tjekTrikker;
+    [SerializeField]
+    private Collider2D Detecter;
+    private void Start()
+    {
+        Detecter = transform.GetChild(0).gameObject.GetComponent<Collider2D>();
+    }
 
     private void Update()
     {
@@ -37,6 +45,7 @@ public class AddRessourcer : MonoBehaviour
 
                 klikTimer = 0;
                 tjekTrikker = false;
+                Detecter.enabled = false;
 
                 ressourcer.RemuveTis(addRessuorcerTil[0]);
                 ressourcer.AddVand(addRessuorcerTil[1]);
@@ -48,5 +57,6 @@ public class AddRessourcer : MonoBehaviour
     public void DoTask()
     {
         tjekTrikker = true;
+        Detecter.enabled = true;
     }
 }
