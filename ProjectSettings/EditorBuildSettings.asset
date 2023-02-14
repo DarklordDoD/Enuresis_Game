@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/MainGame/Scenes/PetShop.unity
     guid: 20d2d11fed6b8c14296fef0c1c3e7e1c
   - enabled: 1
+    path: Assets/MainGame/Scenes/Bedroom.unity
+    guid: d0abf20cb04a9264a8bfebe93e8bdbd2
+  - enabled: 1
     path: Assets/Snake/Scenes/StartMenuSnake.unity
     guid: a975a8f458182422d8337b94d96daff9
   - enabled: 1
