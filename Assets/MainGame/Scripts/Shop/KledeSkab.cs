@@ -7,30 +7,33 @@ public class KledeSkab : MonoBehaviour
 {
     [SerializeField]
     private Vector2 showPosition;
+    [SerializeField]
+    private GameObject noCosmetic;
 
     private AllItems itemManeger;
-    private List<GameObject> itemsISkab;
+    [SerializeField]
     private List<ItemListClass> alleItemLists;
     private GameObject thePet;
+    private GameObject playerPet;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
-        itemManeger = gameController.GetComponent<AllItems>();
+        itemManeger = GameObject.FindGameObjectWithTag("GameController").GetComponent<AllItems>();
         Invoke("OpenSkab", 1);
 
-        PetScelektion sP = gameController.GetComponent<PetScelektion>();
-        Instantiate(sP.petScelektion[sP.petType], showPosition, Quaternion.identity);
-
         thePet = GameObject.FindGameObjectWithTag("ShowPet");
+
+        playerPet = GameObject.FindGameObjectWithTag("Player");
+        playerPet.GetComponent<muvePet>().enabled = false;
+        playerPet.transform.position = showPosition;
+
+        thePet.GetComponent<Animator>().SetBool("Run-element", false);
     }
 
     public void OpenSkab()
     {
-        itemsISkab = itemManeger.boughtItems;
-
-        foreach (var item in itemsISkab)
+        foreach (var item in itemManeger.boughtItems)
         {
             try
             {
@@ -47,6 +50,7 @@ public class KledeSkab : MonoBehaviour
     {
         ItemListClass extraListClass = new ItemListClass();
         extraListClass.listName = item.GetComponent<Item>().itemType;
+
         alleItemLists.Add(extraListClass);
 
         AddItemToList(item, extraListClass, false);
@@ -71,7 +75,7 @@ public class KledeSkab : MonoBehaviour
 
     private void AddItemToList(GameObject item, ItemListClass extraListClass, bool hasList)
     {
-        List<GameObject> extraList = new List<GameObject>();
+        List<GameObject> extraList = new List<GameObject>() {noCosmetic};
 
         if (hasList)
             extraList = extraListClass.listObjekts;
@@ -123,8 +127,12 @@ public class KledeSkab : MonoBehaviour
                     catch { }
                 }
 
-                GameObject petLim = thePet.transform.GetChild(theItem.GetComponent<Item>().limNumber).gameObject;
-                Instantiate(theItem, petLim.GetComponent<Transform>());
+                try
+                {
+                    GameObject petLim = thePet.transform.GetChild(theItem.GetComponent<Item>().limNumber).gameObject;
+                    Instantiate(theItem, petLim.GetComponent<Transform>());
+                } 
+                catch { }
             }
         }     
 
@@ -132,5 +140,10 @@ public class KledeSkab : MonoBehaviour
         {
             rotateButten.GetComponent<ObjecktSkift>().SetItemNumber(itemNumber, itemTyps);
         }
+    }
+
+    public void GoOut()
+    {
+        playerPet.GetComponent<muvePet>().enabled = true;
     }
 }

@@ -30,7 +30,7 @@ public class SceneSkift : MonoBehaviour
         if (aktivateUI == null)
         {
             scM.NewScene(skiftSceneTil);
-            scM.MiniGameUI(minigame, true);
+            scM.MiniGameUI(minigame);
         }
         else
         {
@@ -38,9 +38,6 @@ public class SceneSkift : MonoBehaviour
 
             foreach (GameObject go in GameObject.FindGameObjectsWithTag("SceneSkift"))
                 go.GetComponent<Collider2D>().enabled = !aktivate;
-
-            if (skiftSceneTil == "Omkledning")
-            scM.MiniGameUI(minigame, minigame);
         }
     }
 }

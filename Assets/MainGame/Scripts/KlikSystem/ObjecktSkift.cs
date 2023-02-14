@@ -11,8 +11,7 @@ public class ObjecktSkift : MonoBehaviour
     private string itemType;
     [SerializeField]
     private int itemNumber;
-    [SerializeField]
-    KledeSkab itemS;
+    private KledeSkab itemS;
 
     private void Start()
     {
