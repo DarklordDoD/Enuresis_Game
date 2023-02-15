@@ -68,5 +68,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SimonMiniGame/Scenes/TutorialScene_Simon.unity
     guid: 39af8dff3fb5b3445a428f5462719e59
+  - enabled: 1
+    path: Assets/Shop/Scenes/Shop_Scene.unity
+    guid: 4bd242ef933d3444ebd999a032646e2e
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 6f0895d3c2fcec041832f5f1648e21f3, type: 2}
