@@ -174,7 +174,7 @@ public class Snake : MonoBehaviour
 		_segments.Clear();
    
    
-   		SceneManager.LoadScene(sceneNum);
+   		SceneManager.LoadScene("SnakeEnd");
    }
    
    //Kode til at køre tidligere opsat kode, når spilleren enden samler mad op, eller rammer væggene/sig selv
