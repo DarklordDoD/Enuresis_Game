@@ -173,6 +173,16 @@ public class Ressourcer : MonoBehaviour
 
     private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            AddVand(-(maxBar / 2));
+
+            RemuveTis(-(maxBar / 2));
+
+            AddGlad(-(maxBar / 2));
+        }
+
         tisShowMeter = Mathf.Lerp(tisShowMeter, tisMeter, meterSpeed * Time.deltaTime);
         tisShow.size = tisShowMeter / maxBar;
 
