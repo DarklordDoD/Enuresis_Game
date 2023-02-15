@@ -25,6 +25,12 @@ public class KledeSkab : MonoBehaviour
         thePet = GameObject.FindGameObjectWithTag("ShowPet");
 
         playerPet = GameObject.FindGameObjectWithTag("Player");
+
+        PlacePet();
+    }
+
+    public void PlacePet()
+    {
         playerPet.GetComponent<muvePet>().enabled = false;
         playerPet.transform.position = showPosition;
 

@@ -73,10 +73,14 @@ public class muvePet : MonoBehaviour
         Invoke("lateStart", 0.5f);
     }
 
-    private void lateStart()
+    public void lateStart()
     {
-        //get animator
-        animator = transform.GetChild(0).gameObject.GetComponent<Animator>();
+        try
+        {
+            //get animator
+            animator = transform.GetChild(0).gameObject.GetComponent<Animator>();
+        }
+        catch { }
     }
 
     // Update is called once per frame 

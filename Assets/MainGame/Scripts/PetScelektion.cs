@@ -99,6 +99,10 @@ public class PetScelektion : MonoBehaviour
         thePet = GameObject.FindGameObjectWithTag("Player");
         Instantiate(petScelektion[petType], thePet.transform);
 
+        thePet.GetComponent<muvePet>().lateStart();
+
         GetComponent<SceneManeger>().NewScene("Stue");
+
+        
     }
 }
