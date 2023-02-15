@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Xml.Linq;
 using UnityEngine;
 
 public class muvePet : MonoBehaviour
@@ -39,6 +40,9 @@ public class muvePet : MonoBehaviour
     private float petEffekt;
 
     private float petTimer;
+
+    [Header("Animation")]
+    private Animator animator;
     
 
     // Start is called before the first frame update
@@ -63,6 +67,16 @@ public class muvePet : MonoBehaviour
     {
         RandomWalk();
         rb = GetComponent<Rigidbody2D>();
+
+        rngTimer = timerRange.x;
+
+        Invoke("lateStart", 0.5f);
+    }
+
+    private void lateStart()
+    {
+        //get animator
+        animator = transform.GetChild(0).gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame 
@@ -88,6 +102,13 @@ public class muvePet : MonoBehaviour
 
         if (pointDistance > pointClosness)
         {
+            //start walking (Animation)
+            try
+            {
+                animator.SetBool("Run-element", true);
+            }
+            catch { }
+
             //flytter pette imod destinationen 
             float walkSteps = walkSpeed * Time.deltaTime;
             rb.position = Vector2.MoveTowards(transform.position, nextPoint, walkSteps);
@@ -102,6 +123,13 @@ public class muvePet : MonoBehaviour
             //stopper med at flytte pettet og gøre klar til nyt indput
             valgtWalk = false;
             venter = true;
+
+            //stop walking (Animation)
+            try
+            {
+                animator.SetBool("Run-element", false);
+            }
+            catch { }
         }
     }
 
@@ -175,9 +203,20 @@ public class muvePet : MonoBehaviour
     {
         if (petTimer >= timeMellemPets)
         {
+            //Start vink (Animation)
+            animator.SetBool("Wave-element", true);
+            Invoke("SropVink", 0.3f);
+
             petTimer = 0;
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<Ressourcer>().AddGlad(petEffekt);
-        }       
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<Ressourcer>().AddGlad(petEffekt);         
+        }
+            
+    }
+
+    private void SropVink()
+    {
+        //stop vink (Animation)
+        animator.SetBool("Wave-element", false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

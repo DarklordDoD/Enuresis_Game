@@ -20,9 +20,7 @@ public class Ressourcer : MonoBehaviour
     private float tisVandUp;
 
     [SerializeField]
-    private string bed;
-    [SerializeField]
-    private List<Sprite> bedState;
+    private GameObject stain;
 
     [Header("Vand Resurce")]
     [SerializeField]
@@ -139,6 +137,14 @@ public class Ressourcer : MonoBehaviour
         tisShow.size = tisMeter / maxBar;
         vandShow.size = vandMeter / maxBar;
         gladShow.size = gladMeter / maxBar;
+
+        if (DateTime.Today.Day - dato.Day > 0)
+        {
+            GetComponent<SceneManeger>().NewScene("Bedroom");
+
+            if (tisMeter >= maxBar)
+                Invoke("Ulykke", 0.5f);
+        }
     }
 
     // Update is called once per frame
@@ -150,9 +156,7 @@ public class Ressourcer : MonoBehaviour
             opdateringsTid = 0;
 
             if (tisMeter < maxBar)
-                TisControl(); //controler tis resurcen. fylder den op over tid
-            else
-                Ulykke();
+                TisControl(); //controler tis resurcen. fylder den op over tid              
 
             if (vandMeter >= minBar)
                 VandControl(); //controler tørst resurcen. tømmer den over tid
@@ -185,22 +189,16 @@ public class Ressourcer : MonoBehaviour
 
     private void Ulykke()
     {
-        if (loadSykse)
-        if (DateTime.Today.Day - dato.Day > 0)
-            {
-                RemuveTis(UnityEngine.Random.Range(2000, 5000));
+        RemuveTis(UnityEngine.Random.Range(2000, 5000));
 
-                try
-                {
-                    GameObject.Find(bed).GetComponent<SpriteRenderer>().sprite = bedState[1];
-                }
-                catch { }
-            }
+        stain = GameObject.FindGameObjectWithTag("Stain");
+
+        stain.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     public void CleanUlykke()
     {
-        GameObject.Find(bed).GetComponent<SpriteRenderer>().sprite = bedState[0];
+        stain.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     private void TisControl()

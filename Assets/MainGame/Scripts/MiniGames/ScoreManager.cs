@@ -25,7 +25,7 @@ public class ScoreManager : MonoBehaviour
     }
 
     //Hvilket kode spilleret skal køre, når det starter
-    /*void Start()
+    void Start()
     {
         //Finde spillerens højeste score:
         highscore = PlayerPrefs.GetInt("highscore", 0);
@@ -33,7 +33,7 @@ public class ScoreManager : MonoBehaviour
         //Skrive spillerens score og highscore på valgte tekst elementer i Unity:
         scoreText.text = "SCORE: " + score.ToString();
         highscoreText.text = "HIGHSCORE: " + highscore.ToString();
-    }*/
+    }
 
     public void StartAGame()
     {

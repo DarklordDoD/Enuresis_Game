@@ -55,10 +55,6 @@ public class KlikObjekt : MonoBehaviour
                     hit.collider.GetComponent<SceneSkift>().SkiftTil();
                     break;
 
-                case "petSkift":
-                    hit.collider.GetComponent<ObjecktSkift>().SkiftTil();
-                    break;
-
                 case "RecorseInterakt":
                     hit.collider.GetComponent<AddRessourcer>().DoTask();
                     break;

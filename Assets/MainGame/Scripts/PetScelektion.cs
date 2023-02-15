@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class PetScelektion : MonoBehaviour
 {
-    [SerializeField]
-    private List<GameObject> petScelektion;
+    public List<GameObject> petScelektion;
     [SerializeField]
     private Vector2 showPosition;
+
     public string petName;
-    [SerializeField]
-    private int petType;
+    [HideInInspector]
+    public int petType;
 
     private List<string> saveList;
     [SerializeField]

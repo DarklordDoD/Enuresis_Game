@@ -23,14 +23,14 @@ public class SceneSkift : MonoBehaviour
         }
         catch
         {
-            SceneManager.LoadScene(skiftSceneTil);
+            if (aktivateUI == null)
+                SceneManager.LoadScene(skiftSceneTil);
         }
-
 
         if (aktivateUI == null)
         {
             scM.NewScene(skiftSceneTil);
-            scM.MiniGameUI(minigame);           
+            scM.MiniGameUI(minigame);
         }
         else
         {

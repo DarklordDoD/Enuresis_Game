@@ -51,7 +51,7 @@ public class SceneManeger : MonoBehaviour
     {
         //fjern UI information når man går ind i minigame
         standartUI.SetActive(minigame);
-
+        
         thePet.SetActive(minigame);
     }
 
@@ -71,7 +71,7 @@ public class SceneManeger : MonoBehaviour
             if (nuScene.sceneMedMusic.ToString() == scene)
             {
                 try {
-                    musicManager.PlayMusic(nuScene.music);
+                    musicManager.PlayMusicWithFade(nuScene.music, nuScene.overgange);
                 }
                 catch { }
             }

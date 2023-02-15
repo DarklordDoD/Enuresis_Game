@@ -7,16 +7,25 @@ public class ObjecktSkift : MonoBehaviour
     [SerializeField]
     private bool right; //Hvilken retning skal den roter
 
-    PetScelektion petS;
+    [SerializeField]
+    private string itemType;
+    [SerializeField]
+    private int itemNumber;
+    private KledeSkab itemS;
 
     private void Start()
     {
-            petS = GameObject.FindGameObjectWithTag("GameController").GetComponent<PetScelektion>();
+        itemS = GetComponentInParent<KledeSkab>();
     }
 
-    //for besked om at den næste sene skal loades
-    public void SkiftTil()
+    public void SkiftItemTil()
     {
-        petS.RotatePet(right);
+        itemS.RotateItem(itemType, itemNumber, right);
+    }
+
+    public void SetItemNumber(int itemN, string itemT)
+    {
+        if (itemT == itemType)
+            itemNumber = itemN;
     }
 }
