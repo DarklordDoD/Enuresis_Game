@@ -20,6 +20,7 @@ TagManager:
   - ShopItem
   - DataSamling
   - ItemSkift
+  - Stain
   layers:
   - Default
   - TransparentFX
