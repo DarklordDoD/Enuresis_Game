@@ -138,13 +138,14 @@ public class Ressourcer : MonoBehaviour
         vandShow.size = vandMeter / maxBar;
         gladShow.size = gladMeter / maxBar;
 
-        if (DateTime.Today.Day - dato.Day > 0)
-        {
-            GetComponent<SceneManeger>().NewScene("Bedroom");
+        if (loadSykse)
+            if (DateTime.Today.Day - dato.Day > 0)
+            {
+                GetComponent<SceneManeger>().NewScene("Bedroom");
 
-            if (tisMeter >= maxBar)
-                Invoke("Ulykke", 0.5f);
-        }
+                if (tisMeter >= maxBar)
+                    Invoke("Ulykke", 0.5f);
+            }
     }
 
     // Update is called once per frame
