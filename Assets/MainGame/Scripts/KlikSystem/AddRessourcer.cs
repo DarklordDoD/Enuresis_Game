@@ -23,6 +23,8 @@ public class AddRessourcer : MonoBehaviour
     private void Start()
     {
         Detecter = transform.GetChild(0).gameObject.GetComponent<Collider2D>();
+
+        klikTimer = delayMellemKlik;
     }
 
     private void Update()

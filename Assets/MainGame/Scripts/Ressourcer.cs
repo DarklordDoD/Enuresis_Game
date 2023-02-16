@@ -19,8 +19,8 @@ public class Ressourcer : MonoBehaviour
     [SerializeField]
     private float tisVandUp;
 
-    [SerializeField]
-    private GameObject stain;
+    [HideInInspector]
+    public bool aktivStain;
 
     [Header("Vand Resurce")]
     [SerializeField]
@@ -151,7 +151,7 @@ public class Ressourcer : MonoBehaviour
                 GetComponent<SceneManeger>().NewScene("Bedroom");
 
                 if (tisMeter >= maxBar)
-                    Invoke("Ulykke", 0.5f);
+                    Invoke("Ulykke", 0.1f);
             }
     }
 
@@ -223,9 +223,7 @@ public class Ressourcer : MonoBehaviour
     {
         RemuveTis(UnityEngine.Random.Range(2000, 5000));
 
-        stain = GameObject.FindGameObjectWithTag("Stain");
-
-        stain.GetComponent<Ulykke>().HarTisset(true);
+        GameObject.FindGameObjectWithTag("Stain").GetComponent<Ulykke>().HarTisset(true);
     }
 
     private void TisControl()
@@ -315,7 +313,7 @@ public class Ressourcer : MonoBehaviour
     {
         dato = DateTime.Today + DateTime.Now.TimeOfDay; //finder dato og tid
 
-        saveR = new List<string>() {"","","","",""}; //set list lengde
+        saveR = new List<string>() {"","","","","",""}; //set list lengde
 
         //samle alle variabler i en liste
         saveR[0] = dato.ToString("dd/MM/yyyy HH:mm:ss");
@@ -323,6 +321,7 @@ public class Ressourcer : MonoBehaviour
         saveR[2] = vandMeter.ToString();
         saveR[3] = gladMeter.ToString();
         saveR[4] = monny.ToString();
+        saveR[5] = aktivStain.ToString();
 
         foreach (int s in GetComponent<Snacks>().snacks)
         {
@@ -338,7 +337,8 @@ public class Ressourcer : MonoBehaviour
         SaveClass.LoadFromFile("MainGame", out gotList);
 
         dato = DateTime.Parse(gotList[0]);
-        
+        aktivStain = bool.Parse(gotList[5]);
+
         loadSykse = true;
     }
 }
