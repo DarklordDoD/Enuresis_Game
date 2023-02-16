@@ -90,14 +90,17 @@ public class muvePet : MonoBehaviour
         if (!onTask)
             KlikPoint(); //rigistrer om spilleren klikker på skærmen
 
-        if (!venter)
-            WalkTo(); //får pettet til at gå imod et point
-
         if (!valgtWalk)
             RandomWalk(); //setter et tefeldigt point som pette vil gå til
 
         if (petTimer <= timeMellemPets)
             petTimer += Time.deltaTime;
+    }
+
+    private void FixedUpdate()
+    {
+        if (!venter)
+            WalkTo(); //får pettet til at gå imod et point
     }
 
     private void WalkTo()

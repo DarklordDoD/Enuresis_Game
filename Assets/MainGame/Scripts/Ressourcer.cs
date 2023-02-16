@@ -133,6 +133,10 @@ public class Ressourcer : MonoBehaviour
             gladMeter = maxBar;
         }
 
+        TjekMinOgMax(tisMeter, out tisMeter);
+        TjekMinOgMax(vandMeter, out vandMeter);
+        TjekMinOgMax(gladMeter, out gladMeter);
+
         //set alle de visuelle meter
         tisShow.size = tisMeter / maxBar;
         vandShow.size = vandMeter / maxBar;
@@ -146,6 +150,20 @@ public class Ressourcer : MonoBehaviour
                 if (tisMeter >= maxBar)
                     Invoke("Ulykke", 0.5f);
             }
+    }
+
+    //sørge for at der ikke er nummer der går uden for max eller min value
+    private float TjekMinOgMax(float value, out float valueOut)
+    {
+        valueOut = value;
+
+        if (value > maxBar)
+            valueOut = maxBar;
+
+        if (value < 0)
+            valueOut = 0;
+
+        return valueOut;
     }
 
     // Update is called once per frame
@@ -204,12 +222,7 @@ public class Ressourcer : MonoBehaviour
 
         stain = GameObject.FindGameObjectWithTag("Stain");
 
-        stain.GetComponent<SpriteRenderer>().enabled = true;
-    }
-
-    public void CleanUlykke()
-    {
-        stain.GetComponent<SpriteRenderer>().enabled = false;
+        stain.GetComponent<Ulykke>().HarTisset(true);
     }
 
     private void TisControl()

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class PetScelektion : MonoBehaviour
 {
@@ -42,11 +42,28 @@ public class PetScelektion : MonoBehaviour
         if (inPetMenu)
         {
             Instantiate(petScelektion[petType], showPosition, Quaternion.identity); //Vis det nye pet
-            
+
             Invoke("HidePet", 0);
-        } 
+        }
         else
+        {
             Instantiate(petScelektion[petType], thePet.transform);
+
+            List<GameObject> ownedItems = GetComponent<AllItems>().boughtItems;
+            GameObject petSkin = thePet.transform.GetChild(0).gameObject;
+
+            for (int i = 2; i < saveList.Count; i++)
+            {
+                try
+                {
+                    GameObject wear = ownedItems.Where(obj => obj.name == saveList[i]).SingleOrDefault();
+
+                    GameObject petLim = petSkin.transform.GetChild(wear.GetComponent<Item>().limNumber).gameObject;
+                    Instantiate(wear, petLim.GetComponent<Transform>());
+                }
+                catch { }
+            }
+        }
     }
 
     private void HidePet()
@@ -101,8 +118,6 @@ public class PetScelektion : MonoBehaviour
 
         thePet.GetComponent<muvePet>().lateStart();
 
-        GetComponent<SceneManeger>().NewScene("Stue");
-
-        
+        GetComponent<SceneManeger>().NewScene("Stue");       
     }
 }

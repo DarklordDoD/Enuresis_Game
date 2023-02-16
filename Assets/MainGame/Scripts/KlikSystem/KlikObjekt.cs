@@ -62,6 +62,10 @@ public class KlikObjekt : MonoBehaviour
                 case "ShopItem":
                     hit.collider.GetComponent<KlikBuy>().BuyThisItem();
                     break;
+
+                case "Stain":
+                    hit.collider.GetComponent<Ulykke>().HarTisset(false);
+                    break;
             }
 
         }
