@@ -18,7 +18,7 @@ public class BuyButton : MonoBehaviour
        
         for(int i = 0; i < CosmeticsShop.cosmeticsShop.cosmeticsList.Count; i++)
         {
-            
+
             if (CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsID == cosmeticsID && !CosmeticsShop.cosmeticsShop.cosmeticsList[i].bought && CurrencyManager.currencyManager.RequestCurrency(CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsPrice))
             {
                 //Buy the weapon
@@ -26,15 +26,17 @@ public class BuyButton : MonoBehaviour
                 CurrencyManager.currencyManager.LowerCurrency(CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsPrice);
                 //Set cosmetic ID in your system
             }
-            else if(CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsID == cosmeticsID && !CosmeticsShop.cosmeticsShop.cosmeticsList[i].bought && !CurrencyManager.currencyManager.RequestCurrency(CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsPrice))
+            else if (CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsID == cosmeticsID && !CosmeticsShop.cosmeticsShop.cosmeticsList[i].bought && !CurrencyManager.currencyManager.RequestCurrency(CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsPrice))
             {
                 Debug.Log("Not enough money!");
             }
-            else if(CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsID == cosmeticsID && CosmeticsShop.cosmeticsShop.cosmeticsList[i].bought)
-            {
-                Debug.Log("Item has been sold already");
-                UpdateBuyButton();
-            }
+            else
+            if (CosmeticsShop.cosmeticsShop.cosmeticsList[i].unlimited == false)
+                if (CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsID == cosmeticsID && CosmeticsShop.cosmeticsShop.cosmeticsList[i].bought)
+                {
+                    Debug.Log("Item has been sold already");
+                    UpdateBuyButton();
+                }
         }
 
        CosmeticsShop.cosmeticsShop.UpdateSprite(cosmeticsID); //This is tempoary, we need to grey out this system later, since we do not want to update on clicks, but instead need to change the system to update on buy.

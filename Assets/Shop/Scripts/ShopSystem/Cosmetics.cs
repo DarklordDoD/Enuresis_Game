@@ -17,6 +17,9 @@ public class Cosmetics{
 
 
     public int cosmeticsPrice;
+
+    public bool unlimited;
+
     public bool bought;
     //STATS
 }
