@@ -391,11 +391,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cosmeticsList:
-  - cosmeticsName: "Sl\xF8jfe"
+  - cosmeticsName: Snack
     cosmeticsID: 1
-    SpriteName: Bow
-    cosmeticsPrice: 2000
-    unlimited: 0
+    SpriteName: Snack
+    cosmeticsPrice: 50
+    unlimited: 1
     bought: 0
   - cosmeticsName: Krone
     cosmeticsID: 2
@@ -467,6 +467,12 @@ MonoBehaviour:
     cosmeticsID: 13
     SpriteName: Wizard_Hat
     cosmeticsPrice: 10
+    unlimited: 0
+    bought: 0
+  - cosmeticsName: "Sl\xF8jfe"
+    cosmeticsID: 14
+    SpriteName: Bow
+    cosmeticsPrice: 2000
     unlimited: 0
     bought: 0
   buyButtonList: []
