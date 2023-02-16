@@ -22,7 +22,11 @@ public class BuyButton : MonoBehaviour
             if (CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsID == cosmeticsID && !CosmeticsShop.cosmeticsShop.cosmeticsList[i].bought && CurrencyManager.currencyManager.RequestCurrency(CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsPrice))
             {
                 //Buy the weapon
-                CosmeticsShop.cosmeticsShop.cosmeticsList[i].bought = true;
+                if (CosmeticsShop.cosmeticsShop.cosmeticsList[i].unlimited == false)
+                    CosmeticsShop.cosmeticsShop.cosmeticsList[i].bought = true;
+                else
+
+
                 CurrencyManager.currencyManager.LowerCurrency(CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsPrice);
                 //Set cosmetic ID in your system
             }
@@ -39,7 +43,7 @@ public class BuyButton : MonoBehaviour
                 }
         }
 
-       CosmeticsShop.cosmeticsShop.UpdateSprite(cosmeticsID); //This is tempoary, we need to grey out this system later, since we do not want to update on clicks, but instead need to change the system to update on buy.
+        CosmeticsShop.cosmeticsShop.UpdateSprite(cosmeticsID); //This is tempoary, we need to grey out this system later, since we do not want to update on clicks, but instead need to change the system to update on buy.
     }
 
     void UpdateBuyButton()

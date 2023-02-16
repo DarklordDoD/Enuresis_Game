@@ -54,6 +54,9 @@ public class Ressourcer : MonoBehaviour
     [SerializeField]
     private float gladVandNed;
 
+    [Header("Monny")]
+    public int monny;
+
     [Header("Andet")]
     [SerializeField]
     private float reduceSpeed;
@@ -312,13 +315,19 @@ public class Ressourcer : MonoBehaviour
     {
         dato = DateTime.Today + DateTime.Now.TimeOfDay; //finder dato og tid
 
-        saveR = new List<string>() {"","","",""}; //set list lengde
+        saveR = new List<string>() {"","","","",""}; //set list lengde
 
         //samle alle variabler i en liste
         saveR[0] = dato.ToString("dd/MM/yyyy HH:mm:ss");
         saveR[1] = tisMeter.ToString();
         saveR[2] = vandMeter.ToString();
         saveR[3] = gladMeter.ToString();
+        saveR[4] = monny.ToString();
+
+        foreach (int s in GetComponent<Snacks>().snacks)
+        {
+            saveR.Add(s.ToString());
+        }
 
         SaveClass.WriteToFile("MainGame" ,saveR, false); //gem via save system
     }
