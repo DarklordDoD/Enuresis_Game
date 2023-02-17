@@ -12,7 +12,7 @@ public class AddRessourcer : MonoBehaviour
     [SerializeField]
     private float delayMellemKlik;
     [SerializeField]
-    private Scrollbar showTimer;
+    private Image showTimer;
 
     private Ressourcer ressourcer;
     private float klikTimer;
@@ -23,6 +23,8 @@ public class AddRessourcer : MonoBehaviour
     private void Start()
     {
         Detecter = transform.GetChild(0).gameObject.GetComponent<Collider2D>();
+
+        klikTimer = delayMellemKlik;
     }
 
     private void Update()
@@ -31,7 +33,7 @@ public class AddRessourcer : MonoBehaviour
             klikTimer += Time.deltaTime;
 
         if (showTimer)
-            showTimer.size = klikTimer / delayMellemKlik;
+            showTimer.fillAmount = klikTimer / delayMellemKlik;
     }
 
     public void AddNow()

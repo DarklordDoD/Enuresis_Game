@@ -19,10 +19,8 @@ public class Ressourcer : MonoBehaviour
     [SerializeField]
     private float tisVandUp;
 
-    [SerializeField]
-    private string bed;
-    [SerializeField]
-    private List<Sprite> bedState;
+    [HideInInspector]
+    public bool aktivStain;
 
     [Header("Vand Resurce")]
     [SerializeField]
@@ -55,6 +53,9 @@ public class Ressourcer : MonoBehaviour
     private float whenVandNed;
     [SerializeField]
     private float gladVandNed;
+
+    [Header("Monny")]
+    public int monny;
 
     [Header("Andet")]
     [SerializeField]
@@ -135,10 +136,37 @@ public class Ressourcer : MonoBehaviour
             gladMeter = maxBar;
         }
 
+        TjekMinOgMax(tisMeter, out tisMeter);
+        TjekMinOgMax(vandMeter, out vandMeter);
+        TjekMinOgMax(gladMeter, out gladMeter);
+
         //set alle de visuelle meter
         tisShow.size = tisMeter / maxBar;
         vandShow.size = vandMeter / maxBar;
         gladShow.size = gladMeter / maxBar;
+
+        if (loadSykse)
+            if (DateTime.Today.Day - dato.Day > 0)
+            {
+                GetComponent<SceneManeger>().NewScene("Bedroom");
+
+                if (tisMeter >= maxBar)
+                    Invoke("Ulykke", 0.1f);
+            }
+    }
+
+    //sørge for at der ikke er nummer der går uden for max eller min value
+    private float TjekMinOgMax(float value, out float valueOut)
+    {
+        valueOut = value;
+
+        if (value > maxBar)
+            valueOut = maxBar;
+
+        if (value < 0)
+            valueOut = 0;
+
+        return valueOut;
     }
 
     // Update is called once per frame
@@ -150,9 +178,7 @@ public class Ressourcer : MonoBehaviour
             opdateringsTid = 0;
 
             if (tisMeter < maxBar)
-                TisControl(); //controler tis resurcen. fylder den op over tid
-            else
-                Ulykke();
+                TisControl(); //controler tis resurcen. fylder den op over tid              
 
             if (vandMeter >= minBar)
                 VandControl(); //controler tørst resurcen. tømmer den over tid
@@ -168,6 +194,16 @@ public class Ressourcer : MonoBehaviour
 
     private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            AddVand(-(maxBar / 2));
+
+            RemuveTis(-(maxBar / 2));
+
+            AddGlad(-(maxBar / 2));
+        }
+
         tisShowMeter = Mathf.Lerp(tisShowMeter, tisMeter, meterSpeed * Time.deltaTime);
         tisShow.size = tisShowMeter / maxBar;
 
@@ -185,22 +221,9 @@ public class Ressourcer : MonoBehaviour
 
     private void Ulykke()
     {
-        if (loadSykse)
-        if (DateTime.Today.Day - dato.Day > 0)
-            {
-                RemuveTis(UnityEngine.Random.Range(2000, 5000));
+        RemuveTis(UnityEngine.Random.Range(2000, 5000));
 
-                try
-                {
-                    GameObject.Find(bed).GetComponent<SpriteRenderer>().sprite = bedState[1];
-                }
-                catch { }
-            }
-    }
-
-    public void CleanUlykke()
-    {
-        GameObject.Find(bed).GetComponent<SpriteRenderer>().sprite = bedState[0];
+        GameObject.FindGameObjectWithTag("Stain").GetComponent<Ulykke>().HarTisset(true);
     }
 
     private void TisControl()
@@ -290,13 +313,20 @@ public class Ressourcer : MonoBehaviour
     {
         dato = DateTime.Today + DateTime.Now.TimeOfDay; //finder dato og tid
 
-        saveR = new List<string>() {"","","",""}; //set list lengde
+        saveR = new List<string>() {"","","","","",""}; //set list lengde
 
         //samle alle variabler i en liste
         saveR[0] = dato.ToString("dd/MM/yyyy HH:mm:ss");
         saveR[1] = tisMeter.ToString();
         saveR[2] = vandMeter.ToString();
         saveR[3] = gladMeter.ToString();
+        saveR[4] = monny.ToString();
+        saveR[5] = aktivStain.ToString();
+
+        foreach (int s in GetComponent<Snacks>().snacks)
+        {
+            saveR.Add(s.ToString());
+        }
 
         SaveClass.WriteToFile("MainGame" ,saveR, false); //gem via save system
     }
@@ -307,7 +337,8 @@ public class Ressourcer : MonoBehaviour
         SaveClass.LoadFromFile("MainGame", out gotList);
 
         dato = DateTime.Parse(gotList[0]);
-        
+        aktivStain = bool.Parse(gotList[5]);
+
         loadSykse = true;
     }
 }

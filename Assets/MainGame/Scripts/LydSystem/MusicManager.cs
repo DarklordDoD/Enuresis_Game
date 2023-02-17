@@ -69,11 +69,12 @@ public class MusicManager : MonoBehaviour
         activeSource.Play();
     }
     public void PlayMusicWithFade(AudioClip newClip, float transitionTime = 1.0f)
-    {
+    {       
         // Determine which source is active
         AudioSource activeSource = (firstMusicSourceIsPlaying) ? musicSource : musicSource2;
 
-        StartCoroutine(UpdateMusicWithFade(activeSource, newClip, transitionTime));
+        if (newClip != activeSource.clip)
+            StartCoroutine(UpdateMusicWithFade(activeSource, newClip, transitionTime));
     }
     public void PlayMusicWithCrossFade(AudioClip musicClip, float transitionTime = 1.0f)
     {

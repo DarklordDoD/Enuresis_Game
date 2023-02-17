@@ -73,10 +73,14 @@ public class muvePet : MonoBehaviour
         Invoke("lateStart", 0.5f);
     }
 
-    private void lateStart()
+    public void lateStart()
     {
-        //get animator
-        animator = transform.GetChild(0).gameObject.GetComponent<Animator>();
+        try
+        {
+            //get animator
+            animator = transform.GetChild(0).gameObject.GetComponent<Animator>();
+        }
+        catch { }
     }
 
     // Update is called once per frame 
@@ -86,14 +90,17 @@ public class muvePet : MonoBehaviour
         if (!onTask)
             KlikPoint(); //rigistrer om spilleren klikker på skærmen
 
-        if (!venter)
-            WalkTo(); //får pettet til at gå imod et point
-
         if (!valgtWalk)
             RandomWalk(); //setter et tefeldigt point som pette vil gå til
 
         if (petTimer <= timeMellemPets)
             petTimer += Time.deltaTime;
+    }
+
+    private void FixedUpdate()
+    {
+        if (!venter)
+            WalkTo(); //får pettet til at gå imod et point
     }
 
     private void WalkTo()

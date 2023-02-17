@@ -25,6 +25,12 @@ public class KledeSkab : MonoBehaviour
         thePet = GameObject.FindGameObjectWithTag("ShowPet");
 
         playerPet = GameObject.FindGameObjectWithTag("Player");
+
+        PlacePet();
+    }
+
+    public void PlacePet()
+    {
         playerPet.GetComponent<muvePet>().enabled = false;
         playerPet.transform.position = showPosition;
 
@@ -145,5 +151,23 @@ public class KledeSkab : MonoBehaviour
     public void GoOut()
     {
         playerPet.GetComponent<muvePet>().enabled = true;
+
+        List<string> gotList;
+        
+        SaveClass.LoadFromFile("Pet", out gotList);
+
+        List<string> saveList = new List<string> {gotList[0], gotList[1]};
+
+        foreach (Transform lim in thePet.transform)
+        {
+            try
+            {
+                string[] itemName = lim.transform.GetChild(0).gameObject.name.Split("(");
+                saveList.Add(itemName[0]);
+            }
+            catch { }
+        }
+
+        SaveClass.WriteToFile("Pet",saveList , false);
     }
 }

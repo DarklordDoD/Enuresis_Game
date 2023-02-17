@@ -51,8 +51,9 @@ public class DataSamling : MonoBehaviour
 
         if (lastSvarDato != DateTime.Today.ToString("dd-MM-yyyy"))
         {
-            dato.text = DateTime.Today.ToString("dd/MM/yyyy"); //sette dagens dato ind på skærmen
-            svarList.Add(DateTime.Today.ToString("dd/MM/yyyy")); //setter dagens dato på gem listen
+
+            dato.text = DateTime.Today.ToString("dd-MM-yyyy"); //sette dagens dato ind på skærmen
+            svarList.Add(dato.text); //setter dagens dato på gem listen
             page = -1;
             NextSpogsmaal();
         }

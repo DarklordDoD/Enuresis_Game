@@ -39,5 +39,11 @@ public class SceneSkift : MonoBehaviour
             foreach (GameObject go in GameObject.FindGameObjectsWithTag("SceneSkift"))
                 go.GetComponent<Collider2D>().enabled = !aktivate;
         }
+
+        try
+        {
+            aktivateUI.GetComponent<KledeSkab>().PlacePet();
+        }
+        catch { }
     }
 }
