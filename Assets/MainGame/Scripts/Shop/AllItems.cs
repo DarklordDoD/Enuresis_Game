@@ -23,13 +23,16 @@ public class AllItems : MonoBehaviour
         catch { }
     }
 
-    public void BuyItem(string item)
+    public void BuyItem(string item, bool saveNow)
     {
-        try
-        {
-            boughtItems.Add(items.Where(obj => obj.name == item).SingleOrDefault());
-        }
-        catch { }
+        boughtItems.Add(items.Where(obj => obj.name == item).SingleOrDefault());
+
+        int lastItem = boughtItems.Count - 1;
+        if (boughtItems[lastItem] == null)
+            boughtItems[lastItem] = items.Where(obj => obj.GetComponent<Item>().ID.ToString() == item).SingleOrDefault();
+
+        if (saveNow)
+            SaveList();
     }
 
     private void LoadList()
@@ -38,7 +41,7 @@ public class AllItems : MonoBehaviour
 
         foreach (string item in loadItems)
         {
-            BuyItem(item);           
+            BuyItem(item, false);           
         }
 
         try
@@ -50,8 +53,6 @@ public class AllItems : MonoBehaviour
 
     public void SaveList()
     {
-        saveItems.Add(monny.ToString());
-
         foreach (GameObject item in boughtItems)
         {
             try
@@ -62,5 +63,7 @@ public class AllItems : MonoBehaviour
         }
 
         SaveClass.WriteToFile("Items", saveItems, false);
+
+        saveItems.Clear();
     }
 }

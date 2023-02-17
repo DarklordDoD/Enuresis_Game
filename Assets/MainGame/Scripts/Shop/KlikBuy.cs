@@ -22,7 +22,7 @@ public class KlikBuy : MonoBehaviour
         {
             itemList.monny -= pris;
 
-            itemList.BuyItem(theItem.name);
+            itemList.BuyItem(theItem.name, true);
             itemList.SaveList();
 
             GetComponent<SpriteRenderer>().enabled = false;
