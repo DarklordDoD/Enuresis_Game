@@ -157,19 +157,16 @@ public class KledeSkab : MonoBehaviour
         SaveClass.LoadFromFile("Pet", out gotList);
 
         List<string> saveList = new List<string> {gotList[0], gotList[1]};
-        List<string> aktivCosmetics = new List<string>();
 
         foreach (Transform lim in thePet.transform)
         {
             try
             {
                 string[] itemName = lim.transform.GetChild(0).gameObject.name.Split("(");
-                aktivCosmetics.Add(itemName[0]);
+                saveList.Add(itemName[0]);
             }
             catch { }
         }
-
-        saveList.AddRange(aktivCosmetics);
 
         SaveClass.WriteToFile("Pet",saveList , false);
     }
