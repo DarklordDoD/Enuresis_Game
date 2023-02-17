@@ -15,11 +15,40 @@ public class CosmeticsShop : MonoBehaviour
     public GameObject itemHolderPrefab;
     public Transform grid;
 
+    private AllItems cosmeticStorage;
+
     // Start is called before the first frame update
     void Start()
     {
         cosmeticsShop = this;
         FillList();
+        TestBougt();
+    }
+
+    private void TestBougt()
+    {
+        cosmeticStorage = GameObject.FindGameObjectWithTag("GameController").GetComponent<AllItems>();
+
+        foreach (GameObject item in cosmeticStorage.boughtItems) //gå igennem alle items der er købt
+        {
+            foreach (Cosmetics shopItem in cosmeticsList)
+            {
+                if (!shopItem.unlimited && shopItem.cosmeticsID == item.GetComponent<Item>().ID) //find items på købt list i shoppen
+                {
+                    shopItem.bought = true; //set items til at være købt
+
+                    //opdater desplayet i shoppen
+                    foreach (GameObject shopButten in buyButtonList)
+                    {
+                        if (shopButten.GetComponent<BuyButton>().cosmeticsID == item.GetComponent<Item>().ID)
+                        {
+                            shopButten.GetComponent<BuyButton>().UpdateBuyButton();
+                            UpdateSprite(shopButten.GetComponent<BuyButton>().cosmeticsID);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     void FillList()
