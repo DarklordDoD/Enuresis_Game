@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class BuyButton : MonoBehaviour
 {
@@ -24,8 +25,6 @@ public class BuyButton : MonoBehaviour
                 //Buy the weapon
                 if (CosmeticsShop.cosmeticsShop.cosmeticsList[i].unlimited == false)
                     CosmeticsShop.cosmeticsShop.cosmeticsList[i].bought = true;
-                else
-
 
                 CurrencyManager.currencyManager.LowerCurrency(CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsPrice);
                 //Set cosmetic ID in your system
@@ -46,7 +45,7 @@ public class BuyButton : MonoBehaviour
         CosmeticsShop.cosmeticsShop.UpdateSprite(cosmeticsID); //This is tempoary, we need to grey out this system later, since we do not want to update on clicks, but instead need to change the system to update on buy.
     }
 
-    void UpdateBuyButton()
+    public void UpdateBuyButton()
     {
         buttonText.text = "Aktiv";
         //Change cosmetic on your character / add the cosmetic

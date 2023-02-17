@@ -8,4 +8,5 @@ public class Item : MonoBehaviour
 {
     public string itemType;
     public int limNumber;
+    public int ID;
 }

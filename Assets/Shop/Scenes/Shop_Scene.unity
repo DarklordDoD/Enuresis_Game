@@ -409,7 +409,7 @@ MonoBehaviour:
     cosmeticsPrice: 10000
     unlimited: 0
     bought: 0
-  - cosmeticsName: "Hvid/r\xF8d Joker hat"
+  - cosmeticsName: "Hvid/r\xF8d Joker Hat"
     cosmeticsID: 4
     SpriteName: Joker_White_Red
     cosmeticsPrice: 10

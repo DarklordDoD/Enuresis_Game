@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8341130504237877160}
   - component: {fileID: 3117183595257179931}
   m_Layer: 0
-  m_Name: joker - white and red
+  m_Name: "Hvid_r\xF8d Joker Hat"
   m_TagString: ShopItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,3 +99,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: Neck
   limNumber: 0
+  ID: 4

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2918815622265477029}
   - component: {fileID: 2439695423153178896}
   m_Layer: 0
-  m_Name: Wizard hat
+  m_Name: Troldmandshat
   m_TagString: ShopItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,3 +99,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: Hat
   limNumber: 1
+  ID: 13
