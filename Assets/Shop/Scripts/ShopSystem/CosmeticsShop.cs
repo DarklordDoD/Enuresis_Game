@@ -93,7 +93,7 @@ public class CosmeticsShop : MonoBehaviour
                 {
                     if(cosmeticsList[j].cosmeticsID == cosmeticsID)
                     {
-                  //      if (cosmeticsList[j].unlimited == false)
+                        if (cosmeticsList[j].unlimited == false)
                         if (cosmeticsList[j].bought)
                         {
                             holderScript.itemImage.sprite = Resources.Load<Sprite>("Sprites/" + cosmeticsList[i].SpriteName + "_Sold");
