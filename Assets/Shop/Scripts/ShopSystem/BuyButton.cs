@@ -10,10 +10,13 @@ public class BuyButton : MonoBehaviour
     public Text buttonText;
 
     private AllItems itemList;
+    private Snacks SnavkStorige;
 
     private void Start()
     {
-        itemList = GameObject.FindGameObjectWithTag("GameController").GetComponent<AllItems>();
+        GameObject gameManeger = GameObject.FindGameObjectWithTag("GameController");
+        itemList = gameManeger.GetComponent<AllItems>();
+        SnavkStorige = gameManeger.GetComponent<Snacks>();
     }
 
     public void BuyCosmetic()//On click
@@ -35,6 +38,10 @@ public class BuyButton : MonoBehaviour
                     CosmeticsShop.cosmeticsShop.cosmeticsList[i].bought = true;
 
                     itemList.BuyItem((i + 1).ToString(), true);
+                }
+                else
+                {
+                    SnavkStorige.changeSnaks(CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsName, true, out bool isAdd);
                 }
 
                 CurrencyManager.currencyManager.LowerCurrency(CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsPrice);

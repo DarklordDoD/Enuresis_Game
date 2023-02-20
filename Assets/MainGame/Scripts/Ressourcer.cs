@@ -71,7 +71,8 @@ public class Ressourcer : MonoBehaviour
     private float meterSpeed;
 
     private List<string> saveR;
-    private List<string> gotList;
+    [HideInInspector]
+    public List<string> gotList;
     private bool loadSykse; 
 
     private void Awake()
@@ -148,10 +149,7 @@ public class Ressourcer : MonoBehaviour
         if (loadSykse)
             if (DateTime.Today.Day - dato.Day > 0)
             {
-                GetComponent<SceneManeger>().NewScene("Bedroom");
-
-                if (tisMeter >= maxBar)
-                    Invoke("Ulykke", 0.1f);
+                Invoke("Ulykke", 0.1f);
             }
     }
 
@@ -221,9 +219,14 @@ public class Ressourcer : MonoBehaviour
 
     private void Ulykke()
     {
-        RemuveTis(UnityEngine.Random.Range(2000, 5000));
+        GetComponent<SceneManeger>().NewScene("Bedroom");
 
-        GameObject.FindGameObjectWithTag("Stain").GetComponent<Ulykke>().HarTisset(true);
+        if (tisMeter >= maxBar)
+        {
+            RemuveTis(UnityEngine.Random.Range(2000, 5000));
+
+            GameObject.FindGameObjectWithTag("Stain").GetComponent<Ulykke>().HarTisset(true);
+        }
     }
 
     private void TisControl()
@@ -323,9 +326,9 @@ public class Ressourcer : MonoBehaviour
         saveR[4] = monny.ToString();
         saveR[5] = aktivStain.ToString();
 
-        foreach (int s in GetComponent<Snacks>().snacks)
+        foreach (ASnack s in GetComponent<Snacks>().snacks)
         {
-            saveR.Add(s.ToString());
+            saveR.Add($"{s.snackType},{s.amaunt}");
         }
 
         SaveClass.WriteToFile("MainGame" ,saveR, false); //gem via save system
@@ -338,7 +341,10 @@ public class Ressourcer : MonoBehaviour
 
         dato = DateTime.Parse(gotList[0]);
         aktivStain = bool.Parse(gotList[5]);
+        monny = int.Parse(gotList[4]);
 
         loadSykse = true;
+
+        GetComponent<Snacks>().LoadSnacks();
     }
 }
