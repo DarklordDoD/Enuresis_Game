@@ -11,11 +11,17 @@ public class CurrencyManager : MonoBehaviour
     [SerializeField] private int currency;
 
     public Text currencyText;
+    [SerializeField]
+    private Ressourcer ressourcer;
 
     // Start is called before the first frame update
     void Start()
     {
         currencyManager = this;
+
+        ressourcer = GameObject.FindGameObjectWithTag("GameController").GetComponent<Ressourcer>();
+        currency = ressourcer.monny;
+
         UpdateUI();
     }
 
@@ -48,6 +54,8 @@ public class CurrencyManager : MonoBehaviour
     void UpdateUI()
     {
         currencyText.text = "$ " + currency.ToString("N0");
+
+        ressourcer.monny = currency;
     }
 
 }
