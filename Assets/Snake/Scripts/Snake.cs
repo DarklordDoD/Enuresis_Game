@@ -65,37 +65,37 @@ public class Snake : MonoBehaviour
    //Fortælle hvad knapperne skal gøre når de bliver trykket på. Her at lave spilleren/slanges retning op, ned, venstre eller højre
    public void OnClickRight()
    {
-   		if(_direction.x != 0f){
+   		if(head.direction.x != 0f){
 			return;
 		} else {
-			input = Vector2.right;
+			head.SetDirection(Vector2.right, Vector2.zero);
 		}
    }
    
    public void OnClickLeft()
    {
-   		if(_direction.x != 0f){
+   		if(head.direction.x != 0f){
 			return;
 		} else {
-			input = Vector2.left;
+			head.SetDirection(Vector2.left, Vector2.zero);
 		}
    }
    
    public void OnClickUp()
    {
-   		if(_direction.y != 0f){
+   		if(head.direction.y != 0f){
 			return;
 		} else {
-			input = Vector2.up;
+			head.SetDirection(Vector2.up, Vector2.zero);
 		}
    }
    
    public void OnClickDown()
    {
-   		if(_direction.y != 0f){
+   		if(head.direction.y != 0f){
 			return;
 		} else {
-			input = Vector2.down;
+			head.SetDirection(Vector2.down, Vector2.zero);
 		}
    }
    
