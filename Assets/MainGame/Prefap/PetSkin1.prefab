@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 5803780440325321274}
   - component: {fileID: 5032859279991309519}
   - component: {fileID: 5522869240518592000}
+  - component: {fileID: 9024333855326306972}
   m_Layer: 0
   m_Name: PetSkin1
   m_TagString: ShowPet
@@ -284,6 +285,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9024333855326306972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5803780440325321275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274a3d8933c45de479fb95f521104bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5803780440774308868
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,7 +924,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8233184081491785820}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -995,7 +1008,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8452169118838467728}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

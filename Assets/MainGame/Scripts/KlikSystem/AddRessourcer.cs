@@ -16,13 +16,21 @@ public class AddRessourcer : MonoBehaviour
 
     private Ressourcer ressourcer;
     private float klikTimer;
-    [SerializeField]
     private bool tjekTrikker;
-    [SerializeField]
     private Collider2D Detecter;
+
+    [SerializeField]
+    private string theAnimation;
+    private Animator petAnimator;
+    private muvePet petMuvment;
+
     private void Start()
     {
         Detecter = transform.GetChild(0).gameObject.GetComponent<Collider2D>();
+
+        GameObject thePet = GameObject.FindGameObjectWithTag("Player");
+        petAnimator = thePet.GetComponentInChildren<Animator>();
+        petMuvment = thePet.GetComponent<muvePet>();
 
         klikTimer = delayMellemKlik;
     }
@@ -44,6 +52,10 @@ public class AddRessourcer : MonoBehaviour
 
             if (klikTimer >= delayMellemKlik)
             {
+                petMuvment.onTask = true;
+                petAnimator.SetBool(theAnimation, true);
+                
+                Invoke("StopAnimation", 0.5f);
 
                 klikTimer = 0;
                 tjekTrikker = false;
@@ -54,6 +66,11 @@ public class AddRessourcer : MonoBehaviour
                 ressourcer.AddGlad(addRessuorcerTil[2]);
             }
         }
+    }
+
+    private void StopAnimation()
+    {
+        petAnimator.SetBool(theAnimation, false);
     }
 
     public void DoTask()

@@ -22,7 +22,8 @@ public class muvePet : MonoBehaviour
     private Vector2 siceControle;
 
     private bool valgtWalk;
-    private bool onTask;
+    [HideInInspector]
+    public bool onTask;
 
     private Rigidbody2D rb;
     private Vector2 nextPoint;
@@ -107,7 +108,7 @@ public class muvePet : MonoBehaviour
     {
         DistanceToPoint(transform.position, nextPoint); //rigistrer hvor tæt pettet er på sin point
 
-        if (pointDistance > pointClosness)
+        if (pointDistance > pointClosness && !onTask)
         {
             //start walking (Animation)
             try
@@ -216,8 +217,7 @@ public class muvePet : MonoBehaviour
 
             petTimer = 0;
             GameObject.FindGameObjectWithTag("GameController").GetComponent<Ressourcer>().AddGlad(petEffekt);         
-        }
-            
+        }           
     }
 
     private void SropVink()
