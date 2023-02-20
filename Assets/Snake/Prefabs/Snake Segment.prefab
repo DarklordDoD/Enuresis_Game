@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8676663032272949020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.75, y: 1.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 41b5718e7841d487fbaf0e6d464bc32e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63dc128546aa148bfad5afb43d7c4bfd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.61, y: 0.61}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -103,14 +103,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.61, y: 0.61}
+    newSize: {x: 0.61, y: 0.61}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 0.75}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &-6128977758136471176
 MonoBehaviour:
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0603c7f05c0fe48aa8f3d08e33ab838a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  head: {fileID: 21300000, guid: b343d0b1ec95f4d6aaf2fbccb957feef, type: 3}
-  tail: {fileID: 21300000, guid: c7240f8a35d1a4317a59caa117263ad9, type: 3}
-  body: {fileID: 21300000, guid: 41b5718e7841d487fbaf0e6d464bc32e, type: 3}
-  corner: {fileID: 21300000, guid: c9c0c8aaa77cc4246877132943d64626, type: 3}
+  head: {fileID: 21300000, guid: 48978d6d1c57a4a9baab5cfb332ae2f6, type: 3}
+  tail: {fileID: 21300000, guid: d13e4d2bc51b84c2390042eee66a44d0, type: 3}
+  body: {fileID: 21300000, guid: 63dc128546aa148bfad5afb43d7c4bfd, type: 3}
+  corner: {fileID: 21300000, guid: c984a4a45fded4a52bd8f5e3dd605bb8, type: 3}
