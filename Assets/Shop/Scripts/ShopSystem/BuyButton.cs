@@ -9,6 +9,13 @@ public class BuyButton : MonoBehaviour
     public int cosmeticsID;
     public Text buttonText;
 
+    private AllItems itemList;
+
+    private void Start()
+    {
+        itemList = GameObject.FindGameObjectWithTag("GameController").GetComponent<AllItems>();
+    }
+
     public void BuyCosmetic()//On click
     {
         if (cosmeticsID == 0)
@@ -24,7 +31,11 @@ public class BuyButton : MonoBehaviour
             {
                 //Buy the weapon
                 if (CosmeticsShop.cosmeticsShop.cosmeticsList[i].unlimited == false)
+                {
                     CosmeticsShop.cosmeticsShop.cosmeticsList[i].bought = true;
+
+                    itemList.BuyItem((i + 1).ToString(), true);
+                }
 
                 CurrencyManager.currencyManager.LowerCurrency(CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsPrice);
                 //Set cosmetic ID in your system
