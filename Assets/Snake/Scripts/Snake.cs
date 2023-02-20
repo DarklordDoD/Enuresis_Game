@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
+
+[RequireComponent(typeof(BoxCollider2D))]
 public class Snake : MonoBehaviour
 {
    //Opsætning til at bevæge spilleren
@@ -12,10 +14,10 @@ public class Snake : MonoBehaviour
    private Vector2 input;
    
    //Opsætning til de segmenter, som skal på for at gøre slangen større
-   private List<Transform> _segments = new List<Transform>();
-   public Transform segmentPrefab;
-   
-   public int initialSize = 3;
+   private List<SnakeSegment> _segments = new List<SnakeSegment>();
+   private SnakeSegment head;
+   public SnakeSegment segmentPrefab;
+   public int initialSize = 4;
    
    //Opsætning til at kunne bestemme farten på slangen/spillet
    public float speed = 20f;
@@ -29,6 +31,16 @@ public class Snake : MonoBehaviour
    public Button leftButton;
    public Button rightButton;
 	
+   private void Awake()
+    {
+        head = GetComponent<SnakeSegment>();
+
+        if (head == null)
+        {
+            head = gameObject.AddComponent<SnakeSegment>();
+            head.hideFlags = HideFlags.HideInInspector;
+        }
+    }
 	
    //Det som spillet skal gøre, når det starter
    private void Start()
@@ -91,20 +103,20 @@ public class Snake : MonoBehaviour
    private void Update()
    {
     	// Only allow turning up or down while moving in the x-axis
-		if (_direction.x != 0f){
+		if (head.direction.x != 0f){
         	if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
-				input = Vector2.up;
+				head.SetDirection(Vector2.up, Vector2.zero);
 				} else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) {
-					input = Vector2.down;
+					head.SetDirection(Vector2.down, Vector2.zero);
         		}
     	}
 	
     	// Only allow turning left or right while moving in the y-axis
-    	else if (_direction.y != 0f){
+    	else if (head.direction.y != 0f){
         	if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) {
-            	input = Vector2.right;
+            	head.SetDirection(Vector2.right, Vector2.zero);
         	} else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) {
-            	input = Vector2.left;
+            	head.SetDirection(Vector2.left, Vector2.zero);
         	}
     	}
    }
@@ -122,49 +134,51 @@ public class Snake : MonoBehaviour
     }
    
    
-   		for(int i = _segments.Count -1; i > 0; i--)
-		{
-			_segments[i].position = _segments[i - 1].position;
-		}
+   		 for (int i = _segments.Count - 1; i > 0; i--) {
+            _segments[i].Follow(_segments[i - 1], i, _segments.Count);
+        }
    
    		// Move the snake in the direction it is facing
     	// Round the values to ensure it aligns to the grid
-		float x = Mathf.Round(transform.position.x) + _direction.x;
-    	float y = Mathf.Round(transform.position.y) + _direction.y;
+		float x = Mathf.Round(head.transform.position.x) + head.direction.x;
+    	float y = Mathf.Round(head.transform.position.y) + head.direction.y;
 
-    	transform.position = new Vector2(x, y);
+    	head.transform.position = new Vector2(x, y);
     	nextUpdate = Time.time + (1f / (speed * speedMultiplier));
    }
    
    //Opsætning til at vokse spilleren
    private void Grow()
    {
-   		Transform segment = Instantiate(this.segmentPrefab);
-		segment.position = _segments[_segments.Count -1].position;
-		
-		_segments.Add(segment);
+   		SnakeSegment _segment = Instantiate(segmentPrefab);
+        _segment.Follow(_segments[_segments.Count - 1], _segments.Count, _segments.Count + 1);
+        _segments.Add(_segment);
    }
    
    //Kode til at angive, hvordan spilleren start, blandt andet hvor lang de er
    private void StartState()
    {
-   		for(int i = 1; i < _segments.Count; i++){
-			Destroy(_segments[i].gameObject);
-		}
-		
-		_segments.Clear();
-		_segments.Add(this.transform);
-		
-		for(int i = 1; i < this.initialSize; i++){
-			_segments.Add(Instantiate(this.segmentPrefab));
-		}
-		
-		this.transform.position = Vector3.zero;
+   		 // Set the initial direction of the snake, starting at the origin
+        // (center of the grid)
+        head.SetDirection(Vector2.right, Vector2.zero);
+        head.transform.position = Vector3.zero;
+
+        // Start at 1 to skip destroying the head
+        for (int i = 1; i < _segments.Count; i++) {
+            Destroy(_segments[i].gameObject);
+        }
+
+        // Clear the list then add the head as the first segment
+        _segments.Clear();
+        _segments.Add(head);
+
+        // -1 since the head is already in the list
+        for (int i = 0; i < initialSize - 1; i++) {
+            Grow();
+   		}
    }
    
    //Kode til at loade slut skærmmen når spilleren rammer væggene/sig selv
-   public int sceneNum;
-   
    private void FailState()
    {
    		for(int i = 1; i < _segments.Count; i++){
@@ -188,7 +202,7 @@ public class Snake : MonoBehaviour
    }
    
    //Opsætning til hvad tæller som en væg eller spillerens krop
-   public bool Occupies(float x, float y)
+   /*public bool Occupies(float x, float y)
    {
     	foreach (Transform segment in _segments)
     	{
@@ -198,5 +212,6 @@ public class Snake : MonoBehaviour
     	}
 
     	return false;
-   }
+   }*/
 }
+

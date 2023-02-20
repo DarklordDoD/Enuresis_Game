@@ -4,57 +4,30 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-	//Opsætning til at 
-  	public BoxCollider2D gridArea;
-  
-  	private Snake snake;
+	public Collider2D gridArea;
 
-  	private void Awake()
-  	{
-   		snake = FindObjectOfType<Snake>();
-  	}
-  
-  	private void Start()
-  	{
-  		RandomizePosition();
-  	}
-  
-  	public void RandomizePosition()
-  	{
-    	Bounds bounds = gridArea.bounds;
+    private void Start()
+    {
+        RandomizePosition();
+    }
 
-    	// Pick a random position inside the bounds
-    	float x = Random.Range(bounds.min.x, bounds.max.x);
-    	float y = Random.Range(bounds.min.y, bounds.max.y);
+    public void RandomizePosition()
+    {
+        Bounds bounds = gridArea.bounds;
 
-    	// Round the values to ensure it aligns with the grid
-    	x = Mathf.Round(x);
-    	y = Mathf.Round(y);
+        // Pick a random position inside the bounds
+        float x = Random.Range(bounds.min.x, bounds.max.x);
+        float y = Random.Range(bounds.min.y, bounds.max.y);
 
-    	// Prevent food from spawning on the snake
-    	while (snake.Occupies(x, y))
-    	{
-        	x++;
+        // Round the values to ensure it aligns with the grid
+        x = Mathf.Round(x);
+        y = Mathf.Round(y);
 
-        	if (x > bounds.max.x)
-        	{
-            	x = bounds.min.x;
-            	y++;
+        transform.position = new Vector2(x, y);
+    }
 
-            	if (y > bounds.max.y) {
-                	y = bounds.min.y;
-            	}
-        	}
-    	}
-
-    	// Assign the final position
-    	transform.position = new Vector2(x, y);
-		}
-  
-  	private void OnTriggerEnter2D(Collider2D other)
-   	{
-   		if(other.tag == "Player"){
-			RandomizePosition();
-		}
-   	}
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        RandomizePosition();
+    }
 }
