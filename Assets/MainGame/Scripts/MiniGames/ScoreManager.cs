@@ -13,10 +13,11 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI highscoreText;
     [SerializeField]
-    private static string hvadGame;
+    public string hvadGame;
 
     int score = 0;
     int highscore = 0;
+    [SerializeField]
     private List<string> gotList;
 
     private void Awake()
@@ -28,43 +29,35 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         //Finde spillerens højeste score:
-        highscore = PlayerPrefs.GetInt("highscore", 0);
+        //highscore = PlayerPrefs.GetInt("highscore", 0);
 
-        //Skrive spillerens score og highscore på valgte tekst elementer i Unity:
-        scoreText.text = "SCORE: " + score.ToString();
-        highscoreText.text = "HIGHSCORE: " + highscore.ToString();
-    }
-
-    public void StartAGame()
-    {
         //finder spillerens højeste score for selve spillet;
         try
         {
-            SaveClass.LoadFromFile(hvadGame, out gotList);
+            SaveClass.LoadFromFile("MiniGames", out gotList);
         }
         catch { gotList.Add(score.ToString()); }
 
         highscore = int.Parse(gotList[0]); //setter den gemte score som highscore
 
-        scoreText.text = "SCORE: " + score.ToString();
-        highscoreText.text = "HIGHSCORE: " + highscore.ToString();
+        scoreText.text = "Score: " + score.ToString();
+        highscoreText.text = "Highscore: " + highscore.ToString();
     }
 
 	//Tilføje til spillerens score
     public void AddPoint()
     {
         score += 1;
-        scoreText.text = "SCORE: " + score.ToString();
+        scoreText.text = "Score: " + score.ToString();
 
         //Hvis spillerens score er større end deres tidligere highscore skal scoren skrives som den nye highscore og gemmes
         if (highscore < score)
         {
-            gotList[0] = score.ToString(); ;
+            gotList[0] = score.ToString();
 
-            SaveClass.WriteToFile(hvadGame, gotList, false);
+            SaveClass.WriteToFile("MiniGames", gotList, false);
         }
 
         //PlayerPrefs.SetInt("highscore", score);
-
     }
 }
