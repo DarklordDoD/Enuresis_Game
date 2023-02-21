@@ -14,11 +14,14 @@ public class SnakeSegment : MonoBehaviour
     public Sprite body;
     public Sprite corner;
 
+    public Transform segmentPosition;
+
     public Vector2 direction { get; private set; }
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        segmentPosition = GetComponent<Transform>();
     }
 
     public void SetDirection(Vector2 direction, Vector2 previous)
