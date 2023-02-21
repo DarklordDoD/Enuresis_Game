@@ -1940,6 +1940,7 @@ GameObject:
   - component: {fileID: 4174684531747814989}
   - component: {fileID: 20522153}
   - component: {fileID: 1498230691}
+  - component: {fileID: 576724542}
   m_Layer: 5
   m_Name: GameController
   m_TagString: GameController
@@ -2108,20 +2109,20 @@ MonoBehaviour:
   tisUp: 1
   whenVandUp: 7500
   tisVandUp: 1
-  bed: 
-  bedState: []
+  aktivStain: 0
   vandShow: {fileID: 712255102721757682}
   vandNed: 1
   gladShow: {fileID: 712255103491769383}
   gladIkon: {fileID: 4554019489392100774}
   gladIkonList:
   - {fileID: 21300000, guid: e6834e26416df6f4a9e6f7444f5cc31c, type: 3}
-  - {fileID: 21300000, guid: 812d695b6f7a5de4ea840f1790f6800f, type: 3}
+  - {fileID: 21300000, guid: 27ecc14499a39410cb9f3c576baa80f6, type: 3}
   whenIkonSkift: 1000
   whenTisNed: 7500
   gladTisNed: 1
   whenVandNed: 2500
   gladVandNed: 1
+  monny: 20000
   reduceSpeed: 2
   minBar: 0
   maxBar: 10000
@@ -2170,12 +2171,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 5803780440325321275, guid: 12381bbcc99d671429678f8f3b72d328, type: 3}
-  - {fileID: 2657243501815689803, guid: 7126554099552c84fbdb6ce3db5adb3b, type: 3}
-  - {fileID: 1292709747724803223, guid: 02af1f2a6b943af4fabd15a312d0e29d, type: 3}
+  - {fileID: 4241459556726751994, guid: 00563b5f7e8b0c6439eb2b3c29b2f77d, type: 3}
+  - {fileID: 3005964767616485556, guid: 1fd077517ace2154b9b2fa6b6bdce0ca, type: 3}
+  - {fileID: 5765857350528487253, guid: 18273aee0df1df34f93e7e051e6e9b73, type: 3}
+  - {fileID: 6193395722610723217, guid: 22ab3b4ce6952d64cb7036cc99c6f039, type: 3}
+  - {fileID: 9031961606810158113, guid: 056d71b1fa54d304d8feecd1a939885d, type: 3}
+  - {fileID: 4182104456409270595, guid: 6b1bdbc52b428714a9b54c9d0893c20f, type: 3}
+  - {fileID: 6356468305703893482, guid: 0e0ded875f1daec488b467b8aa1eefc4, type: 3}
+  - {fileID: 3733619527859440139, guid: 97b72127d80b06640b4f4a35dcac9c28, type: 3}
+  - {fileID: 5642051237476371247, guid: f9faa205fba39cd4197062d464e6bea7, type: 3}
+  - {fileID: 3724665774639676685, guid: 9a23bfd039f66204db7f675bd5ac5006, type: 3}
+  - {fileID: 7089634081137354498, guid: 4e76d6186a8fa3d4b8263965dc922098, type: 3}
+  - {fileID: 2465435700772823705, guid: 3d0f831dbfba35e48b776a71623717ce, type: 3}
+  - {fileID: 7192055585708362646, guid: e88e03c5a467b654781e41d7ca3d0c22, type: 3}
   boughtItems: []
   monny: 0
   saveItems: []
+--- !u!114 &576724542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712255104591520818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42e160188fec0204082ab3073009adfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snacks: 050000000200000007000000
 --- !u!1 &712255104669333802
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,7 +2595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0362499cedc46734a85a1d7042954b41, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84c6986cb77d34fc1abaf8b0c91736b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2740,7 +2764,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 812d695b6f7a5de4ea840f1790f6800f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27ecc14499a39410cb9f3c576baa80f6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2816,7 +2840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6ccda4bd91fb2db4caf2dd03fda435d0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2766b8281bf77412d953efcbcca4d173, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2892,7 +2916,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 21b060b75e17a0c4db3b388356dbcbd4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c075c8622e3048b9bd7173c115d22b5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
