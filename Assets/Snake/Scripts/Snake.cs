@@ -202,16 +202,16 @@ public class Snake : MonoBehaviour
    }
    
    //Opsætning til hvad tæller som en væg eller spillerens krop
-   /*public bool Occupies(float x, float y)
+   public bool Occupies(float x, float y)
    {
-    	foreach (Transform segment in _segments)
+    	foreach (SnakeSegment segment in _segments)
     	{
-        	if (segment.position.x == x && segment.position.y == y) {
+        	if (segment.segmentPosition.position.x == x && segment.segmentPosition.position.y == y) {
             	return true;
         	}
     	}
 
     	return false;
-   }*/
+   }
 }
 
