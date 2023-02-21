@@ -31,8 +31,8 @@ public class ScoreManager : MonoBehaviour
         highscore = PlayerPrefs.GetInt("highscore", 0);
 
         //Skrive spillerens score og highscore på valgte tekst elementer i Unity:
-        scoreText.text = "SCORE: " + score.ToString();
-        highscoreText.text = "HIGHSCORE: " + highscore.ToString();
+        scoreText.text = "Score: " + score.ToString();
+        highscoreText.text = "Highscore: " + highscore.ToString();
     }
 
     public void StartAGame()
@@ -46,15 +46,15 @@ public class ScoreManager : MonoBehaviour
 
         highscore = int.Parse(gotList[0]); //setter den gemte score som highscore
 
-        scoreText.text = "SCORE: " + score.ToString();
-        highscoreText.text = "HIGHSCORE: " + highscore.ToString();
+        scoreText.text = "Score: " + score.ToString();
+        highscoreText.text = "Highscore: " + highscore.ToString();
     }
 
 	//Tilføje til spillerens score
     public void AddPoint()
     {
         score += 1;
-        scoreText.text = "SCORE: " + score.ToString();
+        scoreText.text = "Score: " + score.ToString();
 
         //Hvis spillerens score er større end deres tidligere highscore skal scoren skrives som den nye highscore og gemmes
         if (highscore < score)
@@ -64,7 +64,7 @@ public class ScoreManager : MonoBehaviour
             SaveClass.WriteToFile(hvadGame, gotList, false);
         }
 
-        //PlayerPrefs.SetInt("highscore", score);
+        PlayerPrefs.SetInt("highscore", score);
 
     }
 }
