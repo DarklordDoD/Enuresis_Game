@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
+using static UnityEditor.Experimental.GraphView.GraphView;
+using Unity.VisualScripting;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -17,8 +20,9 @@ public class ScoreManager : MonoBehaviour
 
     int score = 0;
     int highscore = 0;
-    [SerializeField]
     private List<string> gotList;
+    [SerializeField]
+    private List<ASnack> allMiniGames;
 
     private void Awake()
     {
@@ -32,13 +36,25 @@ public class ScoreManager : MonoBehaviour
         //highscore = PlayerPrefs.GetInt("highscore", 0);
 
         //finder spillerens højeste score for selve spillet;
+        SaveClass.LoadFromFile("MiniGames", out gotList);
+
+        if (gotList == null)
+            gotList = new List<string> { $"{hvadGame},{score}" };
+
+        foreach (string gameScore in gotList)
+        {
+            List<string> theSplitGames = gameScore.Split(",").ToList();
+
+            allMiniGames.Add(new ASnack { snackType = theSplitGames[0], amaunt = int.Parse(theSplitGames[1]) });
+        }
+
+        //setter den gemte score som highscore
         try
         {
-            SaveClass.LoadFromFile("MiniGames", out gotList);
+            FindScoreOnList(out ASnack theGame);
+            highscore = theGame.amaunt;
         }
-        catch { gotList.Add(score.ToString()); }
-
-        highscore = int.Parse(gotList[0]); //setter den gemte score som highscore
+        catch { }
 
         scoreText.text = "Score: " + score.ToString();
         highscoreText.text = "Highscore: " + highscore.ToString();
@@ -53,11 +69,37 @@ public class ScoreManager : MonoBehaviour
         //Hvis spillerens score er større end deres tidligere highscore skal scoren skrives som den nye highscore og gemmes
         if (highscore < score)
         {
-            gotList[0] = score.ToString();
+            FindScoreOnList(out ASnack theGame);
+            theGame.amaunt = score;
 
-            SaveClass.WriteToFile("MiniGames", gotList, false);
+            SaveScore();
         }
 
         //PlayerPrefs.SetInt("highscore", score);
+    }
+
+    private ASnack FindScoreOnList(out ASnack theGame)
+    {
+        foreach (ASnack gameScore in allMiniGames)
+        {
+            if (gameScore.snackType == hvadGame)
+            {
+                return theGame = gameScore;
+            }
+        }
+
+        return theGame = null;
+    }
+
+    public void SaveScore()
+    {
+        List<string> saveG = new List<string>();
+
+        foreach (ASnack gameScore in allMiniGames)
+        {
+            saveG.Add($"{gameScore.snackType},{gameScore.amaunt}");
+        }
+
+        SaveClass.WriteToFile("MiniGames", saveG, false);
     }
 }
