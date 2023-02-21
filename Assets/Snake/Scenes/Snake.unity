@@ -2185,6 +2185,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 786030284}
   highscoreText: {fileID: 2106342058}
+  hvadGame: Snake
+  gotList: []
 --- !u!1 &2011287556
 GameObject:
   m_ObjectHideFlags: 0
