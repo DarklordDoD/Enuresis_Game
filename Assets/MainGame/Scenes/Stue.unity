@@ -1186,11 +1186,11 @@ RectTransform:
   m_Father: {fileID: 1282539800}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 565, y: 0}
-  m_SizeDelta: {x: 1000, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -110, y: 0}
+  m_SizeDelta: {x: 750, y: 100}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &565584253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1218,7 +1218,7 @@ MonoBehaviour:
   m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &565584254
@@ -2376,11 +2376,11 @@ RectTransform:
   m_Father: {fileID: 712255104322090751}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -500, y: 50}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 400, y: -100}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1282539801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2393,6 +2393,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c5d4906f1b9b143b4af4cfb3d2f867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openSpeed: 150
+  snackHolder: {fileID: 3907035369886619740, guid: 0571684ed3484cf44a5ada3aadcba1a7, type: 3}
+  spacing: -150
+  startPosition: {x: -200, y: -50}
+  theSnacks: []
+  snackPosition: {x: 0, y: 0}
 --- !u!114 &1282539802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2436,7 +2442,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1282539803}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1282539801}
+        m_TargetAssemblyTypeName: SnackMenu, Assembly-CSharp
+        m_MethodName: OpenMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1282539803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2749,6 +2767,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 712255104591520810, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: standartUI.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 712255104591520810, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: standartUI.Array.data[0]
+      value: 
+      objectReference: {fileID: 712255104322090752}
+    - target: {fileID: 712255104591520810, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: standartUI.Array.data[1]
+      value: 
+      objectReference: {fileID: 1282539799}
     - target: {fileID: 712255104591520814, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2846,6 +2876,11 @@ PrefabInstance:
 --- !u!224 &712255104322090751 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 712255104591520814, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+  m_PrefabInstance: {fileID: 712255104322090750}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &712255104322090752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7263582539933010486, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
   m_PrefabInstance: {fileID: 712255104322090750}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4881987759639690621
