@@ -2774,6 +2774,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2267521004594009084, guid: 48537792bb097df4bb311c869f19f286, type: 3}
+      propertyPath: iconSnacksSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 35ab35200598bcd478202656b9ef152e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48537792bb097df4bb311c869f19f286, type: 3}
 --- !u!1001 &9108048146710967827
