@@ -1,23 +1,106 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class SnackMenu : MonoBehaviour
 {
+    [SerializeField]
+    private float openSpeed;
+    [SerializeField]
+    private GameObject snackHolder;
+    [SerializeField]
+    private int spacing;
+    [SerializeField]
+    private Vector2 startPosition;
+
     private Snacks snackStorige;
-    private GameObject menu;
+    private GameObject snackMenu;
+
+    private float openAmount;
+    private bool menuOpen;
+
+    private float insetIndhold;
+    private int nextIndhold;
+    private Vector2 snackPosition; 
 
     // Start is called before the first frame update
     void Start()
     {
         snackStorige = GetComponentInParent<Snacks>();
-        menu = this.transform.GetChild(0).gameObject;
-        menu.GetComponent<Image>();
+        snackMenu = this.transform.GetChild(0).gameObject;
+        openAmount = 0;
+        snackMenu.SetActive(false);
+
+        snackPosition.y = startPosition.y + transform.position.y;
+        snackPosition.x = startPosition.x + transform.position.x;
+    }
+
+    private void Update()
+    {
+        if (menuOpen && openAmount < 100)
+        {
+            openAmount += openSpeed * Time.deltaTime;
+
+            if (openAmount > insetIndhold)
+            {
+                if (insetIndhold < 100)
+                    if (snackStorige.snacks.Count > 10)
+                        insetIndhold += 100 / snackStorige.snacks.Count;
+                    else
+                        insetIndhold += 50;
+
+                if (snackStorige.snacks.Count > nextIndhold)
+                {
+                    Instantiate(snackHolder, snackMenu.transform);
+
+                    GameObject theShowSnack = snackMenu.transform.GetChild(snackMenu.transform.childCount - 1).gameObject;
+                    theShowSnack.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Snack/{snackStorige.snacks[nextIndhold].snackType}");
+                    theShowSnack.transform.position = snackPosition;
+
+                    snackPosition.x += spacing;
+                    nextIndhold += 1;
+                }
+            }
+        }
+        else if (!menuOpen && openAmount > 0)
+        {
+            openAmount -= openSpeed * Time.deltaTime;
+
+            snackPosition.y = startPosition.y + transform.position.y;
+            snackPosition.x = startPosition.x + transform.position.x;
+
+            if (openAmount < insetIndhold)
+            {
+                if (insetIndhold > 0)
+                    if (snackStorige.snacks.Count > 10)
+                        insetIndhold -= 100 / snackStorige.snacks.Count;
+                    else
+                        insetIndhold -= 50;
+
+                if (openAmount > 0) 
+                {
+                    int allShowSnacks = snackMenu.transform.childCount;
+
+                    if (allShowSnacks > 0)
+                        Destroy(snackMenu.transform.GetChild(allShowSnacks - 1).gameObject);
+
+                    if (nextIndhold > 0)
+                        nextIndhold -= 1;
+                }
+                else
+                { snackMenu.SetActive(false); }
+            } 
+        }
+
+        snackMenu.GetComponent<Image>().fillAmount = openAmount / 100;
     }
 
     public void OpenMenu()
-    {
-        
+    {       
+        menuOpen = !menuOpen;
+        snackMenu.SetActive(true);
     }
 }

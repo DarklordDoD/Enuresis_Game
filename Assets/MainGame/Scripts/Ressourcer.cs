@@ -149,6 +149,8 @@ public class Ressourcer : MonoBehaviour
         if (loadSykse)
             if (DateTime.Today.Day - dato.Day > 0)
             {
+                GetComponent<SceneManeger>().NewScene("Bedroom");
+
                 Invoke("Ulykke", 0.1f);
             }
     }
@@ -219,8 +221,6 @@ public class Ressourcer : MonoBehaviour
 
     private void Ulykke()
     {
-        GetComponent<SceneManeger>().NewScene("Bedroom");
-
         if (tisMeter >= maxBar)
         {
             RemuveTis(UnityEngine.Random.Range(2000, 5000));

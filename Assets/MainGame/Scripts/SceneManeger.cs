@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class SceneManeger : MonoBehaviour
 {
     [SerializeField]
-    private GameObject standartUI;
+    private List<GameObject> standartUI;
     [SerializeField]
     private List<GameObject> sporgeSkema;
 
@@ -50,7 +50,10 @@ public class SceneManeger : MonoBehaviour
     public void MiniGameUI (bool minigame)
     {
         //fjern UI information når man går ind i minigame
-        standartUI.SetActive(minigame);
+        foreach (GameObject UIElement in standartUI)
+        {
+            UIElement.SetActive(minigame);
+        }
         
         thePet.SetActive(minigame);
     }
