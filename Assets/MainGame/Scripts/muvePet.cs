@@ -22,7 +22,7 @@ public class muvePet : MonoBehaviour
     private Vector2 siceControle;
 
     private bool valgtWalk;
-    [HideInInspector]
+    //[HideInInspector]
     public bool onTask;
 
     private Rigidbody2D rb;
