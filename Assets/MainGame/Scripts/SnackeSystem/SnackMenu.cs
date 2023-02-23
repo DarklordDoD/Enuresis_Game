@@ -24,8 +24,6 @@ public class SnackMenu : MonoBehaviour
 
     private float insetIndhold;
     private int nextIndhold;
-    [HideInInspector]
-    public List<GameObject> theSnacks;
     private Vector2 snackPosition; 
 
     // Start is called before the first frame update
@@ -34,11 +32,7 @@ public class SnackMenu : MonoBehaviour
         snackStorige = GetComponentInParent<Snacks>();
         snackMenu = this.transform.GetChild(0).gameObject;
         openAmount = 0;
-
-        foreach (ASnack aSnack in snackStorige.snacks)
-        {
-            theSnacks.Add(snackHolder);
-        }
+        snackMenu.SetActive(false);
 
         snackPosition.y = startPosition.y + transform.position.y;
         snackPosition.x = startPosition.x + transform.position.x;
@@ -53,14 +47,14 @@ public class SnackMenu : MonoBehaviour
             if (openAmount > insetIndhold)
             {
                 if (insetIndhold < 100)
-                    if (theSnacks.Count > 10)
-                        insetIndhold += 100 / theSnacks.Count;
+                    if (snackStorige.snacks.Count > 10)
+                        insetIndhold += 100 / snackStorige.snacks.Count;
                     else
                         insetIndhold += 50;
 
-                if (theSnacks.Count > nextIndhold)
+                if (snackStorige.snacks.Count > nextIndhold)
                 {
-                    Instantiate(theSnacks[nextIndhold], snackMenu.transform);
+                    Instantiate(snackHolder, snackMenu.transform);
 
                     GameObject theShowSnack = snackMenu.transform.GetChild(snackMenu.transform.childCount - 1).gameObject;
                     theShowSnack.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Snack/{snackStorige.snacks[nextIndhold].snackType}");
@@ -81,8 +75,8 @@ public class SnackMenu : MonoBehaviour
             if (openAmount < insetIndhold)
             {
                 if (insetIndhold > 0)
-                    if (theSnacks.Count > 10)
-                        insetIndhold -= 100 / theSnacks.Count;
+                    if (snackStorige.snacks.Count > 10)
+                        insetIndhold -= 100 / snackStorige.snacks.Count;
                     else
                         insetIndhold -= 50;
 
@@ -95,7 +89,9 @@ public class SnackMenu : MonoBehaviour
 
                     if (nextIndhold > 0)
                         nextIndhold -= 1;
-                }               
+                }
+                else
+                { snackMenu.SetActive(false); }
             } 
         }
 
@@ -103,7 +99,8 @@ public class SnackMenu : MonoBehaviour
     }
 
     public void OpenMenu()
-    {
+    {       
         menuOpen = !menuOpen;
+        snackMenu.SetActive(true);
     }
 }
