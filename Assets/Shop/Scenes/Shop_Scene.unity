@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currency: 2000
   currencyText: {fileID: 1790609617}
+  ressourcer: {fileID: 0}
 --- !u!4 &38898715
 Transform:
   m_ObjectHideFlags: 0
@@ -393,7 +394,7 @@ MonoBehaviour:
   cosmeticsList:
   - cosmeticsName: Snack
     cosmeticsID: 1
-    SpriteName: Snack
+    SpriteName: Snacks_Merged
     cosmeticsPrice: 50
     unlimited: 1
     bought: 0
