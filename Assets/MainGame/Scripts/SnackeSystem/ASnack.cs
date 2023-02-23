@@ -7,4 +7,5 @@ public class ASnack
 {
     public string snackType;
     public int amaunt;
+    public float giveHappy;
 }

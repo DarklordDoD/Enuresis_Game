@@ -57,7 +57,7 @@ public class SnackMenu : MonoBehaviour
                     Instantiate(snackHolder, snackMenu.transform);
 
                     GameObject theShowSnack = snackMenu.transform.GetChild(snackMenu.transform.childCount - 1).gameObject;
-                    theShowSnack.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Snack/{snackStorige.snacks[nextIndhold].snackType}");
+                    theShowSnack.GetComponent<UseSnack>().snackType = snackStorige.snacks[nextIndhold].snackType;
                     theShowSnack.transform.position = snackPosition;
 
                     snackPosition.x += spacing;
@@ -80,7 +80,7 @@ public class SnackMenu : MonoBehaviour
                     else
                         insetIndhold -= 50;
 
-                if (openAmount > 0) 
+                if (openAmount > -1) 
                 {
                     int allShowSnacks = snackMenu.transform.childCount;
 
