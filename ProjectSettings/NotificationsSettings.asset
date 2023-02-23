@@ -39,6 +39,25 @@
                 "0"
             ]
         },
-        "DrawableResources": []
+        "DrawableResources": [
+            {
+                "Id": "icon_small",
+                "Type": 0,
+                "Asset": {
+                    "fileID": 2800000,
+                    "guid": "2021a93d9cb7130408a6f1594fd0479a",
+                    "type": 3
+                }
+            },
+            {
+                "Id": "icon_large",
+                "Type": 1,
+                "Asset": {
+                    "fileID": 2800000,
+                    "guid": "5eabcc6816d554e449418a9bde6ec5cf",
+                    "type": 3
+                }
+            }
+        ]
     }
 }
