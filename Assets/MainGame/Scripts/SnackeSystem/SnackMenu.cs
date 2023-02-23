@@ -24,7 +24,8 @@ public class SnackMenu : MonoBehaviour
 
     private float insetIndhold;
     private int nextIndhold;
-    private Vector2 snackPosition; 
+    private Vector2 snackPosition;
+    public bool isEating;
 
     // Start is called before the first frame update
     void Start()
