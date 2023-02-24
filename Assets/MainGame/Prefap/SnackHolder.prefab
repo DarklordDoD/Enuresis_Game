@@ -146,4 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66d2dc7e02794a945bd4bcc9b346b305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showSnack: {fileID: 1205394120141841323, guid: cf3a8732726b88e4ea0a0769b89beda2, type: 3}
   snackType: 

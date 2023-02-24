@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class UseSnack : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject showSnack;
+
     [HideInInspector]
     public string snackType;
     private Snacks snackStorige;
@@ -19,30 +22,38 @@ public class UseSnack : MonoBehaviour
 
     public void EatSnack()
     {
-        try
+        if (!GetComponentInParent<SnackMenu>().isEating)
         {
-            foreach (ASnack aSnack in snackStorige.snacks)
+            try
             {
-                if (aSnack.snackType == snackType)
+                foreach (ASnack aSnack in snackStorige.snacks)
                 {
-                    aSnack.amaunt -= 1;
-
-                    GetComponentInParent<Ressourcer>().AddGlad(aSnack.giveHappy);
-
-                    thePet.GetComponentInChildren<Animator>().SetBool("Spise", true);
-                    thePet.GetComponent<muvePet>().onTask = true;                   
-
-                    if (aSnack.amaunt <= 0)
+                    if (aSnack.snackType == snackType)
                     {
-                        Destroy(gameObject);
+                        aSnack.amaunt -= 1;
+                        GetComponentInParent<SnackMenu>().isEating = true;
 
-                        snackStorige.snacks.Remove(aSnack);
+                        GetComponentInParent<Ressourcer>().AddGlad(aSnack.giveHappy);
+
+                        Transform petHand = thePet.transform.GetChild(0).transform.GetChild(2);
+                        Instantiate(showSnack, petHand);
+                        petHand.GetChild(petHand.childCount - 1).GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"Snack/{snackType}");
+
+                        thePet.GetComponentInChildren<Animator>().SetBool("Spise", true);
+                        thePet.GetComponent<muvePet>().onTask = true;
+
+                        if (aSnack.amaunt <= 0)
+                        {
+                            Destroy(gameObject);
+
+                            snackStorige.snacks.Remove(aSnack);
+                        }
                     }
                 }
-            }
-        } catch { }
+            } catch { }
 
-        Invoke("StopAnimation", 0.5f);
+            Invoke("StopAnimation", 0.5f);
+        }     
     }
 
     private void StopAnimation()
