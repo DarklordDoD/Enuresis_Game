@@ -5,8 +5,29 @@ using UnityEngine;
 
 public class AnimationEnd : MonoBehaviour
 {
-    public void muveAgain()
+    private GameObject snackDesplay;
+
+    private void Start()
     {
-        GetComponentInParent<muvePet>().onTask = false;       
+        snackDesplay = GameObject.FindGameObjectWithTag("GameController").transform.Find("Snacks").gameObject;
+    }
+
+    public void MuveAgain()
+    {
+        GetComponentInParent<muvePet>().onTask = false;
+
+        snackDesplay.GetComponent<SnackMenu>().isEating = false;
+    }
+
+    public void RemuveSnack()
+    {
+        GetComponent<Animator>().SetBool("Spise", false);
+
+        try
+        {
+            Transform pethHand = transform.GetChild(2).transform;
+        
+            Destroy(pethHand.GetChild(pethHand.childCount - 1).gameObject);
+        } catch { }
     }
 }

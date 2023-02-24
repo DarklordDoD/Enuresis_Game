@@ -69,7 +69,7 @@ public class CosmeticsShop : MonoBehaviour
             itemHolderList.Add(holder);
             buyButtonList.Add(holderScript.buyButton);
 
-            if (cosmeticsList[i].bought)
+            if (cosmeticsList[i].bought && !cosmeticsList[i].unlimited)
             {
                 holderScript.itemImage.sprite = Resources.Load<Sprite>("Sprites/" + cosmeticsList[i].SpriteName +"_sold");
              
@@ -77,7 +77,6 @@ public class CosmeticsShop : MonoBehaviour
             else
             {
                 holderScript.itemImage.sprite = Resources.Load<Sprite>("Sprites/" + cosmeticsList[i].SpriteName);
-
             }
         }
     }

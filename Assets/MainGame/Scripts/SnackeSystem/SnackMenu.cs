@@ -20,11 +20,14 @@ public class SnackMenu : MonoBehaviour
     private GameObject snackMenu;
 
     private float openAmount;
-    private bool menuOpen;
+    [HideInInspector]
+    public bool menuOpen;
 
+    [SerializeField]
     private float insetIndhold;
     private int nextIndhold;
-    private Vector2 snackPosition; 
+    private Vector2 snackPosition;
+    public bool isEating;
 
     // Start is called before the first frame update
     void Start()
@@ -47,17 +50,18 @@ public class SnackMenu : MonoBehaviour
             if (openAmount > insetIndhold)
             {
                 if (insetIndhold < 100)
-                    if (snackStorige.snacks.Count > 10)
+                    try
+                    {
                         insetIndhold += 100 / snackStorige.snacks.Count;
-                    else
-                        insetIndhold += 50;
+                    }
+                    catch { }
 
                 if (snackStorige.snacks.Count > nextIndhold)
                 {
                     Instantiate(snackHolder, snackMenu.transform);
 
                     GameObject theShowSnack = snackMenu.transform.GetChild(snackMenu.transform.childCount - 1).gameObject;
-                    theShowSnack.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Snack/{snackStorige.snacks[nextIndhold].snackType}");
+                    theShowSnack.GetComponent<UseSnack>().snackType = snackStorige.snacks[nextIndhold].snackType;
                     theShowSnack.transform.position = snackPosition;
 
                     snackPosition.x += spacing;
@@ -75,12 +79,13 @@ public class SnackMenu : MonoBehaviour
             if (openAmount < insetIndhold)
             {
                 if (insetIndhold > 0)
-                    if (snackStorige.snacks.Count > 10)
+                    try
+                    {
                         insetIndhold -= 100 / snackStorige.snacks.Count;
-                    else
-                        insetIndhold -= 50;
+                    }
+                    catch { }
 
-                if (openAmount > 0) 
+                if (openAmount > -1) 
                 {
                     int allShowSnacks = snackMenu.transform.childCount;
 
