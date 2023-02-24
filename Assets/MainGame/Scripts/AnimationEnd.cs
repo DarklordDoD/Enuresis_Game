@@ -14,7 +14,10 @@ public class AnimationEnd : MonoBehaviour
 
     public void MuveAgain()
     {
-        GetComponentInParent<muvePet>().onTask = false;
+        try
+        {
+            GetComponentInParent<muvePet>().onTask = false;
+        } catch { }
 
         snackDesplay.GetComponent<SnackMenu>().isEating = false;
     }

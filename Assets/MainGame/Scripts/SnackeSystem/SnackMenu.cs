@@ -85,7 +85,7 @@ public class SnackMenu : MonoBehaviour
                     }
                     catch { }
 
-                if (openAmount > -1) 
+                if (openAmount > 0) 
                 {
                     int allShowSnacks = snackMenu.transform.childCount;
 
