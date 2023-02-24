@@ -20,9 +20,9 @@ namespace DailyRewardsSystem
 
     public class DailyRewards : MonoBehaviour
     {
-        [Header("Main Menu UI")]
-        [SerializeField] Text currencyText;
-        [SerializeField] Text snacksText;
+        //[Header("Main Menu UI")]
+        //[SerializeField] Text currencyText;
+        //[SerializeField] Text snacksText;
         
 
         [Space]
@@ -54,6 +54,7 @@ namespace DailyRewardsSystem
 
         private int nextRewardIndex;
         private bool isRewardReady = false;
+        private GameObject gameController;
 
         void Start()
         {
@@ -61,6 +62,8 @@ namespace DailyRewardsSystem
 
             StopAllCoroutines();
             StartCoroutine ( CheckForRewards());
+
+            gameController = GameObject.FindGameObjectWithTag("GameController");
         }
 
         void Initialize()
@@ -139,6 +142,8 @@ namespace DailyRewardsSystem
 
             noMoreRewardsPanel.SetActive(true);
             rewardsNotification.SetActive(false);
+
+            Invoke("OnCloseButtonClick", 0.5f);
         }
 
         void OnClaimButtonClick ()
@@ -176,11 +181,11 @@ namespace DailyRewardsSystem
         //Update Mainmenu UI (currency, snacks) ---------------------------
         void UpdateCurrencyTextUI()
         {
-            currencyText.text = GameData.Currency.ToString();
+            gameController.GetComponent<Ressourcer>().monny += GameData.Currency;
         }
         void UpdateSnacksTextUI()
         {
-            snacksText.text = GameData.Snacks.ToString();
+            gameController.GetComponent<Snacks>().changeSnaks("Snacks_Merged", 5500, GameData.Snacks);
         }
         //Open | Close UI -------------------------------------------------
         void OnOpenButtonClick()
