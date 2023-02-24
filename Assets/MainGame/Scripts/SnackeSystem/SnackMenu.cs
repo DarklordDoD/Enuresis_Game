@@ -20,8 +20,10 @@ public class SnackMenu : MonoBehaviour
     private GameObject snackMenu;
 
     private float openAmount;
-    private bool menuOpen;
+    [HideInInspector]
+    public bool menuOpen;
 
+    [SerializeField]
     private float insetIndhold;
     private int nextIndhold;
     private Vector2 snackPosition;
@@ -48,10 +50,11 @@ public class SnackMenu : MonoBehaviour
             if (openAmount > insetIndhold)
             {
                 if (insetIndhold < 100)
-                    if (snackStorige.snacks.Count > 10)
+                    try
+                    {
                         insetIndhold += 100 / snackStorige.snacks.Count;
-                    else
-                        insetIndhold += 50;
+                    }
+                    catch { }
 
                 if (snackStorige.snacks.Count > nextIndhold)
                 {
@@ -76,10 +79,11 @@ public class SnackMenu : MonoBehaviour
             if (openAmount < insetIndhold)
             {
                 if (insetIndhold > 0)
-                    if (snackStorige.snacks.Count > 10)
+                    try
+                    {
                         insetIndhold -= 100 / snackStorige.snacks.Count;
-                    else
-                        insetIndhold -= 50;
+                    }
+                    catch { }
 
                 if (openAmount > -1) 
                 {
