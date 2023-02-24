@@ -149,8 +149,6 @@ namespace DailyRewardsSystem
 
             noMoreRewardsPanel.SetActive(true);
             rewardsNotification.SetActive(false);
-
-            Invoke("OnCloseButtonClick", 0.5f);
         }
 
         void OnClaimButtonClick ()
@@ -164,6 +162,7 @@ namespace DailyRewardsSystem
                 currency = reward.Amount;
                 //TO DO : FX??
                 UpdateCurrencyTextUI ();
+                CloseAfterReward();
             }
             else if (reward.Type == RewardType.Snacks)
             {
@@ -171,6 +170,7 @@ namespace DailyRewardsSystem
                 snacks = reward.Amount;
                 //TO DO : FX??
                 UpdateSnacksTextUI();
+                CloseAfterReward();
             }
             //Save next reward index
             nextRewardIndex++;
@@ -193,6 +193,11 @@ namespace DailyRewardsSystem
         void UpdateSnacksTextUI()
         {
             gameController.GetComponent<Snacks>().changeSnaks("Snacks_Merged", 5500, snacks);
+        }
+
+        private void CloseAfterReward()
+        {
+            Invoke("OnCloseButtonClick", 0.5f);
         }
         //Open | Close UI -------------------------------------------------
         void OnOpenButtonClick()
