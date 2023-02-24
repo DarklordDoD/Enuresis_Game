@@ -27,6 +27,17 @@ public class SceneSkift : MonoBehaviour
                 SceneManager.LoadScene(skiftSceneTil);
         }
 
+        try
+        {
+            if (scM != null)
+            {
+                GameObject snackMenu = GameObject.Find("Snacks");
+
+                if (snackMenu.GetComponent<SnackMenu>().menuOpen)
+                    snackMenu.GetComponent<SnackMenu>().OpenMenu();
+            }
+        } catch { }
+
         if (aktivateUI == null)
         {
             scM.NewScene(skiftSceneTil);

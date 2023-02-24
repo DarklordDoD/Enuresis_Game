@@ -17,7 +17,7 @@ public class MobileNotifications : MonoBehaviour
         {
             Id = "channel_id",
             Name = "Notifications Channel",
-            Importance = Importance.Default,
+            Importance = Importance.High,
             Description = "Reminder notifications",
         };
         AndroidNotificationCenter.RegisterNotificationChannel(channel);
@@ -28,8 +28,11 @@ public class MobileNotifications : MonoBehaviour
         notification.Title = "Husk at drikke vand!";
         notification.Text = "Drik vand løbende.";
         notification.FireTime = System.DateTime.Now.AddSeconds(10);
-        //^ can be changed to something like this: notification.FireTime = System.DateTime.Now.AddHours(24);
-       
+        
+        //^ can be changed to something like this:
+        //notification.FireTime = System.DateTime.Now.AddMinutes(5);
+        //notification.FireTime = System.DateTime.Now.AddHours(24);
+
         //Change up the icons in the notification android message system
         notification.SmallIcon ="icon_small";
         notification.LargeIcon ="icon_large";

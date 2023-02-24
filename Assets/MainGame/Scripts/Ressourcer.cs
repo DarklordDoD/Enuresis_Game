@@ -328,7 +328,7 @@ public class Ressourcer : MonoBehaviour
 
         foreach (ASnack s in GetComponent<Snacks>().snacks)
         {
-            saveR.Add($"{s.snackType},{s.amaunt}");
+            saveR.Add($"{s.snackType},{s.amaunt},{s.giveHappy}");
         }
 
         SaveClass.WriteToFile("MainGame" ,saveR, false); //gem via save system

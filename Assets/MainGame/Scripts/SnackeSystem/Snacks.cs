@@ -7,7 +7,7 @@ public class Snacks : MonoBehaviour
 {
     public List<ASnack> snacks;
 
-    public bool changeSnaks(string snackTybe, bool plus, out bool snackFound)
+    public void changeSnaks(string snackTybe, float givGlad, int changeAmount = 1, bool plus = true)
     {
         bool snakIsAdd = false;
 
@@ -16,7 +16,7 @@ public class Snacks : MonoBehaviour
             if (snack.snackType == snackTybe)
             {
                 if (plus)
-                    snack.amaunt += 1;
+                    snack.amaunt += changeAmount;
                 else
                     snack.amaunt -= 1;
 
@@ -25,9 +25,7 @@ public class Snacks : MonoBehaviour
         }
 
         if (!snakIsAdd && plus)
-            snacks.Add(new ASnack {snackType = snackTybe, amaunt = 1 });
-        
-        return snackFound = snakIsAdd;
+            snacks.Add(new ASnack {snackType = snackTybe, amaunt = changeAmount, giveHappy = givGlad });
     }
 
     public void LoadSnacks()
@@ -38,7 +36,7 @@ public class Snacks : MonoBehaviour
         {
             List<string> theSplitSnack = theLoadList[i].Split(",").ToList();
 
-            snacks.Add(new ASnack { snackType = theSplitSnack[0], amaunt = int.Parse(theSplitSnack[1]) });
+            snacks.Add(new ASnack { snackType = theSplitSnack[0], amaunt = int.Parse(theSplitSnack[1]), giveHappy = float.Parse(theSplitSnack[2]) });
         }
     }
 }

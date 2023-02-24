@@ -41,7 +41,7 @@ public class BuyButton : MonoBehaviour
                 }
                 else
                 {
-                    SnavkStorige.changeSnaks(CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsName, true, out bool isAdd);
+                    SnavkStorige.changeSnaks(CosmeticsShop.cosmeticsShop.cosmeticsList[i].SpriteName, CosmeticsShop.cosmeticsShop.cosmeticsList[i].gladVerdi, 1,true);
                 }
 
                 CurrencyManager.currencyManager.LowerCurrency(CosmeticsShop.cosmeticsShop.cosmeticsList[i].cosmeticsPrice);

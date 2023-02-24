@@ -16,7 +16,7 @@ public class UseSnack : MonoBehaviour
     private void Start()
     {
         snackStorige = GetComponentInParent<Snacks>();
-        GetComponent<Image>().sprite = Resources.Load<Sprite>($"Snack/{snackType}");
+        GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/{snackType}");
         thePet = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -37,7 +37,7 @@ public class UseSnack : MonoBehaviour
 
                         Transform petHand = thePet.transform.GetChild(0).transform.GetChild(2);
                         Instantiate(showSnack, petHand);
-                        petHand.GetChild(petHand.childCount - 1).GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"Snack/{snackType}");
+                        petHand.GetChild(petHand.childCount - 1).GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"Sprites/{snackType}");
 
                         thePet.GetComponentInChildren<Animator>().SetBool("Spise", true);
                         thePet.GetComponent<muvePet>().onTask = true;
@@ -51,13 +51,6 @@ public class UseSnack : MonoBehaviour
                     }
                 }
             } catch { }
-
-            Invoke("StopAnimation", 0.5f);
         }     
-    }
-
-    private void StopAnimation()
-    {
-        thePet.GetComponentInChildren<Animator>().SetBool("Spise", false);
     }
 }

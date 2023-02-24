@@ -18,8 +18,11 @@ public class Cosmetics{
 
     public int cosmeticsPrice;
 
-    public bool unlimited;
-
     public bool bought;
+
+    [Header("Snacks")]
+    public bool unlimited;
+    public float gladVerdi;
+    
     //STATS
 }
