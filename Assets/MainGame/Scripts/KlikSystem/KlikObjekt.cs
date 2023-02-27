@@ -66,6 +66,10 @@ public class KlikObjekt : MonoBehaviour
                 case "Stain":
                     hit.collider.GetComponent<Ulykke>().HarTisset(false);
                     break;
+
+                case "PetFrind":
+                    hit.collider.GetComponent<muvePet>().PetPet();
+                    break;
             }
 
         }

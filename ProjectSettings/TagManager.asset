@@ -21,6 +21,7 @@ TagManager:
   - DataSamling
   - ItemSkift
   - Stain
+  - PetFrind
   layers:
   - Default
   - TransparentFX

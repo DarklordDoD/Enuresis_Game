@@ -224,7 +224,7 @@ public class muvePet : MonoBehaviour
             Invoke("SropVink", 0.3f);
 
             petTimer = 0;
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<Ressourcer>().AddGlad(petEffekt);         
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<Ressourcer>().AddGlad(petEffekt);        
         }           
     }
 

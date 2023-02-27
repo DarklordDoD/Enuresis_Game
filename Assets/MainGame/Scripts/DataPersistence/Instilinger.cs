@@ -28,9 +28,15 @@ public class Instilinger : MonoBehaviour
 
     [Header("Frind")]
     [SerializeField]
-    private Button frindButten;
-    [HideInInspector]
-    public bool frind;
+    private GameObject frindButten;
+    [SerializeField]
+    private List<Sprite> buttenLooks;
+    [SerializeField]
+    private GameObject theFrind;
+    [SerializeField]
+    private Vector2 frindStartPosition;
+    [SerializeField]
+    private bool frind;
 
     private void Awake()
     {
@@ -51,6 +57,7 @@ public class Instilinger : MonoBehaviour
 
         soundSlider.value =  (float)soundLevel / 100;
         Invoke("LydChange", 0.5f);
+        Invoke("AddFrind", 0.5f);
     }
 
     private void AktivateButten()
@@ -92,9 +99,21 @@ public class Instilinger : MonoBehaviour
         GetComponent<MusicManager>().SetMusicVolume((float)soundLevel / 100);
     }
 
-    public void AddFrind()
+    public void FrindEvent()
     {
+        frind = !frind;
 
+        AddFrind();
+    }
+
+    private void AddFrind()
+    {
+        frindButten.GetComponent<Image>().sprite = buttenLooks[Convert.ToInt32(frind)];
+
+        if (frind && muvePet.frindInstance == null)
+            Instantiate(theFrind, frindStartPosition, Quaternion.identity);
+        else
+            Destroy(muvePet.frindInstance);
     }
 
     private void LoadInstilinger()
@@ -103,7 +122,7 @@ public class Instilinger : MonoBehaviour
 
         soundLevel = int.Parse(gotList[1]);
         sprog = int.Parse(gotList[0]);
-        frind = Convert.ToBoolean(gotList[3]);
+        frind = Convert.ToBoolean(gotList[2]);
     }
 
     public void SaveInstillinger()
