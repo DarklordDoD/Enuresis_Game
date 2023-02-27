@@ -251,10 +251,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startObject: {fileID: 1935749443}
   images:
-  - {fileID: 21300000, guid: 4d0982681331a5a429aef7cb818ee2e9, type: 3}
-  - {fileID: 21300000, guid: 433408e0a42cc6e4080553bb396b457f, type: 3}
-  - {fileID: 21300000, guid: bfb554073e303de4e874443990c438b1, type: 3}
-  - {fileID: 21300000, guid: 8bf7395327430a44bba81bb2a124d353, type: 3}
+  - {fileID: 21300000, guid: f79356d56a94e46d3b9fcc9b3a4148dc, type: 3}
+  - {fileID: 21300000, guid: 6fdb613fe546e4ff482895cd3e6976fa, type: 3}
+  - {fileID: 21300000, guid: c61add5fa5d224d318068d13084d37d4, type: 3}
+  - {fileID: 21300000, guid: acf712edd51dd45a9a4fde50d612f428, type: 3}
   scoreText: {fileID: 108369996}
   attemptsText: {fileID: 334642087}
 --- !u!4 &226888238
