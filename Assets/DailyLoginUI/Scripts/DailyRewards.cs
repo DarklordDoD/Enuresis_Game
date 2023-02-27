@@ -20,9 +20,9 @@ namespace DailyRewardsSystem
 
     public class DailyRewards : MonoBehaviour
     {
-        [Header("Main Menu UI")]
-        [SerializeField] Text currencyText;
-        [SerializeField] Text snacksText;
+        //[Header("Main Menu UI")]
+        //[SerializeField] Text currencyText;
+        //[SerializeField] Text snacksText;
         
 
         [Space]
@@ -54,13 +54,23 @@ namespace DailyRewardsSystem
 
         private int nextRewardIndex;
         private bool isRewardReady = false;
+        private GameObject gameController;
+        private GameObject snacksMenu;
+        private int currency;
+        private int snacks;
 
         void Start()
         {
+            gameController = GameObject.FindGameObjectWithTag("GameController");
+            snacksMenu = GameObject.Find("Snacks");
+
+            if (snacksMenu.GetComponent<SnackMenu>().menuOpen)
+                snacksMenu.GetComponent<SnackMenu>().OpenMenu();
+
             Initialize();
 
             StopAllCoroutines();
-            StartCoroutine ( CheckForRewards());
+            StartCoroutine ( CheckForRewards());           
         }
 
         void Initialize()
@@ -148,17 +158,19 @@ namespace DailyRewardsSystem
             //check reward type
             if (reward.Type == RewardType.Currency)
             {
-                Debug.Log ("<color=white>"+reward.Type.ToString ()+ "Claimed : </color>+" + reward.Amount );
-                GameData.Currency += reward.Amount;
+                //Debug.Log ("<color=white>"+reward.Type.ToString ()+ "Claimed : </color>+" + reward.Amount );
+                currency = reward.Amount;
                 //TO DO : FX??
                 UpdateCurrencyTextUI ();
+                CloseAfterReward();
             }
             else if (reward.Type == RewardType.Snacks)
             {
-                Debug.Log("<color=yellow>" + reward.Type.ToString() + "Claimed : </color>+" + reward.Amount);
-                GameData.Snacks += reward.Amount;
+                //Debug.Log("<color=yellow>" + reward.Type.ToString() + "Claimed : </color>+" + reward.Amount);
+                snacks = reward.Amount;
                 //TO DO : FX??
                 UpdateSnacksTextUI();
+                CloseAfterReward();
             }
             //Save next reward index
             nextRewardIndex++;
@@ -176,16 +188,24 @@ namespace DailyRewardsSystem
         //Update Mainmenu UI (currency, snacks) ---------------------------
         void UpdateCurrencyTextUI()
         {
-            currencyText.text = GameData.Currency.ToString();
+            gameController.GetComponent<Ressourcer>().monny += currency;
         }
         void UpdateSnacksTextUI()
         {
-            snacksText.text = GameData.Snacks.ToString();
+            gameController.GetComponent<Snacks>().changeSnaks("Snacks_Merged", 5500, snacks);
+        }
+
+        private void CloseAfterReward()
+        {
+            Invoke("OnCloseButtonClick", 0.5f);
         }
         //Open | Close UI -------------------------------------------------
         void OnOpenButtonClick()
         {
             rewardsCanvas.SetActive(true);
+
+            if (snacksMenu.GetComponent<SnackMenu>().menuOpen)
+                snacksMenu.GetComponent<SnackMenu>().OpenMenu();
         }
         void OnCloseButtonClick()
         {

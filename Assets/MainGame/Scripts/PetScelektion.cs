@@ -14,9 +14,10 @@ public class PetScelektion : MonoBehaviour
     public int petType;
 
     private List<string> saveList;
-    [SerializeField]
     private bool inPetMenu;
     private GameObject thePet;
+
+    private GameObject snackMenu;
 
     private void Awake()
     {
@@ -42,6 +43,9 @@ public class PetScelektion : MonoBehaviour
         if (inPetMenu)
         {
             Instantiate(petScelektion[petType], showPosition, Quaternion.identity); //Vis det nye pet
+
+            snackMenu = GameObject.Find("Snacks");
+            snackMenu.SetActive(false);
 
             Invoke("HidePet", 0);
         }
@@ -118,6 +122,8 @@ public class PetScelektion : MonoBehaviour
 
         thePet.GetComponent<muvePet>().lateStart();
 
-        GetComponent<SceneManeger>().NewScene("Stue");       
+        GetComponent<SceneManeger>().NewScene("Stue");
+
+        snackMenu.SetActive(true);
     }
 }
