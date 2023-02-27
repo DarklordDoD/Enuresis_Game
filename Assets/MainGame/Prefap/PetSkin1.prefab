@@ -297,8 +297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274a3d8933c45de479fb95f521104bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snackDesplay: {fileID: 3907035369886619740, guid: 0571684ed3484cf44a5ada3aadcba1a7, type: 3}
-  snackDesplayList: []
 --- !u!1 &5803780440774308868
 GameObject:
   m_ObjectHideFlags: 0
