@@ -26,6 +26,12 @@ public class Instilinger : MonoBehaviour
     private List<string> gotList;
     private List<string> saveList;
 
+    [Header("Frind")]
+    [SerializeField]
+    private Button frindButten;
+    [HideInInspector]
+    public bool frind;
+
     private void Awake()
     {
         try
@@ -86,17 +92,23 @@ public class Instilinger : MonoBehaviour
         GetComponent<MusicManager>().SetMusicVolume((float)soundLevel / 100);
     }
 
+    public void AddFrind()
+    {
+
+    }
+
     private void LoadInstilinger()
     {
         SaveClass.LoadFromFile("Instillinger", out gotList);
 
         soundLevel = int.Parse(gotList[1]);
         sprog = int.Parse(gotList[0]);
+        frind = Convert.ToBoolean(gotList[3]);
     }
 
     public void SaveInstillinger()
     {
-        saveList = new List<string>() {sprog.ToString(),soundLevel.ToString()};
+        saveList = new List<string>() {sprog.ToString(),soundLevel.ToString(),frind.ToString()};
 
         SaveClass.WriteToFile("Instillinger", saveList, false);
     }

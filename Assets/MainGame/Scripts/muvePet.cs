@@ -44,7 +44,11 @@ public class muvePet : MonoBehaviour
 
     [Header("Animation")]
     private Animator animator;
-    
+
+    [Header("Frind")]
+    [SerializeField]
+    private bool isFrind;
+    public static GameObject frindInstance;
 
     // Start is called before the first frame update
     void Awake()
@@ -52,9 +56,13 @@ public class muvePet : MonoBehaviour
         //dette objekt bliver ikke fjernet når en ny scenemaneger
         DontDestroyOnLoad(this.gameObject);
 
-        if (instance == null)
+        if (instance == null && !isFrind)
         {
             instance = this.gameObject;
+        }
+        else if (frindInstance == null && isFrind)
+        {
+            frindInstance = this.gameObject;
         }
         else
         {
@@ -88,7 +96,7 @@ public class muvePet : MonoBehaviour
     // jeg bruger update til at sende beskeder til andre fungtioner
     void Update()
     {
-        if (!onTask)
+        if (!onTask && !isFrind)
             KlikPoint(); //rigistrer om spilleren klikker på skærmen
 
         if (!valgtWalk)

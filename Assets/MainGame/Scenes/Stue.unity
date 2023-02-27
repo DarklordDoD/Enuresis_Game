@@ -2885,6 +2885,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pet
       objectReference: {fileID: 0}
+    - target: {fileID: 5207499631160052600, guid: f2ef5f91552457a4e8f96a55456d7c24, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207499631160052600, guid: f2ef5f91552457a4e8f96a55456d7c24, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2ef5f91552457a4e8f96a55456d7c24, type: 3}
 --- !u!1001 &9092777160611314311
