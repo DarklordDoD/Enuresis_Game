@@ -10,28 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97269afb30aa84742ae3f3342603618a, type: 3}
-  m_Name: SimonSaysTitle_da
+  m_Name: MemoryGameTitleText_da
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: da
-  m_SharedData: {fileID: 11400000, guid: 9e7b22d983a3f874b90c827e621a84fd, type: 2}
+  m_SharedData: {fileID: 11400000, guid: b1430c66426b60947be0cbc9aecab400, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 14959841280
-    m_Localized: c66ffefe54eaa42e09146de00e66a33f
-    m_Metadata:
-      m_Items: []
-  - m_Id: 17711304704
-    m_Localized: 895e9811e59ee4fe48ca4661995504cd
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19930091520
-    m_Localized: 822645a6fe02641e1a0ad535e174dabc
-    m_Metadata:
-      m_Items: []
-  - m_Id: 15803066683392
-    m_Localized: eb6c32afa4c3e4141814de10e1e3080a
+  - m_Id: 9435942912
+    m_Localized: 1c8b52812d8fe43c2af61333a46ff3ca
     m_Metadata:
       m_Items: []
   references:

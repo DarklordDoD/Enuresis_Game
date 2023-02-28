@@ -10,56 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: RunnerMainMenu Shared Data
+  m_Name: MemoryGameTitleText Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: RunnerMainMenu
-  m_TableCollectionNameGuidString: 6945f67290f83a84e8bafb827f21bf9c
+  m_TableCollectionName: MemoryGameTitleText
+  m_TableCollectionNameGuidString: b1430c66426b60947be0cbc9aecab400
   m_Entries:
-  - m_Id: 46681362432
-    m_Key: Start
-    m_Metadata:
-      m_Items: []
-  - m_Id: 92961312768
-    m_Key: Tutorial
-    m_Metadata:
-      m_Items: []
-  - m_Id: 112347385856
-    m_Key: Close
-    m_Metadata:
-      m_Items: []
-  - m_Id: 38024300531712
-    m_Key: Title
+  - m_Id: 9435942912
+    m_Key: MemoryTitleText
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items:
-    - rid: 3720198234755563588
+    - rid: 3720198238707908609
   m_KeyGenerator:
-    rid: 3720198234755563587
+    rid: 3720198238707908608
   references:
     version: 2
     RefIds:
-    - rid: 3720198234755563587
+    - rid: 3720198238707908608
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1677579160396
-    - rid: 3720198234755563588
+        m_CustomEpoch: 1677587982694
+    - rid: 3720198238707908609
       type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_Entries:
-        - m_KeyId: 112347385856
-          m_TableCodes:
-          - da
-          - en
-        - m_KeyId: 92961312768
-          m_TableCodes:
-          - da
-          - en
-        - m_KeyId: 46681362432
-          m_TableCodes:
-          - da
-          - en
-        - m_KeyId: 38024300531712
+        - m_KeyId: 9435942912
           m_TableCodes:
           - da
           - en

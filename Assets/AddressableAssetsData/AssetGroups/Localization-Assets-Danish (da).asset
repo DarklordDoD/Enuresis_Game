@@ -62,6 +62,16 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-da
+  - m_GUID: 1c8b52812d8fe43c2af61333a46ff3ca
+    m_Address: vendespil title
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+  - m_GUID: eb6c32afa4c3e4141814de10e1e3080a
+    m_Address: Simon siger title
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 725951384df75fb4b82b5ca98b14127e, type: 2}
   m_SchemaSet:
