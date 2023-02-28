@@ -18,13 +18,7 @@ MonoBehaviour:
   m_GUID: 4dcf5eed9f10c634585b244f1fb8a380
   m_SerializeEntries:
   - m_GUID: 4e7310f27d524f440b08cc11ccfcf527
-    m_Address: MemoryGameTitleScreen_en
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
-    - Preload
-  - m_GUID: 32eb2410748223040a2c195d15eb8aca
-    m_Address: MemoryGameEndScreen_en
+    m_Address: StringTable_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

@@ -21,10 +21,6 @@ MonoBehaviour:
     m_Address: Assets/Local Settings/Tables/StringTable Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
-  - m_GUID: d6fe1f108d9d0fb49963b9b7fdad1846
-    m_Address: Assets/Local Settings/Tables/MemoryGameEndScreen Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 725951384df75fb4b82b5ca98b14127e, type: 2}
   m_SchemaSet:
