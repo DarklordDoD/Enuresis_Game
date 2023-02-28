@@ -17,18 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 3fe086ddadf56ba4a8c794795f11d418
   m_SerializeEntries:
-  - m_GUID: 1c0d476e4a2ebfb459d5aca4436af1d3
-    m_Address: MemoryGameTitle_da
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-da
-    - Preload
-  - m_GUID: d6e765e14183deb4b979b82814109c32
-    m_Address: MemoryGameEndScreen_da
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-da
-    - Preload
   - m_GUID: 5f954bd030990f747a60f44af719fce9
     m_Address: ChoosePet_da
     m_ReadOnly: 1
@@ -43,6 +31,18 @@ MonoBehaviour:
     - Preload
   - m_GUID: 64f074618d79e9641ad076b4feacb4a7
     m_Address: RunnerTutorial_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
+  - m_GUID: 3bc582db32b59e74d926f1c25e23092e
+    m_Address: MemoryGameEndScreenText_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
+  - m_GUID: 472e7bead2586874694f15f376998104
+    m_Address: SimonSaysTutorialText_da
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-da

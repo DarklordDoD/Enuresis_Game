@@ -9,17 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97269afb30aa84742ae3f3342603618a, type: 3}
-  m_Name: MemoryGameTitle_en 1
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: MemoryGameEndScreenText_da
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: en
-  m_SharedData: {fileID: 11400000, guid: 516d49df8a553b94d86e43d2e1562b2a, type: 2}
+    m_Code: da
+  m_SharedData: {fileID: 11400000, guid: 9bd9645db5e816c469d3a4d2db99c28f, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 14662045696
-    m_Localized: ca261dd6942ce49968d9153b172fedf4
+  - m_Id: 16687894528
+    m_Localized: Godt Klaret!
     m_Metadata:
       m_Items: []
   references:
