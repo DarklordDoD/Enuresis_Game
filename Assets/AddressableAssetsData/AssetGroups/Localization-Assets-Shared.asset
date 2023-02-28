@@ -25,6 +25,70 @@ MonoBehaviour:
     m_Address: Assets/Local Settings/Tables/MemoryGameEndScreen Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 36e00191ef0049e4490bef0a9d1dbdae
+    m_Address: Assets/Local Settings/Tables/ChoosePet Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 8bab128c94fb0fd4da9798a7eedce6c5
+    m_Address: Assets/Local Settings/Tables/Dressing Room Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 7786e7f66d6d57843a3884be617a076e
+    m_Address: Assets/Local Settings/Tables/SnakeGameTitle Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 51c31bd70c2cade47999a9e94d257671
+    m_Address: Assets/Local Settings/Tables/SnakeEndScreen Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 2a3e9575e7f7bb54aa3c59d267caffd0
+    m_Address: Assets/Local Settings/Tables/RunnerTutorial Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: b34520880d1c78c46a42be2058c62a83
+    m_Address: Assets/Local Settings/Tables/TutorialRunner Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 02555657904a5b640bc8b1e5307764ed
+    m_Address: Assets/Local Settings/Tables/RunnerGameUI Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 6945f67290f83a84e8bafb827f21bf9c
+    m_Address: Assets/Local Settings/Tables/RunnerMainMenu Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: c2d0f92d4bdc247fda014cab876a3fa8
+    m_Address: Runner tutorial - light
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Locale-en
+  - m_GUID: 7f342ffedc76c4835ab2a2f61e703394
+    m_Address: Runner start - light
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Locale-en
+  - m_GUID: dfd3c992de6ca2449b91ce31f6f6dbb8
+    m_Address: Assets/Local Settings/Tables/RunnerGameOver Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 60eb8557baa9cd6468e0b1cccd3dbe3e
+    m_Address: Assets/Local Settings/Tables/RunnerWinScreen Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 4c5dc533b8283426fb8ce88676633c68
+    m_Address: Runner main menu - light
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-da
+  - m_GUID: b72614423e18b4d4c8f9b8fb8dfe2657
+    m_Address: Runner menu - light
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Locale-en
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 725951384df75fb4b82b5ca98b14127e, type: 2}
   m_SchemaSet:

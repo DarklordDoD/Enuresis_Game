@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-English (en)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Assets-English (en)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 60b257e6ec80091439f68aaebdcff167
+  m_SerializeEntries:
+  - m_GUID: 8fe8e8de09d4c48829a838ba4e034cac
+    m_Address: snake back - light
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+  - m_GUID: fa7c6eef6a0d04033be1b576d8b286ab
+    m_Address: snake try again - light
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+  - m_GUID: ce75763de38ed4ba394a05abe221170b
+    m_Address: Runner end- light
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+  - m_GUID: 6300c1694a39944d68fd31bea0328166
+    m_Address: Runner try again - light
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+  - m_GUID: ca261dd6942ce49968d9153b172fedf4
+    m_Address: memory game title
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 725951384df75fb4b82b5ca98b14127e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 74d903f7a2b9fa54790368c789195ed9, type: 2}
+    - {fileID: 11400000, guid: cf741d261fccc35408067dd7f2550653, type: 2}

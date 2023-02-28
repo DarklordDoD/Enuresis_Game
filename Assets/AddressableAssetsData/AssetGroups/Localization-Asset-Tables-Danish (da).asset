@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Asset-Tables-Danish (da)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Asset-Tables-Danish (da)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 4ecb9d15ed88a5b4d85c10f47dc20d02
+  m_SerializeEntries:
+  - m_GUID: 91ad716affd19cf47acaf95e6579333a
+    m_Address: SnakeGameTitle_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
+  - m_GUID: 104b287c101629a4a9a8414a42142a80
+    m_Address: SnakeEndScreen_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
+  - m_GUID: 12566dbccccaa414b910ea785d515d45
+    m_Address: TutorialRunner_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
+  - m_GUID: e22fe79ca1f905e468c6f8c9934fd279
+    m_Address: RunnerGameUI_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
+  - m_GUID: 9e656b5f33802594faed028df6fa4628
+    m_Address: RunnerMainMenu_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
+  - m_GUID: 27d20917ee799004f884a3f4fd5702af
+    m_Address: RunnerGameOver_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
+  - m_GUID: b77abd3319357044d935c16f11873228
+    m_Address: RunnerWinScreen_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
+  - m_GUID: 1640b0617741755488c9ce490df800c9
+    m_Address: MemoryGameTitle_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 725951384df75fb4b82b5ca98b14127e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9aaca40e358959f4e991c227d92f413c, type: 2}
+    - {fileID: 11400000, guid: 9692953034120154c93faee1f3cd1ee1, type: 2}

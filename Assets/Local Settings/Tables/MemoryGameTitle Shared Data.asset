@@ -15,22 +15,29 @@ MonoBehaviour:
   m_TableCollectionName: MemoryGameTitle
   m_TableCollectionNameGuidString: 516d49df8a553b94d86e43d2e1562b2a
   m_Entries:
-  - m_Id: 237069209600
-    m_Key: MemoryGameClose
-    m_Metadata:
-      m_Items: []
-  - m_Id: 329446073372672
-    m_Key: MemoryGameStart
+  - m_Id: 14662045696
+    m_Key: Title
     m_Metadata:
       m_Items: []
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 3720198237529047041
   m_KeyGenerator:
-    rid: 3720198213202608152
+    rid: 3720198237529047040
   references:
     version: 2
     RefIds:
-    - rid: 3720198213202608152
+    - rid: 3720198237529047040
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1677491528677
+        m_CustomEpoch: 1677583485120
+    - rid: 3720198237529047041
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 14662045696
+          m_TableCodes:
+          - en
+          - da
+        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null

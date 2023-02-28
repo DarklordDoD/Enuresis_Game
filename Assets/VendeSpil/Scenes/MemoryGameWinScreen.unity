@@ -900,7 +900,7 @@ GameObject:
   - component: {fileID: 2032514374}
   - component: {fileID: 2032514373}
   m_Layer: 0
-  m_Name: Beach_Background
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -947,7 +947,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c2cd58337c4412f4989269d284fe176d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aaa85da3cc08f4f99bdc5b381100bd0a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

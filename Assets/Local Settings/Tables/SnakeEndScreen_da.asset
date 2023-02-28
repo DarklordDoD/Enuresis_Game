@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97269afb30aa84742ae3f3342603618a, type: 3}
+  m_Name: SnakeEndScreen_da
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: da
+  m_SharedData: {fileID: 11400000, guid: 51c31bd70c2cade47999a9e94d257671, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 255469621248
+    m_Localized: 4a2ec9c3364e54941bd0b83bda873d02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 793506549760
+    m_Localized: 3af523a19ce43413d996e3c92ca9a612
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

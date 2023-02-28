@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 730212782}
   - component: {fileID: 730212781}
   - component: {fileID: 730212784}
+  - component: {fileID: 730212785}
   m_Layer: 5
   m_Name: MainMenuButton
   m_TagString: Untagged
@@ -457,6 +458,29 @@ MonoBehaviour:
   minigame: 0
   aktivateUI: {fileID: 0}
   aktivate: 0
+--- !u!114 &730212785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730212779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f55fcc3768689a4f9cf863b8c11c618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:60eb8557baa9cd6468e0b1cccd3dbe3e
+    m_TableEntryReference:
+      m_KeyId: 51181850624
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &850639858
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,6 +726,7 @@ GameObject:
   - component: {fileID: 1194367241}
   - component: {fileID: 1194367240}
   - component: {fileID: 1194367243}
+  - component: {fileID: 1194367244}
   m_Layer: 5
   m_Name: ExitGameButton
   m_TagString: Untagged
@@ -840,6 +865,41 @@ MonoBehaviour:
   minigame: 1
   aktivateUI: {fileID: 0}
   aktivate: 0
+--- !u!114 &1194367244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194367238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f55fcc3768689a4f9cf863b8c11c618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:60eb8557baa9cd6468e0b1cccd3dbe3e
+    m_TableEntryReference:
+      m_KeyId: 68034564096
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1194367241}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1262131888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,6 +1330,7 @@ GameObject:
   - component: {fileID: 1882395372}
   - component: {fileID: 1882395371}
   - component: {fileID: 1882395374}
+  - component: {fileID: 1882395375}
   m_Layer: 5
   m_Name: ReplayButton
   m_TagString: Untagged
@@ -1328,7 +1389,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 21300000, guid: 8c8b5f1ef7dc9407f8f8d4f757e428aa, type: 3}
+    m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -1408,3 +1469,38 @@ MonoBehaviour:
   minigame: 0
   aktivateUI: {fileID: 0}
   aktivate: 0
+--- !u!114 &1882395375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882395369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f55fcc3768689a4f9cf863b8c11c618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:60eb8557baa9cd6468e0b1cccd3dbe3e
+    m_TableEntryReference:
+      m_KeyId: 30000615424
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1882395372}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
