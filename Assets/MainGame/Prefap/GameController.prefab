@@ -4040,6 +4040,7 @@ GameObject:
   - component: {fileID: 20522153}
   - component: {fileID: 1498230691}
   - component: {fileID: 576724542}
+  - component: {fileID: 6901547210803988489}
   m_Layer: 5
   m_Name: GameController
   m_TagString: GameController
@@ -4311,6 +4312,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snacks: []
+--- !u!114 &6901547210803988489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712255104591520818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e810cbf76ef06f40ae63b6def3a1639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &712255104669333802
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,16 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: StringTable_da
+  m_Name: MemoryGameTitleScreen_en
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: da
+    m_Code: en
   m_SharedData: {fileID: 11400000, guid: 516d49df8a553b94d86e43d2e1562b2a, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
   - m_Id: 237069209600
-    m_Localized: Luk
+    m_Localized: Close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 319535897710592
+    m_Localized: Start
     m_Metadata:
       m_Items: []
   references:
