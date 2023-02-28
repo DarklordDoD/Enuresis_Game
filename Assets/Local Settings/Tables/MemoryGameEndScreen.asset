@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
-  m_Name: StringTable
+  m_Name: MemoryGameEndScreen
   m_EditorClassIdentifier: 
-  m_SharedTableData: {fileID: 11400000, guid: 516d49df8a553b94d86e43d2e1562b2a, type: 2}
+  m_SharedTableData: {fileID: 11400000, guid: ef0555494b70fec4e8410dc23b382af0, type: 2}
   m_Tables:
-  - {fileID: 11400000, guid: 1c0d476e4a2ebfb459d5aca4436af1d3, type: 2}
-  - {fileID: 11400000, guid: 4e7310f27d524f440b08cc11ccfcf527, type: 2}
+  - {fileID: 11400000, guid: d6e765e14183deb4b979b82814109c32, type: 2}
+  - {fileID: 11400000, guid: 66af127b5ebc1dc48bae086287b40384, type: 2}
   m_Extensions: []
   m_Group: String Table
   references:
