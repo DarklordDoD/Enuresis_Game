@@ -27,6 +27,10 @@ MonoBehaviour:
     m_Key: Close
     m_Metadata:
       m_Items: []
+  - m_Id: 38024300531712
+    m_Key: Title
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 3720198234755563588
@@ -52,6 +56,10 @@ MonoBehaviour:
           - da
           - en
         - m_KeyId: 46681362432
+          m_TableCodes:
+          - da
+          - en
+        - m_KeyId: 38024300531712
           m_TableCodes:
           - da
           - en

@@ -10,16 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97269afb30aa84742ae3f3342603618a, type: 3}
-  m_Name: MemoryGameTitle_da 1
+  m_Name: SimonSaysGameOver_da
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: da
-  m_SharedData: {fileID: 11400000, guid: 516d49df8a553b94d86e43d2e1562b2a, type: 2}
+  m_SharedData: {fileID: 11400000, guid: 6dcec32c66347ba4a83ad8899aacb906, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 14662045696
-    m_Localized: 1c8b52812d8fe43c2af61333a46ff3ca
+  - m_Id: 11302408192
+    m_Localized: 6777024389bbe4ef6b1db045a0939d1f
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15635124224
+    m_Localized: 822645a6fe02641e1a0ad535e174dabc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13374394368
+    m_Localized: 32b047a29994a4420a049a11a7b66786
     m_Metadata:
       m_Items: []
   references:

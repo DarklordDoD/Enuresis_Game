@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
-  m_Name: SimonSaysTutorial
+  m_Script: {fileID: 11500000, guid: 4db626ad063b13545924a9839ac5fa83, type: 3}
+  m_Name: SimonSaysGameOver
   m_EditorClassIdentifier: 
-  m_SharedTableData: {fileID: 11400000, guid: 0f4dc715a00957343a7d1b3c9c0da4d8, type: 2}
+  m_SharedTableData: {fileID: 11400000, guid: 6dcec32c66347ba4a83ad8899aacb906, type: 2}
   m_Tables:
-  - {fileID: 11400000, guid: 4fb333a0a6687234489cb3e77332c813, type: 2}
-  - {fileID: 11400000, guid: 01ab59bf14376704d930655d5245aff4, type: 2}
+  - {fileID: 11400000, guid: bf4b5c6254dd51d45928c51f2dab61cb, type: 2}
+  - {fileID: 11400000, guid: bade4c03190b96340a758034dbc4937e, type: 2}
   m_Extensions: []
-  m_Group: String Table
+  m_Group: Asset Table
   references:
     version: 2
     RefIds: []
