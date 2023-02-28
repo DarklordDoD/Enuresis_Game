@@ -8,7 +8,6 @@ public class FrindBehave : MonoBehaviour
     private GameObject noCosmetic;
 
     private AllItems itemManeger;
-    [SerializeField]
     private GameObject frindSkin;
     [SerializeField]
     private List<ItemListClass> alleItemLists;
@@ -35,7 +34,6 @@ public class FrindBehave : MonoBehaviour
         foreach (ItemListClass itemList in alleItemLists)
         {
             int rngN = Random.Range(0, itemList.listObjekts.Count);
-            print(rngN + ", " + itemList.listObjekts.Count);
 
             GameObject theItem = itemList.listObjekts[rngN];
             Item itemN = theItem.GetComponent<Item>();

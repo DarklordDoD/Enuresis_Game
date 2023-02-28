@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UseSnack : MonoBehaviour
 {
@@ -12,12 +13,22 @@ public class UseSnack : MonoBehaviour
     public string snackType;
     private Snacks snackStorige;
     private GameObject thePet;
+    private TextMeshProUGUI showAmount;
 
     private void Start()
     {
         snackStorige = GetComponentInParent<Snacks>();
         GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/{snackType}");
         thePet = GameObject.FindGameObjectWithTag("Player");
+
+        showAmount = GetComponentInChildren<TextMeshProUGUI>();
+        foreach (ASnack aSnack in snackStorige.snacks)
+        {
+            if (aSnack.snackType == snackType)
+            {
+                showAmount.text = aSnack.amaunt.ToString();
+            }
+        }
     }
 
     public void EatSnack()
@@ -31,6 +42,8 @@ public class UseSnack : MonoBehaviour
                     if (aSnack.snackType == snackType)
                     {
                         aSnack.amaunt -= 1;
+                        showAmount.text = aSnack.amaunt.ToString();
+
                         GetComponentInParent<SnackMenu>().isEating = true;
 
                         GetComponentInParent<Ressourcer>().AddGlad(aSnack.giveHappy);
