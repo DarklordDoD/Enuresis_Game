@@ -42,6 +42,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-da
+  - m_GUID: 822645a6fe02641e1a0ad535e174dabc
+    m_Address: simon siger luk - light
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 725951384df75fb4b82b5ca98b14127e, type: 2}
   m_SchemaSet:
