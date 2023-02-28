@@ -511,7 +511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 185960948}
   highscoreText: {fileID: 1297320124}
-  hvadGame: 
+  hvadGame: Snake
   allMiniGames: []
 --- !u!114 &766095282
 MonoBehaviour:
@@ -784,7 +784,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}

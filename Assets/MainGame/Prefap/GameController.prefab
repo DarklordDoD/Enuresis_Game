@@ -4161,6 +4161,7 @@ MonoBehaviour:
   standartUI:
   - {fileID: 7263582539933010486}
   - {fileID: 1282539799}
+  - {fileID: 594649290}
   sporgeSkema:
   - {fileID: 1500858746995048737, guid: eac97b9823d61bf4bb335f014f5bd69a, type: 3}
   musicForScene:
