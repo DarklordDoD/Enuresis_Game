@@ -126,7 +126,14 @@ public class KledeSkab : MonoBehaviour
                     {
                         foreach (GameObject itemOS in GameObject.FindGameObjectsWithTag("ShopItem"))
                         {
-                            if (itemOS.GetComponent<Item>().itemType == itemTyps)
+                            GameObject tjekFrind = null;
+
+                            try
+                            {
+                                tjekFrind = itemOS.GetComponentInParent<FrindBehave>().gameObject;               
+                            } catch { }
+
+                            if (itemOS.GetComponent<Item>().itemType == itemTyps && tjekFrind == null)
                                 Destroy(itemOS);
                         }
                     }
