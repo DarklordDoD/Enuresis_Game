@@ -10,17 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: SimonSaysTutorialText_da
+  m_Name: MemoryGameEndScreen_en
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: da
-  m_SharedData: {fileID: 11400000, guid: 7b91700904d63a04b84a06823aaa3a43, type: 2}
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: ef0555494b70fec4e8410dc23b382af0, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 8043433984
-    m_Localized: "Dette er et huskespil, du skal trykke p\xE5 farverne der lyser
-      op i den r\xE6kkef\xF8lge de lyser op."
+  - m_Id: 11801530368
+    m_Localized: Nicely Done!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 209718153216
+    m_Localized: Close Game
     m_Metadata:
       m_Items: []
   references:

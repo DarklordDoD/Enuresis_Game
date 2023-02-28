@@ -37,38 +37,13 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-da
-  - m_GUID: edd3172b31f624e368e66a4b23feb860
-    m_Address: vendespil luk - light
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-da
-  - m_GUID: 822645a6fe02641e1a0ad535e174dabc
-    m_Address: simon siger luk - light
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-da
-  - m_GUID: 6777024389bbe4ef6b1db045a0939d1f
-    m_Address: "simon siger pr\xF8v igen - light"
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-da
-  - m_GUID: 32b047a29994a4420a049a11a7b66786
-    m_Address: simon siger menu - light
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-da
-  - m_GUID: bde070a4a34ed4247b3eb2e3afc564d8
-    m_Address: simon siger tilbage - light
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-da
   - m_GUID: 1c8b52812d8fe43c2af61333a46ff3ca
     m_Address: vendespil title
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-da
-  - m_GUID: eb6c32afa4c3e4141814de10e1e3080a
-    m_Address: Simon siger title
+  - m_GUID: 822645a6fe02641e1a0ad535e174dabc
+    m_Address: simon siger luk - light
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-da

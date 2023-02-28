@@ -37,38 +37,13 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
-  - m_GUID: 0468f4249cecc4257a7d78bd7e0e4188
-    m_Address: vendespil end - light
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
-  - m_GUID: 3af0aadfa72bf4deca7224ba5bee63b1
-    m_Address: simon siger end - light
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
-  - m_GUID: a5d942d340c634d3faef11c5cebc0364
-    m_Address: simon siger try again- light
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
-  - m_GUID: 203f87254d6854b378feaa9d01edee77
-    m_Address: simon siger main menu - light
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
-  - m_GUID: 8d6da4d0c73f443a8aaaaf06582962a3
-    m_Address: simon siger back - light
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
   - m_GUID: ca261dd6942ce49968d9153b172fedf4
     m_Address: memory game title
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
-  - m_GUID: 5422cf8dc9bcb4c449abefd81dffeefc
-    m_Address: Simon says title
+  - m_GUID: 3af0aadfa72bf4deca7224ba5bee63b1
+    m_Address: simon siger end - light
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
