@@ -2522,6 +2522,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 594649292, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: nextRewardDelay
+      value: 86400
+      objectReference: {fileID: 0}
     - target: {fileID: 712255103116963998, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
