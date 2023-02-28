@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97269afb30aa84742ae3f3342603618a, type: 3}
+  m_Name: RunnerWinScreen_da
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: da
+  m_SharedData: {fileID: 11400000, guid: 60eb8557baa9cd6468e0b1cccd3dbe3e, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 68034564096
+    m_Localized: 16c7b329f46fc4fc4b2d0b92120de1a6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30000615424
+    m_Localized: 9dd6777116c944c24a4e389edbb0deb5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51181850624
+    m_Localized: 4c5dc533b8283426fb8ce88676633c68
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

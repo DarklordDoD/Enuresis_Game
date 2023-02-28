@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: SnakeEndScreen Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: SnakeEndScreen
+  m_TableCollectionNameGuidString: 51c31bd70c2cade47999a9e94d257671
+  m_Entries:
+  - m_Id: 255469621248
+    m_Key: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 793506549760
+    m_Key: Retry
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items:
+    - rid: 3720198234755563559
+  m_KeyGenerator:
+    rid: 3720198234755563558
+  references:
+    version: 2
+    RefIds:
+    - rid: 3720198234755563558
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1677577292527
+    - rid: 3720198234755563559
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 255469621248
+          m_TableCodes:
+          - da
+          - en
+        - m_KeyId: 793506549760
+          m_TableCodes:
+          - da
+          - en
+        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null

@@ -29,6 +29,24 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-da
     - Preload
+  - m_GUID: 5f954bd030990f747a60f44af719fce9
+    m_Address: ChoosePet_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
+  - m_GUID: 9c0c00d55589c6a438181eb43755714a
+    m_Address: Dressing Room_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
+  - m_GUID: 64f074618d79e9641ad076b4feacb4a7
+    m_Address: RunnerTutorial_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 725951384df75fb4b82b5ca98b14127e, type: 2}
   m_SchemaSet:
