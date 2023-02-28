@@ -673,7 +673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 706922261}
   highscoreText: {fileID: 95334557}
-  hvadGame: Simon siger
+  hvadGame: Simon
   allMiniGames: []
 --- !u!1 &1014430506
 GameObject:

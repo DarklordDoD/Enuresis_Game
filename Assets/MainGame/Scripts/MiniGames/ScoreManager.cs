@@ -48,13 +48,13 @@ public class ScoreManager : MonoBehaviour
             allMiniGames.Add(new ASnack { snackType = theSplitGames[0], amaunt = int.Parse(theSplitGames[1]) });
         }
 
-        //setter den gemte score som highscore
-        try
-        {
-            FindScoreOnList(out ASnack theGame);
+        //setter den gemte score som highscore, eller adder ny hvisder ikke er en
+        FindScoreOnList(out ASnack theGame);
+
+        if (theGame == null)
+            allMiniGames.Add(new ASnack { snackType = hvadGame });
+        else
             highscore = theGame.amaunt;
-        }
-        catch { }
 
         scoreText.text = "Score: " + score.ToString();
         highscoreText.text = "Highscore: " + highscore.ToString();
