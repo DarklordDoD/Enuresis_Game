@@ -31,19 +31,6 @@ public class GameManager : MonoBehaviour
     public AudioSource correct;
     public AudioSource incorrect;
 
-    public Text scoreText;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        if(!PlayerPrefs.HasKey("HiScore"))
-        {
-            PlayerPrefs.SetInt("HiScore", 0);
-        }
-        scoreText.text = "Score: 0 - HighScore: " + PlayerPrefs.GetInt("HiScore");
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -112,8 +99,6 @@ public class GameManager : MonoBehaviour
 
         stayLitCounter = stayLit;
         shouldBeLit = true;
-
-        scoreText.text = "Score: 0 - HighScore: " + PlayerPrefs.GetInt("HiScore");
     }
 
     public void ColourPressed(int whichButton)
@@ -132,11 +117,7 @@ public class GameManager : MonoBehaviour
 
                 if(inputInSequence >= activeSequence.Count)
                 {
-                    if(activeSequence.Count > PlayerPrefs.GetInt("HiScore"))
-                    {
-                        PlayerPrefs.SetInt("HiScore", activeSequence.Count);
-                    }
-                    scoreText.text = "Score: " + activeSequence.Count + " - Highscore: " + PlayerPrefs.GetInt("HiScore");
+                    GetComponent<ScoreManager>().AddPoint();
 
                     positionInSequence = 0;
                     inputInSequence = 0;

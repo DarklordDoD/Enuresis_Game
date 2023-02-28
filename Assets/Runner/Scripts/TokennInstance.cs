@@ -11,7 +11,7 @@ public class TokennInstance : MonoBehaviour
     {
         if (Coin.tag == "MyCoin")
         {
-            ScorreManager.instance.AddPoint();
+            ScoreManager.instance.AddPoint();
             Destroy(Coin.gameObject);
 
 
