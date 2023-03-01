@@ -10,23 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: SimonSaysTutorialText Shared Data
+  m_Name: MemoryGameEndScreen Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: SimonSaysTutorialText
-  m_TableCollectionNameGuidString: 7b91700904d63a04b84a06823aaa3a43
+  m_TableCollectionName: MemoryGameEndScreen
+  m_TableCollectionNameGuidString: ef0555494b70fec4e8410dc23b382af0
   m_Entries:
-  - m_Id: 8043433984
-    m_Key: Text
+  - m_Id: 11801530368
+    m_Key: Nicely Done!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 209718153216
+    m_Key: Close Game
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 3720198237529047088
+    rid: 3720198233938984962
   references:
     version: 2
     RefIds:
-    - rid: 3720198237529047088
+    - rid: 3720198233938984962
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1677587221234
+        m_CustomEpoch: 1677569927724

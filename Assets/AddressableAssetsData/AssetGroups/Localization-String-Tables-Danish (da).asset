@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 3fe086ddadf56ba4a8c794795f11d418
   m_SerializeEntries:
+  - m_GUID: 1c0d476e4a2ebfb459d5aca4436af1d3
+    m_Address: MemoryGameTitle_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
   - m_GUID: 5f954bd030990f747a60f44af719fce9
     m_Address: ChoosePet_da
     m_ReadOnly: 1
@@ -35,18 +41,16 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-da
     - Preload
-  - m_GUID: 3bc582db32b59e74d926f1c25e23092e
-    m_Address: MemoryGameEndScreenText_da
+  - m_GUID: 4fb333a0a6687234489cb3e77332c813
+    m_Address: SimonSaysTutorial_da
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-da
-    - Preload
-  - m_GUID: 472e7bead2586874694f15f376998104
-    m_Address: SimonSaysTutorialText_da
+  - m_GUID: d6e765e14183deb4b979b82814109c32
+    m_Address: MemoryGameEndScreen_da
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-da
-    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 725951384df75fb4b82b5ca98b14127e, type: 2}
   m_SchemaSet:

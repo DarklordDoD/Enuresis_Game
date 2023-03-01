@@ -59,7 +59,7 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-da
     - Preload
-  - m_GUID: 1c0d476e4a2ebfb459d5aca4436af1d3
+  - m_GUID: 1640b0617741755488c9ce490df800c9
     m_Address: MemoryGameTitle_da
     m_ReadOnly: 1
     m_SerializedLabels:
@@ -67,24 +67,6 @@ MonoBehaviour:
     - Preload
   - m_GUID: ee38bbbabd072db46b6b858e13c3cc5f
     m_Address: SimonSaysTitle_da
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-da
-    - Preload
-  - m_GUID: 5ded45c92f05ffd448340a5f49b27af3
-    m_Address: MemoryGameEndScreenButton_da
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-da
-    - Preload
-  - m_GUID: bf4b5c6254dd51d45928c51f2dab61cb
-    m_Address: SimonSaysGameOver_da
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-da
-    - Preload
-  - m_GUID: 21038a2ddd63e8d48bcceb11ea70b2cf
-    m_Address: SimonSaysTutorialImage_da
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-da

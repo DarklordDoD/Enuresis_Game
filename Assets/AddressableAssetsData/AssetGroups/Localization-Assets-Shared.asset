@@ -18,15 +18,9 @@ MonoBehaviour:
   m_GUID: db8c3b92bde0a6b47b8c58c89703f47b
   m_SerializeEntries:
   - m_GUID: 516d49df8a553b94d86e43d2e1562b2a
-    m_Address: Assets/Local Settings/Tables/MemoryGameTitle Shared Data.asset
+    m_Address: Assets/Local Settings/Tables/StringTable Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
-  - m_GUID: 4e5dfd95729eb429fa602f85fd3bdff3
-    m_Address: vendespil start - light
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-da
-    - Locale-en
   - m_GUID: 36e00191ef0049e4490bef0a9d1dbdae
     m_Address: Assets/Local Settings/Tables/ChoosePet Shared Data.asset
     m_ReadOnly: 1
@@ -107,24 +101,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-da
     - Locale-en
-  - m_GUID: 9bd9645db5e816c469d3a4d2db99c28f
-    m_Address: Assets/Local Settings/Tables/MemoryGameEndScreenText Shared Data.asset
+  - m_GUID: 0f4dc715a00957343a7d1b3c9c0da4d8
+    m_Address: Assets/Local Settings/Tables/SimonSaysTutorial Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
-  - m_GUID: af85bd5e31131884f83f8ec0aa4e006d
-    m_Address: Assets/Local Settings/Tables/MemoryGameEndScreenButton Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
-  - m_GUID: 6dcec32c66347ba4a83ad8899aacb906
-    m_Address: Assets/Local Settings/Tables/SimonSaysGameOver Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
-  - m_GUID: 27e46be2d0ebff84fa193e58c3af4326
-    m_Address: Assets/Local Settings/Tables/SimonSaysTutorialImage Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
-  - m_GUID: 7b91700904d63a04b84a06823aaa3a43
-    m_Address: Assets/Local Settings/Tables/SimonSaysTutorialText Shared Data.asset
+  - m_GUID: ef0555494b70fec4e8410dc23b382af0
+    m_Address: Assets/Local Settings/Tables/MemoryGameEndScreen Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
   m_ReadOnly: 1

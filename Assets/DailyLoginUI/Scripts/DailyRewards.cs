@@ -58,6 +58,7 @@ namespace DailyRewardsSystem
         private GameObject snacksMenu;
         private int currency;
         private int snacks;
+        private DateTime rewardClaimDateTime;
 
         void Start()
         {
@@ -67,20 +68,16 @@ namespace DailyRewardsSystem
             if (snacksMenu.GetComponent<SnackMenu>().menuOpen)
                 snacksMenu.GetComponent<SnackMenu>().OpenMenu();
 
+            rewardClaimDateTime = gameController.GetComponent<Ressourcer>().dato;
+
             Initialize();
 
             StopAllCoroutines();
-            StartCoroutine ( CheckForRewards());           
+            StartCoroutine ( CheckForRewards());   
         }
 
         void Initialize()
         {
-            nextRewardIndex = PlayerPrefs.GetInt("Next_Reward_Index", 0);
-
-            //Update Mainmenu UI (currency, snacks)
-            UpdateCurrencyTextUI();
-            UpdateSnacksTextUI();
-
             //Add Click Events
             openButton.onClick.RemoveAllListeners();
             openButton.onClick.AddListener(OnOpenButtonClick);
@@ -91,10 +88,6 @@ namespace DailyRewardsSystem
             //Claim button
             claimButton.onClick.RemoveAllListeners();
             claimButton.onClick.AddListener( OnClaimButtonClick );
-
-            //Check if the game is opened for the first time then set Reward_Claim_DateTime to the current datetime
-            if (string.IsNullOrEmpty (PlayerPrefs.GetString ("Reward_Claim_Datetime")))
-            PlayerPrefs.SetString ( "Reward_Claim_Datetime", DateTime.Now.ToString());
         }
 
         IEnumerator CheckForRewards()
@@ -104,8 +97,7 @@ namespace DailyRewardsSystem
             {
                 if (!isRewardReady)
                 {
-                    DateTime currentDatetime = DateTime.Now;
-                    DateTime rewardClaimDateTime = DateTime.Parse(PlayerPrefs.GetString("Reward_Claim_Datetime", currentDatetime.ToString()));
+                    DateTime currentDatetime = DateTime.Now;                 
 
                     //Get total seconds between these two dates (in your real game use TotalHours)
                     double elapsedSeconds = (currentDatetime - rewardClaimDateTime).TotalSeconds;
@@ -123,6 +115,8 @@ namespace DailyRewardsSystem
 
         void ActivateReward()
         {
+            rewardClaimDateTime = DateTime.Now;
+
             isRewardReady = true;
 
             noMoreRewardsPanel.SetActive(false);
