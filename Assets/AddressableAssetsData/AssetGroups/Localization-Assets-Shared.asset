@@ -109,6 +109,10 @@ MonoBehaviour:
     m_Address: Assets/Local Settings/Tables/MemoryGameEndScreen Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: a5d5c31cf331e6444a6ae713b8442aa0
+    m_Address: Assets/Local Settings/Tables/ShopButten Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 725951384df75fb4b82b5ca98b14127e, type: 2}
   m_SchemaSet:

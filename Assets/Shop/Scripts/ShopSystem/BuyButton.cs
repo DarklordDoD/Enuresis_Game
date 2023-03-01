@@ -12,6 +12,8 @@ public class BuyButton : MonoBehaviour
     private AllItems itemList;
     private Snacks SnavkStorige;
 
+    public string bougtSkrift;
+
     private void Start()
     {
         GameObject gameManeger = GameObject.FindGameObjectWithTag("GameController");
@@ -65,7 +67,6 @@ public class BuyButton : MonoBehaviour
 
     public void UpdateBuyButton()
     {
-        buttonText.text = "Aktiv";
         //Change cosmetic on your character / add the cosmetic
         for(int i = 0; i < CosmeticsShop.cosmeticsShop.buyButtonList.Count;i++)
         {
@@ -75,7 +76,7 @@ public class BuyButton : MonoBehaviour
                 //Has the item been bought, does the cosmetic id match?
                 if (CosmeticsShop.cosmeticsShop.cosmeticsList[j].cosmeticsID == BuyButtonScript.cosmeticsID && CosmeticsShop.cosmeticsShop.cosmeticsList[j].bought && CosmeticsShop.cosmeticsShop.cosmeticsList[j].cosmeticsID != cosmeticsID)
                 {
-                    BuyButtonScript.buttonText.text = "Brug";
+                    BuyButtonScript.buttonText.text = bougtSkrift;
                 }
             }       
         }
