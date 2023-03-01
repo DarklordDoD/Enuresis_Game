@@ -113,6 +113,14 @@ MonoBehaviour:
     m_Address: Assets/Local Settings/Tables/ShopButten Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: fe414c4872994ad479578ce287fc083b
+    m_Address: Assets/Local Settings/Tables/MemoryGameEndAssets Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 1a9ed66f19005ef4c9723c6d811ce6c8
+    m_Address: Assets/Local Settings/Tables/GardenShopSign Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 725951384df75fb4b82b5ca98b14127e, type: 2}
   m_SchemaSet:

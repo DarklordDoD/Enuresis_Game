@@ -47,6 +47,26 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-da
+  - m_GUID: edd3172b31f624e368e66a4b23feb860
+    m_Address: vendespil luk - light
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+  - m_GUID: 7c3c1375bec2b4b4dbe88e84eea5f16c
+    m_Address: "vendespil pr\xF8v igen - light"
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+  - m_GUID: 62d2b0f73540641908a1341be338e9db
+    m_Address: vendespil menu - light
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+  - m_GUID: 9a0a7a8e5153545918fe1cf37cc8cf87
+    m_Address: Loppemarked text
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 725951384df75fb4b82b5ca98b14127e, type: 2}
   m_SchemaSet:
