@@ -13,31 +13,31 @@ MonoBehaviour:
   m_Name: GardenShopSign Shared Data
   m_EditorClassIdentifier: 
   m_TableCollectionName: GardenShopSign
-  m_TableCollectionNameGuidString: 1a9ed66f19005ef4c9723c6d811ce6c8
+  m_TableCollectionNameGuidString: 7c251788e3c27a043a97355e526a10d1
   m_Entries:
-  - m_Id: 5958864896
-    m_Key: Sign
+  - m_Id: 6608982016
+    m_Key: ShopSign
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items:
-    - rid: 8953270442750640139
+    - rid: 8953270442750640145
   m_KeyGenerator:
-    rid: 8953270442750640138
+    rid: 8953270442750640144
   references:
     version: 2
     RefIds:
-    - rid: 8953270442750640138
+    - rid: 8953270442750640144
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1677673874835
-    - rid: 8953270442750640139
+        m_CustomEpoch: 1677676252006
+    - rid: 8953270442750640145
       type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_Entries:
-        - m_KeyId: 5958864896
+        - m_KeyId: 6608982016
           m_TableCodes:
-          - da
           - en
+          - da
         m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null

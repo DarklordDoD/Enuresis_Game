@@ -121,8 +121,8 @@ MonoBehaviour:
     m_Address: Assets/Local Settings/Tables/GardenShopSign Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
-  - m_GUID: 8eef8a4335ec2964cbd627b77ab59d85
-    m_Address: Assets/Local Settings/Tables/Shop Shared Data.asset
+  - m_GUID: 7c251788e3c27a043a97355e526a10d1
+    m_Address: Assets/Local Settings/Tables/GardenShopSign Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
   m_ReadOnly: 1
