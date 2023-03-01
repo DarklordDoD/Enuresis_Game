@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AddRessourcer : MonoBehaviour
 {
     [SerializeField]
-    private List<float> addRessuorcerTil = new List<float> {0,0,0};
+    private List<float> addRessuorcerTil = new List<float> {0,0,0,0};
     [SerializeField]
     private float delayMellemKlik;
     [SerializeField]
@@ -64,6 +65,7 @@ public class AddRessourcer : MonoBehaviour
                 ressourcer.RemuveTis(addRessuorcerTil[0]);
                 ressourcer.AddVand(addRessuorcerTil[1]);
                 ressourcer.AddGlad(addRessuorcerTil[2]);
+                ressourcer.monny += Convert.ToInt32(addRessuorcerTil[3]);
             }
         }
     }

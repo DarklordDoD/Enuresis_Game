@@ -858,6 +858,7 @@ MonoBehaviour:
   - 5000
   - 0
   - 0
+  - 0
   delayMellemKlik: 5
   showTimer: {fileID: 1931623726}
   theAnimation: Side
@@ -1059,6 +1060,7 @@ MonoBehaviour:
   - 0
   - 0
   - 1000
+  - 0
   delayMellemKlik: 0
   showTimer: {fileID: 0}
   theAnimation: brush

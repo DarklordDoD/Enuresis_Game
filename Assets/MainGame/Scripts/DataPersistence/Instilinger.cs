@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization.Settings;
+using System.Security.Cryptography;
 
 public class Instilinger : MonoBehaviour
 {
@@ -37,7 +39,7 @@ public class Instilinger : MonoBehaviour
     private Vector2 frindStartPosition;
     [SerializeField]
     private bool frind;
-    //[HideInInspector]
+    [HideInInspector]
     public bool nuMiniGame;
 
     private void Awake()
@@ -87,6 +89,8 @@ public class Instilinger : MonoBehaviour
     {
         sprog = detteSprog;
 
+        StartCoroutine(SetLocal(sprog));
+
         AktivateButten();
     }
 
@@ -135,5 +139,11 @@ public class Instilinger : MonoBehaviour
         saveList = new List<string>() {sprog.ToString(),soundLevel.ToString(),frind.ToString()};
 
         SaveClass.WriteToFile("Instillinger", saveList, false);
+    }
+
+    IEnumerator SetLocal(int lID)
+    {
+        yield return LocalizationSettings.InitializationOperation;
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[lID];  
     }
 }
