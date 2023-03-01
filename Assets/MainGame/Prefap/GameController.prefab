@@ -4386,16 +4386,22 @@ MonoBehaviour:
   - {fileID: 1500858746995048737, guid: eac97b9823d61bf4bb335f014f5bd69a, type: 3}
   musicForScene:
   - sceneMedMusic: Stue
-    music: {fileID: 8300000, guid: 0f733d9a970ea03479ead30f060434b9, type: 3}
+    music: {fileID: 8300000, guid: b275f426778faf94cb30d07a556da953, type: 3}
     overgange: 0.5
   - sceneMedMusic: Toilet
-    music: {fileID: 8300000, guid: c854d3249a273b1459ba3d1442a403f1, type: 3}
+    music: {fileID: 8300000, guid: d65e2c2c99e76fd42b5dc61707fa4d8e, type: 3}
     overgange: 0.5
   - sceneMedMusic: Bedroom
-    music: {fileID: 8300000, guid: 479b18819d391044cb03d3dd8f96a9f4, type: 3}
+    music: {fileID: 8300000, guid: 7a4a484a75a9ba64ab9e37fa495d56a7, type: 3}
     overgange: 0.5
   - sceneMedMusic: Garden
-    music: {fileID: 8300000, guid: 2697e53900ff94a4f88ba85abbd4c2b3, type: 3}
+    music: {fileID: 8300000, guid: 1e079c0fa2943a242a8465ada8b05da2, type: 3}
+    overgange: 0.5
+  - sceneMedMusic: MainMenu_Runner
+    music: {fileID: 8300000, guid: cd6b90cccb859a147856e6fd968aba03, type: 3}
+    overgange: 0.5
+  - sceneMedMusic: Shop_Scene
+    music: {fileID: 8300000, guid: 8f614884314409a40a1bdc3e4a6e7088, type: 3}
     overgange: 0.5
   thePetFrind: {fileID: 0}
   valgtSprog: 0
