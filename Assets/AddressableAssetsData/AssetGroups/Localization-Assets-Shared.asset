@@ -21,10 +21,6 @@ MonoBehaviour:
     m_Address: Assets/Local Settings/Tables/StringTable Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
-  - m_GUID: ef0555494b70fec4e8410dc23b382af0
-    m_Address: Assets/Local Settings/Tables/MemoryGameEndScreen Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
   - m_GUID: 36e00191ef0049e4490bef0a9d1dbdae
     m_Address: Assets/Local Settings/Tables/ChoosePet Shared Data.asset
     m_ReadOnly: 1
@@ -107,6 +103,10 @@ MonoBehaviour:
     - Locale-en
   - m_GUID: 0f4dc715a00957343a7d1b3c9c0da4d8
     m_Address: Assets/Local Settings/Tables/SimonSaysTutorial Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: ef0555494b70fec4e8410dc23b382af0
+    m_Address: Assets/Local Settings/Tables/MemoryGameEndScreen Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
   m_ReadOnly: 1

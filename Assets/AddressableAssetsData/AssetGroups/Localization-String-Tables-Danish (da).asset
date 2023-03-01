@@ -23,12 +23,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-da
     - Preload
-  - m_GUID: d6e765e14183deb4b979b82814109c32
-    m_Address: MemoryGameEndScreen_da
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-da
-    - Preload
   - m_GUID: 5f954bd030990f747a60f44af719fce9
     m_Address: ChoosePet_da
     m_ReadOnly: 1
@@ -49,6 +43,11 @@ MonoBehaviour:
     - Preload
   - m_GUID: 4fb333a0a6687234489cb3e77332c813
     m_Address: SimonSaysTutorial_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+  - m_GUID: d6e765e14183deb4b979b82814109c32
+    m_Address: MemoryGameEndScreen_da
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-da
