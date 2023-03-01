@@ -71,6 +71,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-da
     - Preload
+  - m_GUID: 2acfe9b988344d340989db33238877f9
+    m_Address: MemoryGameEndAssets_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
+  - m_GUID: 859c7687de706ad41b900198342c2a71
+    m_Address: GardenShopSign_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 725951384df75fb4b82b5ca98b14127e, type: 2}
   m_SchemaSet:
