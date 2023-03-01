@@ -16,7 +16,7 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 1a9ed66f19005ef4c9723c6d811ce6c8
   m_Entries:
   - m_Id: 5958864896
-    m_Key: SignText
+    m_Key: Sign
     m_Metadata:
       m_Items: []
   m_Metadata:
