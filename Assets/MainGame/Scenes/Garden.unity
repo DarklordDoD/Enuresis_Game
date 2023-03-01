@@ -1619,9 +1619,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LocalizedAssetReference:
     m_TableReference:
-      m_TableCollectionName: GUID:1a9ed66f19005ef4c9723c6d811ce6c8
+      m_TableCollectionName: GUID:8eef8a4335ec2964cbd627b77ab59d85
     m_TableEntryReference:
-      m_KeyId: 5958864896
+      m_KeyId: 10761977856
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
