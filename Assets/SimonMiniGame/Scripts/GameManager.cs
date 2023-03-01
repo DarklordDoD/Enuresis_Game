@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
             if (stayLitCounter < 0)
             {
-                colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 0.5f);
+                colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 1f);
                 buttonSounds[activeSequence[positionInSequence]].Stop();
                 shouldBeLit = false;
 
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
 
                     
 
-                    colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 1f);
+                    colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 0.5f);
                     buttonSounds[activeSequence[positionInSequence]].Play();
 
                     stayLitCounter = stayLit;
@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
 
         activeSequence.Add(colourSelect);
 
-        colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 1f);
+        colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 0.5f);
         buttonSounds[activeSequence[positionInSequence]].Play();
 
         stayLitCounter = stayLit;
@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
 
                     activeSequence.Add(colourSelect);
 
-                    colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 1f);
+                    colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 0.5f);
                     buttonSounds[activeSequence[positionInSequence]].Play();
 
                     stayLitCounter = stayLit;
