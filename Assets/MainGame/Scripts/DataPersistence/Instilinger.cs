@@ -37,6 +37,8 @@ public class Instilinger : MonoBehaviour
     private Vector2 frindStartPosition;
     [SerializeField]
     private bool frind;
+    //[HideInInspector]
+    public bool nuMiniGame;
 
     private void Awake()
     {
@@ -106,14 +108,17 @@ public class Instilinger : MonoBehaviour
         AddFrind();
     }
 
-    private void AddFrind()
+    public void AddFrind()
     {
         frindButten.GetComponent<Image>().sprite = buttenLooks[Convert.ToInt32(frind)];
 
-        if (frind && muvePet.frindInstance == null)
-            Instantiate(theFrind, frindStartPosition, Quaternion.identity);
-        else
-            Destroy(muvePet.frindInstance);
+        if (!nuMiniGame)
+        {
+            if (frind && muvePet.frindInstance == null)
+                Instantiate(theFrind, frindStartPosition, Quaternion.identity);
+            else if (!frind)
+                Destroy(muvePet.frindInstance);
+        }
     }
 
     private void LoadInstilinger()

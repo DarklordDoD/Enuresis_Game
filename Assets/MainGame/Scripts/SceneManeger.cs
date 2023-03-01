@@ -18,6 +18,8 @@ public class SceneManeger : MonoBehaviour
 
     public static GameObject instance;
     private GameObject thePet;
+    [SerializeField]
+    private GameObject thePetFrind;
     [HideInInspector]
     public int valgtSprog;
 
@@ -56,6 +58,18 @@ public class SceneManeger : MonoBehaviour
         }
         
         thePet.SetActive(minigame);
+
+
+        if (thePetFrind == null)
+            thePetFrind = GameObject.FindGameObjectWithTag("PetFrind");
+
+        GetComponent<Instilinger>().nuMiniGame = !minigame;
+
+        if (thePetFrind != null)
+            thePetFrind.SetActive(minigame);
+
+        if (minigame)
+            GetComponent<Instilinger>().AddFrind();
     }
 
     //loader en ny scene
