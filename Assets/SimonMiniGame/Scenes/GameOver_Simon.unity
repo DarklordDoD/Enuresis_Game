@@ -1220,7 +1220,7 @@ GameObject:
   - component: {fileID: 1839027367}
   - component: {fileID: 1839027366}
   m_Layer: 0
-  m_Name: Simon siger blank background
+  m_Name: Simon siger background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1267,7 +1267,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 28ae817dfe74a4c2797b605f509b9015, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c4ea433d83c043b9a7f65132a718b66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
