@@ -1244,7 +1244,7 @@ GameObject:
   - component: {fileID: 1765353975}
   - component: {fileID: 1765353974}
   m_Layer: 0
-  m_Name: Runner blank background
+  m_Name: Runner background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1291,7 +1291,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3383e2c1dd3c0438ebfc46200abb86ef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c0c946c0fec8a47538d63cab7ba230b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
