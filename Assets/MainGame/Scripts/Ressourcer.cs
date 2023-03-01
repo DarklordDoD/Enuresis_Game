@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 public class Ressourcer : MonoBehaviour
 {
@@ -55,7 +56,10 @@ public class Ressourcer : MonoBehaviour
     private float gladVandNed;
 
     [Header("Monny")]
+    [SerializeField]
+    private TextMeshProUGUI monnyShow;
     public int monny;
+    
 
     [Header("Andet")]
     [SerializeField]
@@ -212,6 +216,8 @@ public class Ressourcer : MonoBehaviour
 
         gladShowMeter = Mathf.Lerp(gladShowMeter, gladMeter, meterSpeed * Time.deltaTime);
         gladShow.size = gladShowMeter / maxBar;
+
+        monnyShow.text = monny.ToString();
     }
 
     private void OnApplicationQuit()

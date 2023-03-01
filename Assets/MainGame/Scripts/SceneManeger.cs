@@ -59,7 +59,7 @@ public class SceneManeger : MonoBehaviour
         
         thePet.SetActive(minigame);
 
-
+        //Aktiver og deaktiver Frind når man går ind og ud af minigames
         if (thePetFrind == null)
             thePetFrind = GameObject.FindGameObjectWithTag("PetFrind");
 
