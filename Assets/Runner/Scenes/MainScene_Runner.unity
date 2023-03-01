@@ -7062,7 +7062,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3031567912043593628, guid: fa7fcc7a746264ef1a97dba87907ad6b, type: 3}
       propertyPath: m_Name
-      value: Sideview-body1
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3031567912043593628, guid: fa7fcc7a746264ef1a97dba87907ad6b, type: 3}
       propertyPath: m_TagString
