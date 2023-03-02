@@ -325,7 +325,7 @@ public class Ressourcer : MonoBehaviour
         saveR = new List<string>() {"","","","","",""}; //set list lengde
 
         //samle alle variabler i en liste
-        saveR[0] = dato.ToString("dd/MM/yyyy HH:mm:ss");
+        saveR[0] = dato.ToString("dd-MM-yyyy HH:mm:ss");
         saveR[1] = tisMeter.ToString();
         saveR[2] = vandMeter.ToString();
         saveR[3] = gladMeter.ToString();
