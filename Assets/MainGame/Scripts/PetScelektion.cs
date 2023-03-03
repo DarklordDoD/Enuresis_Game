@@ -21,6 +21,8 @@ public class PetScelektion : MonoBehaviour
 
     private void Awake()
     {
+        Application.targetFrameRate = 30;
+
         thePet = GameObject.FindGameObjectWithTag("Player");
 
         //prøver at loade sidste gemte pet
