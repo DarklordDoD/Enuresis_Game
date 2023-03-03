@@ -218,6 +218,9 @@ public class Ressourcer : MonoBehaviour
         gladShow.size = gladShowMeter / maxBar;
 
         monnyShow.text = monny.ToString();
+
+        if (opdateringsTid > reduceSpeed)
+            SaveRecorses();
     }
 
     private void OnApplicationQuit()
