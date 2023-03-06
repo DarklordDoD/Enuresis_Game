@@ -934,8 +934,9 @@ GameObject:
   m_Component:
   - component: {fileID: 825689881}
   - component: {fileID: 825689880}
+  - component: {fileID: 825689882}
   m_Layer: 0
-  m_Name: "seng_g\xE6st"
+  m_Name: SengFrind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1008,6 +1009,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &825689882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825689879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8428c999e0705c4cadb8355307acb93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &863407403
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,7 +2218,6 @@ GameObject:
   - component: {fileID: 1483098913}
   - component: {fileID: 1483098912}
   - component: {fileID: 1483098911}
-  - component: {fileID: 1483098910}
   m_Layer: 5
   m_Name: QuitThis
   m_TagString: Untagged
@@ -2234,22 +2246,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1.4, y: 0.7}
   m_Pivot: {x: 0.5, y: 0}
---- !u!114 &1483098910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1483098908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e37bd1f3f0c2e04e8069e2909666852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skiftSceneTil: 
-  minigame: 0
-  aktivateUI: {fileID: 1399324025}
-  aktivate: 0
 --- !u!114 &1483098911
 MonoBehaviour:
   m_ObjectHideFlags: 0

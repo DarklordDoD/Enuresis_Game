@@ -34,6 +34,8 @@ public class AddRessourcer : MonoBehaviour
         petMuvment = thePet.GetComponent<muvePet>();
 
         klikTimer = delayMellemKlik;
+
+        ressourcer = GameObject.FindGameObjectWithTag("GameController").GetComponent<Ressourcer>();
     }
 
     private void Update()
@@ -49,8 +51,6 @@ public class AddRessourcer : MonoBehaviour
     {
         if (tjekTrikker)
         {
-            ressourcer = GameObject.FindGameObjectWithTag("GameController").GetComponent<Ressourcer>();
-
             if (klikTimer >= delayMellemKlik)
             {
                 petMuvment.onTask = true;
@@ -62,12 +62,17 @@ public class AddRessourcer : MonoBehaviour
                 tjekTrikker = false;
                 Detecter.enabled = false;
 
-                ressourcer.RemuveTis(addRessuorcerTil[0]);
-                ressourcer.AddVand(addRessuorcerTil[1]);
-                ressourcer.AddGlad(addRessuorcerTil[2]);
-                ressourcer.monny += Convert.ToInt32(addRessuorcerTil[3]);
+                TheAddAmount();
             }
         }
+    }
+
+    public void TheAddAmount()
+    {
+        ressourcer.RemuveTis(addRessuorcerTil[0]);
+        ressourcer.AddVand(addRessuorcerTil[1]);
+        ressourcer.AddGlad(addRessuorcerTil[2]);
+        ressourcer.monny += Convert.ToInt32(addRessuorcerTil[3]);
     }
 
     private void StopAnimation()

@@ -37,8 +37,8 @@ public class Instilinger : MonoBehaviour
     private GameObject theFrind;
     [SerializeField]
     private Vector2 frindStartPosition;
-    [SerializeField]
-    private bool frind;
+
+    public bool frind;
     [HideInInspector]
     public bool nuMiniGame;
 
@@ -123,6 +123,11 @@ public class Instilinger : MonoBehaviour
             else if (!frind)
                 Destroy(muvePet.frindInstance);
         }
+
+        try
+        {
+            GameObject.Find("SengFrind").GetComponent<FrindBed>().SetBedStait();
+        } catch { }
     }
 
     private void LoadInstilinger()

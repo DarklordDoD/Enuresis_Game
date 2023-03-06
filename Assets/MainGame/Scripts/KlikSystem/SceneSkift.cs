@@ -38,6 +38,12 @@ public class SceneSkift : MonoBehaviour
             }
         } catch { }
 
+        try
+        {
+            aktivateUI.GetComponent<KledeSkab>().PlacePet();
+        }
+        catch { }
+
         if (aktivateUI == null)
         {
             scM.NewScene(skiftSceneTil);
@@ -50,11 +56,5 @@ public class SceneSkift : MonoBehaviour
             foreach (GameObject go in GameObject.FindGameObjectsWithTag("SceneSkift"))
                 go.GetComponent<Collider2D>().enabled = !aktivate;
         }
-
-        try
-        {
-            aktivateUI.GetComponent<KledeSkab>().PlacePet();
-        }
-        catch { }
     }
 }

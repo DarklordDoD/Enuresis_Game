@@ -134,6 +134,9 @@ public class DataSamling : MonoBehaviour
     private void GemSvar()
     {
         SaveClass.WriteToFile("SaveData", svarList, true);
+
+        GetComponent<AddRessourcer>().TheAddAmount();
+
         gameObject.SetActive(false);
     }
 }

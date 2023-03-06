@@ -176,5 +176,10 @@ public class KledeSkab : MonoBehaviour
         }
 
         SaveClass.WriteToFile("Pet",saveList , false);
+
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("SceneSkift"))
+            go.GetComponent<Collider2D>().enabled = true;
+
+        gameObject.SetActive(false);
     }
 }
