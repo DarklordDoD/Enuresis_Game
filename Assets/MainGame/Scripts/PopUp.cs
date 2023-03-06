@@ -44,7 +44,7 @@ public class PopUp : MonoBehaviour
             BackColor.a = timeTakerUd / tonIn;
             back.color = BackColor;
         }
-        else if (tonIn + tonUd > timeTaker)
+        else if (0 < timeTakerUd)
         {
             timeTakerUd -= Time.deltaTime;
 
@@ -54,7 +54,7 @@ public class PopUp : MonoBehaviour
             BackColor.a = timeTakerUd / tonUd;
             back.color = BackColor;
         }
-        else if (timeTakerUd < 0)
+        else
             Destroy(gameObject);
     }
 

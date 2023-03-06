@@ -59,7 +59,11 @@ public class Ressourcer : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI monnyShow;
     public int monny;
-    
+    private int dalyMonny;
+    [SerializeField]
+    private int maxDalyMonny;
+    [SerializeField]
+    private GameObject dalyMonnyDisplay;
 
     [Header("Andet")]
     [SerializeField]
@@ -95,11 +99,6 @@ public class Ressourcer : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        Setop();
-    }
-
-    public void Setop()
     {
         //sætte er det gemte data ind i recursce systemet
         if (loadSykse)
@@ -155,8 +154,32 @@ public class Ressourcer : MonoBehaviour
             {
                 GetComponent<SceneManeger>().NewScene("Bedroom");
 
+                dalyMonny = 0;
+
                 Invoke("Ulykke", 0.1f);
             }
+    }
+
+    public void ShowMonny(int newMonny)
+    {
+        if (dalyMonny < maxDalyMonny)
+        {
+            dalyMonny += newMonny;
+
+            int forMegetMonny = 0;
+
+            if (dalyMonny >= maxDalyMonny)
+            {
+                forMegetMonny = dalyMonny - maxDalyMonny;
+                dalyMonny = maxDalyMonny;
+            }
+
+            monny += newMonny - forMegetMonny;
+        }
+
+        dalyMonnyDisplay.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"{dalyMonny} / {maxDalyMonny}";
+
+        Instantiate(dalyMonnyDisplay, transform);
     }
 
     //sørge for at der ikke er nummer der går uden for max eller min value
@@ -325,7 +348,7 @@ public class Ressourcer : MonoBehaviour
     {
         dato = DateTime.Today + DateTime.Now.TimeOfDay; //finder dato og tid
 
-        saveR = new List<string>() {"","","","","",""}; //set list lengde
+        saveR = new List<string>() {"","","","","","",""}; //set list lengde
 
         //samle alle variabler i en liste
         saveR[0] = dato.ToString("dd-MM-yyyy HH:mm:ss");
@@ -334,6 +357,7 @@ public class Ressourcer : MonoBehaviour
         saveR[3] = gladMeter.ToString();
         saveR[4] = monny.ToString();
         saveR[5] = aktivStain.ToString();
+        saveR[6] = dalyMonny.ToString();
 
         foreach (ASnack s in GetComponent<Snacks>().snacks)
         {
@@ -351,6 +375,7 @@ public class Ressourcer : MonoBehaviour
         dato = DateTime.Parse(gotList[0]);
         aktivStain = bool.Parse(gotList[5]);
         monny = int.Parse(gotList[4]);
+        dalyMonny = int.Parse(gotList[6]);
 
         loadSykse = true;
 

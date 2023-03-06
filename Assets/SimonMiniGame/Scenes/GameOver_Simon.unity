@@ -675,6 +675,8 @@ MonoBehaviour:
   highscoreText: {fileID: 95334557}
   hvadGame: Simon
   allMiniGames: []
+  pointsToMonny: 1
+  showDalyMonny: 1
 --- !u!1 &1014430506
 GameObject:
   m_ObjectHideFlags: 0
