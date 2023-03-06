@@ -513,6 +513,8 @@ MonoBehaviour:
   highscoreText: {fileID: 1297320124}
   hvadGame: Snake
   allMiniGames: []
+  pointsToMonny: 1
+  showDalyMonny: 1
 --- !u!114 &766095282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1076,7 +1078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skiftSceneTil: Snake
-  minigame: 1
+  minigame: 0
   aktivateUI: {fileID: 0}
   aktivate: 0
 --- !u!114 &1596150833
