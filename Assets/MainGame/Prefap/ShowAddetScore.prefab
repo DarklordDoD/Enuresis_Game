@@ -90,8 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d3f19087fe6b14580536ac582d8e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tonIn: 4
-  tonUd: 2
+  tonIn: 1
+  tonUd: 0.5
   timeTakerUd: 0
 --- !u!1 &7075794372397354702
 GameObject:

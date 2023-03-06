@@ -59,8 +59,7 @@ public class Ressourcer : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI monnyShow;
     public int monny;
-    [HideInInspector]
-    public int dalyMonny;
+    private int dalyMonny;
     [SerializeField]
     private int maxDalyMonny;
     [SerializeField]
@@ -155,6 +154,8 @@ public class Ressourcer : MonoBehaviour
             {
                 GetComponent<SceneManeger>().NewScene("Bedroom");
 
+                dalyMonny = 0;
+
                 Invoke("Ulykke", 0.1f);
             }
     }
@@ -169,9 +170,10 @@ public class Ressourcer : MonoBehaviour
 
             if (dalyMonny >= maxDalyMonny)
             {
-                forMegetMonny = maxDalyMonny - dalyMonny;
+                forMegetMonny = dalyMonny - maxDalyMonny;
                 dalyMonny = maxDalyMonny;
             }
+
             monny += newMonny - forMegetMonny;
         }
 
