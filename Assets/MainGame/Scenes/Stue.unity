@@ -2450,30 +2450,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 693588149, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 693588149, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 693588149, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 693588149, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 693588149, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 693588149, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 712255103116963998, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2566,22 +2542,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: monny
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: reduceSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: maxDalyMonny
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: dalyMonnyDisplay
-      value: 
-      objectReference: {fileID: 7075794372242529680, guid: a50bba2c0891c814e9ae93e21e38ac93, type: 3}
     - target: {fileID: 712255104591520818, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_Name
       value: GameController
@@ -2589,10 +2549,6 @@ PrefabInstance:
     - target: {fileID: 712255104669333803, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5189052939098285532, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: petScelektion.Array.size
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}

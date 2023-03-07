@@ -5,7 +5,13 @@ using UnityEngine;
 public class MobileDamageController : MonoBehaviour
 {
     [SerializeField] private float obstacleDamage;
-    [SerializeField] private MobileHealthController healthController;
+    [SerializeField] private int pointMinus;
+    private MobileHealthController healthController;
+
+    private void Start()
+    {
+        healthController = GameObject.Find("GameManager").GetComponentInChildren<MobileHealthController>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,6 +26,7 @@ public class MobileDamageController : MonoBehaviour
     {
         healthController.playerHealth = healthController.playerHealth - obstacleDamage;
         healthController.UpdateHealth();
+        ScoreManager.instance.AddPoint(-pointMinus);
     }
 
 

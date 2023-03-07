@@ -1716,7 +1716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skiftSceneTil: MemoryGameTitleScreen
-  minigame: 1
+  minigame: 0
   aktivateUI: {fileID: 0}
   aktivate: 0
 --- !u!114 &2120568791
