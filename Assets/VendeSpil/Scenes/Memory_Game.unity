@@ -230,6 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 226888238}
   - component: {fileID: 226888237}
+  - component: {fileID: 226888239}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -255,6 +256,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c61add5fa5d224d318068d13084d37d4, type: 3}
   - {fileID: 21300000, guid: 6fdb613fe546e4ff482895cd3e6976fa, type: 3}
   - {fileID: 21300000, guid: acf712edd51dd45a9a4fde50d612f428, type: 3}
+  maxPoints: 30
   scoreText: {fileID: 108369996}
   attemptsText: {fileID: 334642087}
 --- !u!4 &226888238
@@ -272,6 +274,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &226888239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226888236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579c324792a83f94bbea19f9daa016a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  highscoreText: {fileID: 0}
+  hvadGame: VendeSpil
+  allMiniGames: []
+  pointsToMonny: 1
+  showDalyMonny: 0
 --- !u!1 &268605129
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,7 +784,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &974055005
 MonoBehaviour:
@@ -861,50 +881,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1679725234
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1679725236}
-  - component: {fileID: 1679725235}
-  m_Layer: 0
-  m_Name: GameMenuControls
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1679725235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1679725234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0113cae60179ff24ab6337f9283dd01a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1679725236
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1679725234}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1935749442
 GameObject:

@@ -60,18 +60,21 @@ public class ScoreManager : MonoBehaviour
         else
             highscore = theGame.amaunt;
 
-        scoreText.text = "Score: " + score.ToString();
-        highscoreText.text = "Highscore: " + highscore.ToString();
+        if (scoreText != null)
+            scoreText.text = "Score: " + score.ToString();
+        if (highscoreText != null)
+            highscoreText.text = "Highscore: " + highscore.ToString();
 
         if (showDalyMonny)
             CalkolateMonny();
     }
 
 	//Tilføje til spillerens score
-    public void AddPoint()
+    public void AddPoint(int amount = 1)
     {
-        score += 1;
-        scoreText.text = "Score: " + score.ToString();
+        score += amount;
+        if (scoreText != null)
+            scoreText.text = "Score: " + score.ToString();
 
         //Hvis spillerens score er større end deres tidligere highscore skal scoren skrives som den nye highscore og gemmes
         if (highscore < score)
