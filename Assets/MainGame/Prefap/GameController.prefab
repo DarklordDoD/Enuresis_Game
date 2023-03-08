@@ -4382,6 +4382,7 @@ MonoBehaviour:
   - {fileID: 7263582539933010486}
   - {fileID: 1282539799}
   - {fileID: 594649290}
+  - {fileID: 1645671069}
   sporgeSkema:
   - {fileID: 1500858746995048737, guid: eac97b9823d61bf4bb335f014f5bd69a, type: 3}
   musicForScene:
@@ -4420,7 +4421,6 @@ MonoBehaviour:
   petScelektion:
   - {fileID: 5803780440325321275, guid: 12381bbcc99d671429678f8f3b72d328, type: 3}
   - {fileID: 2657243501815689803, guid: 7126554099552c84fbdb6ce3db5adb3b, type: 3}
-  - {fileID: 2657243501815689803, guid: 7126554099552c84fbdb6ce3db5adb3b, type: 3}
   showPosition: {x: 0, y: 0}
   petName: 
   petType: 1
@@ -4454,8 +4454,10 @@ MonoBehaviour:
   whenVandNed: 2500
   gladVandNed: 1
   monnyShow: {fileID: 338205886}
-  monny: 20000
-  reduceSpeed: 2
+  monny: 0
+  maxDalyMonny: 250
+  dalyMonnyDisplay: {fileID: 7075794372242529680, guid: a50bba2c0891c814e9ae93e21e38ac93, type: 3}
+  reduceSpeed: 4
   minBar: 0
   maxBar: 10000
   meterSpeed: 2

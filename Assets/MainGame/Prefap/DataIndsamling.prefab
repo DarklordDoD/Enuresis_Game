@@ -972,6 +972,7 @@ GameObject:
   - component: {fileID: 7595282961314344216}
   - component: {fileID: 3115770317709583346}
   - component: {fileID: 6599326834136481165}
+  - component: {fileID: 9119937482554499950}
   m_Layer: 5
   m_Name: DataIndsamling
   m_TagString: DataSamling
@@ -1088,6 +1089,26 @@ MonoBehaviour:
   svarList: []
   splitListExeption: ShortList
   gotList: []
+--- !u!114 &9119937482554499950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500858746995048737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55049fb74a1cc554cb84791e70499c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addRessuorcerTil:
+  - 0
+  - 0
+  - 0
+  - 25
+  delayMellemKlik: 0
+  showTimer: {fileID: 0}
+  theAnimation: 
 --- !u!1 &1568439477933776769
 GameObject:
   m_ObjectHideFlags: 0

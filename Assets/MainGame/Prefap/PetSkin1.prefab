@@ -207,8 +207,6 @@ Transform:
   - {fileID: 5803780440216341547}
   - {fileID: 5803780440228569904}
   - {fileID: 5803780441826926099}
-  - {fileID: 5803780440774308871}
-  - {fileID: 5803780440930755099}
   - {fileID: 5803780441165677021}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -321,13 +319,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5803780440774308868}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.35, y: 1.04, z: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.35, y: 0.33999997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5803780440325321274}
-  m_RootOrder: 6
+  m_Father: {fileID: 5803780441012003103}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &5803780440774308870
 SpriteRenderer:
@@ -406,12 +404,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5803780440930755096}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.324, y: 1.03, z: 0}
+  m_LocalPosition: {x: 0.324, y: 0.32999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5803780440325321274}
-  m_RootOrder: 7
+  m_Father: {fileID: 5803780441012003103}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5803780440930755098
 SpriteRenderer:
@@ -493,7 +491,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5803780440774308871}
+  - {fileID: 5803780440930755099}
   m_Father: {fileID: 5803780440325321274}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -579,7 +579,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5803780440325321274}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5803780441165677020
 SpriteRenderer:

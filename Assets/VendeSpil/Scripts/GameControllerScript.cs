@@ -14,6 +14,8 @@ public class GameControllerScript : MonoBehaviour
     [SerializeField] private MainImageScript startObject;
     [SerializeField] private Sprite[] images;
 
+    [SerializeField] private int maxPoints;
+
     private int[] Randomiser(int[] locations)
     {
         int[] array = locations.Clone() as int[];
@@ -112,6 +114,11 @@ public class GameControllerScript : MonoBehaviour
 
         if (score >= 4)
         {
+            int isMinus = maxPoints - attempts;
+            if (isMinus <= 0)
+                isMinus = 0;
+            GetComponent<ScoreManager>().AddPoint(isMinus);
+
             SceneManager.LoadScene("MemoryGameWinScreen");
         }
     }

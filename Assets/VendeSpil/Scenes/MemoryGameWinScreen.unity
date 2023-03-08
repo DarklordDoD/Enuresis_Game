@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skiftSceneTil: Memory_Game
-  minigame: 1
+  minigame: 0
   aktivateUI: {fileID: 0}
   aktivate: 0
 --- !u!114 &446002775
@@ -653,6 +653,7 @@ GameObject:
   - component: {fileID: 981558563}
   - component: {fileID: 981558562}
   - component: {fileID: 981558561}
+  - component: {fileID: 981558565}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -745,6 +746,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &981558565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981558560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579c324792a83f94bbea19f9daa016a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  highscoreText: {fileID: 0}
+  hvadGame: VendeSpil
+  allMiniGames: []
+  pointsToMonny: 1
+  showDalyMonny: 1
 --- !u!1 &1712240800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,7 +1716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skiftSceneTil: MemoryGameTitleScreen
-  minigame: 1
+  minigame: 0
   aktivateUI: {fileID: 0}
   aktivate: 0
 --- !u!114 &2120568791

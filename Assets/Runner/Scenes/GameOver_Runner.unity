@@ -242,6 +242,8 @@ MonoBehaviour:
   highscoreText: {fileID: 612080119}
   hvadGame: Runner
   allMiniGames: []
+  pointsToMonny: 1
+  showDalyMonny: 1
 --- !u!1 &243472524
 GameObject:
   m_ObjectHideFlags: 0

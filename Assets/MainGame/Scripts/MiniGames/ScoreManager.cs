@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
-//using static UnityEditor.Experimental.GraphView.GraphView;
-using Unity.VisualScripting;
+using UnityEditor.Localization.Plugins.XLIFF.V12;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -18,11 +17,16 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]
     public string hvadGame;
 
-    int score = 0;
+    private static int score = 0;
     int highscore = 0;
     private List<string> gotList;
     [SerializeField]
     private List<ASnack> allMiniGames;
+
+    [SerializeField]
+    private float pointsToMonny = 1;
+    [SerializeField]
+    private bool showDalyMonny;
 
     private void Awake()
     {
@@ -56,15 +60,24 @@ public class ScoreManager : MonoBehaviour
         else
             highscore = theGame.amaunt;
 
-        scoreText.text = "Score: " + score.ToString();
-        highscoreText.text = "Highscore: " + highscore.ToString();
+        if (scoreText != null)
+            scoreText.text = "Score: " + score.ToString();
+        if (highscoreText != null)
+            highscoreText.text = "Highscore: " + highscore.ToString();
+
+        if (showDalyMonny)
+            CalkolateMonny();
     }
 
 	//Tilføje til spillerens score
-    public void AddPoint()
+    public void AddPoint(int amount = 1)
     {
-        score += 1;
-        scoreText.text = "Score: " + score.ToString();
+        score += amount;
+        if (score < 0)
+            score = 0;
+
+        if (scoreText != null)
+            scoreText.text = "Score: " + score.ToString();
 
         //Hvis spillerens score er større end deres tidligere highscore skal scoren skrives som den nye highscore og gemmes
         if (highscore < score)
@@ -101,5 +114,14 @@ public class ScoreManager : MonoBehaviour
         }
 
         SaveClass.WriteToFile("MiniGames", saveG, false);
+    }
+
+    private void CalkolateMonny()
+    {
+        int getMonny = (int)((float)score * pointsToMonny);
+
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<Ressourcer>().ShowMonny(getMonny);
+
+        score = 0;
     }
 }
