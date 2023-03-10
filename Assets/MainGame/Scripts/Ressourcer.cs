@@ -109,7 +109,8 @@ public class Ressourcer : MonoBehaviour
 
             /*finder ud af hvor meget tid der er gådet siden der blev gemt sidst
             og konveter det hele til sekunder, som en int verdi*/
-            TimeSpan lastVisit = DateTime.Today + DateTime.Now.TimeOfDay - dato;
+            string dateNowMedtid = (DateTime.Today + DateTime.Now.TimeOfDay).ToString("dd-MM-yyyy HH:mm:ss");
+            TimeSpan lastVisit = DateTime.Parse(dateNowMedtid) - dato;
             float lastVisitS = float.Parse(lastVisit.Seconds.ToString());   //sekunder
             lastVisitS += float.Parse(lastVisit.Minutes.ToString()) * 60;   //minutter til sekunder
             lastVisitS += float.Parse(lastVisit.Hours.ToString()) * 3600;   //timer til sekunder
@@ -149,8 +150,10 @@ public class Ressourcer : MonoBehaviour
         vandShow.size = vandMeter / maxBar;
         gladShow.size = gladMeter / maxBar;
 
+        String dateNow = DateTime.Today.ToString("dd-MM-yyyy"); 
+
         if (loadSykse)
-            if (DateTime.Today.Day - dato.Day > 0)
+            if (DateTime.Parse(dateNow).Day - dato.Day > 0)
             {
                 GetComponent<SceneManeger>().NewScene("Bedroom");
 
@@ -159,7 +162,7 @@ public class Ressourcer : MonoBehaviour
                 Invoke("Ulykke", 0.1f);
             }
 
-        print($"{DateTime.Today.Day - dato.Day > 0} , {DateTime.Today.Day} , {dato.Day}");
+        print($"{DateTime.Today.Day} , {dato.Day}");
     }
 
     public void ShowMonny(int newMonny)
