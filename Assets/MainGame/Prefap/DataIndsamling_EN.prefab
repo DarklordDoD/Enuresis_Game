@@ -974,7 +974,7 @@ GameObject:
   - component: {fileID: 6599326834136481165}
   - component: {fileID: 9119937482554499950}
   m_Layer: 5
-  m_Name: DataIndsamling
+  m_Name: DataIndsamling_EN
   m_TagString: DataSamling
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1068,14 +1068,15 @@ MonoBehaviour:
   spogsmaal: {fileID: 8985380975259990448}
   advarelse: {fileID: 6677456096149474826}
   spogsmaalN:
-  - Indtast navn
-  - "Har du drukket v\xE6ske j\xE6vnligt i l\xF8bet af dagen?"
-  - "Drak du v\xE6ske 1-2 timer f\xF8r du gik i seng?"
-  - "Havde du en v\xE5d nat?"
-  - "har du v\xE6ret p\xE5 toilettet i l\xF8bet af natten?"
-  - "P\xE5 hvilket tidspunkt i l\xF8bet af natten bem\xE6rkede du det?"
-  - "Beskriv st\xF8rrelsen af pletten."
-  - "Extra bem\xE6rkninger"
+  - Enter your name
+  - Have you been drinking any liquids regularly during the day?
+  - Did you drink any liquids 1-2 hours before you went to bed, and if so how much?
+    (regular glass size is 0.2 litres)
+  - Did you have a wet or a dry night?
+  - Did you sleep through the night, or have you been to the toilet during the night?
+  - At what point during the night did you notice?
+  - Describe the size of the stain.
+  - Additional remarks
   svarIndput:
   - {fileID: 7080898550728144970}
   - {fileID: 6078245262798763171}
@@ -1327,13 +1328,13 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Kvart glas
+    - m_Text: A quarter of a glass
       m_Image: {fileID: 0}
-    - m_Text: Halvt glas
+    - m_Text: Half a glass
       m_Image: {fileID: 0}
-    - m_Text: Helt glas
+    - m_Text: A full glass
       m_Image: {fileID: 0}
-    - m_Text: Mere end et glas
+    - m_Text: Mere end et glas. More than one full glass
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2561,15 +2562,16 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Meget Lille. (fem krone.)
+    - m_Text: "Extra small. Between the size of a penny to a dollar coin / \xA31
+        coin."
       m_Image: {fileID: 0}
-    - m_Text: "Lille. (h\xE5ndflade.)"
+    - m_Text: Small. The size of a palm.
       m_Image: {fileID: 0}
-    - m_Text: "Midel. (Underbukserne er lidt v\xE5de.)"
+    - m_Text: Medium Underpants are a bit wet.
       m_Image: {fileID: 0}
-    - m_Text: "Stor. (Underbukserne er gennembl\xF8dt.) "
+    - m_Text: Large. Underpants are soaked.
       m_Image: {fileID: 0}
-    - m_Text: "Meget stor. (Sengen er gennembl\xF8dt.)"
+    - m_Text: Extra large. The bed is soaked through.
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3469,6 +3471,7 @@ GameObject:
   - component: {fileID: 3244546864852731173}
   - component: {fileID: 1260262661074168535}
   - component: {fileID: 1697486366324334498}
+  - component: {fileID: 7625399011385460436}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3593,6 +3596,46 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7625399011385460436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4262746546302414926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:e6f3ebd63f03ccb49a329ff719575992
+    m_TableEntryReference:
+      m_KeyId: 4064459689984
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1697486366324334498}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &4294430842836866473
 GameObject:
   m_ObjectHideFlags: 0
@@ -4469,9 +4512,9 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Ja
+    - m_Text: Yes
       m_Image: {fileID: 0}
-    - m_Text: Nej
+    - m_Text: No
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5408,9 +5451,9 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Ja
+    - m_Text: Yes
       m_Image: {fileID: 0}
-    - m_Text: Nej
+    - m_Text: No
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8318,11 +8361,12 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: "var ikke p\xE5 toilettet"
+    - m_Text: "Slept through the night and didn\u2019t go to the bathroom."
       m_Image: {fileID: 0}
-    - m_Text: "var p\xE5 toilettet"
+    - m_Text: "Didn\u2019t sleep through the night og had to go to the toilet."
       m_Image: {fileID: 0}
-    - m_Text: "var p\xE5 toilettet af flere omgange"
+    - m_Text: "Didn\u2019t sleep through the night and had to go to the bathroom
+        multiple times."
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
