@@ -168,12 +168,14 @@ public class KledeSkab : MonoBehaviour
 
         foreach (Transform lim in thePet.transform)
         {
-            try
+            foreach (Transform cosmetik in lim.transform)
             {
-                List<string> itemName = lim.transform.GetChild(0).gameObject.name.Split("(").ToList();
-                saveList.Add(itemName[0]);
+                if (cosmetik.GetComponent<Item>() != null)
+                {
+                    List<string> itemName = cosmetik.gameObject.name.Split("(").ToList();
+                    saveList.Add(itemName[0]);
+                }
             }
-            catch { }
         }
 
         SaveClass.WriteToFile("Pet",saveList , false);

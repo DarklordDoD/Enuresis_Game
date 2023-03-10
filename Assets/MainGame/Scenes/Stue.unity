@@ -3190,6 +3190,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1540430860, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: minigame
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 712255103116963998, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
