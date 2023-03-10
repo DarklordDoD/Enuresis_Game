@@ -158,6 +158,8 @@ public class Ressourcer : MonoBehaviour
 
                 Invoke("Ulykke", 0.1f);
             }
+
+        print($"{DateTime.Today.Day - dato.Day > 0} , {DateTime.Today.Day} , {dato.Day}");
     }
 
     public void ShowMonny(int newMonny)

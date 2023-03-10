@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skiftSceneTil: 
-  minigame: 0
+  minigame: 1
   aktivateUI: {fileID: 1496948559}
   aktivate: 1
 --- !u!1001 &148965248
@@ -3186,6 +3186,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 693588148, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1282539799, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -3697,6 +3701,10 @@ PrefabInstance:
     - target: {fileID: 9092777159959624595, guid: f371e136f2dc0ec4c9ae6e8fe5e6293e, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092777159959624607, guid: f371e136f2dc0ec4c9ae6e8fe5e6293e, type: 3}
+      propertyPath: minigame
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9092777160098491600, guid: f371e136f2dc0ec4c9ae6e8fe5e6293e, type: 3}
       propertyPath: m_AnchorMax.x
