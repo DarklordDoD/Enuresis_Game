@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: Tutorial
   m_TableCollectionNameGuidString: 463112b429b28f641a6d657bd9abd4f4
-  m_Entries: []
+  m_Entries:
+  - m_Id: 50053582848
+    m_Key: Living Room
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
