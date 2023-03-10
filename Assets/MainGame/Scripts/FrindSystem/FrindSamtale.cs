@@ -34,6 +34,7 @@ public class FrindSamtale : MonoBehaviour
 
     private GameObject petSkin;
     private GameObject frindSkin;
+    private bool aktivFrindStain;
 
     public void StartSamtale()
     {
@@ -64,7 +65,7 @@ public class FrindSamtale : MonoBehaviour
         if (gameController.GetComponent<Ressourcer>().aktivStain)
             tisEventType++;
 
-        if (gameController.GetComponent<Ressourcer>().aktivFrindStain)
+        if (aktivFrindStain)
             tisEventType += 2;
 
         samtaleList = samtaler[gameController.GetComponent<Instilinger>().sprog].lines;
