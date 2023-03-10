@@ -10,18 +10,15 @@ public class PetScelektion : MonoBehaviour
     private Vector2 showPosition;
 
     public string petName;
-    [HideInInspector]
     public int petType;
 
     private List<string> saveList;
     private bool inPetMenu;
     private GameObject thePet;
 
-    private GameObject snackMenu;
-
     private void Awake()
     {
-        Application.targetFrameRate = 30;
+        Application.targetFrameRate = 60;
 
         thePet = GameObject.FindGameObjectWithTag("Player");
 
@@ -45,9 +42,6 @@ public class PetScelektion : MonoBehaviour
         if (inPetMenu)
         {
             Instantiate(petScelektion[petType], showPosition, Quaternion.identity); //Vis det nye pet
-
-            snackMenu = GameObject.Find("Snacks");
-            snackMenu.SetActive(false);
 
             Invoke("HidePet", 0);
         }
@@ -74,12 +68,12 @@ public class PetScelektion : MonoBehaviour
 
     private void HidePet()
     {
-        //thePet.SetActive(false);
+        GetComponent<SceneManeger>().MiniGameUI(false);
         GameObject.FindGameObjectWithTag("DataSamling").GetComponent<DataSamling>().UdAf();
     }
 
     public void RotatePet(bool right)
-    {      
+    {
         //roter i gennem listen
         if (right) 
         {
@@ -111,6 +105,8 @@ public class PetScelektion : MonoBehaviour
     }
     public void ScelektEnd()
     {
+        inPetMenu = false;
+
         saveList = new List<string>() {"",""}; //set list lengde
 
         //samle alle variabler i en liste
@@ -119,13 +115,12 @@ public class PetScelektion : MonoBehaviour
 
         SaveClass.WriteToFile("Pet", saveList, false);
 
-        thePet = GameObject.FindGameObjectWithTag("Player");
+        thePet.SetActive(true);
         Instantiate(petScelektion[petType], thePet.transform);
 
         thePet.GetComponent<muvePet>().lateStart();
 
         GetComponent<SceneManeger>().NewScene("Stue");
-
-        snackMenu.SetActive(true);
+        GetComponent<SceneManeger>().MiniGameUI(true);
     }
 }

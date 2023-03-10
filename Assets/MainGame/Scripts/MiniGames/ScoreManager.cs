@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
-using UnityEditor.Localization.Plugins.XLIFF.V12;
 
 public class ScoreManager : MonoBehaviour
 {

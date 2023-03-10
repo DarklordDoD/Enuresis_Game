@@ -259,6 +259,9 @@ public class Ressourcer : MonoBehaviour
 
             GameObject.FindGameObjectWithTag("Stain").GetComponent<Ulykke>().HarTisset(true);
         }
+
+        if (GetComponent<Instilinger>().frind)
+            GameObject.Find("TaleVindu").GetComponent<FrindSamtale>().Invoke("StartSamtale", 1);
     }
 
     private void TisControl()

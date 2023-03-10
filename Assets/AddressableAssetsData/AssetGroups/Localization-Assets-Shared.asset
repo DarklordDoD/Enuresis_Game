@@ -121,6 +121,16 @@ MonoBehaviour:
     m_Address: Assets/Local Settings/Tables/GardenShopSign Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 4e5dfd95729eb429fa602f85fd3bdff3
+    m_Address: vendespil start - light
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Locale-en
+  - m_GUID: 463112b429b28f641a6d657bd9abd4f4
+    m_Address: Assets/Local Settings/Tables/TutorialLivingRoom Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 725951384df75fb4b82b5ca98b14127e, type: 2}
   m_SchemaSet:

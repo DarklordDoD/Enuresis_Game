@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManeger : MonoBehaviour
 {
-    [SerializeField]
-    private List<GameObject> standartUI;
+    public List<GameObject> standartUI;
     [SerializeField]
     private List<GameObject> sporgeSkema;
 
@@ -18,7 +17,6 @@ public class SceneManeger : MonoBehaviour
 
     public static GameObject instance;
     private GameObject thePet;
-    [SerializeField]
     private GameObject thePetFrind;
     [HideInInspector]
     public int valgtSprog;
@@ -39,11 +37,12 @@ public class SceneManeger : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
+
+        thePet = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Start()
     {
-        thePet = GameObject.FindGameObjectWithTag("Player");
         Instantiate(sporgeSkema[valgtSprog], GetComponent<Transform>());
 
         MusicForScene("Stue");
@@ -56,8 +55,12 @@ public class SceneManeger : MonoBehaviour
         {
             UIElement.SetActive(minigame);
         }
-        
-        thePet.SetActive(minigame);
+
+        try
+        {
+            thePet.SetActive(minigame);
+        } catch { }
+
 
         //Aktiver og deaktiver Frind når man går ind og ud af minigames
         if (thePetFrind == null)

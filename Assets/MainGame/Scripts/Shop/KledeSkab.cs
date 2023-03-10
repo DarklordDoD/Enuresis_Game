@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class KledeSkab : MonoBehaviour
@@ -167,19 +168,26 @@ public class KledeSkab : MonoBehaviour
 
         foreach (Transform lim in thePet.transform)
         {
-            try
+            foreach (Transform cosmetik in lim.transform)
             {
-                string[] itemName = lim.transform.GetChild(0).gameObject.name.Split("(");
-                saveList.Add(itemName[0]);
+                if (cosmetik.GetComponent<Item>() != null)
+                {
+                    List<string> itemName = cosmetik.gameObject.name.Split("(").ToList();
+                    saveList.Add(itemName[0]);
+                }
             }
-            catch { }
         }
 
         SaveClass.WriteToFile("Pet",saveList , false);
 
+        gameObject.SetActive(false);
+
+        Invoke("AktivadeKlik", 0.2f);
+    }
+
+    private void AktivadeKlik()
+    {
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("SceneSkift"))
             go.GetComponent<Collider2D>().enabled = true;
-
-        gameObject.SetActive(false);
     }
 }

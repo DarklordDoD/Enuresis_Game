@@ -2945,7 +2945,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: f79d5cbe0d425484d9dbf76b2206f53f, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4404,7 +4404,6 @@ MonoBehaviour:
   - sceneMedMusic: Shop_Scene
     music: {fileID: 8300000, guid: 8f614884314409a40a1bdc3e4a6e7088, type: 3}
     overgange: 0.5
-  thePetFrind: {fileID: 0}
   valgtSprog: 0
 --- !u!114 &5189052939098285532
 MonoBehaviour:
@@ -4420,7 +4419,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   petScelektion:
   - {fileID: 5803780440325321275, guid: 12381bbcc99d671429678f8f3b72d328, type: 3}
-  - {fileID: 2657243501815689803, guid: 7126554099552c84fbdb6ce3db5adb3b, type: 3}
+  - {fileID: 2932893939044689102, guid: 76ca3b6eeb69e9b438aa8e1abef7509f, type: 3}
+  - {fileID: 6393468504167370366, guid: 3aa7c2d5dfec7984cb3527439ec3a0fc, type: 3}
   showPosition: {x: 0, y: 0}
   petName: 
   petType: 1
@@ -4441,6 +4441,7 @@ MonoBehaviour:
   whenVandUp: 7500
   tisVandUp: 1
   aktivStain: 0
+  aktivFrindStain: 0
   vandShow: {fileID: 712255102721757682}
   vandNed: 1
   gladShow: {fileID: 712255103491769383}
