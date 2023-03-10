@@ -9,7 +9,7 @@ public class AnimationEnd : MonoBehaviour
 
     private void Start()
     {
-        snackDesplay = GameObject.FindGameObjectWithTag("GameController").transform.Find("Snacks").gameObject;
+            snackDesplay = GameObject.FindGameObjectWithTag("GameController").transform.Find("Snacks").gameObject;
     }
 
     public void MuveAgain()
@@ -17,7 +17,8 @@ public class AnimationEnd : MonoBehaviour
         try
         {
             GetComponentInParent<muvePet>().onTask = false;
-        } catch { }
+        }
+        catch { }
 
         snackDesplay.GetComponent<SnackMenu>().isEating = false;
     }

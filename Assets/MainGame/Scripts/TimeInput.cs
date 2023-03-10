@@ -24,6 +24,17 @@ public class TimeInput : MonoBehaviour
 
     public void InputChange()
     {
+        bool dontRemuve = false;
+
+        foreach (string theInput in validInputs)
+        {
+            if (timeText.text.EndsWith(theInput))
+                dontRemuve = true;
+        }
+
+        if (!dontRemuve && timeText.text.Length != 0)
+            timeText.text = timeText.text.Remove(timeText.text.Length - 1);
+
         if (timeText.text.Length == 3 && !timeText.text.EndsWith(":"))
         {
             timeText.text = timeText.text.Insert(2, ":");

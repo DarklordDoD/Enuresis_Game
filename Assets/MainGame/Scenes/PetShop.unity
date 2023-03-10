@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 93016213}
   - component: {fileID: 93016212}
   - component: {fileID: 93016211}
+  - component: {fileID: 93016215}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -191,7 +192,7 @@ Canvas:
   m_GameObject: {fileID: 93016210}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -200,7 +201,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1163576869
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &93016214
@@ -212,7 +213,7 @@ RectTransform:
   m_GameObject: {fileID: 93016210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1294181603}
@@ -225,7 +226,19 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &93016215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93016210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ba9a01d6cfdad439992bf109bf6734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &199587888
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "v\xE6lg"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -600,10 +613,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 1
+  m_fontSizeBase: 1
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -890,8 +903,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -5, y: 0}
+  m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1294181604
 MonoBehaviour:
@@ -937,9 +950,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5189052939098285532, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-        m_TargetAssemblyTypeName: PetScelektion, Assembly-CSharp
-        m_MethodName: RotatePet
+      - m_Target: {fileID: 93016215}
+        m_TargetAssemblyTypeName: PetTypeMenu, Assembly-CSharp
+        m_MethodName: PetChange
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1024,8 +1037,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 5, y: 0}
+  m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1706519461
 MonoBehaviour:
@@ -1071,9 +1084,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5189052939098285532, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-        m_TargetAssemblyTypeName: PetScelektion, Assembly-CSharp
-        m_MethodName: RotatePet
+      - m_Target: {fileID: 93016215}
+        m_TargetAssemblyTypeName: PetTypeMenu, Assembly-CSharp
+        m_MethodName: PetChange
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1217,6 +1230,7 @@ GameObject:
   - component: {fileID: 2043922059}
   - component: {fileID: 2043922058}
   - component: {fileID: 2043922057}
+  - component: {fileID: 2043922060}
   m_Layer: 5
   m_Name: "V\xE6lg"
   m_TagString: Untagged
@@ -1242,8 +1256,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 200}
-  m_SizeDelta: {x: 160, y: 60}
+  m_AnchoredPosition: {x: 0, y: -4}
+  m_SizeDelta: {x: 4, y: 1.5}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2043922057
 MonoBehaviour:
@@ -1289,9 +1303,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5189052939098285532, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-        m_TargetAssemblyTypeName: PetScelektion, Assembly-CSharp
-        m_MethodName: ScelektEnd
+      - m_Target: {fileID: 93016215}
+        m_TargetAssemblyTypeName: PetTypeMenu, Assembly-CSharp
+        m_MethodName: PetCelekt
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1321,7 +1335,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 390c894db6f2649759c06ef162d51f50, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1339,3 +1353,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043922055}
   m_CullTransparentMesh: 1
+--- !u!114 &2043922060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043922055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5edaf6442607ac140858b70b84c81def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

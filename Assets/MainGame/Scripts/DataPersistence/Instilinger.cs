@@ -92,6 +92,12 @@ public class Instilinger : MonoBehaviour
         StartCoroutine(SetLocal(sprog));
 
         AktivateButten();
+
+        try
+        {
+            GameObject.Find("TaleVindu").GetComponent<FrindSamtale>().StartSamtale();
+        }
+        catch { }
     }
 
     public void LydStyrke()

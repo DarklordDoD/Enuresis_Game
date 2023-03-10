@@ -22,6 +22,8 @@ public class Ressourcer : MonoBehaviour
 
     [HideInInspector]
     public bool aktivStain;
+    //[HideInInspector]
+    public bool aktivFrindStain;
 
     [Header("Vand Resurce")]
     [SerializeField]
@@ -259,6 +261,8 @@ public class Ressourcer : MonoBehaviour
 
             GameObject.FindGameObjectWithTag("Stain").GetComponent<Ulykke>().HarTisset(true);
         }
+
+        GameObject.Find("TaleVindu").GetComponent<FrindSamtale>().Invoke("StartSamtale", 1);
     }
 
     private void TisControl()
