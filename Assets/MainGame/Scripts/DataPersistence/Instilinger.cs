@@ -53,6 +53,8 @@ public class Instilinger : MonoBehaviour
             sprog = 0;
             soundLevel = 50;
         }
+
+        GetComponent<SceneManeger>().valgtSprog = sprog;
     }
 
     private void Start()

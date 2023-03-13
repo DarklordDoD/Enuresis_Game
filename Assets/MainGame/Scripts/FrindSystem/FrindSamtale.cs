@@ -8,18 +8,17 @@ public class FrindSamtale : MonoBehaviour
 {
 
     [SerializeField]
-    private List<TextMeshProUGUI> taleBoxe; 
+    private List<GameObject> taleBoxe; 
     [SerializeField]
     private List<SamtaleLinjer> samtaler;
     [SerializeField]
     private float delayMellemTale = 0.5f;
-    [SerializeField]
-    private Button theButten;
-    [SerializeField]
-    private GameObject textMenu;
 
     [SerializeField]
+    private int frindUlykkeChange;
+    [SerializeField]
     private int tisEventType;
+    [SerializeField]
     private List<string> samtaleList;
 
     [Header("ObjektDesplay")]
@@ -34,7 +33,6 @@ public class FrindSamtale : MonoBehaviour
 
     private GameObject petSkin;
     private GameObject frindSkin;
-    private bool aktivFrindStain;
 
     public void StartSamtale()
     {
@@ -47,8 +45,8 @@ public class FrindSamtale : MonoBehaviour
 
         GetComponent<SceneSkift>().SkiftTil();
 
-        Instantiate(petSkin, transform.GetChild(0));
-        Instantiate(frindSkin, transform.GetChild(0));
+        Instantiate(petSkin, transform);
+        Instantiate(frindSkin, transform);
 
         GameObject[] showPet = GameObject.FindGameObjectsWithTag("ShowPet");
 
@@ -65,7 +63,9 @@ public class FrindSamtale : MonoBehaviour
         if (gameController.GetComponent<Ressourcer>().aktivStain)
             tisEventType++;
 
-        if (aktivFrindStain)
+        int rngFrind = Random.Range(0, frindUlykkeChange);
+        print(rngFrind);
+        if (0 == rngFrind)
             tisEventType += 2;
 
         samtaleList = samtaler[gameController.GetComponent<Instilinger>().sprog].lines;
@@ -80,59 +80,65 @@ public class FrindSamtale : MonoBehaviour
             case 1: //pet har tisset i sengen
                 if (buttenPress)
                 {
-                    taleBoxe[0].text = samtaleList[3];
+                    taleBoxe[0].SetActive(true);
+                    taleBoxe[0].GetComponentInChildren<TextMeshProUGUI>().text = samtaleList[3];
                     Invoke("DelayAwnser", delayMellemTale);
                     break;
                 }
 
                 frindBed.transform.position = objektPositions[2];
-                Instantiate(petBed, transform.GetChild(0));
+                Instantiate(petBed, transform);
 
-                taleBoxe[2].text = samtaleList[5];
+                taleBoxe[2].GetComponentInChildren<TextMeshProUGUI>().text = samtaleList[5];
                 break;
 
             case 2: //frind har tisset i sengen
                 if (buttenPress)
                 {
-                    taleBoxe[0].text = samtaleList[6];
+                    taleBoxe[0].SetActive(true);
+                    taleBoxe[0].GetComponentInChildren<TextMeshProUGUI>().text = samtaleList[6];
                     Invoke("LukButtenAktiv", delayMellemTale);
                     break;
                 }
 
                 frindBed.transform.position = objektPositions[2];
-                Instantiate(frindBed, transform.GetChild(0));
+                Instantiate(frindBed, transform);
 
-                taleBoxe[1].text = samtaleList[7];
+                taleBoxe[1].SetActive(true);
+                taleBoxe[1].GetComponentInChildren<TextMeshProUGUI>().text = samtaleList[7];
                 Invoke("DelayAwnser", delayMellemTale);
                 break;
 
             case 3: //frind og pet har tisset
                 if (buttenPress)
                 {
-                    taleBoxe[0].text = samtaleList[9];
+                    taleBoxe[0].SetActive(true);
+                    taleBoxe[0].GetComponentInChildren<TextMeshProUGUI>().text = samtaleList[9];
                     Invoke("LukButtenAktiv", delayMellemTale);
                     break;
                 }
 
                 petBed.transform.position = objektPositions[3];
-                Instantiate(petBed, transform.GetChild(0));
+                Instantiate(petBed, transform);
 
                 frindBed.transform.position = objektPositions[4];
-                Instantiate(frindBed, transform.GetChild(0));
+                Instantiate(frindBed, transform);
 
-                taleBoxe[1].text = samtaleList[10];
+                taleBoxe[1].SetActive(true);
+                taleBoxe[1].GetComponentInChildren<TextMeshProUGUI>().text = samtaleList[10];
                 Invoke("DelayAwnser", delayMellemTale);
                 break;
 
             default: //ingen tisser i sengen
                 if (buttenPress)
                 {
-                    taleBoxe[0].text = samtaleList[0];
+                    taleBoxe[0].SetActive(true);
+                    taleBoxe[0].GetComponentInChildren<TextMeshProUGUI>().text = samtaleList[0];
                     Invoke("DelayAwnser", delayMellemTale);
                     break;
                 }
 
-                taleBoxe[2].text = samtaleList[2];
+                taleBoxe[2].GetComponentInChildren<TextMeshProUGUI>().text = samtaleList[2];
                 print(samtaleList[2]);
                 break;
         }
@@ -143,20 +149,22 @@ public class FrindSamtale : MonoBehaviour
         switch (tisEventType)
         {
             case 1:
-                taleBoxe[1].text = samtaleList[4];
+                taleBoxe[1].SetActive(true);
+                taleBoxe[1].GetComponentInChildren<TextMeshProUGUI>().text = samtaleList[4];
                 Invoke("LukButtenAktiv", delayMellemTale);
                 break;
 
             case 2:
-                taleBoxe[2].text = samtaleList[8];
+                taleBoxe[2].GetComponentInChildren<TextMeshProUGUI>().text = samtaleList[8];
                 break;
 
             case 3:
-                taleBoxe[2].text = samtaleList[11];
+                taleBoxe[2].GetComponentInChildren<TextMeshProUGUI>().text = samtaleList[11];
                 break;
 
             default:
-                taleBoxe[1].text = samtaleList[1];
+                taleBoxe[1].SetActive(true);
+                taleBoxe[1].GetComponentInChildren<TextMeshProUGUI>().text = samtaleList[1];
                 Invoke("LukButtenAktiv", delayMellemTale);
                 break;
         }
@@ -164,8 +172,8 @@ public class FrindSamtale : MonoBehaviour
 
     private void LukButtenAktiv()
     {
-        theButten.GetComponentInChildren<TextMeshProUGUI>().text = samtaleList[12];
-        theButten.GetComponent<TaleButten>().lukAktiv = true;
+        taleBoxe[2].GetComponentInChildren<TextMeshProUGUI>().text = samtaleList[12];
+        taleBoxe[2].GetComponent<TaleButten>().lukAktiv = true;
     }
 
     public void SetKlik(bool setTil)
