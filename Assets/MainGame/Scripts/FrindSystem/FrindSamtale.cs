@@ -63,9 +63,7 @@ public class FrindSamtale : MonoBehaviour
         if (gameController.GetComponent<Ressourcer>().aktivStain)
             tisEventType++;
 
-        int rngFrind = Random.Range(0, frindUlykkeChange);
-        print(rngFrind);
-        if (0 == rngFrind)
+        if (0 == Random.Range(0, frindUlykkeChange))
             tisEventType += 2;
 
         samtaleList = samtaler[gameController.GetComponent<Instilinger>().sprog].lines;
