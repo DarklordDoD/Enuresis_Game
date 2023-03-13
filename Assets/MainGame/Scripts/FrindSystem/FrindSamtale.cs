@@ -63,7 +63,8 @@ public class FrindSamtale : MonoBehaviour
         if (gameController.GetComponent<Ressourcer>().aktivStain)
             tisEventType++;
 
-        if (0 == Random.Range(0, frindUlykkeChange))
+        int rngFrind = Random.Range(0, frindUlykkeChange);
+        if (0 == rngFrind)
             tisEventType += 2;
 
         samtaleList = samtaler[gameController.GetComponent<Instilinger>().sprog].lines;
@@ -137,7 +138,6 @@ public class FrindSamtale : MonoBehaviour
                 }
 
                 taleBoxe[2].GetComponentInChildren<TextMeshProUGUI>().text = samtaleList[2];
-                print(samtaleList[2]);
                 break;
         }
     }

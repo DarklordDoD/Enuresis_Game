@@ -3300,7 +3300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: reduceSpeed
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: aktivFrindStain
