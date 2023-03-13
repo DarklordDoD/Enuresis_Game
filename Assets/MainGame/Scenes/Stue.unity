@@ -3186,18 +3186,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 693588148, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1282539799, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1540430860, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: minigame
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 712255103116963998, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3206,14 +3194,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 712255104591520810, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: sporgeSkema.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 712255104591520810, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: sporgeSkema.Array.data[1]
-      value: 
-      objectReference: {fileID: 1500858746995048737, guid: cc24d0d52bb02b34fb282cc38e036f24, type: 3}
     - target: {fileID: 712255104591520814, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3296,14 +3276,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 712255104591520814, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: reduceSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 712255104591520815, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
-      propertyPath: aktivFrindStain
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 712255104591520818, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
