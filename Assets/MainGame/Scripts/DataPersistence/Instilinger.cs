@@ -38,6 +38,7 @@ public class Instilinger : MonoBehaviour
     [SerializeField]
     private Vector2 frindStartPosition;
 
+    [HideInInspector]
     public bool frind;
     [HideInInspector]
     public bool nuMiniGame;

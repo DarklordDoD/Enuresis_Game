@@ -391,6 +391,7 @@ MonoBehaviour:
   minigame: 1
   aktivateUI: {fileID: 1496948559}
   aktivate: 1
+  stayOpenUI: 0
 --- !u!1001 &148965248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -847,6 +848,7 @@ MonoBehaviour:
   minigame: 0
   aktivateUI: {fileID: 0}
   aktivate: 0
+  stayOpenUI: 0
 --- !u!114 &347831350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1025,6 +1027,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &388967499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5345232387039757592, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+  m_PrefabInstance: {fileID: 712255104322090750}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &388967504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388967499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e37bd1f3f0c2e04e8069e2909666852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skiftSceneTil: 
+  minigame: 1
+  aktivateUI: {fileID: 1079952851}
+  aktivate: 1
+  stayOpenUI: 1
 --- !u!1 &402342229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1106,7 @@ MonoBehaviour:
   minigame: 0
   aktivateUI: {fileID: 0}
   aktivate: 0
+  stayOpenUI: 0
 --- !u!114 &402342232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2048,6 +2073,7 @@ MonoBehaviour:
   minigame: 0
   aktivateUI: {fileID: 0}
   aktivate: 0
+  stayOpenUI: 0
 --- !u!114 &910886783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2370,6 +2396,11 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 10, y: -11}
   m_UseGraphicAlpha: 1
+--- !u!1 &1079952851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 213077908, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+  m_PrefabInstance: {fileID: 712255104322090750}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1145356655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2595,6 +2626,7 @@ MonoBehaviour:
   minigame: 0
   aktivateUI: {fileID: 0}
   aktivate: 0
+  stayOpenUI: 0
 --- !u!114 &1227949936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3354,6 +3386,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 213077908, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 238048001, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_SizeDelta.x
       value: 120
@@ -3374,6 +3410,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 454785044, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608676098, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 693588148, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3381,6 +3425,14 @@ PrefabInstance:
     - target: {fileID: 885070703, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540430860, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: stayOpenUI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540430861, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: testKledeskab
       objectReference: {fileID: 0}
     - target: {fileID: 712255103116963998, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3481,6 +3533,22 @@ PrefabInstance:
     - target: {fileID: 712255104669333803, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094298392387929563, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 388967504}
+    - target: {fileID: 2094298392387929563, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SkiftTil
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094298392387929563, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneSkift, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263582539933010486, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac37a347fd778314e8ad39734db2d51f, type: 3}

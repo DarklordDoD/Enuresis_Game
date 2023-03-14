@@ -189,5 +189,7 @@ public class KledeSkab : MonoBehaviour
     {
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("SceneSkift"))
             go.GetComponent<Collider2D>().enabled = true;
+
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneManeger>().klikAktiv = false;
     }
 }

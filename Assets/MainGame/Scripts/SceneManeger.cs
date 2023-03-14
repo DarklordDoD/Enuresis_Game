@@ -10,6 +10,9 @@ public class SceneManeger : MonoBehaviour
     [SerializeField]
     private List<GameObject> sporgeSkema;
 
+    [HideInInspector]
+    public bool klikAktiv;
+
     [Header("Music")]
     [SerializeField]
     private List <MusicAndScene> musicForScene;
