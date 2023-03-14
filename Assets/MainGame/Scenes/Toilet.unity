@@ -859,7 +859,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  delayMellemKlik: 5
+  delayMellemKlik: 10
   showTimer: {fileID: 1931623726}
   theAnimation: Side
 --- !u!212 &1356900409

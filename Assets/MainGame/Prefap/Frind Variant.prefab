@@ -77,19 +77,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5207499631160052583, guid: f2ef5f91552457a4e8f96a55456d7c24, type: 3}
       propertyPath: maxPoint.x
-      value: 5.2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5207499631160052583, guid: f2ef5f91552457a4e8f96a55456d7c24, type: 3}
       propertyPath: maxPoint.y
-      value: -0.7
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5207499631160052583, guid: f2ef5f91552457a4e8f96a55456d7c24, type: 3}
       propertyPath: minPoint.x
-      value: -5.2
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 5207499631160052583, guid: f2ef5f91552457a4e8f96a55456d7c24, type: 3}
       propertyPath: minPoint.y
-      value: -4
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 5207499631160052583, guid: f2ef5f91552457a4e8f96a55456d7c24, type: 3}
       propertyPath: timerRange.x

@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: ShopButten Shared Data
+  m_Name: DalyReward Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: ShopButten
-  m_TableCollectionNameGuidString: a5d5c31cf331e6444a6ae713b8442aa0
+  m_TableCollectionName: DalyReward
+  m_TableCollectionNameGuidString: c7ccc04a51a5b234e9bed589765ffa81
   m_Entries:
-  - m_Id: 17653219328
-    m_Key: BuyButton
+  - m_Id: 12469059584
+    m_Key: Tittel
     m_Metadata:
       m_Items: []
-  - m_Id: 4684598188883968
-    m_Key: ShopTitel
+  - m_Id: 428921503744
+    m_Key: GaveFelt
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 3411267841068892162
+    rid: 3411268136024670213
   references:
     version: 2
     RefIds:
-    - rid: 3411267841068892162
+    - rid: 3411268136024670213
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1677669926815
+        m_CustomEpoch: 1678787457425
