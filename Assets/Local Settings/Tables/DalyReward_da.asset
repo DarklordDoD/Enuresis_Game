@@ -26,6 +26,10 @@ MonoBehaviour:
     m_Localized: IKKE FLERE GAVER I DAG
     m_Metadata:
       m_Items: []
+  - m_Id: 3005524393984
+    m_Localized: MODTAG
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
