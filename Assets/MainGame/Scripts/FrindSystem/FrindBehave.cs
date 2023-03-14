@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FrindBehave : MonoBehaviour
@@ -12,10 +13,14 @@ public class FrindBehave : MonoBehaviour
     [SerializeField]
     private List<ItemListClass> alleItemLists;
     private GameObject petLim;
+    private GameObject thePet;
+    private string isFront;
 
     private void Start()
     {
         itemManeger = GameObject.FindGameObjectWithTag("GameController").GetComponent<AllItems>();
+        thePet = GameObject.FindGameObjectWithTag("Player");
+
         frindSkin = transform.GetChild(transform.childCount - 1).gameObject;
 
         foreach (var item in itemManeger.items)
@@ -27,6 +32,28 @@ public class FrindBehave : MonoBehaviour
         }
 
         RngCosmetic();
+    }
+
+    private void Update()
+    {
+        if (transform.position.y >= thePet.transform.position.y && isFront != "FrindBack")
+        {
+            setLayer("FrindBack");
+        }
+        else if (transform.position.y < thePet.transform.position.y && isFront != "FrindFrond")
+        {
+            setLayer("FrindFrond");
+        }
+    }
+
+    private void setLayer(string front)
+    {
+        isFront = front;
+
+        foreach (SpriteRenderer showLim in frindSkin.GetComponentsInChildren<SpriteRenderer>())
+        {
+            showLim.sortingLayerName = front;
+        }
     }
 
     private void RngCosmetic()

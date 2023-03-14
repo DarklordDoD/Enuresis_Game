@@ -344,8 +344,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -76, y: -52.26999}
-  m_SizeDelta: {x: 100, y: 80}
+  m_AnchoredPosition: {x: -90, y: -60}
+  m_SizeDelta: {x: 120, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &238048004
 CanvasRenderer:
@@ -849,7 +849,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1212,7 +1212,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1266,6 +1266,7 @@ GameObject:
   - component: {fileID: 641858196}
   - component: {fileID: 641858195}
   - component: {fileID: 641858194}
+  - component: {fileID: 87215173}
   m_Layer: 5
   m_Name: Amount_Text
   m_TagString: Untagged
@@ -1350,6 +1351,46 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
+--- !u!114 &87215173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641858192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:c7ccc04a51a5b234e9bed589765ffa81
+    m_TableEntryReference:
+      m_KeyId: 428921503744
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 641858195}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &649628114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,6 +1730,7 @@ GameObject:
   - component: {fileID: 840313803}
   - component: {fileID: 840313805}
   - component: {fileID: 840313804}
+  - component: {fileID: 1717866099}
   m_Layer: 5
   m_Name: Title_Text
   m_TagString: Untagged
@@ -1758,6 +1800,46 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Daglig Gave
+--- !u!114 &1717866099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840313802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:c7ccc04a51a5b234e9bed589765ffa81
+    m_TableEntryReference:
+      m_KeyId: 12469059584
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 840313804}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &885070703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,6 +1948,7 @@ GameObject:
   - component: {fileID: 1177096352}
   - component: {fileID: 1177096351}
   - component: {fileID: 1177096350}
+  - component: {fileID: 333570694}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1950,6 +2033,46 @@ MonoBehaviour:
   m_EffectColor: {r: 0.25929034, g: 0.38679248, b: 0.23231873, a: 0.5}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
+--- !u!114 &333570694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177096348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:c7ccc04a51a5b234e9bed589765ffa81
+    m_TableEntryReference:
+      m_KeyId: 3005524393984
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1177096351}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1282539799
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,7 +2582,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1540430860}
         m_TargetAssemblyTypeName: SceneSkift, Assembly-CSharp
-        m_MethodName: SkiftTil
+        m_MethodName: testKledeskab
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2485,6 +2608,7 @@ MonoBehaviour:
   minigame: 1
   aktivateUI: {fileID: 213077908}
   aktivate: 0
+  stayOpenUI: 1
 --- !u!1 &1645671069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3747,7 +3871,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 712255103809718832}
   m_HandleRect: {fileID: 712255103809718835}
   m_Direction: 0
@@ -3951,7 +4075,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 712255103116963999}
   m_HandleRect: {fileID: 712255103116963998}
   m_Direction: 0
@@ -4079,7 +4203,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 712255104669333800}
   m_HandleRect: {fileID: 712255104669333803}
   m_Direction: 0
@@ -4386,6 +4510,7 @@ MonoBehaviour:
   sporgeSkema:
   - {fileID: 1500858746995048737, guid: eac97b9823d61bf4bb335f014f5bd69a, type: 3}
   - {fileID: 1500858746995048737, guid: cc24d0d52bb02b34fb282cc38e036f24, type: 3}
+  klikAktiv: 0
   musicForScene:
   - sceneMedMusic: Stue
     music: {fileID: 8300000, guid: b275f426778faf94cb30d07a556da953, type: 3}
@@ -4422,6 +4547,11 @@ MonoBehaviour:
   - {fileID: 5803780440325321275, guid: 12381bbcc99d671429678f8f3b72d328, type: 3}
   - {fileID: 2932893939044689102, guid: 76ca3b6eeb69e9b438aa8e1abef7509f, type: 3}
   - {fileID: 6393468504167370366, guid: 3aa7c2d5dfec7984cb3527439ec3a0fc, type: 3}
+  - {fileID: 6279908395580193220, guid: 93eb705daec451e45a598d7bcaca99a1, type: 3}
+  - {fileID: 1207428972617973950, guid: a92b5eb4c60266a4a9c534f5ea088968, type: 3}
+  - {fileID: 8155532327432160907, guid: 34a477b79258a5b44a03b80461b62ed2, type: 3}
+  - {fileID: 1726937017438782239, guid: aa9b83a67f564cc49b8db296f0995f10, type: 3}
+  - {fileID: 5953756078420823912, guid: 18d6156cd3abf224a9b39832443b9c58, type: 3}
   showPosition: {x: 0, y: 0}
   petName: 
   petType: 1
@@ -4884,6 +5014,7 @@ GameObject:
   - component: {fileID: 8149427490635652574}
   - component: {fileID: 2441481010556457213}
   - component: {fileID: 2094298392387929563}
+  - component: {fileID: 388967504}
   m_Layer: 5
   m_Name: OpenInstilinger
   m_TagString: Untagged
@@ -4994,9 +5125,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 20522153}
-        m_TargetAssemblyTypeName: Instilinger, Assembly-CSharp
-        m_MethodName: OpenMenu
+      - m_Target: {fileID: 388967504}
+        m_TargetAssemblyTypeName: SceneSkift, Assembly-CSharp
+        m_MethodName: SkiftTil
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5006,6 +5137,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &388967504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345232387039757592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e37bd1f3f0c2e04e8069e2909666852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skiftSceneTil: 
+  minigame: 1
+  aktivateUI: {fileID: 213077908}
+  aktivate: 1
+  stayOpenUI: 1
 --- !u!1 &7263582539933010486
 GameObject:
   m_ObjectHideFlags: 0
