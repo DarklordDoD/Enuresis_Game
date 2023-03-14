@@ -15,20 +15,9 @@ public class CutScene : MonoBehaviour
 
     private float timer;
     private int theAktivFrame;
-    private bool isAktiv;
-
-    public void StartCutScene()
-    {
-        isAktiv = true;
-
-        desplayScene.SetActive(true);
-    }
 
     private void Update()
     {
-        if (!isAktiv)
-            return;
-
         if (timer <= 0)
         {
             timer = delayTimer;
@@ -40,9 +29,8 @@ public class CutScene : MonoBehaviour
             }
             else
             {
-                desplayScene.SetActive(false);
-                isAktiv = false;
                 theAktivFrame = 0;
+                GetComponent<SceneSkift>().SkiftTil();
             }
         }
         else
