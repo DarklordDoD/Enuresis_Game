@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: ec392dfbaeb2a1145bc2ec0aefdd33ce, type: 3}
     - target: {fileID: 2932893939044689102, guid: 76ca3b6eeb69e9b438aa8e1abef7509f, type: 3}
       propertyPath: m_Name
-      value: PetSkin4
+      value: PetSkin4 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2932893939044689103, guid: 76ca3b6eeb69e9b438aa8e1abef7509f, type: 3}
       propertyPath: m_RootOrder
@@ -25,11 +25,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2932893939044689103, guid: 76ca3b6eeb69e9b438aa8e1abef7509f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.007089913
+      value: 0.24506003
       objectReference: {fileID: 0}
     - target: {fileID: 2932893939044689103, guid: 76ca3b6eeb69e9b438aa8e1abef7509f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0042057037
+      value: -0.16228226
       objectReference: {fileID: 0}
     - target: {fileID: 2932893939044689103, guid: 76ca3b6eeb69e9b438aa8e1abef7509f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -102,7 +102,7 @@ PrefabInstance:
     - target: {fileID: 2932893940506680254, guid: 76ca3b6eeb69e9b438aa8e1abef7509f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3d0f6c0c3235fce4499a64c5731f0e22, type: 3}
+      objectReference: {fileID: 21300000, guid: 44f420450a7cb484b90bb1f343de31f5, type: 3}
     - target: {fileID: 2932893940612909287, guid: 76ca3b6eeb69e9b438aa8e1abef7509f, type: 3}
       propertyPath: m_Sprite
       value: 
