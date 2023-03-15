@@ -82,7 +82,12 @@ public class Ressourcer : MonoBehaviour
     private List<string> saveR;
     [HideInInspector]
     public List<string> gotList;
-    private bool loadSykse; 
+    private bool loadSykse;
+
+    [HideInInspector]
+    public float lastVisitS;
+    [HideInInspector]
+    public string dalyRewardSave;
 
     private void Awake()
     {
@@ -111,7 +116,7 @@ public class Ressourcer : MonoBehaviour
             /*finder ud af hvor meget tid der er gådet siden der blev gemt sidst
             og konveter det hele til sekunder, som en int verdi*/
             TimeSpan lastVisit = (DateTime.Today + DateTime.Now.TimeOfDay) - dato;
-            float lastVisitS = float.Parse(lastVisit.Seconds.ToString());   //sekunder
+            lastVisitS = float.Parse(lastVisit.Seconds.ToString());   //sekunder
             lastVisitS += float.Parse(lastVisit.Minutes.ToString()) * 60;   //minutter til sekunder
             lastVisitS += float.Parse(lastVisit.Hours.ToString()) * 3600;   //timer til sekunder
             lastVisitS += float.Parse(lastVisit.Days.ToString()) * 86400;   //dage til sekunder
@@ -159,7 +164,7 @@ public class Ressourcer : MonoBehaviour
                 Invoke("Ulykke", 0.1f);
             }
 
-        print($"{DateTime.Today + DateTime.Now.TimeOfDay} , {dato} && {DateTime.Today.Day} , {dato.Day}");
+        //print($"{DateTime.Today + DateTime.Now.TimeOfDay} , {dato} && {DateTime.Today.Day} , {dato.Day}");
 
     }
 
@@ -354,7 +359,7 @@ public class Ressourcer : MonoBehaviour
     {
         dato = DateTime.Today + DateTime.Now.TimeOfDay; //finder dato og tid
 
-        saveR = new List<string>() {"","","","","","",""}; //set list lengde
+        saveR = new List<string>() {"","","","","","","",""}; //set list lengde
 
         //samle alle variabler i en liste
         saveR[0] = dato.ToString("dd-MM-yyyy HH:mm:ss");
@@ -364,6 +369,7 @@ public class Ressourcer : MonoBehaviour
         saveR[4] = monny.ToString();
         saveR[5] = aktivStain.ToString();
         saveR[6] = dalyMonny.ToString();
+        saveR[7] = dalyRewardSave;
 
         foreach (ASnack s in GetComponent<Snacks>().snacks)
         {

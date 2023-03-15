@@ -62,8 +62,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: FrindBack
+    uniqueID: 2790431447
+    locked: 0
   - name: Pet
     uniqueID: 2520962579
+    locked: 0
+  - name: FrindFrond
+    uniqueID: 984840567
     locked: 0
   - name: Front
     uniqueID: 1163576869
