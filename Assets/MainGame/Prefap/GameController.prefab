@@ -1176,8 +1176,7 @@ MonoBehaviour:
   iconCurrencySprite: {fileID: 21300000, guid: f228f1556b940442080490a56fe72844, type: 3}
   iconSnacksSprite: {fileID: 21300000, guid: 8d4983ab4cee2e04fb945445e2101790, type: 3}
   rewardsDB: {fileID: 11400000, guid: 7336ef01bbbf2fc4a9f51ea795357ef1, type: 2}
-  nextRewardDelay: 86400
-  checkForRewardDelay: 2
+  haveTaken: []
 --- !u!1 &608676097
 GameObject:
   m_ObjectHideFlags: 0
@@ -3201,7 +3200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a36d0629d64213d409b6f53a26f04e98, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6318a687d7d442e4494912c344d98b8e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4555,6 +4554,7 @@ MonoBehaviour:
   showPosition: {x: 0, y: 0}
   petName: 
   petType: 1
+  inPetMenu: 0
 --- !u!114 &712255104591520815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4593,6 +4593,8 @@ MonoBehaviour:
   maxBar: 10000
   meterSpeed: 2
   gotList: []
+  lastVisitS: 0
+  dalyRewardSave: 
 --- !u!114 &4174684531747814989
 MonoBehaviour:
   m_ObjectHideFlags: 0
