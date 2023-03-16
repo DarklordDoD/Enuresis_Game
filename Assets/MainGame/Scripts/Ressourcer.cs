@@ -164,7 +164,7 @@ public class Ressourcer : MonoBehaviour
                 Invoke("Ulykke", 0.1f);
             }
 
-        //print($"{DateTime.Today + DateTime.Now.TimeOfDay} , {dato} && {DateTime.Today.Day} , {dato.Day}");
+        print($"{DateTime.Today + DateTime.Now.TimeOfDay} , {dato} && {DateTime.Today.Day} , {dato.Day}");
 
     }
 
