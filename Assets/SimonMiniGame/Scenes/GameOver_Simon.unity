@@ -676,6 +676,7 @@ MonoBehaviour:
   hvadGame: Simon
   allMiniGames: []
   pointsToMonny: 1
+  pointsToMonnySquard: 1.2
   showDalyMonny: 1
 --- !u!1 &1014430506
 GameObject:
@@ -908,6 +909,7 @@ MonoBehaviour:
   minigame: 1
   aktivateUI: {fileID: 0}
   aktivate: 0
+  stayOpenUI: 0
 --- !u!1 &1732695642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,6 +1213,7 @@ MonoBehaviour:
   minigame: 0
   aktivateUI: {fileID: 0}
   aktivate: 0
+  stayOpenUI: 0
 --- !u!1 &1839027365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,3 +1449,4 @@ MonoBehaviour:
   minigame: 0
   aktivateUI: {fileID: 0}
   aktivate: 0
+  stayOpenUI: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using Unity.Mathematics;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField]
     private float pointsToMonny = 1;
+    [SerializeField]
+    private float pointsToMonnySquard = 1;
     [SerializeField]
     private bool showDalyMonny;
 
@@ -117,7 +120,7 @@ public class ScoreManager : MonoBehaviour
 
     private void CalkolateMonny()
     {
-        int getMonny = (int)((float)score * pointsToMonny);
+        int getMonny = (int)math.pow(((float)score * pointsToMonny), pointsToMonnySquard);
 
         GameObject.FindGameObjectWithTag("GameController").GetComponent<Ressourcer>().ShowMonny(getMonny);
 

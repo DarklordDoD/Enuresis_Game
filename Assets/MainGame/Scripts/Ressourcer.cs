@@ -86,7 +86,7 @@ public class Ressourcer : MonoBehaviour
 
     [HideInInspector]
     public float lastVisitS;
-    [HideInInspector]
+    //[HideInInspector]
     public string dalyRewardSave;
 
     private void Awake()
