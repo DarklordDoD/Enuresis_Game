@@ -9,25 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: RunnerTutorial_da
+  m_Script: {fileID: 11500000, guid: 97269afb30aa84742ae3f3342603618a, type: 3}
+  m_Name: SnakeTutorialAssets_en
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: da
-  m_SharedData: {fileID: 11400000, guid: 2a3e9575e7f7bb54aa3c59d267caffd0, type: 2}
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 1318ca6474a030d41b2343c943ee1ddc, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 49634152448
-    m_Localized: Indsaml
-    m_Metadata:
-      m_Items: []
-  - m_Id: 79585677312
-    m_Localized: "Undg\xE5"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 101102456832
-    m_Localized: Hav det sjovt!
+  - m_Id: 7305236480
+    m_Localized: 3d603b314a5ee4fd4a13dd7e7ff6bc6d
     m_Metadata:
       m_Items: []
   references:
