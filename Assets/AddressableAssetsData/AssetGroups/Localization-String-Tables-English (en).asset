@@ -35,12 +35,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en
     - Preload
-  - m_GUID: c39c478a92cd5ff4fb8aba6b5ddcdad4
-    m_Address: RunnerTutorial_en
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
-    - Preload
   - m_GUID: 01ab59bf14376704d930655d5245aff4
     m_Address: SimonSaysTutorial_en
     m_ReadOnly: 1

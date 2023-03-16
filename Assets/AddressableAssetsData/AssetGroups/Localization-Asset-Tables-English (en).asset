@@ -89,6 +89,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en
     - Preload
+  - m_GUID: e87c0245a8e920c4097a8be8ca680a03
+    m_Address: MemoryGameTutorial_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+  - m_GUID: 34756ef29e99605469e86bd43f1e1af1
+    m_Address: SnakeTutorialAssets_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 725951384df75fb4b82b5ca98b14127e, type: 2}
   m_SchemaSet:

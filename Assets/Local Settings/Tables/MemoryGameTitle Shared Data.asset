@@ -27,6 +27,10 @@ MonoBehaviour:
     m_Key: MemoryStart
     m_Metadata:
       m_Items: []
+  - m_Id: 5799847314395136
+    m_Key: Tutorial
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 3720198237529047041
@@ -48,6 +52,14 @@ MonoBehaviour:
           m_TableCodes:
           - en
           - da
+        - m_KeyId: 3598995619123200
+          m_TableCodes:
+          - da
+          - en
+        - m_KeyId: 5799847314395136
+          m_TableCodes:
+          - da
+          - en
         m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
     - rid: 8953270642896797706
@@ -56,7 +68,6 @@ MonoBehaviour:
         m_Entries:
         - m_KeyId: 3598995619123200
           m_TableCodes:
-          - da
           - en
         - m_KeyId: 3598697886453760
           m_TableCodes:

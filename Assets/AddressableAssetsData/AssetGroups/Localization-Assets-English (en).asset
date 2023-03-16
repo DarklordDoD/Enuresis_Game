@@ -77,6 +77,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
+  - m_GUID: 3d603b314a5ee4fd4a13dd7e7ff6bc6d
+    m_Address: snake main menu - light
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 725951384df75fb4b82b5ca98b14127e, type: 2}
   m_SchemaSet:
