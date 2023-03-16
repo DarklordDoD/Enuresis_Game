@@ -22,6 +22,47 @@ MonoBehaviour:
     m_Localized: "Klik p\xE5 sk\xE6rmen for at bev\xE6ge dig rundt."
     m_Metadata:
       m_Items: []
+  - m_Id: 1081098984296448
+    m_Localized: "Klik p\xE5 d\xF8ren for at skifte rum."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1090326562148352
+    m_Localized: "Klik p\xE5 glasset for at drikke vand."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1095496591282176
+    m_Localized: "Klik p\xE5 reolen for at spille minigames."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1098517958168576
+    m_Localized: "Klik p\xE5 snack ikonet for at \xE5bne snack menuen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1104436716703744
+    m_Localized: "Snacks og klik p\xE5 k\xE6ledyret \xF8ger hum\xF8ret."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827616896913408
+    m_Localized: "Tryk p\xE5 toilettet for at dr\xE6ne bl\xE6re meteret."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828252950532096
+    m_Localized: "Klik p\xE5 tandb\xF8rsten for at b\xF8rste t\xE6nder."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1838148278358016
+    m_Localized: "Klik p\xE5 shoppen for at k\xF8be snacks og andet."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2120413482913792
+    m_Localized: "Klik p\xE5 podiet for at skifte t\xF8j."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2120798327083008
+    m_Localized: "Klik p\xE5 pilene for at skifte mellem t\xF8j du ejer. Tryk p\xE5
+      \"v\xE6lg\" n\xE5r du er f\xE6rdig."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

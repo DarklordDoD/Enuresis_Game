@@ -19,7 +19,50 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 50053582848
-    m_Localized: Click the screen to move around.
+    m_Localized: Click on the screen to move around.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1081098984296448
+    m_Localized: Click the door to change rooms.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1090326562148352
+    m_Localized: Click the glass of water to drink.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1095496591282176
+    m_Localized: Click the bookcase to play minigames.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1098517958168576
+    m_Localized: Click the snack icon to open the snack menu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1104436716703744
+    m_Localized: Snacks and clicking the pet increases its mood.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1827616896913408
+    m_Localized: Click the toilet to lower the bladder meter.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1828252950532096
+    m_Localized: Click the toothbrush to brush your teeth.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1838148278358016
+    m_Localized: Click the shop to buy snacks and others.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2120413482913792
+    m_Localized: Click the podium to change clothes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2120798327083008
+    m_Localized: 'Click the arrows to change clothes.
+
+      Hit "select" when you
+      are done.'
     m_Metadata:
       m_Items: []
   references:
