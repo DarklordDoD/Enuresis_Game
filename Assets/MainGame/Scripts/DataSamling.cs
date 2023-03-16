@@ -120,11 +120,12 @@ public class DataSamling : MonoBehaviour
             svarList.Add(GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text);
 
         //registrer om der er svaret på spørgsmålet
-        if (standart == svarList[page + 1] && page != svarIndput.Count - 1)
-        {
-            advarelse.text = advarelseText;
-            return;
-        }
+        if (page != svarIndput.Count - 1)
+            if (standart == svarList[page + 1])
+            {
+                advarelse.text = advarelseText;
+                return;
+            }
 
         advarelse.text = "";
         NextSpogsmaal();
