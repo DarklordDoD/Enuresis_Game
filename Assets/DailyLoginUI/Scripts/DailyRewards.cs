@@ -130,6 +130,12 @@ namespace DailyRewardsSystem
 
             haveTaken = gameController.GetComponent<Ressourcer>().gotList[7].Split(",").ToList();
 
+            if (haveTaken.Count < 2)
+            {
+                DeactivateReward();
+                return;
+            }
+
             if (bool.Parse(haveTaken[1]))
             {
                 nextRewardIndex = int.Parse(haveTaken[0]);
