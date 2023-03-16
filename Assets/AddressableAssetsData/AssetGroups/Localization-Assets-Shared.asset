@@ -131,8 +131,8 @@ MonoBehaviour:
     m_Address: Assets/Local Settings/Tables/TutorialLivingRoom Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
-  - m_GUID: c7ccc04a51a5b234e9bed589765ffa81
-    m_Address: Assets/Local Settings/Tables/DalyReward Shared Data.asset
+  - m_GUID: 6d9631b3d3b5e6b4f81559d2b4151c2c
+    m_Address: Assets/Local Settings/Tables/Game_Tutorial_Assets Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
   m_ReadOnly: 1
