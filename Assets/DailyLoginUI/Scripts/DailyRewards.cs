@@ -117,12 +117,16 @@ namespace DailyRewardsSystem
 
         private void TjekOgStart()
         {
+            if (gameController.GetComponent<PetScelektion>().inPetMenu)
+                return;
+
             if (gameController.GetComponent<Ressourcer>().lastVisitS > 86400)
             {
                 nextRewardIndex = UnityEngine.Random.Range(0, rewardsDB.rewardsCount);
                 ActivateReward();
                 return;
             }
+            
 
             haveTaken = gameController.GetComponent<Ressourcer>().gotList[7].Split(",").ToList();
 

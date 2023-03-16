@@ -13,7 +13,8 @@ public class PetScelektion : MonoBehaviour
     public int petType;
 
     private List<string> saveList;
-    private bool inPetMenu;
+    [HideInInspector]
+    public bool inPetMenu;
     private GameObject thePet;
 
     private void Awake()

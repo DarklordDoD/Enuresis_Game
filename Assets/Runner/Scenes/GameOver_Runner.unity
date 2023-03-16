@@ -242,7 +242,7 @@ MonoBehaviour:
   highscoreText: {fileID: 612080119}
   hvadGame: Runner
   allMiniGames: []
-  pointsToMonny: 1
+  pointsToMonny: 1.5
   showDalyMonny: 1
 --- !u!1 &243472524
 GameObject:
@@ -396,6 +396,7 @@ MonoBehaviour:
   minigame: 0
   aktivateUI: {fileID: 0}
   aktivate: 0
+  stayOpenUI: 0
 --- !u!114 &243472530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1093,6 +1094,7 @@ MonoBehaviour:
   minigame: 1
   aktivateUI: {fileID: 0}
   aktivate: 0
+  stayOpenUI: 0
 --- !u!114 &976174267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1551,6 +1553,7 @@ MonoBehaviour:
   minigame: 0
   aktivateUI: {fileID: 0}
   aktivate: 0
+  stayOpenUI: 0
 --- !u!114 &1623423114
 MonoBehaviour:
   m_ObjectHideFlags: 0
