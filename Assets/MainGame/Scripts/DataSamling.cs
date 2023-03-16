@@ -27,8 +27,8 @@ public class DataSamling : MonoBehaviour
     [SerializeField]
     private List<string> gotList;
 
-    private int page;
     [SerializeField]
+    private int page;
     private string standart;
     private string sidsteNavn;
     private string lastSvarDato;
@@ -116,16 +116,15 @@ public class DataSamling : MonoBehaviour
         //sørger for at listen altid bliver lige lang
         if (svarList.Count > page + 1 && svarList[page + 1] != splitListExeption)
             svarList[page + 1] = GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text;
-        else
+
+        else if (GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text != standart || page == svarIndput.Count - 1)
             svarList.Add(GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text);
 
-        //registrer om der er svaret på spørgsmålet
-        if (page != svarIndput.Count - 1)
-            if (standart == svarList[page + 1])
-            {
-                advarelse.text = advarelseText;
-                return;
-            }
+        else
+        {
+            advarelse.text = advarelseText;
+            return;
+        }
 
         advarelse.text = "";
         NextSpogsmaal();
