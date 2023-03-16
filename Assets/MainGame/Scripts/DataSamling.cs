@@ -11,6 +11,8 @@ public class DataSamling : MonoBehaviour
     private TextMeshProUGUI spogsmaal;
     [SerializeField]
     private TextMeshProUGUI advarelse;
+    [SerializeField]
+    private string advarelseText;
 
     [SerializeField]
     private List<string> spogsmaalN;
@@ -26,6 +28,7 @@ public class DataSamling : MonoBehaviour
     private List<string> gotList;
 
     private int page;
+    [SerializeField]
     private string standart;
     private string sidsteNavn;
     private string lastSvarDato;
@@ -69,8 +72,6 @@ public class DataSamling : MonoBehaviour
             case -1:
                 page++;
                 svarIndput[page].SetActive(true);
-                standart = GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text;
-                nameInput.text = sidsteNavn;
                 break;
 
             case 3:
@@ -102,6 +103,10 @@ public class DataSamling : MonoBehaviour
             foreach (GameObject svar in svarIndput)
                 svar.SetActive(false);
             svarIndput[page].SetActive(true);
+
+            standart = GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text;
+            nameInput.text = sidsteNavn;
+
         }
     }
 
@@ -112,16 +117,17 @@ public class DataSamling : MonoBehaviour
         if (svarList.Count > page + 1 && svarList[page + 1] != splitListExeption)
             svarList[page + 1] = GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text;
         else
-            svarList.Add(GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text);       
+            svarList.Add(GameObject.FindWithTag("SvarText").GetComponent<TextMeshProUGUI>().text);
 
         //registrer om der er svaret på spørgsmålet
-        if (page == 0 && standart == svarList[page + 1])
-            advarelse.text = "Ver venlig at udfylde et svar";
-        else
+        if (standart == svarList[page + 1] && page != svarIndput.Count - 1)
         {
-            advarelse.text = "";
-            NextSpogsmaal();
+            advarelse.text = advarelseText;
+            return;
         }
+
+        advarelse.text = "";
+        NextSpogsmaal();
     }
 
     //går id af spørgeskemaet uden at gemme
