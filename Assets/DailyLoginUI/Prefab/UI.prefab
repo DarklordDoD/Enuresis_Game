@@ -693,7 +693,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a36d0629d64213d409b6f53a26f04e98, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6318a687d7d442e4494912c344d98b8e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1035,7 +1035,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a36d0629d64213d409b6f53a26f04e98, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6318a687d7d442e4494912c344d98b8e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1720,8 +1720,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434cddc8b92ec0947ac3bc99ffc972bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currencyText: {fileID: 0}
-  snacksText: {fileID: 0}
   rewardsCanvas: {fileID: 2267521003547255157}
   openButton: {fileID: 2267521003425865562}
   closeButton: {fileID: 2267521003491376078}
@@ -1733,5 +1731,4 @@ MonoBehaviour:
   iconCurrencySprite: {fileID: 21300000, guid: f228f1556b940442080490a56fe72844, type: 3}
   iconSnacksSprite: {fileID: 21300000, guid: 199fd34269b5ca344ab1d0fc381d567e, type: 3}
   rewardsDB: {fileID: 11400000, guid: 7336ef01bbbf2fc4a9f51ea795357ef1, type: 2}
-  nextRewardDelay: 14
-  checkForRewardDelay: 2
+  haveTaken: []

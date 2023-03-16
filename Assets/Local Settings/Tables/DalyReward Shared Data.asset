@@ -16,15 +16,15 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: c7ccc04a51a5b234e9bed589765ffa81
   m_Entries:
   - m_Id: 12469059584
-    m_Key: Tittel
+    m_Key: Title
     m_Metadata:
       m_Items: []
   - m_Id: 428921503744
-    m_Key: GaveFelt
+    m_Key: GiftSpace
     m_Metadata:
       m_Items: []
   - m_Id: 3005524393984
-    m_Key: MotagButten
+    m_Key: ReceiveButton
     m_Metadata:
       m_Items: []
   m_Metadata:
