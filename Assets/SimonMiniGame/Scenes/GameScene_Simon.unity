@@ -1917,6 +1917,7 @@ MonoBehaviour:
   activeSequence: 
   correct: {fileID: 1477635967}
   incorrect: {fileID: 1611380048}
+  pushButten: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 0.49803922}
 --- !u!114 &1929655668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1933,6 +1934,8 @@ MonoBehaviour:
   highscoreText: {fileID: 753167007}
   hvadGame: Simon
   allMiniGames: []
+  pointsToMonny: 1
+  showDalyMonny: 0
 --- !u!1 &2030029605
 GameObject:
   m_ObjectHideFlags: 0

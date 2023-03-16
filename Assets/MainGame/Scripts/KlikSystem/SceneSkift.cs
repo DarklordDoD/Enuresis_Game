@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,10 +10,17 @@ public class SceneSkift : MonoBehaviour
     private bool minigame; //om der bliver skiftet til minigame
     [SerializeField]
     private GameObject aktivateUI; //Hvis der skal åbnes en menu
+    public bool aktivate;
     [SerializeField]
-    private bool aktivate;
+    private bool stayOpenUI;
 
     SceneManeger scM;
+    private bool aktivateKlik;
+
+    private void Start()
+    {
+        aktivateKlik = !aktivate;
+    }
 
     //for besked om at den næste sene skal loades
     public void SkiftTil()
@@ -27,6 +35,9 @@ public class SceneSkift : MonoBehaviour
                 SceneManager.LoadScene(skiftSceneTil);
             return;
         }
+
+        if (stayOpenUI)
+            minigame = scM.standartUI[0].activeSelf;
 
         try
         {
@@ -54,9 +65,19 @@ public class SceneSkift : MonoBehaviour
             aktivateUI.SetActive(aktivate);
 
             foreach (GameObject go in GameObject.FindGameObjectsWithTag("SceneSkift"))
-                go.GetComponent<Collider2D>().enabled = !aktivate;
+                go.GetComponent<Collider2D>().enabled = aktivateKlik;
         }
 
         scM.MiniGameUI(minigame);
+    }
+
+    public void testKledeskab()
+    {        
+        if (GameObject.Find("Omkledning") != null)
+            aktivateKlik = false;
+        else
+            aktivateKlik = true;
+
+        SkiftTil();
     }
 }

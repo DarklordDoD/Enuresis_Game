@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using TMPro;
+using System.Globalization;
 
 public class Ressourcer : MonoBehaviour
 {
@@ -81,7 +82,12 @@ public class Ressourcer : MonoBehaviour
     private List<string> saveR;
     [HideInInspector]
     public List<string> gotList;
-    private bool loadSykse; 
+    private bool loadSykse;
+
+    [HideInInspector]
+    public float lastVisitS;
+    [HideInInspector]
+    public string dalyRewardSave;
 
     private void Awake()
     {
@@ -109,16 +115,14 @@ public class Ressourcer : MonoBehaviour
 
             /*finder ud af hvor meget tid der er gådet siden der blev gemt sidst
             og konveter det hele til sekunder, som en int verdi*/
-            string dateNowMedtid = (DateTime.Today + DateTime.Now.TimeOfDay).ToString("dd-MM-yyyy HH:mm:ss");
-            TimeSpan lastVisit = DateTime.Parse(dateNowMedtid) - dato;
-            float lastVisitS = float.Parse(lastVisit.Seconds.ToString());   //sekunder
+            TimeSpan lastVisit = (DateTime.Today + DateTime.Now.TimeOfDay) - dato;
+            lastVisitS = float.Parse(lastVisit.Seconds.ToString());   //sekunder
             lastVisitS += float.Parse(lastVisit.Minutes.ToString()) * 60;   //minutter til sekunder
             lastVisitS += float.Parse(lastVisit.Hours.ToString()) * 3600;   //timer til sekunder
             lastVisitS += float.Parse(lastVisit.Days.ToString()) * 86400;   //dage til sekunder
 
             //samlet tid dividert med hvor ofte recurser endre sig og konvertert til int
             int LastVisitOpdate = Convert.ToInt32(lastVisitS / reduceSpeed);
-            //Debug.Log($"{lastVisit} to {lastVisitS}. tirgger {LastVisitOpdate} tims");
 
             //luper rescurese udregnings systemet intil systemet har cateh op
             for (int i = 0; i < LastVisitOpdate; i++)
@@ -150,10 +154,8 @@ public class Ressourcer : MonoBehaviour
         vandShow.size = vandMeter / maxBar;
         gladShow.size = gladMeter / maxBar;
 
-        String dateNow = DateTime.Today.ToString("dd-MM-yyyy"); 
-
         if (loadSykse)
-            if (DateTime.Parse(dateNow).Day - dato.Day > 0)
+            if (DateTime.Today.Day - dato.Day > 0)
             {
                 GetComponent<SceneManeger>().NewScene("Bedroom");
 
@@ -162,7 +164,8 @@ public class Ressourcer : MonoBehaviour
                 Invoke("Ulykke", 0.1f);
             }
 
-        print($"{DateTime.Today.Day} , {dato.Day}");
+        //print($"{DateTime.Today + DateTime.Now.TimeOfDay} , {dato} && {DateTime.Today.Day} , {dato.Day}");
+
     }
 
     public void ShowMonny(int newMonny)
@@ -356,7 +359,7 @@ public class Ressourcer : MonoBehaviour
     {
         dato = DateTime.Today + DateTime.Now.TimeOfDay; //finder dato og tid
 
-        saveR = new List<string>() {"","","","","","",""}; //set list lengde
+        saveR = new List<string>() {"","","","","","","",""}; //set list lengde
 
         //samle alle variabler i en liste
         saveR[0] = dato.ToString("dd-MM-yyyy HH:mm:ss");
@@ -366,6 +369,7 @@ public class Ressourcer : MonoBehaviour
         saveR[4] = monny.ToString();
         saveR[5] = aktivStain.ToString();
         saveR[6] = dalyMonny.ToString();
+        saveR[7] = dalyRewardSave;
 
         foreach (ASnack s in GetComponent<Snacks>().snacks)
         {
@@ -380,7 +384,7 @@ public class Ressourcer : MonoBehaviour
     {
         SaveClass.LoadFromFile("MainGame", out gotList);
 
-        dato = DateTime.Parse(gotList[0]);
+        dato = DateTime.ParseExact(gotList[0], "dd-MM-yyyy HH:mm:ss", CultureInfo.InvariantCulture);
         aktivStain = bool.Parse(gotList[5]);
         monny = int.Parse(gotList[4]);
         dalyMonny = int.Parse(gotList[6]);

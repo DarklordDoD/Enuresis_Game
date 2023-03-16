@@ -22,6 +22,10 @@ MonoBehaviour:
     m_Localized: "K\xF8b"
     m_Metadata:
       m_Items: []
+  - m_Id: 4684598188883968
+    m_Localized: Butik
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

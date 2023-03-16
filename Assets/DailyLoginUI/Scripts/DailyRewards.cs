@@ -1,7 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using System;
 using UnityEngine.UI;
 
 namespace DailyRewardsSystem
@@ -48,17 +49,19 @@ namespace DailyRewardsSystem
         [Space]
         [Header("Timing")]
         // Next reward wait delay is using seconds, just change the format if need be.
-        [SerializeField] double nextRewardDelay = 20f;
+        //[SerializeField] double nextRewardDelay = 20f;
         //Checks for rewards every 5 seconds that pass
-        [SerializeField] float checkForRewardDelay = 5f;
+        //[SerializeField] float checkForRewardDelay = 5f;
 
         private int nextRewardIndex;
-        private bool isRewardReady = false;
+        //private bool isRewardReady = false;
         private GameObject gameController;
         private GameObject snacksMenu;
         private int currency;
         private int snacks;
-        private DateTime rewardClaimDateTime;
+        //private DateTime rewardClaimDateTime;
+        [SerializeField]
+        private List<string> haveTaken;
 
         void Start()
         {
@@ -68,12 +71,11 @@ namespace DailyRewardsSystem
             if (snacksMenu.GetComponent<SnackMenu>().menuOpen)
                 snacksMenu.GetComponent<SnackMenu>().OpenMenu();
 
-            rewardClaimDateTime = gameController.GetComponent<Ressourcer>().dato;
-
             Initialize();
+            Invoke("TjekOgStart", 0.1f);
 
-            StopAllCoroutines();
-            StartCoroutine ( CheckForRewards());   
+            //StopAllCoroutines();
+            //StartCoroutine ( CheckForRewards());   
         }
 
         void Initialize()
@@ -87,10 +89,10 @@ namespace DailyRewardsSystem
 
             //Claim button
             claimButton.onClick.RemoveAllListeners();
-            claimButton.onClick.AddListener( OnClaimButtonClick );
+            claimButton.onClick.AddListener(OnClaimButtonClick);
         }
 
-        IEnumerator CheckForRewards()
+        /*IEnumerator CheckForRewards()
         {
 
             while (true)
@@ -111,13 +113,33 @@ namespace DailyRewardsSystem
                 yield return new WaitForSeconds(checkForRewardDelay);
             }
          
+        }*/
+
+        private void TjekOgStart()
+        {
+            if (gameController.GetComponent<Ressourcer>().lastVisitS > 86400)
+            {
+                nextRewardIndex = UnityEngine.Random.Range(0, rewardsDB.rewardsCount);
+                ActivateReward();
+                return;
+            }
+
+            haveTaken = gameController.GetComponent<Ressourcer>().gotList[7].Split(",").ToList();
+
+            if (bool.Parse(haveTaken[1]))
+            {
+                nextRewardIndex = int.Parse(haveTaken[0]);
+                ActivateReward();
+            }
+
         }
 
         void ActivateReward()
         {
-            rewardClaimDateTime = DateTime.Now;
+            //rewardClaimDateTime = DateTime.Now;           
+            //isRewardReady = true;
 
-            isRewardReady = true;
+            gameController.GetComponent<Ressourcer>().dalyRewardSave = nextRewardIndex.ToString() + ",true";
 
             noMoreRewardsPanel.SetActive(false);
             rewardsNotification.SetActive(true);
@@ -134,12 +156,13 @@ namespace DailyRewardsSystem
 
             else rewardImage.sprite = iconSnacksSprite;
 
-            rewardAmountText.text = String.Format("+{0}", reward.Amount);    
+            rewardAmountText.text = String.Format("+{0}", reward.Amount);
         }
 
         void DeactivateReward ()
         {
-            isRewardReady = false;
+            //isRewardReady = false;
+            gameController.GetComponent<Ressourcer>().dalyRewardSave = nextRewardIndex.ToString() + ",false";
 
             noMoreRewardsPanel.SetActive(true);
             rewardsNotification.SetActive(false);
@@ -155,7 +178,7 @@ namespace DailyRewardsSystem
                 //Debug.Log ("<color=white>"+reward.Type.ToString ()+ "Claimed : </color>+" + reward.Amount );
                 currency = reward.Amount;
                 //TO DO : FX??
-                UpdateCurrencyTextUI ();
+                UpdateCurrencyTextUI();
                 CloseAfterReward();
             }
             else if (reward.Type == RewardType.Snacks)
@@ -167,14 +190,14 @@ namespace DailyRewardsSystem
                 CloseAfterReward();
             }
             //Save next reward index
-            nextRewardIndex++;
+            /*nextRewardIndex++;
             if (nextRewardIndex>=rewardsDB.rewardsCount)
-                nextRewardIndex = 0;
+                nextRewardIndex = 0;*/
 
-            PlayerPrefs.SetInt("Next_Reward_Index", nextRewardIndex);
+            //PlayerPrefs.SetInt("Next_Reward_Index", nextRewardIndex);
 
             //Save DateTime of the last claim click
-            PlayerPrefs.SetString ( "Reward_Claim_Datetime", DateTime.Now.ToString() );
+            //PlayerPrefs.SetString ( "Reward_Claim_Datetime", DateTime.Now.ToString() );
 
             DeactivateReward();
         }

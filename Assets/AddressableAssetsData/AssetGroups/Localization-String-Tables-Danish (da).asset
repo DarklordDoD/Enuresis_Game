@@ -63,6 +63,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-da
     - Preload
+  - m_GUID: eee5d8cdf3c7c8c47873e8f76a8f383c
+    m_Address: DalyReward_da
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 725951384df75fb4b82b5ca98b14127e, type: 2}
   m_SchemaSet:

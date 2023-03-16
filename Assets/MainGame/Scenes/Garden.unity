@@ -955,7 +955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3598875829527276704, guid: 5c998a7382a2c914b9dfe961781b4676, type: 3}
       propertyPath: minigame
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3598875829527276704, guid: 5c998a7382a2c914b9dfe961781b4676, type: 3}
       propertyPath: aktivateUI

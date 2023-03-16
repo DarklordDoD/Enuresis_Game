@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     public AudioSource correct;
     public AudioSource incorrect;
 
+    [SerializeField]
+    private Color pushButten;
+
     // Update is called once per frame
     void Update()
     {
@@ -40,7 +43,9 @@ public class GameManager : MonoBehaviour
 
             if (stayLitCounter < 0)
             {
-                colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 1f);
+                colours[activeSequence[positionInSequence]].color = new Color(1f, 1f, 1f, 1f);
+
+                //colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 1f);
                 buttonSounds[activeSequence[positionInSequence]].Stop();
                 shouldBeLit = false;
 
@@ -65,14 +70,17 @@ public class GameManager : MonoBehaviour
             {
                 if (WaitBetweenCounter < 0)
                 {
-                    
 
-                    
+                    colours[activeSequence[positionInSequence]].color = pushButten;
 
-                    colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 0.5f);
+                    //colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 0.2f);
                     buttonSounds[activeSequence[positionInSequence]].Play();
 
-                    stayLitCounter = stayLit;
+                    if (positionInSequence < activeSequence.Count - 3)
+                        stayLitCounter = stayLit / 4;
+                    else
+                        stayLitCounter = stayLit;
+
                     shouldBeLit = true;
                     shouldBeDark = false;
                 }
@@ -85,6 +93,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        GameObject.Find("StartGameButton").SetActive(false);
+
         activeSequence.Clear();
 
         positionInSequence = 0;
@@ -94,7 +104,8 @@ public class GameManager : MonoBehaviour
 
         activeSequence.Add(colourSelect);
 
-        colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 0.5f);
+        colours[activeSequence[positionInSequence]].color = pushButten;
+        //colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 0.5f);
         buttonSounds[activeSequence[positionInSequence]].Play();
 
         stayLitCounter = stayLit;
@@ -126,17 +137,21 @@ public class GameManager : MonoBehaviour
 
                     activeSequence.Add(colourSelect);
 
-                    colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 0.5f);
+                    colours[activeSequence[positionInSequence]].color = pushButten;
+                    //colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 0.5f);
                     buttonSounds[activeSequence[positionInSequence]].Play();
 
-                    stayLitCounter = stayLit;
+                    if (positionInSequence < activeSequence.Count - 3)
+                        stayLitCounter = stayLit / 4;
+                    else
+                        stayLitCounter = stayLit;
+
                     shouldBeLit = true;
 
                     gameActive = false;
 
                     correct.Play();
 
-                    
                 }
             }
 

@@ -32,7 +32,7 @@ public class Snacks : MonoBehaviour
     {
         List<string> theLoadList = GetComponent<Ressourcer>().gotList;
 
-        for (int i = 7; i < theLoadList.Count; i++)
+        for (int i = 8; i < theLoadList.Count; i++)
         {
             List<string> theSplitSnack = theLoadList[i].Split(",").ToList();
 

@@ -77,19 +77,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5207499631160052583, guid: f2ef5f91552457a4e8f96a55456d7c24, type: 3}
       propertyPath: maxPoint.x
-      value: 5.2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5207499631160052583, guid: f2ef5f91552457a4e8f96a55456d7c24, type: 3}
       propertyPath: maxPoint.y
-      value: -0.7
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5207499631160052583, guid: f2ef5f91552457a4e8f96a55456d7c24, type: 3}
       propertyPath: minPoint.x
-      value: -5.2
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 5207499631160052583, guid: f2ef5f91552457a4e8f96a55456d7c24, type: 3}
       propertyPath: minPoint.y
-      value: -4
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 5207499631160052583, guid: f2ef5f91552457a4e8f96a55456d7c24, type: 3}
       propertyPath: timerRange.x
@@ -156,6 +156,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7493032212590720735}
     m_Modifications:
+    - target: {fileID: 5522869240518592000, guid: 12381bbcc99d671429678f8f3b72d328, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522869240518592000, guid: 12381bbcc99d671429678f8f3b72d328, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5803780440216341544, guid: 12381bbcc99d671429678f8f3b72d328, type: 3}
       propertyPath: m_Layer
       value: 9

@@ -19,6 +19,10 @@ MonoBehaviour:
     m_Key: BuyButton
     m_Metadata:
       m_Items: []
+  - m_Id: 4684598188883968
+    m_Key: ShopTitel
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
