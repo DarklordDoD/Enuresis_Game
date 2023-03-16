@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: c24cd6db3b6c0284d9cfdc194a86d2d3, type: 3}
     - target: {fileID: 1207428972617973950, guid: a92b5eb4c60266a4a9c534f5ea088968, type: 3}
       propertyPath: m_Name
-      value: PetSkin7
+      value: PetSkin7 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1207428972617973951, guid: a92b5eb4c60266a4a9c534f5ea088968, type: 3}
       propertyPath: m_RootOrder
@@ -37,11 +37,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1207428972617973951, guid: a92b5eb4c60266a4a9c534f5ea088968, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.033445597
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1207428972617973951, guid: a92b5eb4c60266a4a9c534f5ea088968, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.017635807
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1207428972617973951, guid: a92b5eb4c60266a4a9c534f5ea088968, type: 3}
       propertyPath: m_LocalPosition.z
