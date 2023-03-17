@@ -4956,7 +4956,7 @@ MonoBehaviour:
     - "That\u2019s okay."
     - Close
   delayMellemTale: 0.5
-  frindUlykkeChange: 0
+  frindUlykkeChange: 8
   tisEventType: 0
   samtaleList: []
   objektPositions:
