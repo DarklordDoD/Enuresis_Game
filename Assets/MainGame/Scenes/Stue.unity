@@ -2125,6 +2125,7 @@ GameObject:
   - component: {fileID: 560488312}
   - component: {fileID: 560488313}
   - component: {fileID: 560488314}
+  - component: {fileID: 560488315}
   m_Layer: 5
   m_Name: Help_Button
   m_TagString: Untagged
@@ -2303,6 +2304,19 @@ MonoBehaviour:
   aktivateUI: {fileID: 1926830314}
   aktivate: 1
   stayOpenUI: 0
+--- !u!114 &560488315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560488307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba63cf969c9082f4eb3678c644ce5cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 560488309}
 --- !u!224 &561059415 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9092777160098491600, guid: f371e136f2dc0ec4c9ae6e8fe5e6293e, type: 3}
@@ -6721,6 +6735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1926830315}
+  - component: {fileID: 1926830316}
   m_Layer: 0
   m_Name: Tutorial_UI_Activator
   m_TagString: Untagged
@@ -6743,6 +6758,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1926830316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926830314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48fc686e360a87b4093ca6a0590fd28d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonToAppear: {fileID: 560488309}
+  showButtons:
+  - {fileID: 2063568599}
+  - {fileID: 166051655}
+  - {fileID: 2076066247}
+  - {fileID: 1957313412}
+  - {fileID: 1990099435}
+  - {fileID: 642878952}
 --- !u!1 &1927789690
 GameObject:
   m_ObjectHideFlags: 0

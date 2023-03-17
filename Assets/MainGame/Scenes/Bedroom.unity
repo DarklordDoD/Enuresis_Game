@@ -1001,6 +1001,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 444961474}
+  - component: {fileID: 444961475}
   m_Layer: 0
   m_Name: Tutorial_UI_Activator
   m_TagString: Untagged
@@ -1023,6 +1024,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &444961475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444961473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48fc686e360a87b4093ca6a0590fd28d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonToAppear: {fileID: 1986178500}
+  showButtons:
+  - {fileID: 553438836}
+  - {fileID: 539601512}
 --- !u!1 &537400594
 GameObject:
   m_ObjectHideFlags: 0
@@ -4943,6 +4960,7 @@ GameObject:
   - component: {fileID: 1986178499}
   - component: {fileID: 1986178498}
   - component: {fileID: 1986178503}
+  - component: {fileID: 1986178504}
   m_Layer: 5
   m_Name: Help_Button
   m_TagString: Untagged
@@ -5121,6 +5139,19 @@ MonoBehaviour:
   aktivateUI: {fileID: 444961473}
   aktivate: 1
   stayOpenUI: 0
+--- !u!114 &1986178504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986178496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba63cf969c9082f4eb3678c644ce5cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1986178500}
 --- !u!1 &1992303682
 GameObject:
   m_ObjectHideFlags: 0
