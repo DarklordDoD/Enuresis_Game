@@ -966,7 +966,7 @@ GameObject:
   - component: {fileID: 518990889}
   m_Layer: 5
   m_Name: Tutorial_Popout_Panel
-  m_TagString: Untagged
+  m_TagString: Tutorial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1203,7 +1203,7 @@ GameObject:
   - component: {fileID: 690187938}
   m_Layer: 5
   m_Name: Tutorial_Popout_Panel2
-  m_TagString: Untagged
+  m_TagString: Tutorial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1775,7 +1775,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 1163576869
+  m_SortingLayerID: -448008457
   m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &1311392305
@@ -1837,6 +1837,7 @@ MonoBehaviour:
   - 0
   delayMellemKlik: 10
   showTimer: {fileID: 1931623726}
+  tjekTrikker: 0
   theAnimation: Side
 --- !u!212 &1356900409
 SpriteRenderer:
@@ -2039,6 +2040,7 @@ MonoBehaviour:
   - 0
   delayMellemKlik: 0
   showTimer: {fileID: 0}
+  tjekTrikker: 0
   theAnimation: brush
 --- !u!61 &1437172474
 BoxCollider2D:
@@ -3498,7 +3500,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 1163576869
+  m_SortingLayerID: -448008457
   m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &2123894803

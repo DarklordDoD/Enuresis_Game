@@ -1193,7 +1193,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 1163576869
+  m_SortingLayerID: -448008457
   m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &227333773
@@ -1943,7 +1943,7 @@ GameObject:
   - component: {fileID: 517273102}
   m_Layer: 5
   m_Name: Tutorial_Popout_Panel_3
-  m_TagString: Untagged
+  m_TagString: Tutorial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2399,7 +2399,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 1163576869
+  m_SortingLayerID: -448008457
   m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!224 &570552259
@@ -2894,7 +2894,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 1163576869
+  m_SortingLayerID: -448008457
   m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!224 &696930098
@@ -2932,7 +2932,7 @@ GameObject:
   - component: {fileID: 720932477}
   m_Layer: 5
   m_Name: Tutorial_Popout_Panel_5
-  m_TagString: Untagged
+  m_TagString: Tutorial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3666,7 +3666,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 1163576869
+  m_SortingLayerID: -448008457
   m_SortingOrder: 6
   m_TargetDisplay: 0
 --- !u!224 &871332374
@@ -4205,6 +4205,7 @@ MonoBehaviour:
   - 0
   delayMellemKlik: 0
   showTimer: {fileID: 0}
+  tjekTrikker: 0
   theAnimation: Drinking
 --- !u!61 &955456775
 BoxCollider2D:
@@ -4246,7 +4247,7 @@ GameObject:
   - component: {fileID: 988257939}
   m_Layer: 5
   m_Name: Tutorial_Popout_Panel
-  m_TagString: Untagged
+  m_TagString: Tutorial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5472,7 +5473,7 @@ GameObject:
   - component: {fileID: 1460427839}
   m_Layer: 5
   m_Name: Tutorial_Popout_Panel_6
-  m_TagString: Untagged
+  m_TagString: Tutorial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6348,7 +6349,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 1163576869
+  m_SortingLayerID: -448008457
   m_SortingOrder: 7
   m_TargetDisplay: 0
 --- !u!224 &1706121501
@@ -6546,7 +6547,7 @@ GameObject:
   - component: {fileID: 1907691737}
   m_Layer: 5
   m_Name: Tutorial_Popout_Panel_4
-  m_TagString: Untagged
+  m_TagString: Tutorial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6643,7 +6644,7 @@ GameObject:
   - component: {fileID: 1914760014}
   m_Layer: 5
   m_Name: Tutorial_Popout_Panel_2
-  m_TagString: Untagged
+  m_TagString: Tutorial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6936,7 +6937,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 1163576869
+  m_SortingLayerID: -448008457
   m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &1937641146

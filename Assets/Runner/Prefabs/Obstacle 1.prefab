@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1282115487745308462}
   - component: {fileID: 1282115487745308463}
-  - component: {fileID: 1282115487745308458}
   - component: {fileID: 1282115487745308459}
   - component: {fileID: 1282115487745308456}
   - component: {fileID: 1282115487745308457}
+  - component: {fileID: 1973863428727506557}
   m_Layer: 0
   m_Name: Obstacle 1
   m_TagString: Untagged
@@ -88,32 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1282115487745308458
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1282115487745308460}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.97, y: 1.46}
-    newSize: {x: 1.97, y: 1.46}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.97, y: 1.46}
-  m_EdgeRadius: 0
 --- !u!50 &1282115487745308459
 Rigidbody2D:
   serializedVersion: 4
@@ -161,3 +135,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleDamage: 10
   pointMinus: 2
+--- !u!70 &1973863428727506557
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282115487745308460}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04570795, y: -0.0065579526}
+  m_Size: {x: 1.5357866, y: 1.3290296}
+  m_Direction: 1

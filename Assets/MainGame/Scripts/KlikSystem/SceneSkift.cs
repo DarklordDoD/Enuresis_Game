@@ -73,7 +73,7 @@ public class SceneSkift : MonoBehaviour
 
     public void testKledeskab()
     {        
-        if (GameObject.Find("Omkledning") != null)
+        if (GameObject.Find("Omkledning") != null || GameObject.FindGameObjectWithTag("Tutorial") != null)
             aktivateKlik = false;
         else
             aktivateKlik = true;
