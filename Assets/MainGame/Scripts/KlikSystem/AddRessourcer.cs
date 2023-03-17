@@ -17,6 +17,7 @@ public class AddRessourcer : MonoBehaviour
 
     private Ressourcer ressourcer;
     private float klikTimer;
+    [SerializeField]
     private bool tjekTrikker;
     private Collider2D Detecter;
 
@@ -82,7 +83,9 @@ public class AddRessourcer : MonoBehaviour
 
     public void DoTask()
     {
-        tjekTrikker = true;
+        if (klikTimer >= delayMellemKlik)
+            tjekTrikker = true;
+
         Detecter.enabled = true;
     }
 }
