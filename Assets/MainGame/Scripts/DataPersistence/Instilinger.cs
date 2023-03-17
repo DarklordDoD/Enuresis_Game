@@ -96,11 +96,8 @@ public class Instilinger : MonoBehaviour
 
         AktivateButten();
 
-        try
-        {
-            GameObject.Find("TaleVindu").GetComponent<FrindSamtale>().StartSamtale();
-        }
-        catch { }
+        if (GameObject.Find("VinduTilTale") != null)
+            GameObject.Find("TaleVindu").GetComponent<FrindSamtale>().GetSprog();
     }
 
     public void LydStyrke()

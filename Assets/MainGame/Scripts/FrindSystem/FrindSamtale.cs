@@ -34,11 +34,13 @@ public class FrindSamtale : MonoBehaviour
     private GameObject petSkin;
     private GameObject frindSkin;
 
+    private GameObject gameController;
+
     public void StartSamtale()
     {
         SetKlik(false);
 
-        GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
+        gameController = GameObject.FindGameObjectWithTag("GameController");
 
         petSkin = GameObject.FindGameObjectWithTag("Player").transform.GetChild(0).gameObject;
         frindSkin = GameObject.FindGameObjectWithTag("PetFrind").transform.GetChild(0).gameObject;
@@ -67,6 +69,11 @@ public class FrindSamtale : MonoBehaviour
         if (0 == rngFrind)
             tisEventType += 2;
 
+        GetSprog();    
+    }
+
+    public void GetSprog()
+    {
         samtaleList = samtaler[gameController.GetComponent<Instilinger>().sprog].lines;
 
         RunSamtale(false);

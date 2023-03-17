@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a93351d7d09d194d9b967380f7de5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleDamage: 10
+  obstacleDamage: 100
   pointMinus: 2
 --- !u!70 &6086080394863634028
 CapsuleCollider2D:
