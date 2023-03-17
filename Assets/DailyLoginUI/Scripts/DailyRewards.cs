@@ -115,12 +115,12 @@ namespace DailyRewardsSystem
          
         }*/
 
-        private void TjekOgStart()
+        public void TjekOgStart()
         {
             if (gameController.GetComponent<PetScelektion>().inPetMenu)
                 return;
 
-            if (gameController.GetComponent<Ressourcer>().lastVisitS > 86400)
+            if (DateTime.Today.Day != gameController.GetComponent<Ressourcer>().dato.Day)
             {
                 nextRewardIndex = UnityEngine.Random.Range(0, rewardsDB.rewardsCount);
                 ActivateReward();

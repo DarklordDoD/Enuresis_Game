@@ -390,119 +390,119 @@ MonoBehaviour:
   - cosmeticsName: Candy
     cosmeticsID: 1
     SpriteName: Candy
-    cosmeticsPrice: 50
+    cosmeticsPrice: 15
     bought: 0
     unlimited: 1
     gladVerdi: 1000
   - cosmeticsName: Cokolade
     cosmeticsID: 2
     SpriteName: chocolate bars
-    cosmeticsPrice: 50
+    cosmeticsPrice: 30
     bought: 0
     unlimited: 1
     gladVerdi: 2500
   - cosmeticsName: Cookie
     cosmeticsID: 3
     SpriteName: Cookie
-    cosmeticsPrice: 10
+    cosmeticsPrice: 25
     bought: 0
     unlimited: 1
     gladVerdi: 2000
   - cosmeticsName: Slikkepind
     cosmeticsID: 4
     SpriteName: lolipop
-    cosmeticsPrice: 10
+    cosmeticsPrice: 20
     bought: 0
     unlimited: 1
     gladVerdi: 1500
   - cosmeticsName: Krone
     cosmeticsID: 5
     SpriteName: Crown
-    cosmeticsPrice: 10
+    cosmeticsPrice: 10000
     bought: 0
     unlimited: 0
     gladVerdi: 0
   - cosmeticsName: "Gr\xF8n/lilla Joker Hat"
     cosmeticsID: 6
     SpriteName: Joker_Purple_Green
-    cosmeticsPrice: 10000
+    cosmeticsPrice: 1000
     bought: 0
     unlimited: 0
     gladVerdi: 0
   - cosmeticsName: "Hvid/r\xF8d Joker Hat"
     cosmeticsID: 7
     SpriteName: Joker_White_Red
-    cosmeticsPrice: 10
+    cosmeticsPrice: 200
     bought: 0
     unlimited: 0
     gladVerdi: 0
   - cosmeticsName: "Halsk\xE6de"
     cosmeticsID: 8
     SpriteName: Necklace
-    cosmeticsPrice: 10
+    cosmeticsPrice: 250
     bought: 0
     unlimited: 0
     gladVerdi: 0
   - cosmeticsName: Fest Hat
     cosmeticsID: 9
     SpriteName: Party_Hat
-    cosmeticsPrice: 10
+    cosmeticsPrice: 150
     bought: 0
     unlimited: 0
     gladVerdi: 0
   - cosmeticsName: "Cyan Halst\xF8rkl\xE6de"
     cosmeticsID: 10
     SpriteName: Scarf_Cyan
-    cosmeticsPrice: 10
+    cosmeticsPrice: 375
     bought: 0
     unlimited: 0
     gladVerdi: 0
   - cosmeticsName: "Lilla Halst\xF8rkl\xE6de"
     cosmeticsID: 11
     SpriteName: Scarf_Purple
-    cosmeticsPrice: 10
+    cosmeticsPrice: 425
     bought: 0
     unlimited: 0
     gladVerdi: 0
   - cosmeticsName: "Bl\xE5t Slips"
     cosmeticsID: 12
     SpriteName: Tie_Blue
-    cosmeticsPrice: 10
+    cosmeticsPrice: 175
     bought: 0
     unlimited: 0
     gladVerdi: 0
   - cosmeticsName: "Gr\xF8nt Slips"
     cosmeticsID: 13
     SpriteName: Tie_Green
-    cosmeticsPrice: 10
+    cosmeticsPrice: 150
     bought: 0
     unlimited: 0
     gladVerdi: 0
   - cosmeticsName: "R\xF8dt Slips"
     cosmeticsID: 14
     SpriteName: Tie_Red
-    cosmeticsPrice: 10
+    cosmeticsPrice: 225
     bought: 0
     unlimited: 0
     gladVerdi: 0
   - cosmeticsName: Gult Slips
     cosmeticsID: 15
     SpriteName: Tie_Yellow
-    cosmeticsPrice: 10
+    cosmeticsPrice: 150
     bought: 0
     unlimited: 0
     gladVerdi: 0
   - cosmeticsName: Troldmandshat
     cosmeticsID: 16
     SpriteName: Wizard_Hat
-    cosmeticsPrice: 10
+    cosmeticsPrice: 500
     bought: 0
     unlimited: 0
     gladVerdi: 0
   - cosmeticsName: "Sl\xF8jfe"
     cosmeticsID: 17
     SpriteName: Bow
-    cosmeticsPrice: 2000
+    cosmeticsPrice: 25000
     bought: 0
     unlimited: 0
     gladVerdi: 0
@@ -1039,6 +1039,7 @@ MonoBehaviour:
   minigame: 1
   aktivateUI: {fileID: 0}
   aktivate: 1
+  stayOpenUI: 0
 --- !u!1 &1475102532
 GameObject:
   m_ObjectHideFlags: 0

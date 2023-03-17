@@ -155,7 +155,7 @@ public class Ressourcer : MonoBehaviour
         gladShow.size = gladMeter / maxBar;
 
         if (loadSykse)
-            if (DateTime.Today.Day - dato.Day > 0)
+            if (DateTime.Today.Day != dato.Day)
             {
                 GetComponent<SceneManeger>().NewScene("Bedroom");
 
