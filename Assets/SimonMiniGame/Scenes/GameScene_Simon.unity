@@ -1079,7 +1079,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 96e2379a7216640d1a8ebaae2dceea0c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c022a7b1d693cc6458f9943e81107e32, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1935,6 +1935,7 @@ MonoBehaviour:
   hvadGame: Simon
   allMiniGames: []
   pointsToMonny: 1
+  pointsToMonnySquard: 1
   showDalyMonny: 0
 --- !u!1 &2030029605
 GameObject:
